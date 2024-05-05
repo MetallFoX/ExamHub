@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?><html xmlns:concordion="http://www.concordion.org/2007/concordion" xmlns:e="http://exam.extension.io" xmlns:c="http://www.concordion.org/2007/concordion"><head><script type="text/javascript">document.addEventListener('DOMContentLoaded', function (event) {
+    Array.from(document.getElementsByClassName("nomnoml")).forEach(function(el) {
+        nomnoml.draw(el, el.textContent); 
+    });  
+});</script><script type="text/javascript">window.addEventListener('DOMContentLoaded', function (event) {
+     jQuery("table").wrap(unescape("&lt;div class='table-responsive'&gt;&lt;/div&gt;"));
+}); </script><script type="text/javascript">window.addEventListener('DOMContentLoaded', function (event) {
+     jQuery(".details").wrap(unescape("&lt;details&gt;&lt;/details&gt;"));
+}); </script><script type="text/javascript">window.addEventListener('DOMContentLoaded', function (event) {
+    anchors.options = {
+        placement: 'left',
+        icon: '#'
+    };
+    anchors.add();
+    tocbot.init({
+        tocSelector: '.js-toc',
+        contentSelector: '.bd-content',
+        headingSelector: 'h1, h2, h3, h4, h5, h6',
+        hasInnerContainers: true,
+        collapseDepth: 3,
+        scrollSmooth: false,
+        fixedSidebarOffset: 'auto',
+        includeHtml: true
+    });
+    var collapseDepth = 3; 
+    jQuery( "#example-summary-badge" ).click(function() {
+        if (collapseDepth === 3) {
+            collapseDepth = 30;
+        } else {
+            collapseDepth = 3;
+        }
+        tocbot.refresh({
+            tocSelector: '.js-toc',
+            contentSelector: '.bd-content',
+            headingSelector: 'h1, h2, h3, h4, h5, h6',
+            hasInnerContainers: true,
+            collapseDepth: collapseDepth,
+            scrollSmooth: false,
+            fixedSidebarOffset: 'auto',
+            includeHtml: true
+        });
+        if (collapseDepth === 30) {
+            jQuery( ".toc-link" ).filter(function( index ) {
+                return jQuery( "i", this ).length !== 1
+            }).css("display", "none");
+        } else {
+            jQuery( ".toc-link" ).filter(function( index ) {
+                return jQuery( "i", this ).length !== 1
+            }).css("display", "unset");
+        }
+    });
+}); </script><script type="text/javascript">document.addEventListener('DOMContentLoaded', function (event) {
+    hljs.configure({
+        cssSelector: 'pre code, pre.code'
+    });
+    hljs.highlightAll();
+});</script><meta http-equiv="content-type" content="text/html; charset=UTF-8" /><link type="text/css" rel="stylesheet" href="../../ext/codemirror/codemirror.css" /><link type="text/css" rel="stylesheet" href="../../ext/codemirror/enable-codemirror.css" /><link type="text/css" rel="stylesheet" href="../../ext/codemirror/merge.css" /><link type="text/css" rel="stylesheet" href="../../ext/codemirror/foldgutter.css" /><link type="text/css" rel="stylesheet" href="../../ext/codemirror/simplescrollbar.css" /><script type="text/javascript" src="../../ext/codemirror/codemirror.js"></script><script type="text/javascript" src="../../ext/codemirror/enable-codemirror.js"></script><script type="text/javascript" src="../../ext/codemirror/javascript.js"></script><script type="text/javascript" src="../../ext/codemirror/xml.js"></script><script type="text/javascript" src="../../ext/codemirror/addon/mode/simple.js"></script><script type="text/javascript" src="../../ext/codemirror/http.js"></script><script type="text/javascript" src="../../ext/codemirror/diff_match_patch.js"></script><script type="text/javascript" src="../../ext/codemirror/merge.js"></script><script type="text/javascript" src="../../ext/codemirror/xml-fold.js"></script><script type="text/javascript" src="../../ext/codemirror/simplescrollbar.js"></script><link type="text/css" rel="stylesheet" href="../../ext/highlight/stackoverflow-light.min.css" /><script type="text/javascript" src="../../ext/highlight/highlight.min.js"></script><script type="text/javascript" src="../../ext/highlight/http.min.js"></script><script type="text/javascript" src="../../ext/highlight/java.min.js"></script><link type="text/css" rel="stylesheet" href="../../ext/tocbot/tocbot.css" /><script type="text/javascript" src="../../ext/tocbot/tocbot.min.js"></script><link type="text/css" rel="stylesheet" href="../../ext/fontawesome/css/all.min.css" /><link type="text/css" rel="stylesheet" href="../../ext/fontawesome/css/regular.min.css" /><link type="text/css" rel="stylesheet" href="../../ext/fontawesome/css/solid.min.css" /><link type="text/css" rel="stylesheet" href="../../ext/fontawesome/css/all.min.css" /><link type="text/css" rel="stylesheet" href="../../ext/bootstrap/bootstrap.min.css" /><link type="text/css" rel="stylesheet" href="../../ext/bootstrap/enable-bootstrap.css" /><link type="text/css" rel="stylesheet" href="../../ext/bootstrap/doc.min.css" /><link type="text/css" rel="stylesheet" href="../../ext/bootstrap/scrollToTop.css" /><script type="text/javascript" src="../../ext/bootstrap/bootstrap.bundle.min.js"></script><script type="text/javascript" src="../../ext/bootstrap/jquery-3.2.1.slim.min.js"></script><script type="text/javascript" src="../../ext/bootstrap/sidebar.js"></script><script type="text/javascript" src="../../ext/bootstrap/doc.min.js"></script><script type="text/javascript" src="../../ext/bootstrap/scrollToTop.js"></script><script type="text/javascript" src="../../ext/nomnoml/graphre.js"></script><script type="text/javascript" src="../../ext/nomnoml/nomnoml.min.js"></script><link type="text/css" rel="stylesheet" href="../../timingExtensionStyle.css" /><script type="text/javascript" src="../../timingExtensionToggle.js"></script></head><body><div id="toggle-button"><img id="toggle-on" src="../../timing-on.svg" height="24" width="24" style="display:none" /><img id="toggle-off" src="../../timing-off.svg" height="24" width="24" /></div><span class="breadcrumbs"><a href="../Specs.html">Securities API</a> &gt; <a href="SecurityUpdate.html">Security Update</a> &gt;</span><div class="container-fluid"><div class="container-xxl my-md-4 bd-layout"><main class="bd-main order-1"><div class="bd-toc mt-4 mb-5 my-md-0 ps-xl-3 mb-lg-5 text-muted"><div class="row my-2 pb-2 border-bottom"><div class="col-9"><strong class="h6">On this page</strong></div><div class="col-2"><i id="example-summary-badge" class="fa fa-list-check"></i></div></div><nav id="table-of-contents" class="js-toc toc toc-right" /></div><div class="bd-content ps-lg-4" id="content"><h1>Обновление ФИ: DLQ</h1>
+<h2>Описание</h2>
+<p>Невалидные события обновления ФИ перенаправляются в DLQ.</p>
+<p>Невалидными считаются события, в которых присутствует любое из следующего:</p>
+<ul>
+<li>нарушен формат сообщения</li>
+<li>есть поля без значений</li>
+<li>есть неподдерживаемые поля</li>
+</ul>
+<h2>Примеры</h2>
+<div concordion:example="before" id="before"><p></p><p></p><p></p><p></p><p></p>
+<h3>Перед каждым примером</h3>
+<details> <summary>Чистим ФИ и поля</summary>
+     <span dir="/data/db/" datasets="sources-primary-nsd.xml" cmdId="137919fe-43ab-42ec-9471-8ed42f0565dd" e:db-execute=""><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SOURCE</caption><thead class="thead-default"><tr><th class="">ID</th><th class="">CODE</th><th class="">NAME</th><th class="">PRIORITY</th><th class="">IS_RESERVE</th></tr></thead><tbody><tr><td class=""><span>11</span></td><td class=""><span>NSD</span></td><td class=""><span>API НРД</span></td><td class=""><span>1</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>22</span></td><td class=""><span>BDL</span></td><td class=""><span>Bloomberg Data Licence</span></td><td class=""><span>2</span></td><td class=""><span>1</span></td></tr><tr><td class=""><span>33</span></td><td class=""><span>CBONDS</span></td><td class=""><span>CBONDS</span></td><td class=""><span>3</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>44</span></td><td class=""><span>QUIK_EXPORTER</span></td><td class=""><span>ARQA QUIK Exporter</span></td><td class=""><span>4</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>55</span></td><td class=""><span>CAPQORT</span></td><td class=""><span>DISABLED</span></td><td class=""><span>5</span></td><td class=""><span>0</span></td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SECURITY</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  FIELD_VALUE</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  FIELD_VALUE_AGG</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SECURITY_ID</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SOURCE</caption><thead class="thead-default"><tr><th class="">ID</th><th class="">CODE</th><th class="">NAME</th><th class="">PRIORITY</th><th class="">IS_RESERVE</th></tr></thead><tbody><tr><td class=""><span>11</span></td><td class=""><span>NSD</span></td><td class=""><span>API НРД</span></td><td class=""><span>1</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>22</span></td><td class=""><span>BDL</span></td><td class=""><span>Bloomberg Data Licence</span></td><td class=""><span>2</span></td><td class=""><span>1</span></td></tr><tr><td class=""><span>33</span></td><td class=""><span>CBONDS</span></td><td class=""><span>CBONDS</span></td><td class=""><span>3</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>44</span></td><td class=""><span>QUIK_EXPORTER</span></td><td class=""><span>ARQA QUIK Exporter</span></td><td class=""><span>4</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>55</span></td><td class=""><span>CAPQORT</span></td><td class=""><span>DISABLED</span></td><td class=""><span>5</span></td><td class=""><span>0</span></td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SECURITY</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  FIELD_VALUE</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  FIELD_VALUE_AGG</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SECURITY_ID</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SOURCE</caption><thead class="thead-default"><tr><th class="">ID</th><th class="">CODE</th><th class="">NAME</th><th class="">PRIORITY</th><th class="">IS_RESERVE</th></tr></thead><tbody><tr><td class=""><span>11</span></td><td class=""><span>NSD</span></td><td class=""><span>API НРД</span></td><td class=""><span>1</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>22</span></td><td class=""><span>BDL</span></td><td class=""><span>Bloomberg Data Licence</span></td><td class=""><span>2</span></td><td class=""><span>1</span></td></tr><tr><td class=""><span>33</span></td><td class=""><span>CBONDS</span></td><td class=""><span>CBONDS</span></td><td class=""><span>3</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>44</span></td><td class=""><span>QUIK_EXPORTER</span></td><td class=""><span>ARQA QUIK Exporter</span></td><td class=""><span>4</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>55</span></td><td class=""><span>CAPQORT</span></td><td class=""><span>DISABLED</span></td><td class=""><span>5</span></td><td class=""><span>0</span></td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SECURITY</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  FIELD_VALUE</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  FIELD_VALUE_AGG</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SECURITY_ID</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SOURCE</caption><thead class="thead-default"><tr><th class="">ID</th><th class="">CODE</th><th class="">NAME</th><th class="">PRIORITY</th><th class="">IS_RESERVE</th></tr></thead><tbody><tr><td class=""><span>11</span></td><td class=""><span>NSD</span></td><td class=""><span>API НРД</span></td><td class=""><span>1</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>22</span></td><td class=""><span>BDL</span></td><td class=""><span>Bloomberg Data Licence</span></td><td class=""><span>2</span></td><td class=""><span>1</span></td></tr><tr><td class=""><span>33</span></td><td class=""><span>CBONDS</span></td><td class=""><span>CBONDS</span></td><td class=""><span>3</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>44</span></td><td class=""><span>QUIK_EXPORTER</span></td><td class=""><span>ARQA QUIK Exporter</span></td><td class=""><span>4</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>55</span></td><td class=""><span>CAPQORT</span></td><td class=""><span>DISABLED</span></td><td class=""><span>5</span></td><td class=""><span>0</span></td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SECURITY</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  FIELD_VALUE</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  FIELD_VALUE_AGG</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SECURITY_ID</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SOURCE</caption><thead class="thead-default"><tr><th class="">ID</th><th class="">CODE</th><th class="">NAME</th><th class="">PRIORITY</th><th class="">IS_RESERVE</th></tr></thead><tbody><tr><td class=""><span>11</span></td><td class=""><span>NSD</span></td><td class=""><span>API НРД</span></td><td class=""><span>1</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>22</span></td><td class=""><span>BDL</span></td><td class=""><span>Bloomberg Data Licence</span></td><td class=""><span>2</span></td><td class=""><span>1</span></td></tr><tr><td class=""><span>33</span></td><td class=""><span>CBONDS</span></td><td class=""><span>CBONDS</span></td><td class=""><span>3</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>44</span></td><td class=""><span>QUIK_EXPORTER</span></td><td class=""><span>ARQA QUIK Exporter</span></td><td class=""><span>4</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>55</span></td><td class=""><span>CAPQORT</span></td><td class=""><span>DISABLED</span></td><td class=""><span>5</span></td><td class=""><span>0</span></td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SECURITY</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  FIELD_VALUE</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  FIELD_VALUE_AGG</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SECURITY_ID</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table></span>
+</details>
+<ul>
+<li>Входящий топик батчей пуст: <span e:mq-purge="#TEXT">md.security.data.batch</span></li>
+<li>Входящий топик поштучный пуст: <span e:mq-purge="#TEXT">md.security.data</span></li>
+<li>DLQ пуст: <span e:mq-purge="#TEXT">md.security.data.dlq</span></li>
+</ul>
+</div>
+<h3>Нарушен формат сообщения</h3>
+<p>При получении невалидного события:</p>
+<ul>
+<li>конвертации в ФИ не происходит</li>
+<li>событие перенаправляется в <code>dlq</code></li>
+</ul>
+<div concordion:example="illegal-message-format" class="exam-example mb-3" data-type="example" id="illegal-message-format" data-summary-success="4" data-summary-ignore="0" data-summary-failure="0" data-summary-exception="0" data-summary-status="ExpectedToPass"><div data-bs-toggle="collapse" data-bs-target="#e34cd524d-3ec4-43a8-8f3d-650293fbd416" aria-expanded="true"><h4 style="visibility: hidden; height:0;" class="test-class"><i class="example-badge fa fa-check m-1 text-success"></i>Illegal message format</h4><i class="far fa-caret-square-down"></i><span> </span><a class="bd-example-title text-muted fw-lighter">Illegal message format</a></div><div class="bd-example collapse show rounded bg-light bg-gradient" id="e34cd524d-3ec4-43a8-8f3d-650293fbd416">
+
+<details open=""> <summary class="lead border-bottom text-warning">When</summary>
+<p>На вход пришло невалидное событие:</p><div class="mq-send">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> 
+<tr><td class="exp-body"><div class="json">{}</div></td></tr> </tbody>
+    </table>
+</div>
+</details>
+<details open=""> <summary class="lead border-bottom text-success">Then</summary>
+<p>События обработаны:</p><div class="mq-check">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> <tr><td class="exp-body">EMPTY</td></tr> </tbody>
+    </table>
+</div>
+<p>И</p>
+<p>Перенаправлены в DLQ:</p><div class="mq-check">
+        <table class="table table-sm caption-top">
+            <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.data.dlq</span></caption>
+            <tbody> 
+<tr><td class="exp-body"><div class="json rest-success">{}</div></td></tr> </tbody>
+        </table>
+    </div>
+<p>ФИ не загружены в БД:</p>
+<table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  ФИ:</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="1" class="table-success">EMPTY</td></tr></tbody></table>
+<table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  Поля ФИ:</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="1" class="table-success">EMPTY</td></tr></tbody></table>
+</details>
+</div><div class="time-fig"><p>1s 91ms</p></div></div>
+<h3>Поля без значений</h3>
+<p>При получении события с полями без значений:</p>
+<ul>
+<li>конвертации в ФИ не происходит</li>
+<li>событие перенаправляется в <code>dlq</code></li>
+</ul>
+<div concordion:example="field-without-value" class="exam-example mb-3" data-type="example" id="field-without-value" data-summary-success="4" data-summary-ignore="0" data-summary-failure="0" data-summary-exception="0" data-summary-status="ExpectedToPass"><div data-bs-toggle="collapse" data-bs-target="#ea2f988af-e62b-4a1b-91e7-62d5787c82b2" aria-expanded="true"><h4 style="visibility: hidden; height:0;" class="test-class"><i class="example-badge fa fa-check m-1 text-success"></i>Field without value</h4><i class="far fa-caret-square-down"></i><span> </span><a class="bd-example-title text-muted fw-lighter">Field without value</a></div><div class="bd-example collapse show rounded bg-light bg-gradient" id="ea2f988af-e62b-4a1b-91e7-62d5787c82b2">
+
+<details open=""> <summary class="lead border-bottom text-warning">When</summary>
+<p>На вход пришли события ФИ без значения:</p><div class="mq-send">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> 
+<tr><td class="exp-body"><div class="json">{
+  "status": "SECURITY_FOUND",
+  "integrationSource": "NSD",
+  "isin": "RU0001706947",
+  "timestamp": "2020-01-01T00:00:00",
+  "security": {
+    "isin": "RU0001706947",
+    "name": "MINFIN ROSSII 2 31/10/20",
+    "type": "SEC",
+    "active": true,
+    "statusDescription": "Размещен",
+    "fields": [{
+      "code": "ISIN",
+      "value": "RU0001706947"
+    }, {
+      "code": "FACE_VALUE",
+      "value": ""
+    }]
+  }
+}</div></td></tr>
+
+<tr><td class="exp-body"><div class="json">{
+  "status": "SECURITY_FOUND",
+  "integrationSource": "NSD",
+  "isin": "RU0001706947",
+  "timestamp": "2020-01-01T00:00:00",
+  "security": {
+    "isin": "RU0001706947",
+    "name": "MINFIN ROSSII 2 31/10/20",
+    "type": "SEC",
+    "active": true,
+    "statusDescription": "Размещен",
+    "fields": [{
+      "code": "ISIN",
+      "value": "RU0001706947"
+    }, {
+      "code": "FACE_VALUE",
+      "value": " "
+    }]
+  }
+}</div></td></tr> </tbody>
+    </table>
+</div>
+</details>
+<details open=""> <summary class="lead border-bottom text-success">Then</summary>
+<p>События обработаны:</p><div class="mq-check">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> <tr><td class="exp-body">EMPTY</td></tr> </tbody>
+    </table>
+</div>
+<p>И</p>
+<p>Перенаправлены в DLQ:</p><div class="mq-check">
+        <table class="table table-sm caption-top">
+            <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.data.dlq</span></caption>
+            <tbody>     
+    <tr><td class="exp-body"><div class="json rest-success">{
+  "status": "SECURITY_FOUND",
+  "integrationSource": "NSD",
+  "isin": "RU0001706947",
+  "timestamp": "2020-01-01T00:00:00",
+  "security": {
+    "isin": "RU0001706947",
+    "name": "MINFIN ROSSII 2 31/10/20",
+    "type": "SEC",
+    "active": true,
+    "statusDescription": "Размещен",
+    "fields": [{
+      "code": "ISIN",
+      "value": "RU0001706947"
+    }, {
+      "code": "FACE_VALUE",
+      "value": ""
+    }]
+  }
+}</div></td></tr>
+    
+    <tr><td class="exp-body"><div class="json rest-success">{
+  "status": "SECURITY_FOUND",
+  "integrationSource": "NSD",
+  "isin": "RU0001706947",
+  "timestamp": "2020-01-01T00:00:00",
+  "security": {
+    "isin": "RU0001706947",
+    "name": "MINFIN ROSSII 2 31/10/20",
+    "type": "SEC",
+    "active": true,
+    "statusDescription": "Размещен",
+    "fields": [{
+      "code": "ISIN",
+      "value": "RU0001706947"
+    }, {
+      "code": "FACE_VALUE",
+      "value": " "
+    }]
+  }
+}</div></td></tr> </tbody>
+        </table>
+    </div>
+<p>ФИ не загружены в БД:</p>
+<table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  ФИ:</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="1" class="table-success">EMPTY</td></tr></tbody></table>
+<table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  Поля ФИ:</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="1" class="table-success">EMPTY</td></tr></tbody></table>
+</details>
+</div><div class="time-fig"><p>7s 213ms</p></div></div>
+<p>При этом событие без полей считается валидным.</p>
+<div concordion:example="security-without-fields" class="exam-example mb-3" data-type="example" id="security-without-fields" data-summary-success="3" data-summary-ignore="0" data-summary-failure="0" data-summary-exception="0" data-summary-status="ExpectedToPass"><a style="font-size: 9pt; font-weight: bold; float: right; display: inline-block;margin-top: 20px; text-decoration: none; color: #89C;" href="SecurityUpdateDlq[security-without-fields]LogViewer.html">Log File</a><div data-bs-toggle="collapse" data-bs-target="#e7667f102-8633-480b-8e3d-9eb011cea4b4" aria-expanded="true"><h4 style="visibility: hidden; height:0;" class="test-class"><i class="example-badge fa fa-check m-1 text-success"></i>Security without fields</h4><i class="far fa-caret-square-down"></i><span> </span><a class="bd-example-title text-muted fw-lighter">Security without fields</a></div><div class="bd-example collapse show rounded bg-light bg-gradient" id="e7667f102-8633-480b-8e3d-9eb011cea4b4">
+
+<details open=""> <summary class="lead border-bottom text-warning">When</summary>
+<p>На вход пришли события без полей:</p><div class="mq-send">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> 
+<tr><td class="exp-body"><div class="json">{
+  "integrationSource": "NSD",
+  "status": "SECURITY_FOUND",
+  "isin": "SOME_ISIN",
+  "timestamp": "2020-01-01T00:00:00",
+  "security": {
+    "isin": "SOME_ISIN",
+    "name": "MINFIN ROSSII 2 31/10/20",
+    "type": "SEC",
+    "active": true,
+    "statusDescription": "Размещен"
+  }
+}</div></td></tr> </tbody>
+    </table>
+</div>
+</details>
+<details open=""> <summary class="lead border-bottom text-success">Then</summary>
+<p>События обработаны:</p><div class="mq-check">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> <tr><td class="exp-body">EMPTY</td></tr> </tbody>
+    </table>
+</div>
+<p>ФИ сохранены в БД:</p>
+<table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  ФИ:</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="1" class="table-success">EMPTY</td></tr></tbody></table>
+<p>Перенаправлены в DLQ:</p><div class="mq-check">
+        <table class="table table-sm caption-top">
+            <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.data.dlq</span></caption>
+            <tbody>     
+    <tr><td class="exp-body"><div class="json rest-success">{
+  "integrationSource": "NSD",
+  "status": "SECURITY_FOUND",
+  "isin": "SOME_ISIN",
+  "timestamp": "2020-01-01T00:00:00",
+  "security": {
+    "isin": "SOME_ISIN",
+    "name": "MINFIN ROSSII 2 31/10/20",
+    "type": "SEC",
+    "active": true,
+    "statusDescription": "Размещен"
+  }
+}</div></td></tr> </tbody>
+        </table>
+    </div>
+</details>
+</div><div class="time-fig"><p>5s 227ms</p></div></div>
+<h3>Неподдерживаемые поля</h3>
+<p>При получении ФИ c неизвестным полем:</p>
+<ul>
+<li>конвертации в ФИ не происходит</li>
+<li>событие перенаправляется в <code>dlq</code></li>
+</ul>
+<div concordion:example="unknown-field" class="exam-example mb-3" data-type="example" id="unknown-field" data-summary-success="4" data-summary-ignore="0" data-summary-failure="0" data-summary-exception="0" data-summary-status="ExpectedToPass"><div data-bs-toggle="collapse" data-bs-target="#e79ab3351-3a91-4334-b051-df029dc6616d" aria-expanded="true"><h4 style="visibility: hidden; height:0;" class="test-class"><i class="example-badge fa fa-check m-1 text-success"></i>Unknown field</h4><i class="far fa-caret-square-down"></i><span> </span><a class="bd-example-title text-muted fw-lighter">Unknown field</a></div><div class="bd-example collapse show rounded bg-light bg-gradient" id="e79ab3351-3a91-4334-b051-df029dc6616d">
+
+<details open=""> <summary class="lead border-bottom text-warning">When</summary>
+<p>На вход пришло событие ФИ с неизвестным полем:</p><div class="mq-send">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> 
+<tr><td class="exp-body"><div class="json">{
+  "status": "SECURITY_FOUND",
+  "integrationSource": "NSD",
+  "isin": "RU0001706947",
+  "timestamp": "2020-01-01T00:00:00",
+  "security": {
+    "isin": "RU0001706947",
+    "name": "MINFIN ROSSII 2 31/10/20",
+    "type": "SEC",
+    "active": true,
+    "statusDescription": "Размещен",
+    "fields": [{
+      "code": "ISIN",
+      "value": "RU0001706947"
+    }, {
+      "code": "UNKNOWN_FIELD_CODE",
+      "value": "1000"
+    }]
+  }
+}</div></td></tr> </tbody>
+    </table>
+</div>
+</details>
+<details open=""> <summary class="lead border-bottom text-success">Then</summary>
+<p>События обработаны:</p><div class="mq-check">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> <tr><td class="exp-body">EMPTY</td></tr> </tbody>
+    </table>
+</div>
+<p>И</p>
+<p>Перенаправлены в DLQ:</p><div class="mq-check">
+        <table class="table table-sm caption-top">
+            <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.data.dlq</span></caption>
+            <tbody>     
+    <tr><td class="exp-body"><div class="json rest-success">{
+  "status": "SECURITY_FOUND",
+  "integrationSource": "NSD",
+  "isin": "RU0001706947",
+  "timestamp": "2020-01-01T00:00:00",
+  "security": {
+    "isin": "RU0001706947",
+    "name": "MINFIN ROSSII 2 31/10/20",
+    "type": "SEC",
+    "active": true,
+    "statusDescription": "Размещен",
+    "fields": [{
+      "code": "ISIN",
+      "value": "RU0001706947"
+    }, {
+      "code": "UNKNOWN_FIELD_CODE",
+      "value": "1000"
+    }]
+  }
+}</div></td></tr> </tbody>
+        </table>
+    </div>
+<p>ФИ не загружены в БД:</p>
+<table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  ФИ:</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="1" class="table-success">EMPTY</td></tr></tbody></table>
+<table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  Поля ФИ:</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="1" class="table-success">EMPTY</td></tr></tbody></table>
+</details>
+</div><div class="time-fig"><p>3s 138ms</p></div></div>
+<h2>Прочие кейсы</h2>
+<ul>
+<li><a concordion:run="concordion" href="SecurityUpdateDlqBatch.html" class="success">Как работает перенаправление в DLQ при обработке бачами?</a><span class="time-run"> (2s 309ms)</span></li>
+</ul></div></main></div></div><div class="footer">Results generated by <a href="http://www.concordion.org" style="font-weight: bold; text-decoration: none; color: #89C;">Concordion</a><div class="testTime">in 19235 ms on 02-апр.-2024 at 12:29:16 MSK</div><div class="testTime"><a href="SecurityUpdateDlqLogViewer.html" style="font-weight: bold; text-decoration: none; color: #89C;">Log File</a></div></div></body><button id="btnToTop" onclick="topFunction()" type="button" class="btn btn-light btn-sm text-muted me-1"><i class="fa fa-arrow-up"></i></button></html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <style type="text/css">
+        h1 {
+            margin-bottom: 0;
+        }
+
+        .levelkey {
+            margin-top: 25px;
+            padding 0;
+            border-collapse: collapse;
+        }
+
+        .levelkey td {
+            width: 48px;
+            border: 1px solid gray;
+            text-align: center;
+        }
+
+        .alignleft {
+            display: inline-block;
+        }
+
+        .floatright {
+            display: inline-block;
+            float: right;
+            margin-right: 40px;
+        }
+
+        .line {
+            font-family: monospace;
+        }
+
+        .info {
+        }
+
+        .info-color {
+            background-color: White;
+        }
+
+        .debug {
+        }
+
+        .debug-color {
+            background-color: Gainsboro;
+        }
+
+        .trace {
+        }
+
+        .trace-color {
+            background-color: Khaki;
+        }
+
+        .warn {
+        }
+
+        .warn-color {
+            background-color: Orange;
+        }
+
+        .error {
+        }
+
+        .error-color {
+            background-color: #ffbbbb;
+        }
+
+        .line-numbers {
+            background: #e9e9e9;
+            border-right: 1px solid #666;
+            display: inline-block;
+            width: 40px;
+            text-align: right;
+            padding: 0 5px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .split-debug-levels {
+            border-bottom: none;
+        }
+
+        .split-trace-levels {
+            border-bottom: none;
+        }
+
+        div.header-fixed {
+            background-color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding-left: 10px;
+            z-index: 100000;
+        }
+
+        ul.content {
+            margin-top: 125px;
+            padding-left: 0;
+            white-space: nowrap;
+            list-style-type: none;
+        }
+
+        pre {
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+        }
+
+    </style>
+    <script type="text/javascript">
+        function filterTestWorker(cb) {
+            doFilter("test-worker", cb.checked);
+        }
+
+        function filterDebug(cb) {
+            doFilter("debug", cb.checked);
+            doSplit("split-debug-levels", cb.checked);
+        }
+
+        function filterTrace(cb) {
+            doFilter("trace", cb.checked);
+            doSplit("split-trace-levels", cb.checked);
+        }
+
+        function doFilter(className, checked) {
+            var setting = checked ? "inherit" : "none";
+
+            var all = document.getElementsByClassName(className);
+            for (var i = 0; i < all.length; i++) {
+                all[i].style.display = setting;
+            }
+        }
+
+        function doSplit(className, checked) {
+            var setting = checked ? "none" : "1px dotted black";
+
+            var all = document.getElementsByClassName(className);
+            for (var i = 0; i < all.length; i++) {
+                all[i].style.borderBottom = setting;
+            }
+        }
+
+        function filter() {
+            let input, filter, ul, lines, line;
+            input = document.getElementById("search");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("content");
+            lines = ul.getElementsByTagName("li");
+
+            for (let i = 0; i < lines.length; i++) {
+                line = lines[i];
+                if (line) {
+                    let txtValue = line.textContent || line.innerText;
+                    line.style.display = txtValue.toUpperCase().indexOf(filter) > -1 ? "" : "none";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="header-fixed">
+    <h1 class="alignleft">SecurityUpdate[update-existing-security].log</h1>
+    <table class="levelkey floatright">
+        <tr>
+            <td class="trace-color">Trace</td>
+            <td class="debug-color">Debug</td>
+            <td class="info-color">Info</td>
+            <td class="warn-color">Warn</td>
+            <td class="error-color">Error</td>
+        </tr>
+    </table>
+
+    <p>
+        <label class="alignleft"><input id="chkDebug" type="checkbox" onclick="filterDebug(this);" checked>DEBUG</label>
+        <label class="alignleft"><input id="chkTrace" type="checkbox" onclick="filterTrace(this);" checked>TRACE</label>
+        <label class="alignleft"><input id="chkTestWorker" type="checkbox" onclick="filterTestWorker(this);" checked>Test worker</label>
+        <input type="text" id="search" onkeyup="filter()" placeholder="Search...">
+        <span class="floatright"><a href="SecurityUpdate[update-existing-security].log">Raw Log File</a></span>
+    </p>
+    <hr style="clear: both;">
+</div>
+<ul class="content" id="content">
+    <li class="line warn warn-color test-worker"><div class="line-numbers">1</div><pre>15:43:01.827 [Test worker] WARN  i.g.a.c.e.e.d.c.check.DbVerifier.verify-0E7RQCE - Check failed</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">2</div><pre>org.awaitility.core.ConditionTimeoutException: Condition with alias 'Await DB table security' didn't complete within 9 seconds because assertion condition defined as a io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier table content mismatch:</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">3</div><pre>"is_active" in row 1: Actual value='true' is not equal to expected value='0'</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">4</div><pre>"name" in row 1: Actual value='old name' is not equal to expected value='MINFIN ROSSII 2 31/10/20'</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">5</div><pre>"status_description" in row 1: Actual value='old desc' is not equal to expected value='Истек'</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">6</div><pre>"type" in row 1: Actual value='10' is not equal to expected value='6'</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">7</div><pre>"updated_at" in row 1: Actual value='2024-01-30 00:00:00.0' is not equal to expected value='!{within 10s}'.</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">8</div><pre>	at org.awaitility.core.ConditionAwaiter.await(ConditionAwaiter.java:167)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">9</div><pre>	at org.awaitility.core.AssertionCondition.await(AssertionCondition.java:119)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">10</div><pre>	at org.awaitility.core.AssertionCondition.await(AssertionCondition.java:31)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">11</div><pre>	at org.awaitility.core.ConditionFactory.until(ConditionFactory.java:985)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">12</div><pre>	at org.awaitility.core.ConditionFactory.untilAsserted(ConditionFactory.java:769)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">13</div><pre>	at io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier.verify-0E7RQCE(DbVerifier.kt:48)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">14</div><pre>	at io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier.verify-0E7RQCE(DbVerifier.kt:22)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">15</div><pre>	at io.github.adven27.concordion.extensions.exam.core.commands.ExamAssertCommand.verify(ExamVerifyCommand.kt:111)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">16</div><pre>	at io.github.adven27.concordion.extensions.exam.db.commands.check.CheckCommand.verify(CheckCommand.kt:43)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">17</div><pre>	at org.concordion.api.AbstractCommandDecorator\$3.run(AbstractCommandDecorator.java:33)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">18</div><pre>	at org.concordion.internal.command.LocalTextDecorator.process(LocalTextDecorator.java:26)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">19</div><pre>	at org.concordion.api.AbstractCommandDecorator.verify(AbstractCommandDecorator.java:31)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">20</div><pre>	at org.concordion.api.AbstractCommandDecorator\$3.run(AbstractCommandDecorator.java:33)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">21</div><pre>	at org.concordion.internal.command.ThrowableCatchingDecorator.process(ThrowableCatchingDecorator.java:38)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">22</div><pre>	at org.concordion.api.AbstractCommandDecorator.verify(AbstractCommandDecorator.java:31)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">23</div><pre>	at org.concordion.api.CommandCall.verify(CommandCall.java:76)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">24</div><pre>	at org.concordion.api.CommandCallList.processSequentially(CommandCallList.java:34)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">25</div><pre>	at org.concordion.internal.command.ExampleCommand.execute(ExampleCommand.java:49)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">26</div><pre>	at org.concordion.api.AbstractCommandDecorator\$2.run(AbstractCommandDecorator.java:25)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">27</div><pre>	at org.concordion.internal.command.LocalTextDecorator.process(LocalTextDecorator.java:26)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">28</div><pre>	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">29</div><pre>	at org.concordion.api.AbstractCommandDecorator\$2.run(AbstractCommandDecorator.java:25)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">30</div><pre>	at org.concordion.internal.command.ThrowableCatchingDecorator.process(ThrowableCatchingDecorator.java:38)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">31</div><pre>	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">32</div><pre>	at org.concordion.api.CommandCall.execute(CommandCall.java:72)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">33</div><pre>	at org.concordion.internal.XMLSpecification.processNode(XMLSpecification.java:60)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">34</div><pre>	at org.concordion.internal.XMLSpecification.processExample(XMLSpecification.java:76)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">35</div><pre>	at org.concordion.Concordion.processExample(Concordion.java:92)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">36</div><pre>	at org.concordion.internal.FixtureRunner.run(FixtureRunner.java:41)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">37</div><pre>	at org.concordion.integration.junit4.ConcordionRunner.invoke(ConcordionRunner.java:207)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">38</div><pre>	at org.concordion.integration.junit4.ConcordionRunner\$1.invoke(ConcordionRunner.java:31)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">39</div><pre>	at org.concordion.integration.junit4.ConcordionFrameworkMethod.invokeExplosively(ConcordionFrameworkMethod.java:58)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">40</div><pre>	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">41</div><pre>	at org.junit.runners.ParentRunner\$3.evaluate(ParentRunner.java:306)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">42</div><pre>	at org.junit.runners.BlockJUnit4ClassRunner\$1.evaluate(BlockJUnit4ClassRunner.java:100)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">43</div><pre>	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">44</div><pre>	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">45</div><pre>	at org.concordion.integration.junit4.ConcordionRunner.runChild(ConcordionRunner.java:191)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">46</div><pre>	at org.concordion.integration.junit4.ConcordionRunner.runChild(ConcordionRunner.java:23)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">47</div><pre>	at org.junit.runners.ParentRunner\$4.run(ParentRunner.java:331)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">48</div><pre>	at org.junit.runners.ParentRunner\$1.schedule(ParentRunner.java:79)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">49</div><pre>	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">50</div><pre>	at org.junit.runners.ParentRunner.access\$100(ParentRunner.java:66)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">51</div><pre>	at org.junit.runners.ParentRunner\$2.evaluate(ParentRunner.java:293)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">52</div><pre>	at org.junit.runners.ParentRunner\$3.evaluate(ParentRunner.java:306)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">53</div><pre>	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">54</div><pre>	at org.concordion.integration.junit4.ConcordionRunner.run(ConcordionRunner.java:150)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">55</div><pre>	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">56</div><pre>	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">57</div><pre>	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">58</div><pre>	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">59</div><pre>	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">60</div><pre>	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">61</div><pre>	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">62</div><pre>	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda\$execute\$0(EngineExecutionOrchestrator.java:54)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">63</div><pre>	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">64</div><pre>	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">65</div><pre>	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">66</div><pre>	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">67</div><pre>	at org.junit.platform.launcher.core.DefaultLauncherSession\$DelegatingLauncher.execute(DefaultLauncherSession.java:86)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">68</div><pre>	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor\$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:110)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">69</div><pre>	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor\$CollectAllTestClassesExecutor.access\$000(JUnitPlatformTestClassProcessor.java:90)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">70</div><pre>	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:85)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">71</div><pre>	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">72</div><pre>	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">73</div><pre>	at java.base/java.lang.reflect.Method.invoke(Method.java:577)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">74</div><pre>	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">75</div><pre>	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">76</div><pre>	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">77</div><pre>	at org.gradle.internal.dispatch.ProxyDispatchAdapter\$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">78</div><pre>	at jdk.proxy2/jdk.proxy2.\$Proxy5.stop(Unknown Source)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">79</div><pre>	at org.gradle.api.internal.tasks.testing.worker.TestWorker\$3.run(TestWorker.java:193)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">80</div><pre>	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">81</div><pre>	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">82</div><pre>	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">83</div><pre>	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">84</div><pre>	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">85</div><pre>	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">86</div><pre>	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">87</div><pre>	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">88</div><pre>Caused by: io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier\$TableContentMismatch: table content mismatch:</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">89</div><pre>"is_active" in row 1: Actual value='true' is not equal to expected value='0'</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">90</div><pre>"name" in row 1: Actual value='old name' is not equal to expected value='MINFIN ROSSII 2 31/10/20'</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">91</div><pre>"status_description" in row 1: Actual value='old desc' is not equal to expected value='Истек'</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">92</div><pre>"type" in row 1: Actual value='10' is not equal to expected value='6'</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">93</div><pre>"updated_at" in row 1: Actual value='2024-01-30 00:00:00.0' is not equal to expected value='!{within 10s}'</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">94</div><pre>	at io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier.dbUnitAssert(DbVerifier.kt:80)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">95</div><pre>	at io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier.verify_0E7RQCE\$lambda\$1\$lambda\$0(DbVerifier.kt:54)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">96</div><pre>	at org.awaitility.core.AssertionCondition.lambda\$new\$0(AssertionCondition.java:53)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">97</div><pre>	at org.awaitility.core.ConditionAwaiter\$ConditionPoller.call(ConditionAwaiter.java:248)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">98</div><pre>	at org.awaitility.core.ConditionAwaiter\$ConditionPoller.call(ConditionAwaiter.java:235)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">99</div><pre>	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">100</div><pre>	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">101</div><pre>	at java.base/java.util.concurrent.ThreadPoolExecutor\$Worker.run(ThreadPoolExecutor.java:635)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">102</div><pre>	at java.base/java.lang.Thread.run(Thread.java:833)</pre></li>
+<li class="line error error-color awaitility[await-db-table-field_value]"><div class="line-numbers">103</div><pre>15:43:01.878 [awaitility[Await DB table field_value]] ERROR o.dbunit.assertion.DbUnitAssertBase.compareRowCounts - org.dbunit.assertion.DbComparisonFailure[row count (table=field_value)expected:&lt;7&gt;but was:&lt;3&gt;]</pre></li>
+<li class="line error error-color awaitility[await-db-table-field_value]"><div class="line-numbers">104</div><pre>15:43:02.888 [awaitility[Await DB table field_value]] ERROR o.dbunit.assertion.DbUnitAssertBase.compareRowCounts - org.dbunit.assertion.DbComparisonFailure[row count (table=field_value)expected:&lt;7&gt;but was:&lt;3&gt;]</pre></li>
+<li class="line error error-color awaitility[await-db-table-field_value]"><div class="line-numbers">105</div><pre>15:43:03.896 [awaitility[Await DB table field_value]] ERROR o.dbunit.assertion.DbUnitAssertBase.compareRowCounts - org.dbunit.assertion.DbComparisonFailure[row count (table=field_value)expected:&lt;7&gt;but was:&lt;3&gt;]</pre></li>
+<li class="line error error-color awaitility[await-db-table-field_value]"><div class="line-numbers">106</div><pre>15:43:04.902 [awaitility[Await DB table field_value]] ERROR o.dbunit.assertion.DbUnitAssertBase.compareRowCounts - org.dbunit.assertion.DbComparisonFailure[row count (table=field_value)expected:&lt;7&gt;but was:&lt;3&gt;]</pre></li>
+<li class="line error error-color awaitility[await-db-table-field_value]"><div class="line-numbers">107</div><pre>15:43:05.905 [awaitility[Await DB table field_value]] ERROR o.dbunit.assertion.DbUnitAssertBase.compareRowCounts - org.dbunit.assertion.DbComparisonFailure[row count (table=field_value)expected:&lt;7&gt;but was:&lt;3&gt;]</pre></li>
+<li class="line error error-color awaitility[await-db-table-field_value]"><div class="line-numbers">108</div><pre>15:43:06.909 [awaitility[Await DB table field_value]] ERROR o.dbunit.assertion.DbUnitAssertBase.compareRowCounts - org.dbunit.assertion.DbComparisonFailure[row count (table=field_value)expected:&lt;7&gt;but was:&lt;3&gt;]</pre></li>
+<li class="line error error-color awaitility[await-db-table-field_value]"><div class="line-numbers">109</div><pre>15:43:07.912 [awaitility[Await DB table field_value]] ERROR o.dbunit.assertion.DbUnitAssertBase.compareRowCounts - org.dbunit.assertion.DbComparisonFailure[row count (table=field_value)expected:&lt;7&gt;but was:&lt;3&gt;]</pre></li>
+<li class="line error error-color awaitility[await-db-table-field_value]"><div class="line-numbers">110</div><pre>15:43:08.925 [awaitility[Await DB table field_value]] ERROR o.dbunit.assertion.DbUnitAssertBase.compareRowCounts - org.dbunit.assertion.DbComparisonFailure[row count (table=field_value)expected:&lt;7&gt;but was:&lt;3&gt;]</pre></li>
+<li class="line error error-color awaitility[await-db-table-field_value]"><div class="line-numbers">111</div><pre>15:43:09.929 [awaitility[Await DB table field_value]] ERROR o.dbunit.assertion.DbUnitAssertBase.compareRowCounts - org.dbunit.assertion.DbComparisonFailure[row count (table=field_value)expected:&lt;7&gt;but was:&lt;3&gt;]</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">112</div><pre>15:43:10.936 [Test worker] WARN  i.g.a.c.e.e.d.c.check.DbVerifier.verify-0E7RQCE - Check failed</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">113</div><pre>org.awaitility.core.ConditionTimeoutException: Condition with alias 'Await DB table field_value' didn't complete within 9 seconds because assertion condition defined as a io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier table size mismatch.</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">114</div><pre>	at org.awaitility.core.ConditionAwaiter.await(ConditionAwaiter.java:167)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">115</div><pre>	at org.awaitility.core.AssertionCondition.await(AssertionCondition.java:119)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">116</div><pre>	at org.awaitility.core.AssertionCondition.await(AssertionCondition.java:31)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">117</div><pre>	at org.awaitility.core.ConditionFactory.until(ConditionFactory.java:985)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">118</div><pre>	at org.awaitility.core.ConditionFactory.untilAsserted(ConditionFactory.java:769)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">119</div><pre>	at io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier.verify-0E7RQCE(DbVerifier.kt:48)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">120</div><pre>	at io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier.verify-0E7RQCE(DbVerifier.kt:22)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">121</div><pre>	at io.github.adven27.concordion.extensions.exam.core.commands.ExamAssertCommand.verify(ExamVerifyCommand.kt:111)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">122</div><pre>	at io.github.adven27.concordion.extensions.exam.db.commands.check.CheckCommand.verify(CheckCommand.kt:43)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">123</div><pre>	at org.concordion.api.AbstractCommandDecorator\$3.run(AbstractCommandDecorator.java:33)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">124</div><pre>	at org.concordion.internal.command.LocalTextDecorator.process(LocalTextDecorator.java:26)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">125</div><pre>	at org.concordion.api.AbstractCommandDecorator.verify(AbstractCommandDecorator.java:31)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">126</div><pre>	at org.concordion.api.AbstractCommandDecorator\$3.run(AbstractCommandDecorator.java:33)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">127</div><pre>	at org.concordion.internal.command.ThrowableCatchingDecorator.process(ThrowableCatchingDecorator.java:38)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">128</div><pre>	at org.concordion.api.AbstractCommandDecorator.verify(AbstractCommandDecorator.java:31)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">129</div><pre>	at org.concordion.api.CommandCall.verify(CommandCall.java:76)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">130</div><pre>	at org.concordion.api.CommandCallList.processSequentially(CommandCallList.java:34)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">131</div><pre>	at org.concordion.internal.command.ExampleCommand.execute(ExampleCommand.java:49)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">132</div><pre>	at org.concordion.api.AbstractCommandDecorator\$2.run(AbstractCommandDecorator.java:25)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">133</div><pre>	at org.concordion.internal.command.LocalTextDecorator.process(LocalTextDecorator.java:26)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">134</div><pre>	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">135</div><pre>	at org.concordion.api.AbstractCommandDecorator\$2.run(AbstractCommandDecorator.java:25)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">136</div><pre>	at org.concordion.internal.command.ThrowableCatchingDecorator.process(ThrowableCatchingDecorator.java:38)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">137</div><pre>	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">138</div><pre>	at org.concordion.api.CommandCall.execute(CommandCall.java:72)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">139</div><pre>	at org.concordion.internal.XMLSpecification.processNode(XMLSpecification.java:60)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">140</div><pre>	at org.concordion.internal.XMLSpecification.processExample(XMLSpecification.java:76)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">141</div><pre>	at org.concordion.Concordion.processExample(Concordion.java:92)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">142</div><pre>	at org.concordion.internal.FixtureRunner.run(FixtureRunner.java:41)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">143</div><pre>	at org.concordion.integration.junit4.ConcordionRunner.invoke(ConcordionRunner.java:207)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">144</div><pre>	at org.concordion.integration.junit4.ConcordionRunner\$1.invoke(ConcordionRunner.java:31)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">145</div><pre>	at org.concordion.integration.junit4.ConcordionFrameworkMethod.invokeExplosively(ConcordionFrameworkMethod.java:58)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">146</div><pre>	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">147</div><pre>	at org.junit.runners.ParentRunner\$3.evaluate(ParentRunner.java:306)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">148</div><pre>	at org.junit.runners.BlockJUnit4ClassRunner\$1.evaluate(BlockJUnit4ClassRunner.java:100)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">149</div><pre>	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">150</div><pre>	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">151</div><pre>	at org.concordion.integration.junit4.ConcordionRunner.runChild(ConcordionRunner.java:191)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">152</div><pre>	at org.concordion.integration.junit4.ConcordionRunner.runChild(ConcordionRunner.java:23)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">153</div><pre>	at org.junit.runners.ParentRunner\$4.run(ParentRunner.java:331)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">154</div><pre>	at org.junit.runners.ParentRunner\$1.schedule(ParentRunner.java:79)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">155</div><pre>	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">156</div><pre>	at org.junit.runners.ParentRunner.access\$100(ParentRunner.java:66)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">157</div><pre>	at org.junit.runners.ParentRunner\$2.evaluate(ParentRunner.java:293)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">158</div><pre>	at org.junit.runners.ParentRunner\$3.evaluate(ParentRunner.java:306)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">159</div><pre>	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">160</div><pre>	at org.concordion.integration.junit4.ConcordionRunner.run(ConcordionRunner.java:150)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">161</div><pre>	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">162</div><pre>	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">163</div><pre>	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">164</div><pre>	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">165</div><pre>	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">166</div><pre>	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">167</div><pre>	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">168</div><pre>	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda\$execute\$0(EngineExecutionOrchestrator.java:54)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">169</div><pre>	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">170</div><pre>	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">171</div><pre>	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">172</div><pre>	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">173</div><pre>	at org.junit.platform.launcher.core.DefaultLauncherSession\$DelegatingLauncher.execute(DefaultLauncherSession.java:86)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">174</div><pre>	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor\$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:110)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">175</div><pre>	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor\$CollectAllTestClassesExecutor.access\$000(JUnitPlatformTestClassProcessor.java:90)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">176</div><pre>	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:85)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">177</div><pre>	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">178</div><pre>	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">179</div><pre>	at java.base/java.lang.reflect.Method.invoke(Method.java:577)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">180</div><pre>	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">181</div><pre>	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">182</div><pre>	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">183</div><pre>	at org.gradle.internal.dispatch.ProxyDispatchAdapter\$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">184</div><pre>	at jdk.proxy2/jdk.proxy2.\$Proxy5.stop(Unknown Source)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">185</div><pre>	at org.gradle.api.internal.tasks.testing.worker.TestWorker\$3.run(TestWorker.java:193)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">186</div><pre>	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">187</div><pre>	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">188</div><pre>	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">189</div><pre>	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">190</div><pre>	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">191</div><pre>	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">192</div><pre>	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">193</div><pre>	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">194</div><pre>Caused by: io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier\$TableSizeMismatch: table size mismatch</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">195</div><pre>	at io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier.dbUnitAssert(DbVerifier.kt:77)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">196</div><pre>	at io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier.verify_0E7RQCE\$lambda\$1\$lambda\$0(DbVerifier.kt:54)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">197</div><pre>	at org.awaitility.core.AssertionCondition.lambda\$new\$0(AssertionCondition.java:53)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">198</div><pre>	at org.awaitility.core.ConditionAwaiter\$ConditionPoller.call(ConditionAwaiter.java:248)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">199</div><pre>	at org.awaitility.core.ConditionAwaiter\$ConditionPoller.call(ConditionAwaiter.java:235)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">200</div><pre>	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">201</div><pre>	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">202</div><pre>	at java.base/java.util.concurrent.ThreadPoolExecutor\$Worker.run(ThreadPoolExecutor.java:635)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">203</div><pre>	at java.base/java.lang.Thread.run(Thread.java:833)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">204</div><pre>Caused by: org.dbunit.assertion.DbComparisonFailure: row count (table=field_value) expected:&lt;7&gt; but was:&lt;3&gt;</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">205</div><pre>	at org.dbunit.assertion.DefaultFailureHandler\$DefaultFailureFactory.createFailure(DefaultFailureHandler.java:323)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">206</div><pre>	at org.dbunit.assertion.DefaultFailureHandler.createFailure(DefaultFailureHandler.java:105)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">207</div><pre>	at org.dbunit.assertion.DbUnitAssertBase.compareRowCounts(DbUnitAssertBase.java:171)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">208</div><pre>	at org.dbunit.assertion.DbUnitAssertBase.assertWithValueComparer(DbUnitAssertBase.java:417)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">209</div><pre>	at org.dbunit.Assertion.assertWithValueComparer(Assertion.java:238)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">210</div><pre>	at io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier.assert(DbVerifier.kt:85)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">211</div><pre>	at io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier.dbUnitAssert(DbVerifier.kt:75)</pre></li>
+<li class="line warn warn-color test-worker"><div class="line-numbers">212</div><pre>	... 8 common frames omitted</pre></li>
+<li class="line info info-color test-worker"><div class="line-numbers">213</div><pre>15:43:20.782 [Test worker] INFO  o.s.b.w.e.tomcat.GracefulShutdown.shutDownGracefully - Commencing graceful shutdown. Waiting for active requests to complete</pre></li>
+<li class="line info info-color tomcat-shutdown"><div class="line-numbers">214</div><pre>15:43:20.786 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol.log - Pausing ProtocolHandler ["http-nio-41631"]</pre></li>
+<li class="line info info-color tomcat-shutdown"><div class="line-numbers">215</div><pre>15:43:22.796 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown.doShutdown - Graceful shutdown complete</pre></li>
+<li class="line error error-color http-nio-41631-acceptor"><div class="line-numbers">216</div><pre>15:43:22.800 [http-nio-41631-Acceptor] ERROR org.apache.tomcat.util.net.Acceptor.log - Socket accept failed</pre></li>
+<li class="line error error-color http-nio-41631-acceptor"><div class="line-numbers">217</div><pre>java.nio.channels.AsynchronousCloseException: null</pre></li>
+<li class="line error error-color http-nio-41631-acceptor"><div class="line-numbers">218</div><pre>	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:202)</pre></li>
+<li class="line error error-color http-nio-41631-acceptor"><div class="line-numbers">219</div><pre>	at java.base/sun.nio.ch.ServerSocketChannelImpl.end(ServerSocketChannelImpl.java:376)</pre></li>
+<li class="line error error-color http-nio-41631-acceptor"><div class="line-numbers">220</div><pre>	at java.base/sun.nio.ch.ServerSocketChannelImpl.accept(ServerSocketChannelImpl.java:399)</pre></li>
+<li class="line error error-color http-nio-41631-acceptor"><div class="line-numbers">221</div><pre>	at org.apache.tomcat.util.net.NioEndpoint.serverSocketAccept(NioEndpoint.java:548)</pre></li>
+<li class="line error error-color http-nio-41631-acceptor"><div class="line-numbers">222</div><pre>	at org.apache.tomcat.util.net.NioEndpoint.serverSocketAccept(NioEndpoint.java:79)</pre></li>
+<li class="line error error-color http-nio-41631-acceptor"><div class="line-numbers">223</div><pre>	at org.apache.tomcat.util.net.Acceptor.run(Acceptor.java:129)</pre></li>
+<li class="line error error-color http-nio-41631-acceptor"><div class="line-numbers">224</div><pre>	at java.base/java.lang.Thread.run(Thread.java:833)</pre></li>
+<li class="line info info-color test-worker"><div class="line-numbers">225</div><pre>15:43:22.798 [Test worker] INFO  o.a.coyote.http11.Http11NioProtocol.log - Pausing ProtocolHandler ["http-nio-41631"]</pre></li>
+<li class="line info info-color test-worker"><div class="line-numbers">226</div><pre>15:43:22.801 [Test worker] INFO  o.a.catalina.core.StandardService.log - Stopping service [Tomcat]</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[lettuce-timer-3-1"><div class="line-numbers">227</div><pre>15:43:22.812 [Test worker] WARN  o.a.c.loader.WebappClassLoaderBase.log - The web application [ROOT] appears to have started a thread named [lettuce-timer-3-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[lettuce-timer-3-1"><div class="line-numbers">228</div><pre> java.base@18.0.1.1/java.lang.Thread.sleep(Native Method)</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[lettuce-timer-3-1"><div class="line-numbers">229</div><pre> app//io.netty.util.HashedWheelTimer\$Worker.waitForNextTick(HashedWheelTimer.java:600)</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[lettuce-timer-3-1"><div class="line-numbers">230</div><pre> app//io.netty.util.HashedWheelTimer\$Worker.run(HashedWheelTimer.java:496)</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[lettuce-timer-3-1"><div class="line-numbers">231</div><pre> app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[lettuce-timer-3-1"><div class="line-numbers">232</div><pre> java.base@18.0.1.1/java.lang.Thread.run(Thread.java:833)</pre></li>
+<li class="line info info-color test-worker"><div class="line-numbers">233</div><pre>15:43:22.815 [Test worker] INFO  o.a.coyote.http11.Http11NioProtocol.log - Stopping ProtocolHandler ["http-nio-41631"]</pre></li>
+<li class="line info info-color test-worker"><div class="line-numbers">234</div><pre>15:43:22.817 [Test worker] INFO  o.a.coyote.http11.Http11NioProtocol.log - Destroying ProtocolHandler ["http-nio-41631"]</pre></li>
+<li class="line info info-color org.springframework.kafka.kafkalistenerendpointcontainer#0-0-c-1"><div class="line-numbers">235</div><pre>15:43:22.821 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: partitions revoked: [md.security.assets.data-0]</pre></li>
+<li class="line info info-color org.springframework.kafka.kafkalistenerendpointcontainer#1-0-c-1"><div class="line-numbers">236</div><pre>15:43:22.821 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: partitions revoked: [md.issuer.events-0]</pre></li>
+<li class="line info info-color org.springframework.kafka.kafkalistenerendpointcontainer#3-0-c-1"><div class="line-numbers">237</div><pre>15:43:22.821 [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: partitions revoked: [md.security.data.batch-0]</pre></li>
+<li class="line info info-color org.springframework.kafka.kafkalistenerendpointcontainer#2-0-c-1"><div class="line-numbers">238</div><pre>15:43:22.821 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: partitions revoked: [md.security.registry-records.data-0]</pre></li>
+<li class="line info info-color org.springframework.kafka.kafkalistenerendpointcontainer#4-0-c-1"><div class="line-numbers">239</div><pre>15:43:22.821 [org.springframework.kafka.KafkaListenerEndpointContainer#4-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: partitions revoked: [md.security.data-0]</pre></li>
+<li class="line info info-color org.springframework.kafka.kafkalistenerendpointcontainer#3-0-c-1"><div class="line-numbers">240</div><pre>15:43:22.835 [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: Consumer stopped</pre></li>
+<li class="line info info-color org.springframework.kafka.kafkalistenerendpointcontainer#1-0-c-1"><div class="line-numbers">241</div><pre>15:43:22.838 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: Consumer stopped</pre></li>
+<li class="line info info-color org.springframework.kafka.kafkalistenerendpointcontainer#4-0-c-1"><div class="line-numbers">242</div><pre>15:43:22.838 [org.springframework.kafka.KafkaListenerEndpointContainer#4-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: Consumer stopped</pre></li>
+<li class="line info info-color org.springframework.kafka.kafkalistenerendpointcontainer#2-0-c-1"><div class="line-numbers">243</div><pre>15:43:22.839 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: Consumer stopped</pre></li>
+<li class="line info info-color org.springframework.kafka.kafkalistenerendpointcontainer#0-0-c-1"><div class="line-numbers">244</div><pre>15:43:22.839 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: Consumer stopped</pre></li>
+<li class="line info info-color springapplicationshutdownhook"><div class="line-numbers">245</div><pre>15:43:23.211 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...</pre></li>
+<li class="line info info-color springapplicationshutdownhook"><div class="line-numbers">246</div><pre>15:43:23.213 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.</pre></li>
+
+</ul>
+</div>
+</body>
+</html>

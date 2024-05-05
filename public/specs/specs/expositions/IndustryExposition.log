@@ -1,0 +1,1135 @@
+12:45:41.981 [Test worker] ERROR org.dbunit.database.DatabaseDataSet.getTableMetaData - Table 'security_issuer_expositionERROR: update or delete on table "security" violates foreign key constraint "offer_security_id_fk" on table "offer"
+  Подробности: Key (isin)=(ISIN2) is still referenced from table "offer".' not found in tableMap=org.dbunit.dataset.OrderedTableNameMap[_tableNames=[cfi_attribute, cfi_attribute_value, cfi_category, cfi_group, currency, databasechangelog, databasechangeloglock, field, field_value, field_value_agg, ignored_security, offer, registry, registry_record, security, security_asset, security_br_type_industry, security_create_order, security_id, security_id_type, security_issuer_exposition, security_source, security_type, security_type_field, shedlock, source, subscription_order, subscription_order_params], _tableMap={SECURITY_ID_TYPE=null, SECURITY_ID=null, OFFER=null, FIELD_VALUE=null, SECURITY_ISSUER_EXPOSITION=null, SECURITY_SOURCE=null, CFI_CATEGORY=null, SECURITY_TYPE=null, REGISTRY_RECORD=null, FIELD_VALUE_AGG=null, CURRENCY=null, CFI_ATTRIBUTE_VALUE=null, SECURITY_ASSET=null, FIELD=null, SUBSCRIPTION_ORDER_PARAMS=null, CFI_GROUP=null, SECURITY_BR_TYPE_INDUSTRY=null, IGNORED_SECURITY=null, SECURITY_TYPE_FIELD=null, CFI_ATTRIBUTE=null, DATABASECHANGELOG=null, SECURITY=null, SOURCE=table=source, cols=[(id, SMALLINT, noNulls), (code, VARCHAR, noNulls), (name, VARCHAR, noNulls), (priority, SMALLINT, noNulls), (is_reserve, BIT, noNulls), (subscribable, BIT, noNulls)], pk=[(id, SMALLINT, noNulls)], DATABASECHANGELOGLOCK=null, SECURITY_CREATE_ORDER=null, SHEDLOCK=null, SUBSCRIPTION_ORDER=null, REGISTRY=null}, _caseSensitiveTableNames=false]
+12:45:42.027 [Test worker] ERROR org.dbunit.database.DatabaseDataSet.getTableMetaData - Table 'security_issuer_expositionERROR: update or delete on table "security" violates foreign key constraint "offer_security_id_fk" on table "offer"
+  Подробности: Key (isin)=(ISIN2) is still referenced from table "offer".security_issuer_expositionERROR: update or delete on table "security" violates foreign key constraint "offer_security_id_fk" on table "offer"
+  Подробности: Key (isin)=(ISIN2) is still referenced from table "offer".' not found in tableMap=org.dbunit.dataset.OrderedTableNameMap[_tableNames=[cfi_attribute, cfi_attribute_value, cfi_category, cfi_group, currency, databasechangelog, databasechangeloglock, field, field_value, field_value_agg, ignored_security, offer, registry, registry_record, security, security_asset, security_br_type_industry, security_create_order, security_id, security_id_type, security_issuer_exposition, security_source, security_type, security_type_field, shedlock, source, subscription_order, subscription_order_params], _tableMap={SECURITY_ID_TYPE=null, SECURITY_ID=null, OFFER=null, FIELD_VALUE=null, SECURITY_ISSUER_EXPOSITION=null, SECURITY_SOURCE=null, CFI_CATEGORY=null, SECURITY_TYPE=null, REGISTRY_RECORD=null, FIELD_VALUE_AGG=null, CURRENCY=null, CFI_ATTRIBUTE_VALUE=null, SECURITY_ASSET=null, FIELD=null, SUBSCRIPTION_ORDER_PARAMS=null, CFI_GROUP=null, SECURITY_BR_TYPE_INDUSTRY=null, IGNORED_SECURITY=null, SECURITY_TYPE_FIELD=null, CFI_ATTRIBUTE=null, DATABASECHANGELOG=null, SECURITY=null, SOURCE=table=source, cols=[(id, SMALLINT, noNulls), (code, VARCHAR, noNulls), (name, VARCHAR, noNulls), (priority, SMALLINT, noNulls), (is_reserve, BIT, noNulls), (subscribable, BIT, noNulls)], pk=[(id, SMALLINT, noNulls)], DATABASECHANGELOGLOCK=null, SECURITY_CREATE_ORDER=null, SHEDLOCK=null, SUBSCRIPTION_ORDER=null, REGISTRY=null}, _caseSensitiveTableNames=false]
+12:45:42.067 [Test worker] ERROR org.dbunit.database.DatabaseDataSet.getTableMetaData - Table 'security_issuer_expositionERROR: update or delete on table "security" violates foreign key constraint "offer_security_id_fk" on table "offer"
+  Подробности: Key (isin)=(ISIN2) is still referenced from table "offer".security_issuer_expositionERROR: update or delete on table "security" violates foreign key constraint "offer_security_id_fk" on table "offer"
+  Подробности: Key (isin)=(ISIN2) is still referenced from table "offer".security_issuer_expositionERROR: update or delete on table "security" violates foreign key constraint "offer_security_id_fk" on table "offer"
+  Подробности: Key (isin)=(ISIN2) is still referenced from table "offer".security_issuer_expositionERROR: update or delete on table "security" violates foreign key constraint "offer_security_id_fk" on table "offer"
+  Подробности: Key (isin)=(ISIN2) is still referenced from table "offer".' not found in tableMap=org.dbunit.dataset.OrderedTableNameMap[_tableNames=[cfi_attribute, cfi_attribute_value, cfi_category, cfi_group, currency, databasechangelog, databasechangeloglock, field, field_value, field_value_agg, ignored_security, offer, registry, registry_record, security, security_asset, security_br_type_industry, security_create_order, security_id, security_id_type, security_issuer_exposition, security_source, security_type, security_type_field, shedlock, source, subscription_order, subscription_order_params], _tableMap={SECURITY_ID_TYPE=null, SECURITY_ID=null, OFFER=null, FIELD_VALUE=null, SECURITY_ISSUER_EXPOSITION=null, SECURITY_SOURCE=null, CFI_CATEGORY=null, SECURITY_TYPE=null, REGISTRY_RECORD=null, FIELD_VALUE_AGG=null, CURRENCY=null, CFI_ATTRIBUTE_VALUE=null, SECURITY_ASSET=null, FIELD=null, SUBSCRIPTION_ORDER_PARAMS=null, CFI_GROUP=null, SECURITY_BR_TYPE_INDUSTRY=null, IGNORED_SECURITY=null, SECURITY_TYPE_FIELD=null, CFI_ATTRIBUTE=null, DATABASECHANGELOG=null, SECURITY=null, SOURCE=table=source, cols=[(id, SMALLINT, noNulls), (code, VARCHAR, noNulls), (name, VARCHAR, noNulls), (priority, SMALLINT, noNulls), (is_reserve, BIT, noNulls), (subscribable, BIT, noNulls)], pk=[(id, SMALLINT, noNulls)], DATABASECHANGELOGLOCK=null, SECURITY_CREATE_ORDER=null, SHEDLOCK=null, SUBSCRIPTION_ORDER=null, REGISTRY=null}, _caseSensitiveTableNames=false]
+12:45:42.107 [Test worker] ERROR org.dbunit.database.DatabaseDataSet.getTableMetaData - Table 'security_issuer_expositionERROR: update or delete on table "security" violates foreign key constraint "offer_security_id_fk" on table "offer"
+  Подробности: Key (isin)=(ISIN2) is still referenced from table "offer".security_issuer_expositionERROR: update or delete on table "security" violates foreign key constraint "offer_security_id_fk" on table "offer"
+  Подробности: Key (isin)=(ISIN2) is still referenced from table "offer".security_issuer_expositionERROR: update or delete on table "security" violates foreign key constraint "offer_security_id_fk" on table "offer"
+  Подробности: Key (isin)=(ISIN2) is still referenced from table "offer".security_issuer_expositionERROR: update or delete on table "security" violates foreign key constraint "offer_security_id_fk" on table "offer"
+  Подробности: Key (isin)=(ISIN2) is still referenced from table "offer".security_issuer_expositionERROR: update or delete on table "security" violates foreign key constraint "offer_security_id_fk" on table "offer"
+  Подробности: Key (isin)=(ISIN2) is still referenced from table "offer".security_issuer_expositionERROR: update or delete on table "security" violates foreign key constraint "offer_security_id_fk" on table "offer"
+  Подробности: Key (isin)=(ISIN2) is still referenced from table "offer".security_issuer_expositionERROR: update or delete on table "security" violates foreign key constraint "offer_security_id_fk" on table "offer"
+  Подробности: Key (isin)=(ISIN2) is still referenced from table "offer".security_issuer_expositionERROR: update or delete on table "security" violates foreign key constraint "offer_security_id_fk" on table "offer"
+  Подробности: Key (isin)=(ISIN2) is still referenced from table "offer".' not found in tableMap=org.dbunit.dataset.OrderedTableNameMap[_tableNames=[cfi_attribute, cfi_attribute_value, cfi_category, cfi_group, currency, databasechangelog, databasechangeloglock, field, field_value, field_value_agg, ignored_security, offer, registry, registry_record, security, security_asset, security_br_type_industry, security_create_order, security_id, security_id_type, security_issuer_exposition, security_source, security_type, security_type_field, shedlock, source, subscription_order, subscription_order_params], _tableMap={SECURITY_ID_TYPE=null, SECURITY_ID=null, OFFER=null, FIELD_VALUE=null, SECURITY_ISSUER_EXPOSITION=null, SECURITY_SOURCE=null, CFI_CATEGORY=null, SECURITY_TYPE=null, REGISTRY_RECORD=null, FIELD_VALUE_AGG=null, CURRENCY=null, CFI_ATTRIBUTE_VALUE=null, SECURITY_ASSET=null, FIELD=null, SUBSCRIPTION_ORDER_PARAMS=null, CFI_GROUP=null, SECURITY_BR_TYPE_INDUSTRY=null, IGNORED_SECURITY=null, SECURITY_TYPE_FIELD=null, CFI_ATTRIBUTE=null, DATABASECHANGELOG=null, SECURITY=null, SOURCE=table=source, cols=[(id, SMALLINT, noNulls), (code, VARCHAR, noNulls), (name, VARCHAR, noNulls), (priority, SMALLINT, noNulls), (is_reserve, BIT, noNulls), (subscribable, BIT, noNulls)], pk=[(id, SMALLINT, noNulls)], DATABASECHANGELOGLOCK=null, SECURITY_CREATE_ORDER=null, SHEDLOCK=null, SUBSCRIPTION_ORDER=null, REGISTRY=null}, _caseSensitiveTableNames=false]
+12:45:42.328 [http-nio-54797-exec-10] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "b98e8f7f290c6a15",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/securities/registries",
+  "host" : "localhost",
+  "path" : "/securities/registries",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:45:42.328 [http-nio-54797-exec-10] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "b98e8f7f290c6a15",
+  "duration" : 21,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:45:41 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:45:42.405 [http-nio-54797-exec-9] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "d0edfcb4c4a1ecca",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/securities/registries/moex-high-tech/records",
+  "host" : "localhost",
+  "path" : "/securities/registries/moex-high-tech/records",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:45:42.405 [http-nio-54797-exec-9] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "d0edfcb4c4a1ecca",
+  "duration" : 23,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:45:41 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:45:42.419 [http-nio-54797-exec-1] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "fc8c6c1edf78b52b",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/securities/registries/moex-high-tech/records?isin=ISIN5",
+  "host" : "localhost",
+  "path" : "/securities/registries/moex-high-tech/records",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:45:42.420 [http-nio-54797-exec-1] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "fc8c6c1edf78b52b",
+  "duration" : 5,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:45:41 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:45:42.433 [http-nio-54797-exec-4] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "9d06c1fd8d759e30",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/securities/registries/moex-high-tech/records?from=2020-01-01",
+  "host" : "localhost",
+  "path" : "/securities/registries/moex-high-tech/records",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:45:42.433 [http-nio-54797-exec-4] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "9d06c1fd8d759e30",
+  "duration" : 5,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:45:41 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:45:42.445 [http-nio-54797-exec-5] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "813e8c7c6b154d43",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/securities/registries/moex-high-tech/records?to=2022-01-01",
+  "host" : "localhost",
+  "path" : "/securities/registries/moex-high-tech/records",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:45:42.445 [http-nio-54797-exec-5] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "813e8c7c6b154d43",
+  "duration" : 4,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:45:41 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:45:42.458 [http-nio-54797-exec-7] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "9e82c19c0337ddbb",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/securities/registries/moex-high-tech/records?from=2010-01-01&to=2022-01-01",
+  "host" : "localhost",
+  "path" : "/securities/registries/moex-high-tech/records",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:45:42.458 [http-nio-54797-exec-7] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "9e82c19c0337ddbb",
+  "duration" : 6,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:45:41 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:45:42.510 [http-nio-54797-exec-8] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "da15aede79d20e8d",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/securities/registries/moex-high-tech/records?size=2",
+  "host" : "localhost",
+  "path" : "/securities/registries/moex-high-tech/records",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:45:42.510 [http-nio-54797-exec-8] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "da15aede79d20e8d",
+  "duration" : 7,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:45:42 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:45:42.524 [http-nio-54797-exec-11] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "c696f814e1f9f0d6",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/securities/registries/moex-high-tech/records?page=0&size=4",
+  "host" : "localhost",
+  "path" : "/securities/registries/moex-high-tech/records",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:45:42.525 [http-nio-54797-exec-11] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "c696f814e1f9f0d6",
+  "duration" : 6,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:45:42 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:45:42.538 [http-nio-54797-exec-3] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "91665c1f4851e9d9",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/securities/registries/moex-high-tech/records?page=1&size=4",
+  "host" : "localhost",
+  "path" : "/securities/registries/moex-high-tech/records",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:45:42.538 [http-nio-54797-exec-3] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "91665c1f4851e9d9",
+  "duration" : 5,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:45:42 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:45:42.550 [http-nio-54797-exec-6] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "8f42887ce01b0b3f",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/securities/registries/moex-high-tech/records?page=2&size=4",
+  "host" : "localhost",
+  "path" : "/securities/registries/moex-high-tech/records",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:45:42.550 [http-nio-54797-exec-6] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "8f42887ce01b0b3f",
+  "duration" : 4,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:45:42 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:45:42.645 [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] INFO  r.a.m.a.s.l.RegistryRecordsEventListener.listen - Got registry records event: RegistryRecordsEvent(registry=moex-high-tech, records=[RegistryRecord(isin=ISIN1, includedAt=2001-01-01, excludedAt=2002-01-01), RegistryRecord(isin=NEW_ISIN1, includedAt=2000-01-01, excludedAt=2001-01-01), RegistryRecord(isin=NEW_ISIN2, includedAt=2001-01-01, excludedAt=2002-01-01), RegistryRecord(isin=NEW_ISIN3, includedAt=2002-01-01, excludedAt=2003-01-01)])
+12:45:43.847 [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] INFO  r.a.m.a.s.l.RegistryRecordsEventListener.listen - Got registry records event: RegistryRecordsEvent(registry=new-registry, records=[RegistryRecord(isin=ISIN1, includedAt=2001-01-01, excludedAt=2002-01-01), RegistryRecord(isin=NEW_ISIN1, includedAt=2000-01-01, excludedAt=2001-01-01), RegistryRecord(isin=NEW_ISIN2, includedAt=2001-01-01, excludedAt=2002-01-01), RegistryRecord(isin=NEW_ISIN3, includedAt=2002-01-01, excludedAt=2003-01-01)])
+12:45:45.005 [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] ERROR r.a.m.a.securitiesapi.SecuritiesApi.dlqPublishingRecoverer$lambda$5 - Failed to process message: ConsumerRecord(topic = md.security.registry-records.data, partition = 0, leaderEpoch = 0, offset = 2, CreateTime = 1712051144995, serialized key size = -1, serialized value size = 2, headers = RecordHeaders(headers = [], isReadOnly = false), key = null, value = {}), sending to DLQ: md.security.registry-records.data.dlq-0
+org.springframework.kafka.listener.ListenerExecutionFailedException: Listener failed; nested exception is org.springframework.kafka.support.converter.ConversionException: Failed to convert from JSON; nested exception is com.fasterxml.jackson.module.kotlin.MissingKotlinParameterException: Instantiation of [simple type, class ru.alfacapital.mda.api.securitiesapi.listener.RegistryRecordsEventListener$RegistryRecordsEvent] value failed for JSON property registry due to missing (therefore NULL) value for creator parameter registry which is a non-nullable type
+ at [Source: (String)"{}"; line: 1, column: 2] (through reference chain: ru.alfacapital.mda.api.securitiesapi.listener.RegistryRecordsEventListener$RegistryRecordsEvent["registry"])
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.decorateException(KafkaMessageListenerContainer.java:2724)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2690)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeOnMessage(KafkaMessageListenerContainer.java:2650)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2577)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeWithRecords(KafkaMessageListenerContainer.java:2457)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeRecordListener(KafkaMessageListenerContainer.java:2335)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeListener(KafkaMessageListenerContainer.java:2006)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeIfHaveRecords(KafkaMessageListenerContainer.java:1375)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.pollAndInvoke(KafkaMessageListenerContainer.java:1366)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.run(KafkaMessageListenerContainer.java:1257)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.springframework.kafka.support.converter.ConversionException: Failed to convert from JSON; nested exception is com.fasterxml.jackson.module.kotlin.MissingKotlinParameterException: Instantiation of [simple type, class ru.alfacapital.mda.api.securitiesapi.listener.RegistryRecordsEventListener$RegistryRecordsEvent] value failed for JSON property registry due to missing (therefore NULL) value for creator parameter registry which is a non-nullable type
+ at [Source: (String)"{}"; line: 1, column: 2] (through reference chain: ru.alfacapital.mda.api.securitiesapi.listener.RegistryRecordsEventListener$RegistryRecordsEvent["registry"])
+	at org.springframework.kafka.support.converter.JsonMessageConverter.extractAndConvertValue(JsonMessageConverter.java:116)
+	at org.springframework.kafka.support.converter.MessagingMessageConverter.toMessage(MessagingMessageConverter.java:174)
+	at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.toMessagingMessage(MessagingMessageListenerAdapter.java:322)
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:83)
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53)
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter$$FastClassBySpringCGLIB$$cde8c01d.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:792)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:762)
+	at org.springframework.cloud.sleuth.brave.instrument.messaging.MessageListenerMethodInterceptor.invoke(MessageListenerMethodInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:762)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:707)
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter$$EnhancerBySpringCGLIB$$547e39f2.onMessage(<generated>)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2670)
+	... 11 common frames omitted
+Caused by: com.fasterxml.jackson.module.kotlin.MissingKotlinParameterException: Instantiation of [simple type, class ru.alfacapital.mda.api.securitiesapi.listener.RegistryRecordsEventListener$RegistryRecordsEvent] value failed for JSON property registry due to missing (therefore NULL) value for creator parameter registry which is a non-nullable type
+ at [Source: (String)"{}"; line: 1, column: 2] (through reference chain: ru.alfacapital.mda.api.securitiesapi.listener.RegistryRecordsEventListener$RegistryRecordsEvent["registry"])
+	at com.fasterxml.jackson.module.kotlin.KotlinValueInstantiator.createFromObjectWith(KotlinValueInstantiator.kt:84)
+	at com.fasterxml.jackson.databind.deser.impl.PropertyBasedCreator.build(PropertyBasedCreator.java:202)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeUsingPropertyBased(BeanDeserializer.java:519)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1405)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:352)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:185)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:323)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4674)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3629)
+	at org.springframework.kafka.support.converter.JsonMessageConverter.extractAndConvertValue(JsonMessageConverter.java:113)
+	... 26 common frames omitted
+12:45:46.354 [awaitility[Await DB table offer]] ERROR o.dbunit.assertion.DbUnitAssertBase.compareRowCounts - org.dbunit.assertion.DbComparisonFailure[row count (table=offer)expected:<2>but was:<0>]
+12:45:46.357 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] DEBUG r.a.m.a.s.service.SecurityService.find - Finding securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[WRONG_ISIN], fields=null, sources=null, at=null, from=null, to=null)
+12:45:46.359 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] DEBUG r.a.m.a.s.service.SecurityService.find - Found 0 securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[WRONG_ISIN], fields=null, sources=null, at=null, from=null, to=null)
+12:45:46.364 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  r.a.m.a.s.service.OfferService.createOffer - No security with securityId=WRONG_ISIN. Offer data offerData=OfferData(securityId=WRONG_ISIN, date=2024-02-01, type=null, optionType=null, openDate=null, closeDate=null, price=null, description=null) has been ignored.
+12:45:46.372 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] DEBUG r.a.m.a.s.service.SecurityService.find - Finding securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN_C], fields=null, sources=null, at=null, from=null, to=null)
+12:45:46.373 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] DEBUG r.a.m.a.s.service.SecurityService.find - Found 1 securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN_C], fields=null, sources=null, at=null, from=null, to=null)
+12:45:46.393 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] DEBUG r.a.m.a.s.service.SecurityService.find - Finding securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN_C], fields=null, sources=null, at=null, from=null, to=null)
+12:45:46.397 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] DEBUG r.a.m.a.s.service.SecurityService.find - Found 1 securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN_C], fields=null, sources=null, at=null, from=null, to=null)
+12:45:49.640 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] ERROR r.a.m.a.securitiesapi.SecuritiesApi.dlqPublishingRecoverer$lambda$5 - Failed to process message: ConsumerRecord(topic = md.security.offers.data, partition = 0, leaderEpoch = 0, offset = 5, CreateTime = 1712051149633, serialized key size = -1, serialized value size = 2, headers = RecordHeaders(headers = [], isReadOnly = false), key = null, value = {}), sending to DLQ: md.security.offers.data.dlq-0
+org.springframework.kafka.listener.ListenerExecutionFailedException: Listener failed; nested exception is org.springframework.kafka.support.converter.ConversionException: Failed to convert from JSON; nested exception is com.fasterxml.jackson.module.kotlin.MissingKotlinParameterException: Instantiation of [simple type, class ru.alfacapital.mda.api.securitiesapi.listener.OffersDataListener$OfferDataDto] value failed for JSON property offer due to missing (therefore NULL) value for creator parameter offer which is a non-nullable type
+ at [Source: (String)"{}"; line: 1, column: 2] (through reference chain: ru.alfacapital.mda.api.securitiesapi.listener.OffersDataListener$OfferDataDto["offer"])
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.decorateException(KafkaMessageListenerContainer.java:2724)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2690)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeOnMessage(KafkaMessageListenerContainer.java:2650)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2577)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeWithRecords(KafkaMessageListenerContainer.java:2457)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeRecordListener(KafkaMessageListenerContainer.java:2335)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeListener(KafkaMessageListenerContainer.java:2006)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeIfHaveRecords(KafkaMessageListenerContainer.java:1375)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.pollAndInvoke(KafkaMessageListenerContainer.java:1366)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.run(KafkaMessageListenerContainer.java:1257)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.springframework.kafka.support.converter.ConversionException: Failed to convert from JSON; nested exception is com.fasterxml.jackson.module.kotlin.MissingKotlinParameterException: Instantiation of [simple type, class ru.alfacapital.mda.api.securitiesapi.listener.OffersDataListener$OfferDataDto] value failed for JSON property offer due to missing (therefore NULL) value for creator parameter offer which is a non-nullable type
+ at [Source: (String)"{}"; line: 1, column: 2] (through reference chain: ru.alfacapital.mda.api.securitiesapi.listener.OffersDataListener$OfferDataDto["offer"])
+	at org.springframework.kafka.support.converter.JsonMessageConverter.extractAndConvertValue(JsonMessageConverter.java:116)
+	at org.springframework.kafka.support.converter.MessagingMessageConverter.toMessage(MessagingMessageConverter.java:174)
+	at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.toMessagingMessage(MessagingMessageListenerAdapter.java:322)
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:83)
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53)
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter$$FastClassBySpringCGLIB$$cde8c01d.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:792)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:762)
+	at org.springframework.cloud.sleuth.brave.instrument.messaging.MessageListenerMethodInterceptor.invoke(MessageListenerMethodInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:762)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:707)
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter$$EnhancerBySpringCGLIB$$547e39f2.onMessage(<generated>)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2670)
+	... 11 common frames omitted
+Caused by: com.fasterxml.jackson.module.kotlin.MissingKotlinParameterException: Instantiation of [simple type, class ru.alfacapital.mda.api.securitiesapi.listener.OffersDataListener$OfferDataDto] value failed for JSON property offer due to missing (therefore NULL) value for creator parameter offer which is a non-nullable type
+ at [Source: (String)"{}"; line: 1, column: 2] (through reference chain: ru.alfacapital.mda.api.securitiesapi.listener.OffersDataListener$OfferDataDto["offer"])
+	at com.fasterxml.jackson.module.kotlin.KotlinValueInstantiator.createFromObjectWith(KotlinValueInstantiator.kt:84)
+	at com.fasterxml.jackson.databind.deser.impl.PropertyBasedCreator.build(PropertyBasedCreator.java:202)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeUsingPropertyBased(BeanDeserializer.java:519)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1405)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:352)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:185)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:323)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4674)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3629)
+	at org.springframework.kafka.support.converter.JsonMessageConverter.extractAndConvertValue(JsonMessageConverter.java:113)
+	... 26 common frames omitted
+12:45:51.068 [http-nio-54797-exec-2] INFO  o.s.api.AbstractOpenApiResource.getOpenApi - Init duration for springdoc-openapi is: 294 ms
+12:45:51.144 [http-nio-54797-exec-2] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "d6a1935222b1546d",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/api-docs",
+  "host" : "localhost",
+  "path" : "/api-docs",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:45:51.144 [http-nio-54797-exec-2] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "d6a1935222b1546d",
+  "duration" : 375,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Length" : [ "16255" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:45:51 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ]
+  }
+}
+12:45:51.231 [http-nio-54797-exec-10] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "e65ea3f8a8e57d7a",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/async-api-docs",
+  "host" : "localhost",
+  "path" : "/async-api-docs",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:45:51.231 [http-nio-54797-exec-10] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "e65ea3f8a8e57d7a",
+  "duration" : 74,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Length" : [ "14849" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:45:51 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ]
+  }
+}
+12:45:51.516 [http-nio-54797-exec-9] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "c5db58f2f8ac7faa",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/securities/assets?securityIds=STRUCTURED1",
+  "host" : "localhost",
+  "path" : "/securities/assets",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:45:51.516 [http-nio-54797-exec-9] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "c5db58f2f8ac7faa",
+  "duration" : 28,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:45:51 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:45:51.542 [http-nio-54797-exec-1] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "e2e061cc49cfba25",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/securities/assets?securityIds=STRUCTURED1%2CSTRUCTURED2",
+  "host" : "localhost",
+  "path" : "/securities/assets",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:45:51.542 [http-nio-54797-exec-1] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "e2e061cc49cfba25",
+  "duration" : 7,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:45:51 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:45:51.559 [http-nio-54797-exec-4] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "dafdd7727a1fe04b",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/securities/assets?securityIds=UNKNOWN",
+  "host" : "localhost",
+  "path" : "/securities/assets",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:45:51.559 [http-nio-54797-exec-4] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "dafdd7727a1fe04b",
+  "duration" : 5,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:45:51 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:45:51.572 [http-nio-54797-exec-5] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "bd274f307c16f336",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/securities/assets?securityTypeCodes=SEC",
+  "host" : "localhost",
+  "path" : "/securities/assets",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:45:51.572 [http-nio-54797-exec-5] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "bd274f307c16f336",
+  "duration" : 5,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:45:51 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:45:51.586 [http-nio-54797-exec-7] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "8d8c9c405c484328",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/securities/assets?securityTypeCodes=SEC%2CAFORSEC",
+  "host" : "localhost",
+  "path" : "/securities/assets",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:45:51.586 [http-nio-54797-exec-7] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "8d8c9c405c484328",
+  "duration" : 5,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:45:51 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:45:51.598 [http-nio-54797-exec-8] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "9cb9ba02257353fe",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/securities/assets?securityTypeCodes=UNKNOWN",
+  "host" : "localhost",
+  "path" : "/securities/assets",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:45:51.599 [http-nio-54797-exec-8] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "9cb9ba02257353fe",
+  "duration" : 4,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:45:51 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:45:51.720 [http-nio-54797-exec-1] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "b0a2cbd23b88bcfe",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/securities/assets?assetIds=ASSET_ISIN1",
+  "host" : "localhost",
+  "path" : "/securities/assets",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:45:51.720 [http-nio-54797-exec-1] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "b0a2cbd23b88bcfe",
+  "duration" : 7,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:45:51 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:45:51.732 [http-nio-54797-exec-5] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "a8cb2501cdd78238",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/securities/assets?assetIds=ASSET_ISIN1%2CASSET_ISIN2",
+  "host" : "localhost",
+  "path" : "/securities/assets",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:45:51.733 [http-nio-54797-exec-5] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "a8cb2501cdd78238",
+  "duration" : 4,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:45:51 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:45:51.743 [http-nio-54797-exec-4] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "9adaf10b75de4dd3",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/securities/assets?assetIds=UNKNOWN",
+  "host" : "localhost",
+  "path" : "/securities/assets",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:45:51.744 [http-nio-54797-exec-4] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "9adaf10b75de4dd3",
+  "duration" : 4,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:45:51 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:45:51.823 [http-nio-54797-exec-8] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "fdfcb81ad775dedc",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/securities/assets?size=3",
+  "host" : "localhost",
+  "path" : "/securities/assets",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:45:51.824 [http-nio-54797-exec-8] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "fdfcb81ad775dedc",
+  "duration" : 4,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:45:51 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:45:51.835 [http-nio-54797-exec-9] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "e028bd364f546ac8",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/securities/assets?page=1&size=2",
+  "host" : "localhost",
+  "path" : "/securities/assets",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:45:51.836 [http-nio-54797-exec-9] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "e028bd364f546ac8",
+  "duration" : 4,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:45:51 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:45:51.857 [http-nio-54797-exec-6] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "9ccc1d62bcd12b41",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/securities/assets?sort=securityId%2Casc",
+  "host" : "localhost",
+  "path" : "/securities/assets",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:45:51.857 [http-nio-54797-exec-6] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "9ccc1d62bcd12b41",
+  "duration" : 4,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:45:51 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:45:51.871 [http-nio-54797-exec-10] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "f776243bc9dca845",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/securities/assets?sort=assetId%2Casc",
+  "host" : "localhost",
+  "path" : "/securities/assets",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:45:51.872 [http-nio-54797-exec-10] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "f776243bc9dca845",
+  "duration" : 6,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:45:51 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:45:51.961 [http-nio-54797-exec-12] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "f5819c7cdf8ea7d1",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/securities/STRUCTURED1/assets",
+  "host" : "localhost",
+  "path" : "/securities/STRUCTURED1/assets",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:45:51.961 [http-nio-54797-exec-12] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "f5819c7cdf8ea7d1",
+  "duration" : 8,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:45:51 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:45:52.037 [http-nio-54797-exec-1] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "ff503b33a69cf268",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/securities/NOT_STRUCTURED/assets",
+  "host" : "localhost",
+  "path" : "/securities/NOT_STRUCTURED/assets",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:45:52.038 [http-nio-54797-exec-1] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "ff503b33a69cf268",
+  "duration" : 4,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:45:51 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:45:52.127 [http-nio-54797-exec-5] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "af986d43b46fc128",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/securities/UNKNOWN/assets",
+  "host" : "localhost",
+  "path" : "/securities/UNKNOWN/assets",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:45:52.127 [http-nio-54797-exec-5] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "af986d43b46fc128",
+  "duration" : 5,
+  "protocol" : "HTTP/1.1",
+  "status" : 404,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:45:51 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  },
+  "body" : {"code":"SECURITY_NOT_FOUND"}
+}

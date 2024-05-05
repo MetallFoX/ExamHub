@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?><html xmlns:concordion="http://www.concordion.org/2007/concordion" xmlns:e="http://exam.extension.io" xmlns:c="http://www.concordion.org/2007/concordion"><head><script type="text/javascript">document.addEventListener('DOMContentLoaded', function (event) {
+    Array.from(document.getElementsByClassName("nomnoml")).forEach(function(el) {
+        nomnoml.draw(el, el.textContent); 
+    });  
+});</script><script type="text/javascript">window.addEventListener('DOMContentLoaded', function (event) {
+     jQuery("table").wrap(unescape("&lt;div class='table-responsive'&gt;&lt;/div&gt;"));
+}); </script><script type="text/javascript">window.addEventListener('DOMContentLoaded', function (event) {
+     jQuery(".details").wrap(unescape("&lt;details&gt;&lt;/details&gt;"));
+}); </script><script type="text/javascript">window.addEventListener('DOMContentLoaded', function (event) {
+    anchors.options = {
+        placement: 'left',
+        icon: '#'
+    };
+    anchors.add();
+    tocbot.init({
+        tocSelector: '.js-toc',
+        contentSelector: '.bd-content',
+        headingSelector: 'h1, h2, h3, h4, h5, h6',
+        hasInnerContainers: true,
+        collapseDepth: 3,
+        scrollSmooth: false,
+        fixedSidebarOffset: 'auto',
+        includeHtml: true
+    });
+    var collapseDepth = 3; 
+    jQuery( "#example-summary-badge" ).click(function() {
+        if (collapseDepth === 3) {
+            collapseDepth = 30;
+        } else {
+            collapseDepth = 3;
+        }
+        tocbot.refresh({
+            tocSelector: '.js-toc',
+            contentSelector: '.bd-content',
+            headingSelector: 'h1, h2, h3, h4, h5, h6',
+            hasInnerContainers: true,
+            collapseDepth: collapseDepth,
+            scrollSmooth: false,
+            fixedSidebarOffset: 'auto',
+            includeHtml: true
+        });
+        if (collapseDepth === 30) {
+            jQuery( ".toc-link" ).filter(function( index ) {
+                return jQuery( "i", this ).length !== 1
+            }).css("display", "none");
+        } else {
+            jQuery( ".toc-link" ).filter(function( index ) {
+                return jQuery( "i", this ).length !== 1
+            }).css("display", "unset");
+        }
+    });
+}); </script><script type="text/javascript">document.addEventListener('DOMContentLoaded', function (event) {
+    hljs.configure({
+        cssSelector: 'pre code, pre.code'
+    });
+    hljs.highlightAll();
+});</script><meta http-equiv="content-type" content="text/html; charset=UTF-8" /><link type="text/css" rel="stylesheet" href="../../ext/codemirror/codemirror.css" /><link type="text/css" rel="stylesheet" href="../../ext/codemirror/enable-codemirror.css" /><link type="text/css" rel="stylesheet" href="../../ext/codemirror/merge.css" /><link type="text/css" rel="stylesheet" href="../../ext/codemirror/foldgutter.css" /><link type="text/css" rel="stylesheet" href="../../ext/codemirror/simplescrollbar.css" /><script type="text/javascript" src="../../ext/codemirror/codemirror.js"></script><script type="text/javascript" src="../../ext/codemirror/enable-codemirror.js"></script><script type="text/javascript" src="../../ext/codemirror/javascript.js"></script><script type="text/javascript" src="../../ext/codemirror/xml.js"></script><script type="text/javascript" src="../../ext/codemirror/addon/mode/simple.js"></script><script type="text/javascript" src="../../ext/codemirror/http.js"></script><script type="text/javascript" src="../../ext/codemirror/diff_match_patch.js"></script><script type="text/javascript" src="../../ext/codemirror/merge.js"></script><script type="text/javascript" src="../../ext/codemirror/xml-fold.js"></script><script type="text/javascript" src="../../ext/codemirror/simplescrollbar.js"></script><link type="text/css" rel="stylesheet" href="../../ext/highlight/stackoverflow-light.min.css" /><script type="text/javascript" src="../../ext/highlight/highlight.min.js"></script><script type="text/javascript" src="../../ext/highlight/http.min.js"></script><script type="text/javascript" src="../../ext/highlight/java.min.js"></script><link type="text/css" rel="stylesheet" href="../../ext/tocbot/tocbot.css" /><script type="text/javascript" src="../../ext/tocbot/tocbot.min.js"></script><link type="text/css" rel="stylesheet" href="../../ext/fontawesome/css/all.min.css" /><link type="text/css" rel="stylesheet" href="../../ext/fontawesome/css/regular.min.css" /><link type="text/css" rel="stylesheet" href="../../ext/fontawesome/css/solid.min.css" /><link type="text/css" rel="stylesheet" href="../../ext/fontawesome/css/all.min.css" /><link type="text/css" rel="stylesheet" href="../../ext/bootstrap/bootstrap.min.css" /><link type="text/css" rel="stylesheet" href="../../ext/bootstrap/enable-bootstrap.css" /><link type="text/css" rel="stylesheet" href="../../ext/bootstrap/doc.min.css" /><link type="text/css" rel="stylesheet" href="../../ext/bootstrap/scrollToTop.css" /><script type="text/javascript" src="../../ext/bootstrap/bootstrap.bundle.min.js"></script><script type="text/javascript" src="../../ext/bootstrap/jquery-3.2.1.slim.min.js"></script><script type="text/javascript" src="../../ext/bootstrap/sidebar.js"></script><script type="text/javascript" src="../../ext/bootstrap/doc.min.js"></script><script type="text/javascript" src="../../ext/bootstrap/scrollToTop.js"></script><script type="text/javascript" src="../../ext/nomnoml/graphre.js"></script><script type="text/javascript" src="../../ext/nomnoml/nomnoml.min.js"></script><link type="text/css" rel="stylesheet" href="../../timingExtensionStyle.css" /><script type="text/javascript" src="../../timingExtensionToggle.js"></script></head><body><div id="toggle-button"><img id="toggle-on" src="../../timing-on.svg" height="24" width="24" style="display:none" /><img id="toggle-off" src="../../timing-off.svg" height="24" width="24" /></div><span class="breadcrumbs"><a href="../Specs.html">Securities API</a> &gt; <a href="SecurityUpdate.html">Security Update</a> &gt;</span><div class="container-fluid"><div class="container-xxl my-md-4 bd-layout"><main class="bd-main order-1"><div class="bd-toc mt-4 mb-5 my-md-0 ps-xl-3 mb-lg-5 text-muted"><div class="row my-2 pb-2 border-bottom"><div class="col-9"><strong class="h6">On this page</strong></div><div class="col-2"><i id="example-summary-badge" class="fa fa-list-check"></i></div></div><nav id="table-of-contents" class="js-toc toc toc-right" /></div><div class="bd-content ps-lg-4" id="content"><h1>Сохранение ID ФИ</h1>
+<h2>Описание</h2>
+<p>Описание...</p>
+<h2>Примеры</h2>
+<div concordion:example="before" id="before"><p></p><p></p><p></p><p></p>
+<h3>Перед каждым примером</h3>
+<details> <summary>Чистим ФИ и поля</summary>
+     <span dir="/data/db/" datasets="sources-primary-nsd.xml" cmdId="85daf6a4-f77f-4c34-a890-bc04af23eb28" e:db-execute=""><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SOURCE</caption><thead class="thead-default"><tr><th class="">ID</th><th class="">CODE</th><th class="">NAME</th><th class="">PRIORITY</th><th class="">IS_RESERVE</th></tr></thead><tbody><tr><td class=""><span>11</span></td><td class=""><span>NSD</span></td><td class=""><span>API НРД</span></td><td class=""><span>1</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>22</span></td><td class=""><span>BDL</span></td><td class=""><span>Bloomberg Data Licence</span></td><td class=""><span>2</span></td><td class=""><span>1</span></td></tr><tr><td class=""><span>33</span></td><td class=""><span>CBONDS</span></td><td class=""><span>CBONDS</span></td><td class=""><span>3</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>44</span></td><td class=""><span>QUIK_EXPORTER</span></td><td class=""><span>ARQA QUIK Exporter</span></td><td class=""><span>4</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>55</span></td><td class=""><span>CAPQORT</span></td><td class=""><span>DISABLED</span></td><td class=""><span>5</span></td><td class=""><span>0</span></td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SECURITY</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  FIELD_VALUE</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  FIELD_VALUE_AGG</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SECURITY_ID</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SOURCE</caption><thead class="thead-default"><tr><th class="">ID</th><th class="">CODE</th><th class="">NAME</th><th class="">PRIORITY</th><th class="">IS_RESERVE</th></tr></thead><tbody><tr><td class=""><span>11</span></td><td class=""><span>NSD</span></td><td class=""><span>API НРД</span></td><td class=""><span>1</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>22</span></td><td class=""><span>BDL</span></td><td class=""><span>Bloomberg Data Licence</span></td><td class=""><span>2</span></td><td class=""><span>1</span></td></tr><tr><td class=""><span>33</span></td><td class=""><span>CBONDS</span></td><td class=""><span>CBONDS</span></td><td class=""><span>3</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>44</span></td><td class=""><span>QUIK_EXPORTER</span></td><td class=""><span>ARQA QUIK Exporter</span></td><td class=""><span>4</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>55</span></td><td class=""><span>CAPQORT</span></td><td class=""><span>DISABLED</span></td><td class=""><span>5</span></td><td class=""><span>0</span></td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SECURITY</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  FIELD_VALUE</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  FIELD_VALUE_AGG</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SECURITY_ID</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SOURCE</caption><thead class="thead-default"><tr><th class="">ID</th><th class="">CODE</th><th class="">NAME</th><th class="">PRIORITY</th><th class="">IS_RESERVE</th></tr></thead><tbody><tr><td class=""><span>11</span></td><td class=""><span>NSD</span></td><td class=""><span>API НРД</span></td><td class=""><span>1</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>22</span></td><td class=""><span>BDL</span></td><td class=""><span>Bloomberg Data Licence</span></td><td class=""><span>2</span></td><td class=""><span>1</span></td></tr><tr><td class=""><span>33</span></td><td class=""><span>CBONDS</span></td><td class=""><span>CBONDS</span></td><td class=""><span>3</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>44</span></td><td class=""><span>QUIK_EXPORTER</span></td><td class=""><span>ARQA QUIK Exporter</span></td><td class=""><span>4</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>55</span></td><td class=""><span>CAPQORT</span></td><td class=""><span>DISABLED</span></td><td class=""><span>5</span></td><td class=""><span>0</span></td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SECURITY</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  FIELD_VALUE</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  FIELD_VALUE_AGG</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SECURITY_ID</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SOURCE</caption><thead class="thead-default"><tr><th class="">ID</th><th class="">CODE</th><th class="">NAME</th><th class="">PRIORITY</th><th class="">IS_RESERVE</th></tr></thead><tbody><tr><td class=""><span>11</span></td><td class=""><span>NSD</span></td><td class=""><span>API НРД</span></td><td class=""><span>1</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>22</span></td><td class=""><span>BDL</span></td><td class=""><span>Bloomberg Data Licence</span></td><td class=""><span>2</span></td><td class=""><span>1</span></td></tr><tr><td class=""><span>33</span></td><td class=""><span>CBONDS</span></td><td class=""><span>CBONDS</span></td><td class=""><span>3</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>44</span></td><td class=""><span>QUIK_EXPORTER</span></td><td class=""><span>ARQA QUIK Exporter</span></td><td class=""><span>4</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>55</span></td><td class=""><span>CAPQORT</span></td><td class=""><span>DISABLED</span></td><td class=""><span>5</span></td><td class=""><span>0</span></td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SECURITY</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  FIELD_VALUE</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  FIELD_VALUE_AGG</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SECURITY_ID</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table></span>
+</details>
+<details> <summary>Чистим топики</summary>
+<ul>
+<li>Входящий топик батчей пуст: <span e:mq-purge="#TEXT">md.security.data.batch</span></li>
+<li>Входящий топик поштучный пуст: <span e:mq-purge="#TEXT">md.security.data</span></li>
+<li>DLQ пуст: <span e:mq-purge="#TEXT">md.security.data.dlq</span></li>
+</ul>
+</details>
+</div>
+<h3>Новый ФИ</h3>
+<div concordion:example="new-securities" class="exam-example mb-3" data-type="example" id="new-securities" data-summary-success="4" data-summary-ignore="0" data-summary-failure="0" data-summary-exception="0" data-summary-status="ExpectedToPass"><a style="font-size: 9pt; font-weight: bold; float: right; display: inline-block;margin-top: 20px; text-decoration: none; color: #89C;" href="SecurityIdUpdate[new-securities]LogViewer.html">Log File</a><div data-bs-toggle="collapse" data-bs-target="#ee927f690-b597-448d-ae08-73e7b9134000" aria-expanded="true"><h4 style="visibility: hidden; height:0;" class="test-class"><i class="example-badge fa fa-check m-1 text-success"></i>New securities</h4><i class="far fa-caret-square-down"></i><span> </span><a class="bd-example-title text-muted fw-lighter">New securities</a></div><div class="bd-example collapse show rounded bg-light bg-gradient" id="ee927f690-b597-448d-ae08-73e7b9134000">
+
+<details open=""> <summary>When</summary>
+<p><span e:set="#sec1" hidden="true">{{map isin='ISIN1' name='only isin'}}</span><span e:set="#sec1" hidden="true">{isin=ISIN1, name=only isin}</span> <span e:set="#sec2" hidden="true">{{map isin='ISIN2' name='isin and reg num'}}</span><span e:set="#sec2" hidden="true">{isin=ISIN2, name=isin and reg num}</span> <span e:set="#sec3" hidden="true">{{map isin='REGN3' name='only reg num'}}</span><span e:set="#sec3" hidden="true">{isin=REGN3, name=only reg num}</span></p>
+<p>На вход пришло событие:</p><div class="mq-send">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> 
+<tr><td class="exp-body"><div class="json">{
+  "status": "SECURITY_FOUND",
+  "integrationSource": "NSD",
+  "isin": "ISIN1",
+  "timestamp": "2024-04-02T12:28:27.287",
+  "security": {
+    "isin": "ISIN1",
+    "name": "only isin",
+    "type": "SEC",
+    "active": true,
+    "statusDescription": "Размещен",
+    "fields": [{
+      "code": "ISIN",
+      "value": "ISIN1"
+    }]
+  }
+}</div></td></tr>
+
+<tr><td class="exp-body"><div class="json">{
+  "status": "SECURITY_FOUND",
+  "integrationSource": "NSD",
+  "isin": "ISIN2",
+  "timestamp": "2024-04-02T12:28:27.287",
+  "security": {
+    "isin": "ISIN2",
+    "name": "isin and reg num",
+    "type": "SEC",
+    "active": true,
+    "statusDescription": "Размещен",
+    "fields": [{
+      "code": "ISIN",
+      "value": "ISIN2"
+    }, {
+      "code": "RULE_NUMBER",
+      "value": "REGN2"
+    }]
+  }
+}</div></td></tr>
+
+<tr><td class="exp-body"><div class="json">{
+  "status": "SECURITY_FOUND",
+  "integrationSource": "NSD",
+  "isin": "REGN3",
+  "timestamp": "2024-04-02T12:28:27.287",
+  "security": {
+    "isin": "REGN3",
+    "name": "only reg num",
+    "type": "SEC",
+    "active": true,
+    "statusDescription": "Размещен",
+    "fields": [{
+      "code": "RULE_NUMBER",
+      "value": "REGN3"
+    }]
+  }
+}</div></td></tr> </tbody>
+    </table>
+</div>
+</details>
+<details open=""> <summary>Then</summary>
+<p>Событие обработано:</p><div class="mq-check">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> <tr><td class="exp-body">EMPTY</td></tr> </tbody>
+    </table>
+</div>
+<p>ФИ и его поля сохранены:</p>
+<table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  ФИ?</caption><thead class="thead-default"><tr><th class="">isin</th><th class="">name</th><th class="">updated_at</th></tr></thead><tbody><tr><td class=" table-success"><span title="ISIN1" data-toggle="tooltip" data-placement="top" style="">ISIN1</span></td><td class=" table-success"><span title="only isin" data-toggle="tooltip" data-placement="top" style="">only isin</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:48.204</span></td></tr><tr><td class=" table-success"><span title="ISIN2" data-toggle="tooltip" data-placement="top" style="">ISIN2</span></td><td class=" table-success"><span title="isin and reg num" data-toggle="tooltip" data-placement="top" style="">isin and reg num</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:48.237</span></td></tr><tr><td class=" table-success"><span title="REGN3" data-toggle="tooltip" data-placement="top" style="">REGN3</span></td><td class=" table-success"><span title="only reg num" data-toggle="tooltip" data-placement="top" style="">only reg num</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:48.258</span></td></tr></tbody></table>
+<table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  Поля ФИ?</caption><thead class="thead-default"><tr><th class="">security</th><th class="">field</th><th class="">value</th><th class="">created_at</th></tr></thead><tbody><tr><td class=" table-success"><span title="29" data-toggle="tooltip" data-placement="top" style="">29</span></td><td class=" table-success"><span title="65" data-toggle="tooltip" data-placement="top" style="">65</span></td><td class=" table-success"><span title="ISIN1" data-toggle="tooltip" data-placement="top" style="">ISIN1</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:48.204</span></td></tr><tr><td class=" table-success"><span title="30" data-toggle="tooltip" data-placement="top" style="">30</span></td><td class=" table-success"><span title="65" data-toggle="tooltip" data-placement="top" style="">65</span></td><td class=" table-success"><span title="ISIN2" data-toggle="tooltip" data-placement="top" style="">ISIN2</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:48.237</span></td></tr><tr><td class=" table-success"><span title="30" data-toggle="tooltip" data-placement="top" style="">30</span></td><td class=" table-success"><span title="66" data-toggle="tooltip" data-placement="top" style="">66</span></td><td class=" table-success"><span title="REGN2" data-toggle="tooltip" data-placement="top" style="">REGN2</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:48.237</span></td></tr><tr><td class=" table-success"><span title="31" data-toggle="tooltip" data-placement="top" style="">31</span></td><td class=" table-success"><span title="66" data-toggle="tooltip" data-placement="top" style="">66</span></td><td class=" table-success"><span title="REGN3" data-toggle="tooltip" data-placement="top" style="">REGN3</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:48.258</span></td></tr></tbody></table>
+<table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  ID ФИ?</caption><thead class="thead-default"><tr><th class="">security</th><th class="">type</th><th class="">id</th><th class="">updated_at</th></tr></thead><tbody><tr><td class=" table-success"><span title="29" data-toggle="tooltip" data-placement="top" style="">29</span></td><td class=" table-success"><span title="1" data-toggle="tooltip" data-placement="top" style="">1</span></td><td class=" table-success"><span title="ISIN1" data-toggle="tooltip" data-placement="top" style="">ISIN1</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:48.204</span></td></tr><tr><td class=" table-success"><span title="30" data-toggle="tooltip" data-placement="top" style="">30</span></td><td class=" table-success"><span title="1" data-toggle="tooltip" data-placement="top" style="">1</span></td><td class=" table-success"><span title="ISIN2" data-toggle="tooltip" data-placement="top" style="">ISIN2</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:48.237</span></td></tr><tr><td class=" table-success"><span title="30" data-toggle="tooltip" data-placement="top" style="">30</span></td><td class=" table-success"><span title="2" data-toggle="tooltip" data-placement="top" style="">2</span></td><td class=" table-success"><span title="REGN2" data-toggle="tooltip" data-placement="top" style="">REGN2</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:48.237</span></td></tr><tr><td class=" table-success"><span title="31" data-toggle="tooltip" data-placement="top" style="">31</span></td><td class=" table-success"><span title="2" data-toggle="tooltip" data-placement="top" style="">2</span></td><td class=" table-success"><span title="REGN3" data-toggle="tooltip" data-placement="top" style="">REGN3</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:48.258</span></td></tr></tbody></table>
+</details>
+</div><div class="time-fig"><p>1s 158ms</p></div></div>
+<h3>Обновление существующего ФИ</h3>
+<div concordion:example="update-existing-security" class="exam-example mb-3" data-type="example" id="update-existing-security" data-summary-success="4" data-summary-ignore="0" data-summary-failure="0" data-summary-exception="0" data-summary-status="ExpectedToPass"><a style="font-size: 9pt; font-weight: bold; float: right; display: inline-block;margin-top: 20px; text-decoration: none; color: #89C;" href="SecurityIdUpdate[update-existing-security]LogViewer.html">Log File</a><div data-bs-toggle="collapse" data-bs-target="#e5885958a-6c5e-435d-93e5-a2f8dedf8ddd" aria-expanded="true"><h4 style="visibility: hidden; height:0;" class="test-class"><i class="example-badge fa fa-check m-1 text-success"></i>Update existing security</h4><i class="far fa-caret-square-down"></i><span> </span><a class="bd-example-title text-muted fw-lighter">Update existing security</a></div><div class="bd-example collapse show rounded bg-light bg-gradient" id="e5885958a-6c5e-435d-93e5-a2f8dedf8ddd">
+
+<details open=""> <summary>Given</summary>
+<table hidden="true" rendered="true">
+<thead>
+<tr><th> isin  </th><th> name </th><th> type                     </th><th> status_description </th><th> source           </th><th> updated_at   </th></tr>
+</thead>
+<tbody>
+<tr><td> ISIN1 </td><td> old  </td><td> {{securityType 'SHARE'}} </td><td> old desc           </td><td> {{source 'NSD'}} </td><td> {{weeksAgo}} </td></tr>
+<tr><td> REGN2 </td><td> old  </td><td> {{securityType 'SHARE'}} </td><td> old desc           </td><td> {{source 'NSD'}} </td><td> {{weeksAgo}} </td></tr>
+</tbody>
+<caption><span e:db-set="security">ФИ:</span></caption>
+</table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  ФИ:</caption><thead class="thead-default"><tr><th class="">isin</th><th class="">name</th><th class="">type</th><th class="">status_description</th><th class="">source</th><th class="">updated_at</th></tr></thead><tbody><tr><td class=""><span>ISIN1</span></td><td class=""><span>old</span></td><td class=""><span>10</span></td><td class=""><span>old desc</span></td><td class=""><span>11</span></td><td class=""><span>2024-03-26 00:00:00.000</span></td></tr><tr><td class=""><span>REGN2</span></td><td class=""><span>old</span></td><td class=""><span>10</span></td><td class=""><span>old desc</span></td><td class=""><span>11</span></td><td class=""><span>2024-03-26 00:00:00.000</span></td></tr></tbody></table>
+<table hidden="true" rendered="true">
+<thead>
+<tr><th> security             </th><th> field                   </th><th> value </th><th> date         </th><th> source           </th><th> created_at   </th></tr>
+</thead>
+<tbody>
+<tr><td> {{security 'ISIN1'}} </td><td> {{field 'ISIN'}}        </td><td> ISIN1 </td><td> {{weeksAgo}} </td><td> {{source 'NSD'}} </td><td> {{weeksAgo}} </td></tr>
+<tr><td> {{security 'REGN2'}} </td><td> {{field 'RULE_NUMBER'}} </td><td> REGN2 </td><td> {{weeksAgo}} </td><td> {{source 'NSD'}} </td><td> {{weeksAgo}} </td></tr>
+</tbody>
+<caption><span e:db-set="field_value">Поля ФИ:</span></caption>
+</table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  Поля ФИ:</caption><thead class="thead-default"><tr><th class="">security</th><th class="">field</th><th class="">value</th><th class="">date</th><th class="">source</th><th class="">created_at</th></tr></thead><tbody><tr><td class=""><span>32</span></td><td class=""><span>65</span></td><td class=""><span>ISIN1</span></td><td class=""><span>2024-03-26 00:00:00.000</span></td><td class=""><span>11</span></td><td class=""><span>2024-03-26 00:00:00.000</span></td></tr><tr><td class=""><span>33</span></td><td class=""><span>66</span></td><td class=""><span>REGN2</span></td><td class=""><span>2024-03-26 00:00:00.000</span></td><td class=""><span>11</span></td><td class=""><span>2024-03-26 00:00:00.000</span></td></tr></tbody></table>
+<table hidden="true" rendered="true">
+<thead>
+<tr><th> security             </th><th> type                        </th><th> id    </th><th> updated_at   </th></tr>
+</thead>
+<tbody>
+<tr><td> {{security 'ISIN1'}} </td><td> {{secIdType 'ISIN'}}        </td><td> ISIN1 </td><td> {{weeksAgo}} </td></tr>
+<tr><td> {{security 'REGN2'}} </td><td> {{secIdType 'RULE_NUMBER'}} </td><td> REGN2 </td><td> {{weeksAgo}} </td></tr>
+</tbody>
+<caption><span e:db-set="security_id">ID ФИ:</span></caption>
+</table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  ID ФИ:</caption><thead class="thead-default"><tr><th class="">security</th><th class="">type</th><th class="">id</th><th class="">updated_at</th></tr></thead><tbody><tr><td class=""><span>32</span></td><td class=""><span>1</span></td><td class=""><span>ISIN1</span></td><td class=""><span>2024-03-26 00:00:00.000</span></td></tr><tr><td class=""><span>33</span></td><td class=""><span>2</span></td><td class=""><span>REGN2</span></td><td class=""><span>2024-03-26 00:00:00.000</span></td></tr></tbody></table>
+</details>
+<details open=""> <summary>When</summary>
+<p>На вход пришло событие</p><div class="mq-send">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> 
+<tr><td class="exp-body"><div class="json">{
+  "status": "SECURITY_FOUND",
+  "integrationSource": "NSD",
+  "isin": "ISIN1",
+  "timestamp": "2024-04-02T12:28:27.287",
+  "security": {
+    "isin": "ISIN1",
+    "name": "MINFIN ROSSII 2 31/10/20",
+    "type": "SEC",
+    "active": true,
+    "statusDescription": "Размещен",
+    "fields": [{
+      "code": "ISIN",
+      "value": "ISIN1"
+    }, {
+      "code": "RULE_NUMBER",
+      "value": "REGN1"
+    }]
+  }
+}</div></td></tr>
+
+<tr><td class="exp-body"><div class="json">{
+  "status": "SECURITY_FOUND",
+  "integrationSource": "NSD",
+  "isin": "ISIN2",
+  "timestamp": "2024-04-02T12:28:27.287",
+  "security": {
+    "isin": "ISIN2",
+    "name": "MINFIN ROSSII 2 31/10/20",
+    "type": "SEC",
+    "active": true,
+    "statusDescription": "Размещен",
+    "fields": [{
+      "code": "RULE_NUMBER",
+      "value": "REGN2"
+    }]
+  }
+}</div></td></tr> </tbody>
+    </table>
+</div>
+</details>
+<details open=""> <summary>Then</summary>
+<p>Событие обработано:</p><div class="mq-check">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> <tr><td class="exp-body">EMPTY</td></tr> </tbody>
+    </table>
+</div>
+<p>ФИ и его поля обновлены:</p>
+<table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  ФИ?</caption><thead class="thead-default"><tr><th class="">isin</th><th class="">updated_at</th></tr></thead><tbody><tr><td class=" table-success"><span title="ISIN1" data-toggle="tooltip" data-placement="top" style="">ISIN1</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:49.484</span></td></tr><tr><td class=" table-success"><span title="REGN2" data-toggle="tooltip" data-placement="top" style="">REGN2</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:49.520</span></td></tr></tbody></table>
+<table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  Поля ФИ?</caption><thead class="thead-default"><tr><th class="">security</th><th class="">field</th><th class="">value</th><th class="">created_at</th></tr></thead><tbody><tr><td class=" table-success"><span title="32" data-toggle="tooltip" data-placement="top" style="">32</span></td><td class=" table-success"><span title="65" data-toggle="tooltip" data-placement="top" style="">65</span></td><td class=" table-success"><span title="ISIN1" data-toggle="tooltip" data-placement="top" style="">ISIN1</span></td><td class=" table-success"><span title="2024-03-26 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2024-03-26 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="32" data-toggle="tooltip" data-placement="top" style="">32</span></td><td class=" table-success"><span title="66" data-toggle="tooltip" data-placement="top" style="">66</span></td><td class=" table-success"><span title="REGN1" data-toggle="tooltip" data-placement="top" style="">REGN1</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:49.484</span></td></tr><tr><td class=" table-success"><span title="33" data-toggle="tooltip" data-placement="top" style="">33</span></td><td class=" table-success"><span title="66" data-toggle="tooltip" data-placement="top" style="">66</span></td><td class=" table-success"><span title="REGN2" data-toggle="tooltip" data-placement="top" style="">REGN2</span></td><td class=" table-success"><span title="2024-03-26 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2024-03-26 00:00:00.000</span></td></tr></tbody></table>
+<table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  ID ФИ?</caption><thead class="thead-default"><tr><th class="">security</th><th class="">type</th><th class="">id</th><th class="">updated_at</th></tr></thead><tbody><tr><td class=" table-success"><span title="32" data-toggle="tooltip" data-placement="top" style="">32</span></td><td class=" table-success"><span title="1" data-toggle="tooltip" data-placement="top" style="">1</span></td><td class=" table-success"><span title="ISIN1" data-toggle="tooltip" data-placement="top" style="">ISIN1</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:49.484</span></td></tr><tr><td class=" table-success"><span title="32" data-toggle="tooltip" data-placement="top" style="">32</span></td><td class=" table-success"><span title="2" data-toggle="tooltip" data-placement="top" style="">2</span></td><td class=" table-success"><span title="REGN1" data-toggle="tooltip" data-placement="top" style="">REGN1</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:49.484</span></td></tr><tr><td class=" table-success"><span title="33" data-toggle="tooltip" data-placement="top" style="">33</span></td><td class=" table-success"><span title="2" data-toggle="tooltip" data-placement="top" style="">2</span></td><td class=" table-success"><span title="REGN2" data-toggle="tooltip" data-placement="top" style="">REGN2</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:49.520</span></td></tr></tbody></table>
+</details>
+</div><div class="time-fig"><p>1s 180ms</p></div></div><div concordion:example="изменился-rule-number" class="exam-example mb-3" data-type="example" id="изменился-rule-number" data-summary-success="6" data-summary-ignore="0" data-summary-failure="0" data-summary-exception="0" data-summary-status="ExpectedToPass"><div data-bs-toggle="collapse" data-bs-target="#ed949a098-2359-4620-9248-d19ad80f8d7d" aria-expanded="true"><h4 style="visibility: hidden; height:0;" class="test-class"><i class="example-badge fa fa-check m-1 text-success"></i>Изменился RULE_NUMBER</h4><i class="far fa-caret-square-down"></i><span> </span><a class="bd-example-title text-muted fw-lighter">Изменился RULE_NUMBER</a></div><div class="bd-example collapse show rounded bg-light bg-gradient" id="ed949a098-2359-4620-9248-d19ad80f8d7d">
+
+<details open=""> <summary>Given</summary>
+<p><span e:set="#sec1" hidden="true">{{map isin='ISIN1' name='isin1 has reg num'}}</span><span e:set="#sec1" hidden="true">{isin=ISIN1, name=isin1 has reg num}</span></p>
+<table hidden="true" rendered="true">
+<thead>
+<tr><th> isin          </th><th> name          </th><th> type                     </th><th> status_description </th><th> source           </th><th> updated_at   </th></tr>
+</thead>
+<tbody>
+<tr><td> {{sec1.isin}} </td><td> {{sec1.name}} </td><td> {{securityType 'SHARE'}} </td><td> old desc           </td><td> {{source 'NSD'}} </td><td> {{weeksAgo}} </td></tr>
+</tbody>
+<caption><span e:db-set="security">ФИ:</span></caption>
+</table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  ФИ:</caption><thead class="thead-default"><tr><th class="">isin</th><th class="">name</th><th class="">type</th><th class="">status_description</th><th class="">source</th><th class="">updated_at</th></tr></thead><tbody><tr><td class=""><span>ISIN1</span></td><td class=""><span>isin1 has reg num</span></td><td class=""><span>10</span></td><td class=""><span>old desc</span></td><td class=""><span>11</span></td><td class=""><span>2024-03-26 00:00:00.000</span></td></tr></tbody></table>
+<table hidden="true" rendered="true">
+<thead>
+<tr><th> security               </th><th> field                   </th><th> value </th><th> date         </th><th> source           </th><th> created_at   </th></tr>
+</thead>
+<tbody>
+<tr><td> {{security sec1.isin}} </td><td> {{field 'RULE_NUMBER'}} </td><td> OLD   </td><td> {{weeksAgo}} </td><td> {{source 'NSD'}} </td><td> {{weeksAgo}} </td></tr>
+</tbody>
+<caption><span e:db-set="field_value">Поля ФИ:</span></caption>
+</table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  Поля ФИ:</caption><thead class="thead-default"><tr><th class="">security</th><th class="">field</th><th class="">value</th><th class="">date</th><th class="">source</th><th class="">created_at</th></tr></thead><tbody><tr><td class=""><span>34</span></td><td class=""><span>66</span></td><td class=""><span>OLD</span></td><td class=""><span>2024-03-26 00:00:00.000</span></td><td class=""><span>11</span></td><td class=""><span>2024-03-26 00:00:00.000</span></td></tr></tbody></table>
+<table hidden="true" rendered="true">
+<thead>
+<tr><th> security               </th><th> type                        </th><th> id            </th><th> updated_at   </th></tr>
+</thead>
+<tbody>
+<tr><td> {{security sec1.isin}} </td><td> {{secIdType 'ISIN'}}        </td><td> {{sec1.isin}} </td><td> {{weeksAgo}} </td></tr>
+<tr><td> {{security sec1.isin}} </td><td> {{secIdType 'RULE_NUMBER'}} </td><td> OLD           </td><td> {{weeksAgo}} </td></tr>
+</tbody>
+<caption><span e:db-set="security_id">ID ФИ:</span></caption>
+</table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  ID ФИ:</caption><thead class="thead-default"><tr><th class="">security</th><th class="">type</th><th class="">id</th><th class="">updated_at</th></tr></thead><tbody><tr><td class=""><span>34</span></td><td class=""><span>1</span></td><td class=""><span>ISIN1</span></td><td class=""><span>2024-03-26 00:00:00.000</span></td></tr><tr><td class=""><span>34</span></td><td class=""><span>2</span></td><td class=""><span>OLD</span></td><td class=""><span>2024-03-26 00:00:00.000</span></td></tr></tbody></table>
+</details>
+<details open=""> <summary>When</summary>
+<p>На вход пришло событие</p><div class="mq-send">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> 
+<tr><td class="exp-body"><div class="json">{
+  "status": "SECURITY_FOUND",
+  "integrationSource": "NSD",
+  "isin": "ISIN1",
+  "timestamp": "2024-04-02T12:28:27.287",
+  "security": {
+    "isin": "ISIN1",
+    "name": "isin1 has reg num",
+    "type": "SEC",
+    "active": true,
+    "statusDescription": "Размещен",
+    "fields": [{
+      "code": "ISIN",
+      "value": "ISIN1"
+    }, {
+      "code": "RULE_NUMBER",
+      "value": "REGN1"
+    }]
+  }
+}</div></td></tr> </tbody>
+    </table>
+</div>
+</details>
+<details open=""> <summary>Then</summary>
+<p>Событие обработано:</p><div class="mq-check">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> <tr><td class="exp-body">EMPTY</td></tr> </tbody>
+    </table>
+</div>
+<p>и</p>
+<p>Событие в поштучной очереди обработано:</p><div class="mq-check">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.data</span></caption>
+        <tbody> <tr><td class="exp-body">EMPTY</td></tr> </tbody>
+    </table>
+</div>
+<p>ФИ и его поля обновлены:</p>
+<table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  ФИ?</caption><thead class="thead-default"><tr><th class="">isin</th><th class="">name</th><th class="">updated_at</th></tr></thead><tbody><tr><td class=" table-success"><span title="ISIN1" data-toggle="tooltip" data-placement="top" style="">ISIN1</span></td><td class=" table-success"><span title="isin1 has reg num" data-toggle="tooltip" data-placement="top" style="">isin1 has reg num</span></td><td class=" table-success"><span title="2024-03-26 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2024-03-26 00:00:00.000</span></td></tr></tbody></table>
+<table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  Поля ФИ?</caption><thead class="thead-default"><tr><th class="">security</th><th class="">field</th><th class="">value</th><th class="">created_at</th></tr></thead><tbody><tr><td class=" table-success"><span title="34" data-toggle="tooltip" data-placement="top" style="">34</span></td><td class=" table-success"><span title="66" data-toggle="tooltip" data-placement="top" style="">66</span></td><td class=" table-success"><span title="OLD" data-toggle="tooltip" data-placement="top" style="">OLD</span></td><td class=" table-success"><span title="2024-03-26 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2024-03-26 00:00:00.000</span></td></tr></tbody></table>
+<table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  ID ФИ?</caption><thead class="thead-default"><tr><th class="">security</th><th class="">type</th><th class="">id</th><th class="">updated_at</th></tr></thead><tbody><tr><td class=" table-success"><span title="34" data-toggle="tooltip" data-placement="top" style="">34</span></td><td class=" table-success"><span title="1" data-toggle="tooltip" data-placement="top" style="">1</span></td><td class=" table-success"><span title="ISIN1" data-toggle="tooltip" data-placement="top" style="">ISIN1</span></td><td class=" table-success"><span title="2024-03-26 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2024-03-26 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="34" data-toggle="tooltip" data-placement="top" style="">34</span></td><td class=" table-success"><span title="2" data-toggle="tooltip" data-placement="top" style="">2</span></td><td class=" table-success"><span title="OLD" data-toggle="tooltip" data-placement="top" style="">OLD</span></td><td class=" table-success"><span title="2024-03-26 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2024-03-26 00:00:00.000</span></td></tr></tbody></table>
+<p>Перенаправлены в DLQ:</p><div class="mq-check">
+        <table class="table table-sm caption-top">
+            <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.data.dlq</span></caption>
+            <tbody>     
+    <tr><td class="exp-body"><div class="json rest-success">{
+  "status": "SECURITY_FOUND",
+  "integrationSource": "NSD",
+  "isin": "ISIN1",
+  "timestamp": "2024-04-02T12:28:27.287",
+  "security": {
+    "isin": "ISIN1",
+    "name": "isin1 has reg num",
+    "type": "SEC",
+    "active": true,
+    "statusDescription": "Размещен",
+    "fields": [{
+      "code": "ISIN",
+      "value": "ISIN1"
+    }, {
+      "code": "RULE_NUMBER",
+      "value": "REGN1"
+    }]
+  }
+}</div></td></tr> </tbody>
+        </table>
+    </div>
+</details>
+</div><div class="time-fig"><p>5s 239ms</p></div></div><div concordion:example="two-sec" class="exam-example mb-3" data-type="example" id="two-sec" data-summary-success="4" data-summary-ignore="0" data-summary-failure="0" data-summary-exception="0" data-summary-status="ExpectedToPass"><div data-bs-toggle="collapse" data-bs-target="#e1d27f651-c631-45e2-81dd-694759a01339" aria-expanded="true"><h4 style="visibility: hidden; height:0;" class="test-class"><i class="example-badge fa fa-check m-1 text-success"></i>two sec</h4><i class="far fa-caret-square-down"></i><span> </span><a class="bd-example-title text-muted fw-lighter">two sec</a></div><div class="bd-example collapse show rounded bg-light bg-gradient" id="e1d27f651-c631-45e2-81dd-694759a01339">
+
+<details open=""> <summary>When</summary>
+<p><span e:set="#sec1" hidden="true">{{map isin='AB' name='isin and rn'}}</span><span e:set="#sec1" hidden="true">{isin=AB, name=isin and rn}</span> <span e:set="#sec2" hidden="true">{{map isin='B' name='isin'}}</span><span e:set="#sec2" hidden="true">{isin=B, name=isin}</span></p>
+<p>На вход пришло событие:</p><div class="mq-send">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> 
+<tr><td class="exp-body"><div class="json">{
+  "status": "SECURITY_FOUND",
+  "integrationSource": "NSD",
+  "isin": "AB",
+  "timestamp": "2024-04-02T12:28:27.287",
+  "security": {
+    "isin": "AB",
+    "name": "isin and rn",
+    "type": "SEC",
+    "active": true,
+    "statusDescription": "Размещен",
+    "fields": [{
+      "code": "ISIN",
+      "value": "A"
+    }, {
+      "code": "RULE_NUMBER",
+      "value": "B"
+    }]
+  }
+}</div></td></tr>
+
+<tr><td class="exp-body"><div class="json">{
+  "status": "SECURITY_FOUND",
+  "integrationSource": "NSD",
+  "isin": "B",
+  "timestamp": "2024-04-02T12:28:27.287",
+  "security": {
+    "isin": "B",
+    "name": "isin",
+    "type": "SEC",
+    "active": true,
+    "statusDescription": "Размещен",
+    "fields": [{
+      "code": "ISIN",
+      "value": "B"
+    }]
+  }
+}</div></td></tr> </tbody>
+    </table>
+</div>
+</details>
+<details open=""> <summary>Then</summary>
+<p>Событие обработано:</p><div class="mq-check">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> <tr><td class="exp-body">EMPTY</td></tr> </tbody>
+    </table>
+</div>
+<p>ФИ и его поля сохранены:</p>
+<table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  ФИ?</caption><thead class="thead-default"><tr><th class="">isin</th><th class="">name</th><th class="">updated_at</th></tr></thead><tbody><tr><td class=" table-success"><span title="AB" data-toggle="tooltip" data-placement="top" style="">AB</span></td><td class=" table-success"><span title="isin and rn" data-toggle="tooltip" data-placement="top" style="">isin and rn</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:55.940</span></td></tr><tr><td class=" table-success"><span title="B" data-toggle="tooltip" data-placement="top" style="">B</span></td><td class=" table-success"><span title="isin" data-toggle="tooltip" data-placement="top" style="">isin</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:55.987</span></td></tr></tbody></table>
+<table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  Поля ФИ?</caption><thead class="thead-default"><tr><th class="">security</th><th class="">field</th><th class="">value</th><th class="">created_at</th></tr></thead><tbody><tr><td class=" table-success"><span title="35" data-toggle="tooltip" data-placement="top" style="">35</span></td><td class=" table-success"><span title="65" data-toggle="tooltip" data-placement="top" style="">65</span></td><td class=" table-success"><span title="A" data-toggle="tooltip" data-placement="top" style="">A</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:55.940</span></td></tr><tr><td class=" table-success"><span title="35" data-toggle="tooltip" data-placement="top" style="">35</span></td><td class=" table-success"><span title="66" data-toggle="tooltip" data-placement="top" style="">66</span></td><td class=" table-success"><span title="B" data-toggle="tooltip" data-placement="top" style="">B</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:55.940</span></td></tr><tr><td class=" table-success"><span title="36" data-toggle="tooltip" data-placement="top" style="">36</span></td><td class=" table-success"><span title="65" data-toggle="tooltip" data-placement="top" style="">65</span></td><td class=" table-success"><span title="B" data-toggle="tooltip" data-placement="top" style="">B</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:55.987</span></td></tr></tbody></table>
+<table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  ID ФИ?</caption><thead class="thead-default"><tr><th class="">security</th><th class="">type</th><th class="">id</th><th class="">updated_at</th></tr></thead><tbody><tr><td class=" table-success"><span title="35" data-toggle="tooltip" data-placement="top" style="">35</span></td><td class=" table-success"><span title="1" data-toggle="tooltip" data-placement="top" style="">1</span></td><td class=" table-success"><span title="A" data-toggle="tooltip" data-placement="top" style="">A</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:55.940</span></td></tr><tr><td class=" table-success"><span title="36" data-toggle="tooltip" data-placement="top" style="">35</span></td><td class=" table-success"><span title="1" data-toggle="tooltip" data-placement="top" style="">2</span></td><td class=" table-success"><span title="B" data-toggle="tooltip" data-placement="top" style="">B</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:55.940</span></td></tr><tr><td class=" table-success"><span title="35" data-toggle="tooltip" data-placement="top" style="">36</span></td><td class=" table-success"><span title="2" data-toggle="tooltip" data-placement="top" style="">1</span></td><td class=" table-success"><span title="B" data-toggle="tooltip" data-placement="top" style="">B</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:55.987</span></td></tr></tbody></table>
+</details>
+</div><div class="time-fig"><p>1s 132ms</p></div></div></div></main></div></div><div class="footer">Results generated by <a href="http://www.concordion.org" style="font-weight: bold; text-decoration: none; color: #89C;">Concordion</a><div class="testTime">in 8889 ms on 02-апр.-2024 at 12:29:57 MSK</div><div class="testTime"><a href="SecurityIdUpdateLogViewer.html" style="font-weight: bold; text-decoration: none; color: #89C;">Log File</a></div></div></body><button id="btnToTop" onclick="topFunction()" type="button" class="btn btn-light btn-sm text-muted me-1"><i class="fa fa-arrow-up"></i></button></html>

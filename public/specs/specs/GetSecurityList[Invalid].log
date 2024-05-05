@@ -1,0 +1,14 @@
+13:42:08.566 [Test worker] INFO  o.a.h.impl.client.DefaultHttpClient.tryExecute - I/O exception (java.net.SocketException) caught when processing request to {}->http://localhost:15756: Connection reset
+13:42:08.571 [Test worker] INFO  o.a.h.impl.client.DefaultHttpClient.tryExecute - Retrying request to {}->http://localhost:15756
+13:42:08.708 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: partitions revoked: [md.security.assets.data-0]
+13:42:08.708 [org.springframework.kafka.KafkaListenerEndpointContainer#4-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: partitions revoked: [md.security.data-0]
+13:42:08.708 [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: partitions revoked: [md.security.data.batch-0]
+13:42:08.708 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: partitions revoked: [md.security.registry-records.data-0]
+13:42:08.709 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: partitions revoked: [md.issuer.events-0]
+13:42:08.764 [org.springframework.kafka.KafkaListenerEndpointContainer#4-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: Consumer stopped
+13:42:08.768 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: Consumer stopped
+13:42:08.772 [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: Consumer stopped
+13:42:08.772 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: Consumer stopped
+13:42:08.774 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: Consumer stopped
+13:42:09.022 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+13:42:09.035 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.

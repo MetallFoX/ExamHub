@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?><html xmlns:e="http://exam.extension.io" lang="en"><head><script type="text/javascript">document.addEventListener('DOMContentLoaded', function (event) {
+    Array.from(document.getElementsByClassName("nomnoml")).forEach(function(el) {
+        nomnoml.draw(el, el.textContent); 
+    });  
+});</script><script type="text/javascript">window.addEventListener('DOMContentLoaded', function (event) {
+     jQuery("table").wrap(unescape("&lt;div class='table-responsive'&gt;&lt;/div&gt;"));
+}); </script><script type="text/javascript">window.addEventListener('DOMContentLoaded', function (event) {
+     jQuery(".details").wrap(unescape("&lt;details&gt;&lt;/details&gt;"));
+}); </script><script type="text/javascript">window.addEventListener('DOMContentLoaded', function (event) {
+    anchors.options = {
+        placement: 'left',
+        icon: '#'
+    };
+    anchors.add();
+    tocbot.init({
+        tocSelector: '.js-toc',
+        contentSelector: '.bd-content',
+        headingSelector: 'h1, h2, h3, h4, h5, h6',
+        hasInnerContainers: true,
+        collapseDepth: 3,
+        scrollSmooth: false,
+        fixedSidebarOffset: 'auto',
+        includeHtml: true
+    });
+    var collapseDepth = 3; 
+    jQuery( "#example-summary-badge" ).click(function() {
+        if (collapseDepth === 3) {
+            collapseDepth = 30;
+        } else {
+            collapseDepth = 3;
+        }
+        tocbot.refresh({
+            tocSelector: '.js-toc',
+            contentSelector: '.bd-content',
+            headingSelector: 'h1, h2, h3, h4, h5, h6',
+            hasInnerContainers: true,
+            collapseDepth: collapseDepth,
+            scrollSmooth: false,
+            fixedSidebarOffset: 'auto',
+            includeHtml: true
+        });
+        if (collapseDepth === 30) {
+            jQuery( ".toc-link" ).filter(function( index ) {
+                return jQuery( "i", this ).length !== 1
+            }).css("display", "none");
+        } else {
+            jQuery( ".toc-link" ).filter(function( index ) {
+                return jQuery( "i", this ).length !== 1
+            }).css("display", "unset");
+        }
+    });
+}); </script><script type="text/javascript">document.addEventListener('DOMContentLoaded', function (event) {
+    hljs.configure({
+        cssSelector: 'pre code, pre.code'
+    });
+    hljs.highlightAll();
+});</script><meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link type="text/css" rel="stylesheet" href="../../ext/codemirror/codemirror.css" /><link type="text/css" rel="stylesheet" href="../../ext/codemirror/enable-codemirror.css" /><link type="text/css" rel="stylesheet" href="../../ext/codemirror/merge.css" /><link type="text/css" rel="stylesheet" href="../../ext/codemirror/foldgutter.css" /><link type="text/css" rel="stylesheet" href="../../ext/codemirror/simplescrollbar.css" /><script type="text/javascript" src="../../ext/codemirror/codemirror.js"></script><script type="text/javascript" src="../../ext/codemirror/enable-codemirror.js"></script><script type="text/javascript" src="../../ext/codemirror/javascript.js"></script><script type="text/javascript" src="../../ext/codemirror/xml.js"></script><script type="text/javascript" src="../../ext/codemirror/addon/mode/simple.js"></script><script type="text/javascript" src="../../ext/codemirror/http.js"></script><script type="text/javascript" src="../../ext/codemirror/diff_match_patch.js"></script><script type="text/javascript" src="../../ext/codemirror/merge.js"></script><script type="text/javascript" src="../../ext/codemirror/xml-fold.js"></script><script type="text/javascript" src="../../ext/codemirror/simplescrollbar.js"></script><link type="text/css" rel="stylesheet" href="../../ext/highlight/stackoverflow-light.min.css" /><script type="text/javascript" src="../../ext/highlight/highlight.min.js"></script><script type="text/javascript" src="../../ext/highlight/http.min.js"></script><script type="text/javascript" src="../../ext/highlight/java.min.js"></script><link type="text/css" rel="stylesheet" href="../../ext/tocbot/tocbot.css" /><script type="text/javascript" src="../../ext/tocbot/tocbot.min.js"></script><link type="text/css" rel="stylesheet" href="../../ext/fontawesome/css/all.min.css" /><link type="text/css" rel="stylesheet" href="../../ext/fontawesome/css/regular.min.css" /><link type="text/css" rel="stylesheet" href="../../ext/fontawesome/css/solid.min.css" /><link type="text/css" rel="stylesheet" href="../../ext/fontawesome/css/all.min.css" /><link type="text/css" rel="stylesheet" href="../../ext/bootstrap/bootstrap.min.css" /><link type="text/css" rel="stylesheet" href="../../ext/bootstrap/enable-bootstrap.css" /><link type="text/css" rel="stylesheet" href="../../ext/bootstrap/doc.min.css" /><link type="text/css" rel="stylesheet" href="../../ext/bootstrap/scrollToTop.css" /><script type="text/javascript" src="../../ext/bootstrap/bootstrap.bundle.min.js"></script><script type="text/javascript" src="../../ext/bootstrap/jquery-3.2.1.slim.min.js"></script><script type="text/javascript" src="../../ext/bootstrap/sidebar.js"></script><script type="text/javascript" src="../../ext/bootstrap/doc.min.js"></script><script type="text/javascript" src="../../ext/bootstrap/scrollToTop.js"></script><script type="text/javascript" src="../../ext/nomnoml/graphre.js"></script><script type="text/javascript" src="../../ext/nomnoml/nomnoml.min.js"></script><link type="text/css" rel="stylesheet" href="../../timingExtensionStyle.css" /><script type="text/javascript" src="../../timingExtensionToggle.js"></script></head><body><div id="toggle-button"><img id="toggle-on" src="../../timing-on.svg" height="24" width="24" style="display:none" /><img id="toggle-off" src="../../timing-off.svg" height="24" width="24" /></div><span class="breadcrumbs"><a href="../Specs.html">Securities API</a> &gt; <a href="RegistryRecordsUpdate.html">Registry Records Update</a> &gt;</span><div class="container-fluid"><div class="container-xxl my-md-4 bd-layout"><main class="bd-main order-1"><div class="bd-toc mt-4 mb-5 my-md-0 ps-xl-3 mb-lg-5 text-muted"><div class="row my-2 pb-2 border-bottom"><div class="col-9"><strong class="h6">On this page</strong></div><div class="col-2"><i id="example-summary-badge" class="fa fa-list-check"></i></div></div><nav id="table-of-contents" class="js-toc toc toc-right" /></div><div class="bd-content ps-lg-4" id="content">
+<h1>Обновление записей реестра ФИ</h1>
+<hr />
+
+<h2>Описание</h2>
+
+<p>
+    Описание...
+</p>
+
+<h2>Примеры</h2>
+
+
+
+<h3>Happy path</h3>
+
+<div xmlns:c="http://www.concordion.org/2007/concordion" name="Обновление существующего реестра" cmdId="9864cda3-7f88-4277-906c-9d99266c2510" c:example="Обновление существующего реестра" c:status="ExpectedToPass" e:example="" class="exam-example mb-3" data-type="example" id="Обновление существующего реестра" data-summary-success="3" data-summary-ignore="0" data-summary-failure="0" data-summary-exception="0" data-summary-status="ExpectedToPass"><div data-bs-toggle="collapse" data-bs-target="#ebd565850-21c1-4e5b-a608-46ee415734f1" aria-expanded="true"><h4 style="visibility: hidden; height:0;" class="test-class"><i class="example-badge fa fa-check m-1 text-success"></i>Обновление существующего реестра</h4><i class="far fa-caret-square-down"></i><span> </span><a class="bd-example-title text-muted fw-lighter">Обновление существующего реестра</a></div><div class="bd-example collapse show rounded bg-light bg-gradient" id="ebd565850-21c1-4e5b-a608-46ee415734f1"><div cmdId="146114b4-4657-437f-a215-2b5d2ba307be" e:before-each="">
+    <div cmdId="9c6edd02-da08-4e62-b895-9bc1bb09e7e1" e:given="" class="given"><p class="lead text-primary">Given</p><hr />
+        <pre var="date1" value="{{today 'yyyy-MM-dd' minus='1 day'}}" cmdId="b6ada3bb-8ec2-4abc-80b3-150e9672dea2" e:set="" hidden="true"> </pre><pre var="date1" value="{{today 'yyyy-MM-dd' minus='1 day'}}" hidden="true" cmdId="b6ada3bb-8ec2-4abc-80b3-150e9672dea2" e:set="">2024-04-01</pre>
+        <pre var="date2" value="{{today 'yyyy-MM-dd' plus='1 day'}}" cmdId="c2e17040-7855-46c4-af36-97cf08cbce61" e:set="" hidden="true"> </pre><pre var="date2" value="{{today 'yyyy-MM-dd' plus='1 day'}}" hidden="true" cmdId="c2e17040-7855-46c4-af36-97cf08cbce61" e:set="">2024-04-03</pre>
+
+        <div name="md.security.registry.events" hidden="" cmdId="2dfb8839-95a2-48d7-9d09-2d0cac68be46" e:mq-purge=""><table class="table table-sm caption-top"><caption><i class="far fa-envelope-open me-1"> </i><span>md.security.registry.events purged</span></caption></table></div>
+        <div name="md.security.registry-records.data" hidden="" cmdId="bd99fc86-1cf7-4b7d-af02-0b176bc8fad2" e:mq-purge=""><table class="table table-sm caption-top"><caption><i class="far fa-envelope-open me-1"> </i><span>md.security.registry-records.data purged</span></caption></table></div>
+        <div name="md.security.registry-records.data.dlq" hidden="" cmdId="090f8389-19c9-4415-ad80-0282b4731d40" e:mq-purge=""><table class="table table-sm caption-top"><caption><i class="far fa-envelope-open me-1"> </i><span>md.security.registry-records.data.dlq purged</span></caption></table></div>
+        <pre tables="registry,registry_record" hidden="" cmdId="23d309ea-e01b-4b3f-acff-e6e5cd9def35" e:db-clean="">registry,registry_record</pre>
+    </div>
+</div>
+    <div cmdId="4478c8ee-2016-4164-900b-5277b735e079" e:given="" class="given"><p class="lead text-primary">Given</p><hr />
+        Предварительно заполнены реестры
+        <span dir="/data/db/" datasets="registry-records.xml" cmdId="e39b0009-84db-4e21-97fa-c5b67fcf5e03" e:db-execute=""><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  REGISTRY</caption><thead class="thead-default"><tr><th class="">CODE</th></tr></thead><tbody><tr><td class=""><span>moex-high-tech</span></td></tr><tr><td class=""><span>other-registry</span></td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  REGISTRY_RECORD</caption><thead class="thead-default"><tr><th class="">REGISTRY_ID</th><th class="">ISIN</th><th class="">INCLUDED_AT</th><th class="">EXCLUDED_AT</th></tr></thead><tbody><tr><td class=""><span>7</span></td><td class=""><span>ISIN1</span></td><td class=""><span>2000-01-01</span></td><td class=""><span>2001-01-01</span></td></tr><tr><td class=""><span>7</span></td><td class=""><span>ISIN2</span></td><td class=""><span>2020-01-01</span></td><td class=""><span>(null)</span></td></tr><tr><td class=""><span>7</span></td><td class=""><span>ISIN3</span></td><td class=""><span>2023-01-01</span></td><td class=""><span>(null)</span></td></tr><tr><td class=""><span>7</span></td><td class=""><span>ISIN4</span></td><td class=""><span>2019-01-01</span></td><td class=""><span>2020-01-01</span></td></tr><tr><td class=""><span>7</span></td><td class=""><span>ISIN5</span></td><td class=""><span>2024-04-01</span></td><td class=""><span>(null)</span></td></tr><tr><td class=""><span>7</span></td><td class=""><span>ISIN6</span></td><td class=""><span>2024-04-03</span></td><td class=""><span>(null)</span></td></tr><tr><td class=""><span>8</span></td><td class=""><span>ISIN1</span></td><td class=""><span>2000-01-01</span></td><td class=""><span>2001-01-01</span></td></tr></tbody></table></span>
+    </div>
+
+    <div cmdId="fed59ec8-5482-43ea-a155-0ba42ebfda93" e:when="" class="when"><p class="lead text-warning">When</p><hr />
+        На вход пришло событие:
+        <div class="mq-send">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope me-1"> </i><span>md.security.registry-records.data</span></caption>
+        <tbody> 
+<tr><td class="exp-body"><div class="json">{
+  "registry": "moex-high-tech",
+  "records": [{
+    "isin": "ISIN1",
+    "includedAt": "2001-01-01",
+    "excludedAt": "2002-01-01"
+  }, {
+    "isin": "NEW_ISIN1",
+    "includedAt": "2000-01-01",
+    "excludedAt": "2001-01-01"
+  }, {
+    "isin": "NEW_ISIN2",
+    "includedAt": "2001-01-01",
+    "excludedAt": "2002-01-01"
+  }, {
+    "isin": "NEW_ISIN3",
+    "includedAt": "2002-01-01",
+    "excludedAt": "2003-01-01"
+  }]
+}</div></td></tr> </tbody>
+    </table>
+</div>
+    </div>
+
+    <div cmdId="b731a41a-da66-4b3f-84f4-d9595412004c" e:then="" class="then"><p class="lead text-success">Then</p><hr />
+        События обработаны:
+        <div class="mq-check">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.registry-records.data</span></caption>
+        <tbody> <tr><td class="exp-body">EMPTY</td></tr> </tbody>
+    </table>
+</div>
+
+        Реестр c соответствующим кодом перезаписан:
+        <table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  registry_record</caption><thead class="thead-default"><tr><th class="">registry_id</th><th class="">isin</th><th class="">included_at</th><th class="">excluded_at</th></tr></thead><tbody><tr><td class=" table-success"><span title="7" data-toggle="tooltip" data-placement="top" style="">7</span></td><td class=" table-success"><span title="ISIN1" data-toggle="tooltip" data-placement="top" style="">ISIN1</span></td><td class=" table-success"><span title="2001-01-01" data-toggle="tooltip" data-placement="top" style="">2001-01-01 00:00:00.000</span></td><td class=" table-success"><span title="2002-01-01" data-toggle="tooltip" data-placement="top" style="">2002-01-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="7" data-toggle="tooltip" data-placement="top" style="">7</span></td><td class=" table-success"><span title="NEW_ISIN1" data-toggle="tooltip" data-placement="top" style="">NEW_ISIN1</span></td><td class=" table-success"><span title="2000-01-01" data-toggle="tooltip" data-placement="top" style="">2000-01-01 00:00:00.000</span></td><td class=" table-success"><span title="2001-01-01" data-toggle="tooltip" data-placement="top" style="">2001-01-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="7" data-toggle="tooltip" data-placement="top" style="">7</span></td><td class=" table-success"><span title="NEW_ISIN2" data-toggle="tooltip" data-placement="top" style="">NEW_ISIN2</span></td><td class=" table-success"><span title="2001-01-01" data-toggle="tooltip" data-placement="top" style="">2001-01-01 00:00:00.000</span></td><td class=" table-success"><span title="2002-01-01" data-toggle="tooltip" data-placement="top" style="">2002-01-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="7" data-toggle="tooltip" data-placement="top" style="">7</span></td><td class=" table-success"><span title="NEW_ISIN3" data-toggle="tooltip" data-placement="top" style="">NEW_ISIN3</span></td><td class=" table-success"><span title="2002-01-01" data-toggle="tooltip" data-placement="top" style="">2002-01-01 00:00:00.000</span></td><td class=" table-success"><span title="2003-01-01" data-toggle="tooltip" data-placement="top" style="">2003-01-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="8" data-toggle="tooltip" data-placement="top" style="">8</span></td><td class=" table-success"><span title="ISIN1" data-toggle="tooltip" data-placement="top" style="">ISIN1</span></td><td class=" table-success"><span title="2000-01-01" data-toggle="tooltip" data-placement="top" style="">2000-01-01 00:00:00.000</span></td><td class=" table-success"><span title="2001-01-01" data-toggle="tooltip" data-placement="top" style="">2001-01-01 00:00:00.000</span></td></tr></tbody></table>
+
+        Отправлено событие Реестра:
+        <div class="mq-check">
+        <table class="table table-sm caption-top">
+            <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.registry.events</span></caption>
+            <tbody>     
+    <tr><td class="exp-body"><div class="json rest-success">{
+  "registry": "moex-high-tech",
+  "created": [{
+    "isin": "NEW_ISIN1",
+    "includedAt": "2000-01-01",
+    "excludedAt": "2001-01-01"
+  }, {
+    "isin": "NEW_ISIN2",
+    "includedAt": "2001-01-01",
+    "excludedAt": "2002-01-01"
+  }, {
+    "isin": "NEW_ISIN3",
+    "includedAt": "2002-01-01",
+    "excludedAt": "2003-01-01"
+  }],
+  "updated": [{
+    "isin": "ISIN1",
+    "includedAt": "2001-01-01",
+    "excludedAt": "2002-01-01"
+  }],
+  "deleted": [{
+    "isin": "ISIN2",
+    "includedAt": "2020-01-01"
+  }, {
+    "isin": "ISIN3",
+    "includedAt": "2023-01-01"
+  }, {
+    "isin": "ISIN4",
+    "includedAt": "2019-01-01",
+    "excludedAt": "2020-01-01"
+  }, {
+    "isin": "ISIN5",
+    "includedAt": "2024-04-01"
+  }, {
+    "isin": "ISIN6",
+    "includedAt": "2024-04-03"
+  }]
+}</div></td></tr> </tbody>
+        </table>
+    </div>
+    </div>
+</div><div class="time-fig"><p>1s 202ms</p></div></div>
+
+<div xmlns:c="http://www.concordion.org/2007/concordion" name="Новый реестр" cmdId="f0359ea5-4988-4a68-aab4-ed55ae69a368" c:example="Новый реестр" c:status="ExpectedToPass" e:example="" class="exam-example mb-3" data-type="example" id="Новый реестр" data-summary-success="4" data-summary-ignore="0" data-summary-failure="0" data-summary-exception="0" data-summary-status="ExpectedToPass"><div data-bs-toggle="collapse" data-bs-target="#ead801330-6a53-4284-bed9-8c75de1355fa" aria-expanded="true"><h4 style="visibility: hidden; height:0;" class="test-class"><i class="example-badge fa fa-check m-1 text-success"></i>Новый реестр</h4><i class="far fa-caret-square-down"></i><span> </span><a class="bd-example-title text-muted fw-lighter">Новый реестр</a></div><div class="bd-example collapse show rounded bg-light bg-gradient" id="ead801330-6a53-4284-bed9-8c75de1355fa"><div cmdId="146114b4-4657-437f-a215-2b5d2ba307be" e:before-each="">
+    <div cmdId="9c6edd02-da08-4e62-b895-9bc1bb09e7e1" e:given="" class="given"><p class="lead text-primary">Given</p><hr />
+        <pre var="date1" value="{{today 'yyyy-MM-dd' minus='1 day'}}" cmdId="b6ada3bb-8ec2-4abc-80b3-150e9672dea2" e:set="" hidden="true"> </pre><pre var="date1" value="{{today 'yyyy-MM-dd' minus='1 day'}}" hidden="true" cmdId="b6ada3bb-8ec2-4abc-80b3-150e9672dea2" e:set="">2024-04-01</pre>
+        <pre var="date2" value="{{today 'yyyy-MM-dd' plus='1 day'}}" cmdId="c2e17040-7855-46c4-af36-97cf08cbce61" e:set="" hidden="true"> </pre><pre var="date2" value="{{today 'yyyy-MM-dd' plus='1 day'}}" hidden="true" cmdId="c2e17040-7855-46c4-af36-97cf08cbce61" e:set="">2024-04-03</pre>
+
+        <div name="md.security.registry.events" hidden="" cmdId="2dfb8839-95a2-48d7-9d09-2d0cac68be46" e:mq-purge=""><table class="table table-sm caption-top"><caption><i class="far fa-envelope-open me-1"> </i><span>md.security.registry.events purged</span></caption></table></div>
+        <div name="md.security.registry-records.data" hidden="" cmdId="bd99fc86-1cf7-4b7d-af02-0b176bc8fad2" e:mq-purge=""><table class="table table-sm caption-top"><caption><i class="far fa-envelope-open me-1"> </i><span>md.security.registry-records.data purged</span></caption></table></div>
+        <div name="md.security.registry-records.data.dlq" hidden="" cmdId="090f8389-19c9-4415-ad80-0282b4731d40" e:mq-purge=""><table class="table table-sm caption-top"><caption><i class="far fa-envelope-open me-1"> </i><span>md.security.registry-records.data.dlq purged</span></caption></table></div>
+        <pre tables="registry,registry_record" hidden="" cmdId="23d309ea-e01b-4b3f-acff-e6e5cd9def35" e:db-clean="">registry,registry_record</pre>
+    </div>
+</div>
+    <div cmdId="755d1c0d-ea9e-41d9-879b-93d8ff75fe38" e:given="" class="given"><p class="lead text-primary">Given</p><hr />
+        Предварительно заполнены реестры
+        <span dir="/data/db/" datasets="registry-records.xml" cmdId="6c9b428c-6652-41b8-8dc0-ab8dcfd73436" e:db-execute=""><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  REGISTRY</caption><thead class="thead-default"><tr><th class="">CODE</th></tr></thead><tbody><tr><td class=""><span>moex-high-tech</span></td></tr><tr><td class=""><span>other-registry</span></td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  REGISTRY_RECORD</caption><thead class="thead-default"><tr><th class="">REGISTRY_ID</th><th class="">ISIN</th><th class="">INCLUDED_AT</th><th class="">EXCLUDED_AT</th></tr></thead><tbody><tr><td class=""><span>9</span></td><td class=""><span>ISIN1</span></td><td class=""><span>2000-01-01</span></td><td class=""><span>2001-01-01</span></td></tr><tr><td class=""><span>9</span></td><td class=""><span>ISIN2</span></td><td class=""><span>2020-01-01</span></td><td class=""><span>(null)</span></td></tr><tr><td class=""><span>9</span></td><td class=""><span>ISIN3</span></td><td class=""><span>2023-01-01</span></td><td class=""><span>(null)</span></td></tr><tr><td class=""><span>9</span></td><td class=""><span>ISIN4</span></td><td class=""><span>2019-01-01</span></td><td class=""><span>2020-01-01</span></td></tr><tr><td class=""><span>9</span></td><td class=""><span>ISIN5</span></td><td class=""><span>2024-04-01</span></td><td class=""><span>(null)</span></td></tr><tr><td class=""><span>9</span></td><td class=""><span>ISIN6</span></td><td class=""><span>2024-04-03</span></td><td class=""><span>(null)</span></td></tr><tr><td class=""><span>10</span></td><td class=""><span>ISIN1</span></td><td class=""><span>2000-01-01</span></td><td class=""><span>2001-01-01</span></td></tr></tbody></table></span>
+    </div>
+
+    <div cmdId="cd459249-8e70-4f88-9447-1175bc6a3022" e:when="" class="when"><p class="lead text-warning">When</p><hr />
+        На вход пришло событие:
+        <div class="mq-send">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope me-1"> </i><span>md.security.registry-records.data</span></caption>
+        <tbody> 
+<tr><td class="exp-body"><div class="json">{
+  "registry": "new-registry",
+  "records": [{
+    "isin": "ISIN1",
+    "includedAt": "2001-01-01",
+    "excludedAt": "2002-01-01"
+  }, {
+    "isin": "NEW_ISIN1",
+    "includedAt": "2000-01-01",
+    "excludedAt": "2001-01-01"
+  }, {
+    "isin": "NEW_ISIN2",
+    "includedAt": "2001-01-01",
+    "excludedAt": "2002-01-01"
+  }, {
+    "isin": "NEW_ISIN3",
+    "includedAt": "2002-01-01",
+    "excludedAt": "2003-01-01"
+  }]
+}</div></td></tr> </tbody>
+    </table>
+</div>
+    </div>
+
+    <div cmdId="51f0c68a-4f00-423f-852e-b5e8d35e3d8c" e:then="" class="then"><p class="lead text-success">Then</p><hr />
+        События обработаны:
+        <div class="mq-check">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.registry-records.data</span></caption>
+        <tbody> <tr><td class="exp-body">EMPTY</td></tr> </tbody>
+    </table>
+</div>
+
+        Реестр c соответствующим кодом сохранен:
+        <table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  registry</caption><thead class="thead-default"><tr><th class="">code</th></tr></thead><tbody><tr><td class=" table-success"><span title="moex-high-tech" data-toggle="tooltip" data-placement="top" style="">moex-high-tech</span></td></tr><tr><td class=" table-success"><span title="other-registry" data-toggle="tooltip" data-placement="top" style="">new-registry</span></td></tr><tr><td class=" table-success"><span title="new-registry" data-toggle="tooltip" data-placement="top" style="">other-registry</span></td></tr></tbody></table>
+        <table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  registry_record</caption><thead class="thead-default"><tr><th class="">registry_id</th><th class="">isin</th><th class="">included_at</th><th class="">excluded_at</th></tr></thead><tbody><tr><td class=" table-success"><span title="9" data-toggle="tooltip" data-placement="top" style="">9</span></td><td class=" table-success"><span title="ISIN1" data-toggle="tooltip" data-placement="top" style="">ISIN1</span></td><td class=" table-success"><span title="2000-01-01" data-toggle="tooltip" data-placement="top" style="">2000-01-01 00:00:00.000</span></td><td class=" table-success"><span title="2001-01-01" data-toggle="tooltip" data-placement="top" style="">2001-01-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="9" data-toggle="tooltip" data-placement="top" style="">9</span></td><td class=" table-success"><span title="ISIN2" data-toggle="tooltip" data-placement="top" style="">ISIN2</span></td><td class=" table-success"><span title="2020-01-01" data-toggle="tooltip" data-placement="top" style="">2020-01-01 00:00:00.000</span></td><td class=" table-success"><span title="(null)" data-toggle="tooltip" data-placement="top" style="">(null)</span></td></tr><tr><td class=" table-success"><span title="9" data-toggle="tooltip" data-placement="top" style="">9</span></td><td class=" table-success"><span title="ISIN3" data-toggle="tooltip" data-placement="top" style="">ISIN3</span></td><td class=" table-success"><span title="2023-01-01" data-toggle="tooltip" data-placement="top" style="">2023-01-01 00:00:00.000</span></td><td class=" table-success"><span title="(null)" data-toggle="tooltip" data-placement="top" style="">(null)</span></td></tr><tr><td class=" table-success"><span title="9" data-toggle="tooltip" data-placement="top" style="">9</span></td><td class=" table-success"><span title="ISIN4" data-toggle="tooltip" data-placement="top" style="">ISIN4</span></td><td class=" table-success"><span title="2019-01-01" data-toggle="tooltip" data-placement="top" style="">2019-01-01 00:00:00.000</span></td><td class=" table-success"><span title="2020-01-01" data-toggle="tooltip" data-placement="top" style="">2020-01-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="9" data-toggle="tooltip" data-placement="top" style="">9</span></td><td class=" table-success"><span title="ISIN5" data-toggle="tooltip" data-placement="top" style="">ISIN5</span></td><td class=" table-success"><span title="2024-04-01" data-toggle="tooltip" data-placement="top" style="">2024-04-01 00:00:00.000</span></td><td class=" table-success"><span title="(null)" data-toggle="tooltip" data-placement="top" style="">(null)</span></td></tr><tr><td class=" table-success"><span title="9" data-toggle="tooltip" data-placement="top" style="">9</span></td><td class=" table-success"><span title="ISIN6" data-toggle="tooltip" data-placement="top" style="">ISIN6</span></td><td class=" table-success"><span title="2024-04-03" data-toggle="tooltip" data-placement="top" style="">2024-04-03 00:00:00.000</span></td><td class=" table-success"><span title="(null)" data-toggle="tooltip" data-placement="top" style="">(null)</span></td></tr><tr><td class=" table-success"><span title="10" data-toggle="tooltip" data-placement="top" style="">10</span></td><td class=" table-success"><span title="ISIN1" data-toggle="tooltip" data-placement="top" style="">ISIN1</span></td><td class=" table-success"><span title="2000-01-01" data-toggle="tooltip" data-placement="top" style="">2000-01-01 00:00:00.000</span></td><td class=" table-success"><span title="2001-01-01" data-toggle="tooltip" data-placement="top" style="">2001-01-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="11" data-toggle="tooltip" data-placement="top" style="">11</span></td><td class=" table-success"><span title="ISIN1" data-toggle="tooltip" data-placement="top" style="">ISIN1</span></td><td class=" table-success"><span title="2001-01-01" data-toggle="tooltip" data-placement="top" style="">2001-01-01 00:00:00.000</span></td><td class=" table-success"><span title="2002-01-01" data-toggle="tooltip" data-placement="top" style="">2002-01-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="11" data-toggle="tooltip" data-placement="top" style="">11</span></td><td class=" table-success"><span title="NEW_ISIN1" data-toggle="tooltip" data-placement="top" style="">NEW_ISIN1</span></td><td class=" table-success"><span title="2000-01-01" data-toggle="tooltip" data-placement="top" style="">2000-01-01 00:00:00.000</span></td><td class=" table-success"><span title="2001-01-01" data-toggle="tooltip" data-placement="top" style="">2001-01-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="11" data-toggle="tooltip" data-placement="top" style="">11</span></td><td class=" table-success"><span title="NEW_ISIN2" data-toggle="tooltip" data-placement="top" style="">NEW_ISIN2</span></td><td class=" table-success"><span title="2001-01-01" data-toggle="tooltip" data-placement="top" style="">2001-01-01 00:00:00.000</span></td><td class=" table-success"><span title="2002-01-01" data-toggle="tooltip" data-placement="top" style="">2002-01-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="11" data-toggle="tooltip" data-placement="top" style="">11</span></td><td class=" table-success"><span title="NEW_ISIN3" data-toggle="tooltip" data-placement="top" style="">NEW_ISIN3</span></td><td class=" table-success"><span title="2002-01-01" data-toggle="tooltip" data-placement="top" style="">2002-01-01 00:00:00.000</span></td><td class=" table-success"><span title="2003-01-01" data-toggle="tooltip" data-placement="top" style="">2003-01-01 00:00:00.000</span></td></tr></tbody></table>
+
+        Отправлены события Реестра:
+        <div class="mq-check">
+        <table class="table table-sm caption-top">
+            <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.registry.events</span></caption>
+            <tbody>     
+    <tr><td class="exp-body"><div class="json rest-success">{
+  "registry": "new-registry",
+  "created": [{
+    "isin": "ISIN1",
+    "includedAt": "2001-01-01",
+    "excludedAt": "2002-01-01"
+  }, {
+    "isin": "NEW_ISIN1",
+    "includedAt": "2000-01-01",
+    "excludedAt": "2001-01-01"
+  }, {
+    "isin": "NEW_ISIN2",
+    "includedAt": "2001-01-01",
+    "excludedAt": "2002-01-01"
+  }, {
+    "isin": "NEW_ISIN3",
+    "includedAt": "2002-01-01",
+    "excludedAt": "2003-01-01"
+  }],
+  "updated": [],
+  "deleted": []
+}</div></td></tr> </tbody>
+        </table>
+    </div>
+    </div>
+</div><div class="time-fig"><p>1s 215ms</p></div></div>
+
+<h3>Ошибки</h3>
+
+<div xmlns:c="http://www.concordion.org/2007/concordion" name="Невалидный формат входящего сообщения" cmdId="ad7737e3-4295-408f-b4ea-b652a8604207" c:example="Невалидный формат входящего сообщения" c:status="ExpectedToPass" e:example="" class="exam-example mb-3" data-type="example" id="Невалидный формат входящего сообщения" data-summary-success="4" data-summary-ignore="0" data-summary-failure="0" data-summary-exception="0" data-summary-status="ExpectedToPass"><div data-bs-toggle="collapse" data-bs-target="#e47cd91bb-cd77-4dfc-8426-9e00784711ad" aria-expanded="true"><h4 style="visibility: hidden; height:0;" class="test-class"><i class="example-badge fa fa-check m-1 text-success"></i>Невалидный формат входящего сообщения</h4><i class="far fa-caret-square-down"></i><span> </span><a class="bd-example-title text-muted fw-lighter">Невалидный формат входящего сообщения</a></div><div class="bd-example collapse show rounded bg-light bg-gradient" id="e47cd91bb-cd77-4dfc-8426-9e00784711ad"><div cmdId="146114b4-4657-437f-a215-2b5d2ba307be" e:before-each="">
+    <div cmdId="9c6edd02-da08-4e62-b895-9bc1bb09e7e1" e:given="" class="given"><p class="lead text-primary">Given</p><hr />
+        <pre var="date1" value="{{today 'yyyy-MM-dd' minus='1 day'}}" cmdId="b6ada3bb-8ec2-4abc-80b3-150e9672dea2" e:set="" hidden="true"> </pre><pre var="date1" value="{{today 'yyyy-MM-dd' minus='1 day'}}" hidden="true" cmdId="b6ada3bb-8ec2-4abc-80b3-150e9672dea2" e:set="">2024-04-01</pre>
+        <pre var="date2" value="{{today 'yyyy-MM-dd' plus='1 day'}}" cmdId="c2e17040-7855-46c4-af36-97cf08cbce61" e:set="" hidden="true"> </pre><pre var="date2" value="{{today 'yyyy-MM-dd' plus='1 day'}}" hidden="true" cmdId="c2e17040-7855-46c4-af36-97cf08cbce61" e:set="">2024-04-03</pre>
+
+        <div name="md.security.registry.events" hidden="" cmdId="2dfb8839-95a2-48d7-9d09-2d0cac68be46" e:mq-purge=""><table class="table table-sm caption-top"><caption><i class="far fa-envelope-open me-1"> </i><span>md.security.registry.events purged</span></caption></table></div>
+        <div name="md.security.registry-records.data" hidden="" cmdId="bd99fc86-1cf7-4b7d-af02-0b176bc8fad2" e:mq-purge=""><table class="table table-sm caption-top"><caption><i class="far fa-envelope-open me-1"> </i><span>md.security.registry-records.data purged</span></caption></table></div>
+        <div name="md.security.registry-records.data.dlq" hidden="" cmdId="090f8389-19c9-4415-ad80-0282b4731d40" e:mq-purge=""><table class="table table-sm caption-top"><caption><i class="far fa-envelope-open me-1"> </i><span>md.security.registry-records.data.dlq purged</span></caption></table></div>
+        <pre tables="registry,registry_record" hidden="" cmdId="23d309ea-e01b-4b3f-acff-e6e5cd9def35" e:db-clean="">registry,registry_record</pre>
+    </div>
+</div>
+    <div cmdId="107f9981-0687-4300-9570-4393ffc0c7f9" e:when="" class="when"><p class="lead text-warning">When</p><hr />
+        На вход пришло событие:
+        <div class="mq-send">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope me-1"> </i><span>md.security.registry-records.data</span></caption>
+        <tbody> 
+<tr><td class="exp-body"><div class="json">{}</div></td></tr> </tbody>
+    </table>
+</div>
+    </div>
+
+    <div cmdId="f91c43ef-9db4-446e-a5f1-6117bf90b77d" e:then="" class="then"><p class="lead text-success">Then</p><hr />
+        События обработаны:
+        <div class="mq-check">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.registry-records.data</span></caption>
+        <tbody> <tr><td class="exp-body">EMPTY</td></tr> </tbody>
+    </table>
+</div>
+
+        Записи не сохранены в реестр:
+        <table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  registry_record</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0" class="table-success">EMPTY</td></tr></tbody></table>
+
+        События реестра не отправлены:
+        <div class="mq-check">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.registry.events</span></caption>
+        <tbody> <tr><td class="exp-body">EMPTY</td></tr> </tbody>
+    </table>
+</div>
+
+        Cобытие перенаправлено в DLQ
+        <div class="mq-check">
+        <table class="table table-sm caption-top">
+            <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.registry-records.data.dlq</span></caption>
+            <tbody> 
+<tr><td class="exp-body"><div class="json rest-success">{}</div></td></tr> </tbody>
+        </table>
+    </div>
+    </div>
+</div><div class="time-fig"><p>1s 216ms</p></div></div>
+
+</div></main></div></div><div class="footer">Results generated by <a href="http://www.concordion.org" style="font-weight: bold; text-decoration: none; color: #89C;">Concordion</a><div class="testTime">in 3640 ms on 02-апр.-2024 at 12:45:46 MSK</div></div></body>
+<button id="btnToTop" onclick="topFunction()" type="button" class="btn btn-light btn-sm text-muted me-1"><i class="fa fa-arrow-up"></i></button></html>

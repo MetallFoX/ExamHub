@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <style type="text/css">
+        h1 {
+            margin-bottom: 0;
+        }
+
+        .levelkey {
+            margin-top: 25px;
+            padding 0;
+            border-collapse: collapse;
+        }
+
+        .levelkey td {
+            width: 48px;
+            border: 1px solid gray;
+            text-align: center;
+        }
+
+        .alignleft {
+            display: inline-block;
+        }
+
+        .floatright {
+            display: inline-block;
+            float: right;
+            margin-right: 40px;
+        }
+
+        .line {
+            font-family: monospace;
+        }
+
+        .info {
+        }
+
+        .info-color {
+            background-color: White;
+        }
+
+        .debug {
+        }
+
+        .debug-color {
+            background-color: Gainsboro;
+        }
+
+        .trace {
+        }
+
+        .trace-color {
+            background-color: Khaki;
+        }
+
+        .warn {
+        }
+
+        .warn-color {
+            background-color: Orange;
+        }
+
+        .error {
+        }
+
+        .error-color {
+            background-color: #ffbbbb;
+        }
+
+        .line-numbers {
+            background: #e9e9e9;
+            border-right: 1px solid #666;
+            display: inline-block;
+            width: 40px;
+            text-align: right;
+            padding: 0 5px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .split-debug-levels {
+            border-bottom: none;
+        }
+
+        .split-trace-levels {
+            border-bottom: none;
+        }
+
+        div.header-fixed {
+            background-color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding-left: 10px;
+            z-index: 100000;
+        }
+
+        ul.content {
+            margin-top: 125px;
+            padding-left: 0;
+            white-space: nowrap;
+            list-style-type: none;
+        }
+
+        pre {
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+        }
+
+    </style>
+    <script type="text/javascript">
+        function filterTestWorker(cb) {
+            doFilter("test-worker", cb.checked);
+        }
+
+        function filterDebug(cb) {
+            doFilter("debug", cb.checked);
+            doSplit("split-debug-levels", cb.checked);
+        }
+
+        function filterTrace(cb) {
+            doFilter("trace", cb.checked);
+            doSplit("split-trace-levels", cb.checked);
+        }
+
+        function doFilter(className, checked) {
+            var setting = checked ? "inherit" : "none";
+
+            var all = document.getElementsByClassName(className);
+            for (var i = 0; i < all.length; i++) {
+                all[i].style.display = setting;
+            }
+        }
+
+        function doSplit(className, checked) {
+            var setting = checked ? "none" : "1px dotted black";
+
+            var all = document.getElementsByClassName(className);
+            for (var i = 0; i < all.length; i++) {
+                all[i].style.borderBottom = setting;
+            }
+        }
+
+        function filter() {
+            let input, filter, ul, lines, line;
+            input = document.getElementById("search");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("content");
+            lines = ul.getElementsByTagName("li");
+
+            for (let i = 0; i < lines.length; i++) {
+                line = lines[i];
+                if (line) {
+                    let txtValue = line.textContent || line.innerText;
+                    line.style.display = txtValue.toUpperCase().indexOf(filter) > -1 ? "" : "none";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="header-fixed">
+    <h1 class="alignleft">SecurityUpdateDlq.log</h1>
+    <table class="levelkey floatright">
+        <tr>
+            <td class="trace-color">Trace</td>
+            <td class="debug-color">Debug</td>
+            <td class="info-color">Info</td>
+            <td class="warn-color">Warn</td>
+            <td class="error-color">Error</td>
+        </tr>
+    </table>
+
+    <p>
+        <label class="alignleft"><input id="chkDebug" type="checkbox" onclick="filterDebug(this);" checked>DEBUG</label>
+        <label class="alignleft"><input id="chkTrace" type="checkbox" onclick="filterTrace(this);" checked>TRACE</label>
+        <label class="alignleft"><input id="chkTestWorker" type="checkbox" onclick="filterTestWorker(this);" checked>Test worker</label>
+        <input type="text" id="search" onkeyup="filter()" placeholder="Search...">
+        <span class="floatright"><a href="SecurityUpdateDlq.log">Raw Log File</a></span>
+    </p>
+    <hr style="clear: both;">
+</div>
+<ul class="content" id="content">
+    <li class="line info info-color test-worker"><div class="line-numbers">1</div><pre>16:18:09.541 [Test worker] INFO  o.s.b.w.e.tomcat.GracefulShutdown.shutDownGracefully - Commencing graceful shutdown. Waiting for active requests to complete</pre></li>
+<li class="line info info-color tomcat-shutdown"><div class="line-numbers">2</div><pre>16:18:09.551 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol.log - Pausing ProtocolHandler ["http-nio-35901"]</pre></li>
+<li class="line info info-color tomcat-shutdown"><div class="line-numbers">3</div><pre>16:18:10.560 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown.doShutdown - Graceful shutdown complete</pre></li>
+<li class="line info info-color test-worker"><div class="line-numbers">4</div><pre>16:18:10.564 [Test worker] INFO  o.a.coyote.http11.Http11NioProtocol.log - Pausing ProtocolHandler ["http-nio-35901"]</pre></li>
+<li class="line info info-color test-worker"><div class="line-numbers">5</div><pre>16:18:10.564 [Test worker] INFO  o.a.catalina.core.StandardService.log - Stopping service [Tomcat]</pre></li>
+<li class="line info info-color test-worker"><div class="line-numbers">6</div><pre>16:18:10.569 [Test worker] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Destroying Spring FrameworkServlet 'dispatcherServlet'</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[lettuce-timer-3-1"><div class="line-numbers">7</div><pre>16:18:10.594 [Test worker] WARN  o.a.c.loader.WebappClassLoaderBase.log - The web application [ROOT] appears to have started a thread named [lettuce-timer-3-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[lettuce-timer-3-1"><div class="line-numbers">8</div><pre> java.base@18.0.1.1/java.lang.Thread.sleep(Native Method)</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[lettuce-timer-3-1"><div class="line-numbers">9</div><pre> app//io.netty.util.HashedWheelTimer\$Worker.waitForNextTick(HashedWheelTimer.java:600)</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[lettuce-timer-3-1"><div class="line-numbers">10</div><pre> app//io.netty.util.HashedWheelTimer\$Worker.run(HashedWheelTimer.java:496)</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[lettuce-timer-3-1"><div class="line-numbers">11</div><pre> app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[lettuce-timer-3-1"><div class="line-numbers">12</div><pre> java.base@18.0.1.1/java.lang.Thread.run(Thread.java:833)</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[defaultdispatcher-worker-1"><div class="line-numbers">13</div><pre>16:18:10.597 [Test worker] WARN  o.a.c.loader.WebappClassLoaderBase.log - The web application [ROOT] appears to have started a thread named [DefaultDispatcher-worker-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[defaultdispatcher-worker-1"><div class="line-numbers">14</div><pre> java.base@18.0.1.1/jdk.internal.misc.Unsafe.park(Native Method)</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[defaultdispatcher-worker-1"><div class="line-numbers">15</div><pre> java.base@18.0.1.1/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:376)</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[defaultdispatcher-worker-1"><div class="line-numbers">16</div><pre> app//kotlinx.coroutines.scheduling.CoroutineScheduler\$Worker.park(CoroutineScheduler.kt:795)</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[defaultdispatcher-worker-1"><div class="line-numbers">17</div><pre> app//kotlinx.coroutines.scheduling.CoroutineScheduler\$Worker.tryPark(CoroutineScheduler.kt:740)</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[defaultdispatcher-worker-1"><div class="line-numbers">18</div><pre> app//kotlinx.coroutines.scheduling.CoroutineScheduler\$Worker.runWorker(CoroutineScheduler.kt:711)</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[defaultdispatcher-worker-1"><div class="line-numbers">19</div><pre> app//kotlinx.coroutines.scheduling.CoroutineScheduler\$Worker.run(CoroutineScheduler.kt:664)</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[defaultdispatcher-worker-2"><div class="line-numbers">20</div><pre>16:18:10.598 [Test worker] WARN  o.a.c.loader.WebappClassLoaderBase.log - The web application [ROOT] appears to have started a thread named [DefaultDispatcher-worker-2] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[defaultdispatcher-worker-2"><div class="line-numbers">21</div><pre> java.base@18.0.1.1/jdk.internal.misc.Unsafe.park(Native Method)</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[defaultdispatcher-worker-2"><div class="line-numbers">22</div><pre> java.base@18.0.1.1/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:376)</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[defaultdispatcher-worker-2"><div class="line-numbers">23</div><pre> app//kotlinx.coroutines.scheduling.CoroutineScheduler\$Worker.park(CoroutineScheduler.kt:795)</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[defaultdispatcher-worker-2"><div class="line-numbers">24</div><pre> app//kotlinx.coroutines.scheduling.CoroutineScheduler\$Worker.tryPark(CoroutineScheduler.kt:740)</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[defaultdispatcher-worker-2"><div class="line-numbers">25</div><pre> app//kotlinx.coroutines.scheduling.CoroutineScheduler\$Worker.runWorker(CoroutineScheduler.kt:711)</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[defaultdispatcher-worker-2"><div class="line-numbers">26</div><pre> app//kotlinx.coroutines.scheduling.CoroutineScheduler\$Worker.run(CoroutineScheduler.kt:664)</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[kafka-producer-network-thread-|-producer-1"><div class="line-numbers">27</div><pre>16:18:10.600 [Test worker] WARN  o.a.c.loader.WebappClassLoaderBase.log - The web application [ROOT] appears to have started a thread named [kafka-producer-network-thread | producer-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[kafka-producer-network-thread-|-producer-1"><div class="line-numbers">28</div><pre> java.base@18.0.1.1/sun.nio.ch.KQueue.poll(Native Method)</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[kafka-producer-network-thread-|-producer-1"><div class="line-numbers">29</div><pre> java.base@18.0.1.1/sun.nio.ch.KQueueSelectorImpl.doSelect(KQueueSelectorImpl.java:122)</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[kafka-producer-network-thread-|-producer-1"><div class="line-numbers">30</div><pre> java.base@18.0.1.1/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:129)</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[kafka-producer-network-thread-|-producer-1"><div class="line-numbers">31</div><pre> java.base@18.0.1.1/sun.nio.ch.SelectorImpl.select(SelectorImpl.java:141)</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[kafka-producer-network-thread-|-producer-1"><div class="line-numbers">32</div><pre> app//org.apache.kafka.common.network.Selector.select(Selector.java:873)</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[kafka-producer-network-thread-|-producer-1"><div class="line-numbers">33</div><pre> app//org.apache.kafka.common.network.Selector.poll(Selector.java:465)</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[kafka-producer-network-thread-|-producer-1"><div class="line-numbers">34</div><pre> app//org.apache.kafka.clients.NetworkClient.poll(NetworkClient.java:560)</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[kafka-producer-network-thread-|-producer-1"><div class="line-numbers">35</div><pre> app//org.apache.kafka.clients.producer.internals.Sender.runOnce(Sender.java:328)</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[kafka-producer-network-thread-|-producer-1"><div class="line-numbers">36</div><pre> app//org.apache.kafka.clients.producer.internals.Sender.run(Sender.java:243)</pre></li>
+<li class="line warn warn-color test-worker]-warn--o.a.c.loader.webappclassloaderbase.log---the-web-application-[root]-appears-to-have-started-a-thread-named-[kafka-producer-network-thread-|-producer-1"><div class="line-numbers">37</div><pre> java.base@18.0.1.1/java.lang.Thread.run(Thread.java:833)</pre></li>
+<li class="line info info-color test-worker"><div class="line-numbers">38</div><pre>16:18:10.601 [Test worker] INFO  o.a.coyote.http11.Http11NioProtocol.log - Stopping ProtocolHandler ["http-nio-35901"]</pre></li>
+<li class="line info info-color test-worker"><div class="line-numbers">39</div><pre>16:18:10.604 [Test worker] INFO  o.a.coyote.http11.Http11NioProtocol.log - Destroying ProtocolHandler ["http-nio-35901"]</pre></li>
+<li class="line info info-color org.springframework.kafka.kafkalistenerendpointcontainer#4-0-c-1"><div class="line-numbers">40</div><pre>16:18:10.610 [org.springframework.kafka.KafkaListenerEndpointContainer#4-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: partitions revoked: [md.security.data-0]</pre></li>
+<li class="line info info-color org.springframework.kafka.kafkalistenerendpointcontainer#1-0-c-1"><div class="line-numbers">41</div><pre>16:18:10.610 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: partitions revoked: [md.issuer.events-0]</pre></li>
+<li class="line info info-color org.springframework.kafka.kafkalistenerendpointcontainer#0-0-c-1"><div class="line-numbers">42</div><pre>16:18:10.610 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: partitions revoked: [md.security.assets.data-0]</pre></li>
+<li class="line info info-color org.springframework.kafka.kafkalistenerendpointcontainer#2-0-c-1"><div class="line-numbers">43</div><pre>16:18:10.610 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: partitions revoked: [md.security.registry-records.data-0]</pre></li>
+<li class="line info info-color org.springframework.kafka.kafkalistenerendpointcontainer#3-0-c-1"><div class="line-numbers">44</div><pre>16:18:10.611 [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: partitions revoked: [md.security.data.batch-0]</pre></li>
+<li class="line info info-color org.springframework.kafka.kafkalistenerendpointcontainer#2-0-c-1"><div class="line-numbers">45</div><pre>16:18:10.753 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: Consumer stopped</pre></li>
+<li class="line info info-color org.springframework.kafka.kafkalistenerendpointcontainer#4-0-c-1"><div class="line-numbers">46</div><pre>16:18:10.757 [org.springframework.kafka.KafkaListenerEndpointContainer#4-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: Consumer stopped</pre></li>
+<li class="line info info-color org.springframework.kafka.kafkalistenerendpointcontainer#1-0-c-1"><div class="line-numbers">47</div><pre>16:18:10.759 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: Consumer stopped</pre></li>
+<li class="line info info-color org.springframework.kafka.kafkalistenerendpointcontainer#3-0-c-1"><div class="line-numbers">48</div><pre>16:18:10.761 [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: Consumer stopped</pre></li>
+<li class="line info info-color org.springframework.kafka.kafkalistenerendpointcontainer#0-0-c-1"><div class="line-numbers">49</div><pre>16:18:10.762 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: Consumer stopped</pre></li>
+<li class="line info info-color springapplicationshutdownhook"><div class="line-numbers">50</div><pre>16:18:11.628 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...</pre></li>
+<li class="line info info-color springapplicationshutdownhook"><div class="line-numbers">51</div><pre>16:18:11.654 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.</pre></li>
+
+</ul>
+</div>
+</body>
+</html>

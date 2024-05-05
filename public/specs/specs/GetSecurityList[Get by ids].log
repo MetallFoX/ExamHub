@@ -1,0 +1,387 @@
+20:04:15.433 [Test worker] WARN  i.g.a.c.e.exam.core.ContentVerifier.verify-gIAlu-s - Content verification error
+net.javacrumbs.jsonunit.core.internal.Opentest4jExceptionFactory$JsonAssertError: JSON documents are different:
+Array "" has different length, expected: <3> but was: <1>.
+Array "" has different content. Missing values: [{"id":2,"isin":"ISIN2","name":"Apple Inc. ао","typeCode":"SEC","cfiType":{"fullCode":"DBFUFB","category":{"code":"D","name":"Debt instruments","nameRus":"Долговые инструменты"},"group":{"code":"B","name":"Bonds","nameRus":"Облигации"},"attributes":[{"position":1,"name":"Type of interest","nameRus":"Тип интереса","value":{"code":"F","name":"Fixed Rate","nameRus":"Фиксированная ставка"}},{"position":2,"name":"Guarantee","nameRus":"Гарантия","value":{"code":"U","name":"Unsecured/Unguaranteed","nameRus":"Необеспеченный / Негарантированное"}},{"position":3,"name":"Redemption/Reimbursement","nameRus":"Выкуп / Компенсации","value":{"code":"F","name":"Fixed Maturity","nameRus":"Фиксированная зрелость"}},{"position":4,"name":"Form","nameRus":"Форма","value":{"code":"B","name":"Bearer","nameRus":"Податель"}}]},"active":true,"statusDescription":"В обращении","createdAt":"${json-unit.matches:formattedAndWithin}ISO_LOCAL|$|1m|$|2024-02-05T20:04:15.421","updatedAt":"${json-unit.matches:formattedAndWithin}ISO_LOCAL|$|1m|$|2024-02-05T20:04:15.421","fields":[{"code":"BASE_VALUE","value":"212","timestamp":"2024-01-29T00:00:00","source":"NSD"},{"code":"CFI","value":"DBFUFB","timestamp":"2024-01-29T00:00:00","source":"NSD"},{"code":"FACE_VALUE","value":"233","timestamp":"2024-01-29T00:00:00","source":"NSD"}]}, {"id":3,"isin":"ISIN3","name":"ADIDAS AG ORD SHS","typeCode":"AFORSEC","active":true,"createdAt":"${json-unit.matches:formattedAndWithin}ISO_LOCAL|$|1m|$|2024-02-05T20:04:15.423","updatedAt":"${json-unit.matches:formattedAndWithin}ISO_LOCAL|$|1m|$|2024-02-05T20:04:15.423","fields":[]}], extra values: [], expected: <[{"id":1,"isin":"ISIN1","name":"SOGOU Inc","typeCode":"SEC","cfiType":{"fullCode":"ESVUFR","category":{"code":"E","name":"Equity","nameRus":"Капитал"},"group":{"code":"S","name":"Common/Ordinary shares","nameRus":"Обычные акции"},"attributes":[{"position":1,"name":"Voting right","nameRus":"Право голоса","value":{"code":"V","name":"Voting","nameRus":"Голосование"}},{"position":2,"name":"Ownership","nameRus":"Владение","value":{"code":"U","name":"Free","nameRus":"Свободно"}},{"position":3,"name":"Payment Status","nameRus":"Статус платежа","value":{"code":"F","name":"Fully Paid","nameRus":"Полностью оплачено"}},{"position":4,"name":"Form","nameRus":"Форма","value":{"code":"R","name":"Registered","nameRus":"Зарегистрированный"}}]},"active":true,"statusDescription":"Размещен","createdAt":"${json-unit.matches:formattedAndWithin}ISO_LOCAL|$|1m|$|2024-02-05T20:04:15.421","updatedAt":"${json-unit.matches:formattedAndWithin}ISO_LOCAL|$|1m|$|2024-02-05T20:04:15.421","fields":[{"code":"BASE_VALUE","value":"111","timestamp":"2024-01-29T00:00:00","source":"NSD"},{"code":"CFI","value":"ESVUFR","timestamp":"2024-01-29T00:00:00","source":"NSD"},{"code":"CURRENCY","value":"122","timestamp":"2024-01-29T00:00:00","source":"NSD"},{"code":"FACE_VALUE","value":"132","timestamp":"2024-01-29T00:00:00","source":"NSD"}]},{"id":2,"isin":"ISIN2","name":"Apple Inc. ао","typeCode":"SEC","cfiType":{"fullCode":"DBFUFB","category":{"code":"D","name":"Debt instruments","nameRus":"Долговые инструменты"},"group":{"code":"B","name":"Bonds","nameRus":"Облигации"},"attributes":[{"position":1,"name":"Type of interest","nameRus":"Тип интереса","value":{"code":"F","name":"Fixed Rate","nameRus":"Фиксированная ставка"}},{"position":2,"name":"Guarantee","nameRus":"Гарантия","value":{"code":"U","name":"Unsecured/Unguaranteed","nameRus":"Необеспеченный / Негарантированное"}},{"position":3,"name":"Redemption/Reimbursement","nameRus":"Выкуп / Компенсации","value":{"code":"F","name":"Fixed Maturity","nameRus":"Фиксированная зрелость"}},{"position":4,"name":"Form","nameRus":"Форма","value":{"code":"B","name":"Bearer","nameRus":"Податель"}}]},"active":true,"statusDescription":"В обращении","createdAt":"${json-unit.matches:formattedAndWithin}ISO_LOCAL|$|1m|$|2024-02-05T20:04:15.421","updatedAt":"${json-unit.matches:formattedAndWithin}ISO_LOCAL|$|1m|$|2024-02-05T20:04:15.421","fields":[{"code":"BASE_VALUE","value":"212","timestamp":"2024-01-29T00:00:00","source":"NSD"},{"code":"CFI","value":"DBFUFB","timestamp":"2024-01-29T00:00:00","source":"NSD"},{"code":"FACE_VALUE","value":"233","timestamp":"2024-01-29T00:00:00","source":"NSD"}]},{"id":3,"isin":"ISIN3","name":"ADIDAS AG ORD SHS","typeCode":"AFORSEC","active":true,"createdAt":"${json-unit.matches:formattedAndWithin}ISO_LOCAL|$|1m|$|2024-02-05T20:04:15.423","updatedAt":"${json-unit.matches:formattedAndWithin}ISO_LOCAL|$|1m|$|2024-02-05T20:04:15.423","fields":[]}]> but was: <[{"id":1,"isin":"ISIN1","name":"SOGOU Inc","typeCode":"SEC","cfiType":{"fullCode":"ESVUFR","category":{"code":"E","name":"Equity","nameRus":"Капитал"},"group":{"code":"S","name":"Common/Ordinary shares","nameRus":"Обычные акции"},"attributes":[{"position":1,"name":"Voting right","nameRus":"Право голоса","value":{"code":"V","name":"Voting","nameRus":"Голосование"}},{"position":2,"name":"Ownership","nameRus":"Владение","value":{"code":"U","name":"Free","nameRus":"Свободно"}},{"position":3,"name":"Payment Status","nameRus":"Статус платежа","value":{"code":"F","name":"Fully Paid","nameRus":"Полностью оплачено"}},{"position":4,"name":"Form","nameRus":"Форма","value":{"code":"R","name":"Registered","nameRus":"Зарегистрированный"}}]},"active":true,"statusDescription":"Размещен","createdAt":"2024-02-05T20:04:14.381246","updatedAt":"2024-02-05T20:04:14.381246","fields":[{"code":"BASE_VALUE","value":"111","timestamp":"2024-01-29T00:00:00","source":"NSD"},{"code":"CFI","value":"ESVUFR","timestamp":"2024-01-29T00:00:00","source":"NSD"},{"code":"CURRENCY","value":"122","timestamp":"2024-01-29T00:00:00","source":"NSD"},{"code":"FACE_VALUE","value":"132","timestamp":"2024-01-29T00:00:00","source":"NSD"}]}]>
+
+	at net.javacrumbs.jsonunit.core.internal.Opentest4jExceptionFactory.createException(ExceptionFactory.java:37)
+	at net.javacrumbs.jsonunit.core.internal.ExceptionUtils.createException(ExceptionUtils.java:45)
+	at net.javacrumbs.jsonunit.core.internal.Diff.failIfDifferent(Diff.java:617)
+	at net.javacrumbs.jsonunit.core.internal.Diff.failIfDifferent(Diff.java:612)
+	at net.javacrumbs.jsonunit.JsonAssert.assertJsonPartEquals(JsonAssert.java:84)
+	at net.javacrumbs.jsonunit.JsonAssert.assertJsonEquals(JsonAssert.java:69)
+	at io.github.adven27.concordion.extensions.exam.core.JsonVerifier.assertThat(Content.kt:181)
+	at io.github.adven27.concordion.extensions.exam.core.ContentVerifier$Default.verify-gIAlu-s(Content.kt:122)
+	at io.github.adven27.concordion.extensions.exam.ws.CaseCommand.check(RestCommands.kt:411)
+	at io.github.adven27.concordion.extensions.exam.ws.CaseCommand.check(RestCommands.kt:394)
+	at io.github.adven27.concordion.extensions.exam.ws.CaseCommand.execute(RestCommands.kt:275)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.LocalTextDecorator.process(LocalTextDecorator.java:26)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.ThrowableCatchingDecorator.process(ThrowableCatchingDecorator.java:38)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.CommandCall.execute(CommandCall.java:72)
+	at org.concordion.api.CommandCallList.processSequentially(CommandCallList.java:33)
+	at io.github.adven27.concordion.extensions.exam.core.commands.ExamCommand.execute(ExamCommand.kt:62)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.LocalTextDecorator.process(LocalTextDecorator.java:26)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.ThrowableCatchingDecorator.process(ThrowableCatchingDecorator.java:38)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.CommandCall.execute(CommandCall.java:72)
+	at org.concordion.api.CommandCallList.processSequentially(CommandCallList.java:33)
+	at org.concordion.internal.command.ExampleCommand.execute(ExampleCommand.java:49)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.LocalTextDecorator.process(LocalTextDecorator.java:26)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.ThrowableCatchingDecorator.process(ThrowableCatchingDecorator.java:38)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.CommandCall.execute(CommandCall.java:72)
+	at org.concordion.internal.XMLSpecification.processNode(XMLSpecification.java:60)
+	at org.concordion.internal.XMLSpecification.processExample(XMLSpecification.java:76)
+	at org.concordion.Concordion.processExample(Concordion.java:92)
+	at org.concordion.internal.FixtureRunner.run(FixtureRunner.java:41)
+	at org.concordion.integration.junit4.ConcordionRunner.invoke(ConcordionRunner.java:207)
+	at org.concordion.integration.junit4.ConcordionRunner$1.invoke(ConcordionRunner.java:31)
+	at org.concordion.integration.junit4.ConcordionFrameworkMethod.invokeExplosively(ConcordionFrameworkMethod.java:58)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.concordion.integration.junit4.ConcordionRunner.runChild(ConcordionRunner.java:191)
+	at org.concordion.integration.junit4.ConcordionRunner.runChild(ConcordionRunner.java:23)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.concordion.integration.junit4.ConcordionRunner.run(ConcordionRunner.java:150)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:110)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:90)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:85)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy2/jdk.proxy2.$Proxy5.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+20:04:15.449 [http-nio-16083-exec-3] DEBUG r.a.m.a.s.service.SecurityService.find - Finding securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, RN1], fields=null, sources=null, at=null, from=null, to=null)
+20:04:15.457 [http-nio-16083-exec-3] DEBUG r.a.m.a.s.service.SecurityService.find - Found 1 securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, RN1], fields=null, sources=null, at=null, from=null, to=null)
+20:04:15.461 [http-nio-16083-exec-3] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "c6b8f300f1a93e94",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:16083/securities?ids=ISIN1%2CRN1&idTypes=ISIN%2CRULE_NUMBER",
+  "host" : "localhost",
+  "path" : "/securities",
+  "scheme" : "http",
+  "port" : "16083",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:16083" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+20:04:15.461 [http-nio-16083-exec-3] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "c6b8f300f1a93e94",
+  "duration" : 13,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Mon, 05 Feb 2024 17:04:15 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+20:04:15.467 [Test worker] WARN  i.g.a.c.e.exam.core.ContentVerifier.verify-gIAlu-s - Content verification error
+net.javacrumbs.jsonunit.core.internal.Opentest4jExceptionFactory$JsonAssertError: JSON documents are different:
+Array "" has different length, expected: <2> but was: <1>.
+Array "" has different content. Missing values: [{"id":2,"isin":"ISIN2","name":"Apple Inc. ао","typeCode":"SEC","cfiType":{"fullCode":"DBFUFB","category":{"code":"D","name":"Debt instruments","nameRus":"Долговые инструменты"},"group":{"code":"B","name":"Bonds","nameRus":"Облигации"},"attributes":[{"position":1,"name":"Type of interest","nameRus":"Тип интереса","value":{"code":"F","name":"Fixed Rate","nameRus":"Фиксированная ставка"}},{"position":2,"name":"Guarantee","nameRus":"Гарантия","value":{"code":"U","name":"Unsecured/Unguaranteed","nameRus":"Необеспеченный / Негарантированное"}},{"position":3,"name":"Redemption/Reimbursement","nameRus":"Выкуп / Компенсации","value":{"code":"F","name":"Fixed Maturity","nameRus":"Фиксированная зрелость"}},{"position":4,"name":"Form","nameRus":"Форма","value":{"code":"B","name":"Bearer","nameRus":"Податель"}}]},"active":true,"statusDescription":"В обращении","createdAt":"${json-unit.matches:formattedAndWithin}ISO_LOCAL|$|1m|$|2024-02-05T20:04:15.464","updatedAt":"${json-unit.matches:formattedAndWithin}ISO_LOCAL|$|1m|$|2024-02-05T20:04:15.464","fields":[{"code":"BASE_VALUE","value":"212","timestamp":"2024-01-29T00:00:00","source":"NSD"},{"code":"CFI","value":"DBFUFB","timestamp":"2024-01-29T00:00:00","source":"NSD"},{"code":"FACE_VALUE","value":"233","timestamp":"2024-01-29T00:00:00","source":"NSD"}]}], extra values: [], expected: <[{"id":1,"isin":"ISIN1","name":"SOGOU Inc","typeCode":"SEC","cfiType":{"fullCode":"ESVUFR","category":{"code":"E","name":"Equity","nameRus":"Капитал"},"group":{"code":"S","name":"Common/Ordinary shares","nameRus":"Обычные акции"},"attributes":[{"position":1,"name":"Voting right","nameRus":"Право голоса","value":{"code":"V","name":"Voting","nameRus":"Голосование"}},{"position":2,"name":"Ownership","nameRus":"Владение","value":{"code":"U","name":"Free","nameRus":"Свободно"}},{"position":3,"name":"Payment Status","nameRus":"Статус платежа","value":{"code":"F","name":"Fully Paid","nameRus":"Полностью оплачено"}},{"position":4,"name":"Form","nameRus":"Форма","value":{"code":"R","name":"Registered","nameRus":"Зарегистрированный"}}]},"active":true,"statusDescription":"Размещен","createdAt":"${json-unit.matches:formattedAndWithin}ISO_LOCAL|$|1m|$|2024-02-05T20:04:15.464","updatedAt":"${json-unit.matches:formattedAndWithin}ISO_LOCAL|$|1m|$|2024-02-05T20:04:15.464","fields":[{"code":"BASE_VALUE","value":"111","timestamp":"2024-01-29T00:00:00","source":"NSD"},{"code":"CFI","value":"ESVUFR","timestamp":"2024-01-29T00:00:00","source":"NSD"},{"code":"CURRENCY","value":"122","timestamp":"2024-01-29T00:00:00","source":"NSD"},{"code":"FACE_VALUE","value":"132","timestamp":"2024-01-29T00:00:00","source":"NSD"}]},{"id":2,"isin":"ISIN2","name":"Apple Inc. ао","typeCode":"SEC","cfiType":{"fullCode":"DBFUFB","category":{"code":"D","name":"Debt instruments","nameRus":"Долговые инструменты"},"group":{"code":"B","name":"Bonds","nameRus":"Облигации"},"attributes":[{"position":1,"name":"Type of interest","nameRus":"Тип интереса","value":{"code":"F","name":"Fixed Rate","nameRus":"Фиксированная ставка"}},{"position":2,"name":"Guarantee","nameRus":"Гарантия","value":{"code":"U","name":"Unsecured/Unguaranteed","nameRus":"Необеспеченный / Негарантированное"}},{"position":3,"name":"Redemption/Reimbursement","nameRus":"Выкуп / Компенсации","value":{"code":"F","name":"Fixed Maturity","nameRus":"Фиксированная зрелость"}},{"position":4,"name":"Form","nameRus":"Форма","value":{"code":"B","name":"Bearer","nameRus":"Податель"}}]},"active":true,"statusDescription":"В обращении","createdAt":"${json-unit.matches:formattedAndWithin}ISO_LOCAL|$|1m|$|2024-02-05T20:04:15.464","updatedAt":"${json-unit.matches:formattedAndWithin}ISO_LOCAL|$|1m|$|2024-02-05T20:04:15.464","fields":[{"code":"BASE_VALUE","value":"212","timestamp":"2024-01-29T00:00:00","source":"NSD"},{"code":"CFI","value":"DBFUFB","timestamp":"2024-01-29T00:00:00","source":"NSD"},{"code":"FACE_VALUE","value":"233","timestamp":"2024-01-29T00:00:00","source":"NSD"}]}]> but was: <[{"id":1,"isin":"ISIN1","name":"SOGOU Inc","typeCode":"SEC","cfiType":{"fullCode":"ESVUFR","category":{"code":"E","name":"Equity","nameRus":"Капитал"},"group":{"code":"S","name":"Common/Ordinary shares","nameRus":"Обычные акции"},"attributes":[{"position":1,"name":"Voting right","nameRus":"Право голоса","value":{"code":"V","name":"Voting","nameRus":"Голосование"}},{"position":2,"name":"Ownership","nameRus":"Владение","value":{"code":"U","name":"Free","nameRus":"Свободно"}},{"position":3,"name":"Payment Status","nameRus":"Статус платежа","value":{"code":"F","name":"Fully Paid","nameRus":"Полностью оплачено"}},{"position":4,"name":"Form","nameRus":"Форма","value":{"code":"R","name":"Registered","nameRus":"Зарегистрированный"}}]},"active":true,"statusDescription":"Размещен","createdAt":"2024-02-05T20:04:14.381246","updatedAt":"2024-02-05T20:04:14.381246","fields":[{"code":"BASE_VALUE","value":"111","timestamp":"2024-01-29T00:00:00","source":"NSD"},{"code":"CFI","value":"ESVUFR","timestamp":"2024-01-29T00:00:00","source":"NSD"},{"code":"CURRENCY","value":"122","timestamp":"2024-01-29T00:00:00","source":"NSD"},{"code":"FACE_VALUE","value":"132","timestamp":"2024-01-29T00:00:00","source":"NSD"}]}]>
+
+	at net.javacrumbs.jsonunit.core.internal.Opentest4jExceptionFactory.createException(ExceptionFactory.java:37)
+	at net.javacrumbs.jsonunit.core.internal.ExceptionUtils.createException(ExceptionUtils.java:45)
+	at net.javacrumbs.jsonunit.core.internal.Diff.failIfDifferent(Diff.java:617)
+	at net.javacrumbs.jsonunit.core.internal.Diff.failIfDifferent(Diff.java:612)
+	at net.javacrumbs.jsonunit.JsonAssert.assertJsonPartEquals(JsonAssert.java:84)
+	at net.javacrumbs.jsonunit.JsonAssert.assertJsonEquals(JsonAssert.java:69)
+	at io.github.adven27.concordion.extensions.exam.core.JsonVerifier.assertThat(Content.kt:181)
+	at io.github.adven27.concordion.extensions.exam.core.ContentVerifier$Default.verify-gIAlu-s(Content.kt:122)
+	at io.github.adven27.concordion.extensions.exam.ws.CaseCommand.check(RestCommands.kt:411)
+	at io.github.adven27.concordion.extensions.exam.ws.CaseCommand.check(RestCommands.kt:394)
+	at io.github.adven27.concordion.extensions.exam.ws.CaseCommand.execute(RestCommands.kt:275)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.LocalTextDecorator.process(LocalTextDecorator.java:26)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.ThrowableCatchingDecorator.process(ThrowableCatchingDecorator.java:38)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.CommandCall.execute(CommandCall.java:72)
+	at org.concordion.api.CommandCallList.processSequentially(CommandCallList.java:33)
+	at io.github.adven27.concordion.extensions.exam.core.commands.ExamCommand.execute(ExamCommand.kt:62)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.LocalTextDecorator.process(LocalTextDecorator.java:26)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.ThrowableCatchingDecorator.process(ThrowableCatchingDecorator.java:38)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.CommandCall.execute(CommandCall.java:72)
+	at org.concordion.api.CommandCallList.processSequentially(CommandCallList.java:33)
+	at org.concordion.internal.command.ExampleCommand.execute(ExampleCommand.java:49)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.LocalTextDecorator.process(LocalTextDecorator.java:26)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.ThrowableCatchingDecorator.process(ThrowableCatchingDecorator.java:38)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.CommandCall.execute(CommandCall.java:72)
+	at org.concordion.internal.XMLSpecification.processNode(XMLSpecification.java:60)
+	at org.concordion.internal.XMLSpecification.processExample(XMLSpecification.java:76)
+	at org.concordion.Concordion.processExample(Concordion.java:92)
+	at org.concordion.internal.FixtureRunner.run(FixtureRunner.java:41)
+	at org.concordion.integration.junit4.ConcordionRunner.invoke(ConcordionRunner.java:207)
+	at org.concordion.integration.junit4.ConcordionRunner$1.invoke(ConcordionRunner.java:31)
+	at org.concordion.integration.junit4.ConcordionFrameworkMethod.invokeExplosively(ConcordionFrameworkMethod.java:58)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.concordion.integration.junit4.ConcordionRunner.runChild(ConcordionRunner.java:191)
+	at org.concordion.integration.junit4.ConcordionRunner.runChild(ConcordionRunner.java:23)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.concordion.integration.junit4.ConcordionRunner.run(ConcordionRunner.java:150)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:110)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:90)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:85)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy2/jdk.proxy2.$Proxy5.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+20:04:15.583 [http-nio-16083-exec-4] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "cf7b8a126c9b7c4e",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:16083/securities?ids=RN1%2CUNKNOWN&idTypes=REG_CODE%2CWKN&isins=ISIN1%2CISIN2%2CISIN3",
+  "host" : "localhost",
+  "path" : "/securities",
+  "scheme" : "http",
+  "port" : "16083",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:16083" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+20:04:15.589 [http-nio-16083-exec-4] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "cf7b8a126c9b7c4e",
+  "duration" : 105,
+  "protocol" : "HTTP/1.1",
+  "status" : 400,
+  "headers" : {
+    "Connection" : [ "close" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Mon, 05 Feb 2024 17:04:15 GMT" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  },
+  "body" : {"code":"INVALID_FORMAT","violations":[{"path":"idTypes","message":"Field value rejected: REG_CODE,WKN"}]}
+}
+20:04:15.596 [Test worker] WARN  i.g.a.c.e.exam.core.ContentVerifier.verify-gIAlu-s - Content verification error
+org.opentest4j.AssertionFailedError: JSON documents are different:
+Different value found in node "", expected: <[{"id":1,"isin":"ISIN1","name":"SOGOU Inc","typeCode":"SEC","cfiType":{"fullCode":"ESVUFR","category":{"code":"E","name":"Equity","nameRus":"Капитал"},"group":{"code":"S","name":"Common/Ordinary shares","nameRus":"Обычные акции"},"attributes":[{"position":1,"name":"Voting right","nameRus":"Право голоса","value":{"code":"V","name":"Voting","nameRus":"Голосование"}},{"position":2,"name":"Ownership","nameRus":"Владение","value":{"code":"U","name":"Free","nameRus":"Свободно"}},{"position":3,"name":"Payment Status","nameRus":"Статус платежа","value":{"code":"F","name":"Fully Paid","nameRus":"Полностью оплачено"}},{"position":4,"name":"Form","nameRus":"Форма","value":{"code":"R","name":"Registered","nameRus":"Зарегистрированный"}}]},"active":true,"statusDescription":"Размещен","createdAt":"${json-unit.matches:formattedAndWithin}ISO_LOCAL|$|1m|$|2024-02-05T20:04:15.595","updatedAt":"${json-unit.matches:formattedAndWithin}ISO_LOCAL|$|1m|$|2024-02-05T20:04:15.595","fields":[{"code":"BASE_VALUE","value":"111","timestamp":"2024-01-29T00:00:00","source":"NSD"},{"code":"CFI","value":"ESVUFR","timestamp":"2024-01-29T00:00:00","source":"NSD"},{"code":"CURRENCY","value":"122","timestamp":"2024-01-29T00:00:00","source":"NSD"},{"code":"FACE_VALUE","value":"132","timestamp":"2024-01-29T00:00:00","source":"NSD"}]},{"id":2,"isin":"ISIN2","name":"Apple Inc. ао","typeCode":"SEC","cfiType":{"fullCode":"DBFUFB","category":{"code":"D","name":"Debt instruments","nameRus":"Долговые инструменты"},"group":{"code":"B","name":"Bonds","nameRus":"Облигации"},"attributes":[{"position":1,"name":"Type of interest","nameRus":"Тип интереса","value":{"code":"F","name":"Fixed Rate","nameRus":"Фиксированная ставка"}},{"position":2,"name":"Guarantee","nameRus":"Гарантия","value":{"code":"U","name":"Unsecured/Unguaranteed","nameRus":"Необеспеченный / Негарантированное"}},{"position":3,"name":"Redemption/Reimbursement","nameRus":"Выкуп / Компенсации","value":{"code":"F","name":"Fixed Maturity","nameRus":"Фиксированная зрелость"}},{"position":4,"name":"Form","nameRus":"Форма","value":{"code":"B","name":"Bearer","nameRus":"Податель"}}]},"active":true,"statusDescription":"В обращении","createdAt":"${json-unit.matches:formattedAndWithin}ISO_LOCAL|$|1m|$|2024-02-05T20:04:15.595","updatedAt":"${json-unit.matches:formattedAndWithin}ISO_LOCAL|$|1m|$|2024-02-05T20:04:15.595","fields":[{"code":"BASE_VALUE","value":"212","timestamp":"2024-01-29T00:00:00","source":"NSD"},{"code":"CFI","value":"DBFUFB","timestamp":"2024-01-29T00:00:00","source":"NSD"},{"code":"FACE_VALUE","value":"233","timestamp":"2024-01-29T00:00:00","source":"NSD"}]}]> but was: <{"code":"INVALID_FORMAT","violations":[{"path":"idTypes","message":"Field value rejected: REG_CODE,WKN"}]}>.
+
+	at net.javacrumbs.jsonunit.core.internal.Opentest4jExceptionFactory.createException(ExceptionFactory.java:35)
+	at net.javacrumbs.jsonunit.core.internal.ExceptionUtils.createException(ExceptionUtils.java:45)
+	at net.javacrumbs.jsonunit.core.internal.Diff.failIfDifferent(Diff.java:617)
+	at net.javacrumbs.jsonunit.core.internal.Diff.failIfDifferent(Diff.java:612)
+	at net.javacrumbs.jsonunit.JsonAssert.assertJsonPartEquals(JsonAssert.java:84)
+	at net.javacrumbs.jsonunit.JsonAssert.assertJsonEquals(JsonAssert.java:69)
+	at io.github.adven27.concordion.extensions.exam.core.JsonVerifier.assertThat(Content.kt:181)
+	at io.github.adven27.concordion.extensions.exam.core.ContentVerifier$Default.verify-gIAlu-s(Content.kt:122)
+	at io.github.adven27.concordion.extensions.exam.ws.CaseCommand.check(RestCommands.kt:411)
+	at io.github.adven27.concordion.extensions.exam.ws.CaseCommand.check(RestCommands.kt:394)
+	at io.github.adven27.concordion.extensions.exam.ws.CaseCommand.execute(RestCommands.kt:275)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.LocalTextDecorator.process(LocalTextDecorator.java:26)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.ThrowableCatchingDecorator.process(ThrowableCatchingDecorator.java:38)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.CommandCall.execute(CommandCall.java:72)
+	at org.concordion.api.CommandCallList.processSequentially(CommandCallList.java:33)
+	at io.github.adven27.concordion.extensions.exam.core.commands.ExamCommand.execute(ExamCommand.kt:62)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.LocalTextDecorator.process(LocalTextDecorator.java:26)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.ThrowableCatchingDecorator.process(ThrowableCatchingDecorator.java:38)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.CommandCall.execute(CommandCall.java:72)
+	at org.concordion.api.CommandCallList.processSequentially(CommandCallList.java:33)
+	at org.concordion.internal.command.ExampleCommand.execute(ExampleCommand.java:49)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.LocalTextDecorator.process(LocalTextDecorator.java:26)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.ThrowableCatchingDecorator.process(ThrowableCatchingDecorator.java:38)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.CommandCall.execute(CommandCall.java:72)
+	at org.concordion.internal.XMLSpecification.processNode(XMLSpecification.java:60)
+	at org.concordion.internal.XMLSpecification.processExample(XMLSpecification.java:76)
+	at org.concordion.Concordion.processExample(Concordion.java:92)
+	at org.concordion.internal.FixtureRunner.run(FixtureRunner.java:41)
+	at org.concordion.integration.junit4.ConcordionRunner.invoke(ConcordionRunner.java:207)
+	at org.concordion.integration.junit4.ConcordionRunner$1.invoke(ConcordionRunner.java:31)
+	at org.concordion.integration.junit4.ConcordionFrameworkMethod.invokeExplosively(ConcordionFrameworkMethod.java:58)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.concordion.integration.junit4.ConcordionRunner.runChild(ConcordionRunner.java:191)
+	at org.concordion.integration.junit4.ConcordionRunner.runChild(ConcordionRunner.java:23)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.concordion.integration.junit4.ConcordionRunner.run(ConcordionRunner.java:150)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:110)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:90)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:85)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy2/jdk.proxy2.$Proxy5.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+20:04:15.824 [Test worker] INFO  o.s.b.w.e.tomcat.GracefulShutdown.shutDownGracefully - Commencing graceful shutdown. Waiting for active requests to complete
+20:04:15.824 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol.log - Pausing ProtocolHandler ["http-nio-16083"]
+20:04:16.831 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown.doShutdown - Graceful shutdown complete
+20:04:16.832 [Test worker] INFO  o.a.coyote.http11.Http11NioProtocol.log - Pausing ProtocolHandler ["http-nio-16083"]
+20:04:16.833 [Test worker] INFO  o.a.catalina.core.StandardService.log - Stopping service [Tomcat]
+20:04:16.835 [Test worker] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Destroying Spring FrameworkServlet 'dispatcherServlet'
+20:04:16.839 [Test worker] WARN  o.a.c.loader.WebappClassLoaderBase.log - The web application [ROOT] appears to have started a thread named [lettuce-timer-3-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@18.0.1.1/java.lang.Thread.sleep(Native Method)
+ app//io.netty.util.HashedWheelTimer$Worker.waitForNextTick(HashedWheelTimer.java:600)
+ app//io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:496)
+ app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+ java.base@18.0.1.1/java.lang.Thread.run(Thread.java:833)
+20:04:16.840 [Test worker] INFO  o.a.coyote.http11.Http11NioProtocol.log - Stopping ProtocolHandler ["http-nio-16083"]
+20:04:16.842 [Test worker] INFO  o.a.coyote.http11.Http11NioProtocol.log - Destroying ProtocolHandler ["http-nio-16083"]
+20:04:16.846 [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: partitions revoked: [md.security.data.batch-0]
+20:04:16.846 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: partitions revoked: [md.issuer.events-0]
+20:04:16.846 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: partitions revoked: [md.security.registry-records.data-0]
+20:04:16.846 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: partitions revoked: [md.security.assets.data-0]
+20:04:16.846 [org.springframework.kafka.KafkaListenerEndpointContainer#4-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: partitions revoked: [md.security.data-0]
+20:04:16.864 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: Consumer stopped
+20:04:16.864 [org.springframework.kafka.KafkaListenerEndpointContainer#4-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: Consumer stopped
+20:04:16.864 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: Consumer stopped
+20:04:16.865 [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: Consumer stopped
+20:04:16.865 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer.info - securities-api: Consumer stopped
+20:04:17.199 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+20:04:17.200 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.

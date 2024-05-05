@@ -1,0 +1,9 @@
+/* TEAM */
+
+    Developer: Aleksei Anikeev
+	Contact: epimetallfox [at] gmail.ru
+	From: Vologda, Russia
+
+/* SITE */
+
+    Doctype:HTML5

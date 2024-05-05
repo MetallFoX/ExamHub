@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?><html xmlns:e="http://exam.extension.io" lang="en"><head><script type="text/javascript">document.addEventListener('DOMContentLoaded', function (event) {
+    Array.from(document.getElementsByClassName("nomnoml")).forEach(function(el) {
+        nomnoml.draw(el, el.textContent); 
+    });  
+});</script><script type="text/javascript">window.addEventListener('DOMContentLoaded', function (event) {
+     jQuery("table").wrap(unescape("&lt;div class='table-responsive'&gt;&lt;/div&gt;"));
+}); </script><script type="text/javascript">window.addEventListener('DOMContentLoaded', function (event) {
+     jQuery(".details").wrap(unescape("&lt;details&gt;&lt;/details&gt;"));
+}); </script><script type="text/javascript">window.addEventListener('DOMContentLoaded', function (event) {
+    anchors.options = {
+        placement: 'left',
+        icon: '#'
+    };
+    anchors.add();
+    tocbot.init({
+        tocSelector: '.js-toc',
+        contentSelector: '.bd-content',
+        headingSelector: 'h1, h2, h3, h4, h5, h6',
+        hasInnerContainers: true,
+        collapseDepth: 3,
+        scrollSmooth: false,
+        fixedSidebarOffset: 'auto',
+        includeHtml: true
+    });
+    var collapseDepth = 3; 
+    jQuery( "#example-summary-badge" ).click(function() {
+        if (collapseDepth === 3) {
+            collapseDepth = 30;
+        } else {
+            collapseDepth = 3;
+        }
+        tocbot.refresh({
+            tocSelector: '.js-toc',
+            contentSelector: '.bd-content',
+            headingSelector: 'h1, h2, h3, h4, h5, h6',
+            hasInnerContainers: true,
+            collapseDepth: collapseDepth,
+            scrollSmooth: false,
+            fixedSidebarOffset: 'auto',
+            includeHtml: true
+        });
+        if (collapseDepth === 30) {
+            jQuery( ".toc-link" ).filter(function( index ) {
+                return jQuery( "i", this ).length !== 1
+            }).css("display", "none");
+        } else {
+            jQuery( ".toc-link" ).filter(function( index ) {
+                return jQuery( "i", this ).length !== 1
+            }).css("display", "unset");
+        }
+    });
+}); </script><script type="text/javascript">document.addEventListener('DOMContentLoaded', function (event) {
+    hljs.configure({
+        cssSelector: 'pre code, pre.code'
+    });
+    hljs.highlightAll();
+});</script><meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link type="text/css" rel="stylesheet" href="../../ext/codemirror/codemirror.css" /><link type="text/css" rel="stylesheet" href="../../ext/codemirror/enable-codemirror.css" /><link type="text/css" rel="stylesheet" href="../../ext/codemirror/merge.css" /><link type="text/css" rel="stylesheet" href="../../ext/codemirror/foldgutter.css" /><link type="text/css" rel="stylesheet" href="../../ext/codemirror/simplescrollbar.css" /><script type="text/javascript" src="../../ext/codemirror/codemirror.js"></script><script type="text/javascript" src="../../ext/codemirror/enable-codemirror.js"></script><script type="text/javascript" src="../../ext/codemirror/javascript.js"></script><script type="text/javascript" src="../../ext/codemirror/xml.js"></script><script type="text/javascript" src="../../ext/codemirror/addon/mode/simple.js"></script><script type="text/javascript" src="../../ext/codemirror/http.js"></script><script type="text/javascript" src="../../ext/codemirror/diff_match_patch.js"></script><script type="text/javascript" src="../../ext/codemirror/merge.js"></script><script type="text/javascript" src="../../ext/codemirror/xml-fold.js"></script><script type="text/javascript" src="../../ext/codemirror/simplescrollbar.js"></script><link type="text/css" rel="stylesheet" href="../../ext/highlight/stackoverflow-light.min.css" /><script type="text/javascript" src="../../ext/highlight/highlight.min.js"></script><script type="text/javascript" src="../../ext/highlight/http.min.js"></script><script type="text/javascript" src="../../ext/highlight/java.min.js"></script><link type="text/css" rel="stylesheet" href="../../ext/tocbot/tocbot.css" /><script type="text/javascript" src="../../ext/tocbot/tocbot.min.js"></script><link type="text/css" rel="stylesheet" href="../../ext/fontawesome/css/all.min.css" /><link type="text/css" rel="stylesheet" href="../../ext/fontawesome/css/regular.min.css" /><link type="text/css" rel="stylesheet" href="../../ext/fontawesome/css/solid.min.css" /><link type="text/css" rel="stylesheet" href="../../ext/fontawesome/css/all.min.css" /><link type="text/css" rel="stylesheet" href="../../ext/bootstrap/bootstrap.min.css" /><link type="text/css" rel="stylesheet" href="../../ext/bootstrap/enable-bootstrap.css" /><link type="text/css" rel="stylesheet" href="../../ext/bootstrap/doc.min.css" /><link type="text/css" rel="stylesheet" href="../../ext/bootstrap/scrollToTop.css" /><script type="text/javascript" src="../../ext/bootstrap/bootstrap.bundle.min.js"></script><script type="text/javascript" src="../../ext/bootstrap/jquery-3.2.1.slim.min.js"></script><script type="text/javascript" src="../../ext/bootstrap/sidebar.js"></script><script type="text/javascript" src="../../ext/bootstrap/doc.min.js"></script><script type="text/javascript" src="../../ext/bootstrap/scrollToTop.js"></script><script type="text/javascript" src="../../ext/nomnoml/graphre.js"></script><script type="text/javascript" src="../../ext/nomnoml/nomnoml.min.js"></script><link type="text/css" rel="stylesheet" href="../../timingExtensionStyle.css" /><script type="text/javascript" src="../../timingExtensionToggle.js"></script></head><body><div id="toggle-button"><img id="toggle-on" src="../../timing-on.svg" height="24" width="24" style="display:none" /><img id="toggle-off" src="../../timing-off.svg" height="24" width="24" /></div><span class="breadcrumbs"><a href="../Specs.html">Securities API</a> &gt; <a href="SecurityUpdate.html">Security Update</a> &gt;</span><div class="container-fluid"><div class="container-xxl my-md-4 bd-layout"><main class="bd-main order-1"><div class="bd-toc mt-4 mb-5 my-md-0 ps-xl-3 mb-lg-5 text-muted"><div class="row my-2 pb-2 border-bottom"><div class="col-9"><strong class="h6">On this page</strong></div><div class="col-2"><i id="example-summary-badge" class="fa fa-list-check"></i></div></div><nav id="table-of-contents" class="js-toc toc toc-right" /></div><div class="bd-content ps-lg-4" id="content">
+<h1>Обновление ФИ: поддерживаемые форматы значений полей</h1>
+
+<h2>Описание</h2>
+
+<p>В качестве значений могут выступать числа разного порядка и даты.</p>
+
+<h2>Примеры</h2>
+
+
+
+<h3>Числа разного порядка</h3>
+<p>
+    При запуске: <br />
+    - все ФИ загружены из топика в БД<br />
+</p>
+<div xmlns:c="http://www.concordion.org/2007/concordion" name="Various values" cmdId="2e763d92-5f4b-4b74-9da2-01466574c072" c:example="Various values" c:status="ExpectedToPass" e:example="" class="exam-example mb-3" data-type="example" id="Various values" data-summary-success="4" data-summary-ignore="0" data-summary-failure="0" data-summary-exception="0" data-summary-status="ExpectedToPass"><a style="font-size: 9pt; font-weight: bold; float: right; display: inline-block;margin-top: 20px; text-decoration: none; color: #89C;" href="SecurityUpdateValueFormats[Various values]LogViewer.html">Log File</a><div data-bs-toggle="collapse" data-bs-target="#ee2ec4980-2ced-48b7-8ff2-32fa1bdd79cc" aria-expanded="true"><h4 style="visibility: hidden; height:0;" class="test-class"><i class="example-badge fa fa-check m-1 text-success"></i>Various values</h4><i class="far fa-caret-square-down"></i><span> </span><a class="bd-example-title text-muted fw-lighter">Various values</a></div><div class="bd-example collapse show rounded bg-light bg-gradient" id="ee2ec4980-2ced-48b7-8ff2-32fa1bdd79cc"><div cmdId="825a1076-fb4b-4761-9ab4-8ebaddffed58" e:before-each="">
+    <div cmdId="90f63df4-e361-449f-9203-d32a0005d2d9" e:given="" class="given"><p class="lead text-primary">Given</p><hr />
+        В БД нет ФИ и значений полей ФИ: <pre tables="security, field_value, field_value_agg, security_issuer_exposition, security_id" cmdId="64be61d6-e631-499e-b7b7-5e4721ab3e58" e:db-clean="">security, field_value, field_value_agg, security_issuer_exposition, security_id</pre>
+        Входящий топик батчей пуст: <div name="md.security.data.batch" cmdId="b4224bb0-8570-4495-ad22-5be9699b6ad5" e:mq-purge=""><table class="table table-sm caption-top"><caption><i class="far fa-envelope-open me-1"> </i><span>md.security.data.batch purged</span></caption></table></div>
+        Входящий топик поштучный пуст: <div name="md.security.data" cmdId="4479a143-9b5f-4e00-932c-3b36dcc589bb" e:mq-purge=""><table class="table table-sm caption-top"><caption><i class="far fa-envelope-open me-1"> </i><span>md.security.data purged</span></caption></table></div>
+        DLQ пуст: <div name="md.security.data.dlq" cmdId="c24a0033-3581-40b1-9d77-0ad8d5543b19" e:mq-purge=""><table class="table table-sm caption-top"><caption><i class="far fa-envelope-open me-1"> </i><span>md.security.data.dlq purged</span></caption></table></div>
+        <span dir="/data/db/" datasets="sources-primary-nsd.xml" cmdId="1949093c-a57d-4a44-8c17-4059047f203f" e:db-execute=""><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SOURCE</caption><thead class="thead-default"><tr><th class="">ID</th><th class="">CODE</th><th class="">NAME</th><th class="">PRIORITY</th><th class="">IS_RESERVE</th></tr></thead><tbody><tr><td class=""><span>11</span></td><td class=""><span>NSD</span></td><td class=""><span>API НРД</span></td><td class=""><span>1</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>22</span></td><td class=""><span>BDL</span></td><td class=""><span>Bloomberg Data Licence</span></td><td class=""><span>2</span></td><td class=""><span>1</span></td></tr><tr><td class=""><span>33</span></td><td class=""><span>CBONDS</span></td><td class=""><span>CBONDS</span></td><td class=""><span>3</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>44</span></td><td class=""><span>QUIK_EXPORTER</span></td><td class=""><span>ARQA QUIK Exporter</span></td><td class=""><span>4</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>55</span></td><td class=""><span>CAPQORT</span></td><td class=""><span>DISABLED</span></td><td class=""><span>5</span></td><td class=""><span>0</span></td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SECURITY</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  FIELD_VALUE</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  FIELD_VALUE_AGG</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SECURITY_ID</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table></span>
+        <pre var="sec" value="{{map isin='RU0001011101' name='MINFIN ROSSII 2 31/10/20' type='NSEC' status='Размещен' active=true}}" cmdId="be99f238-53eb-484a-b6f1-ad463ae2666f" e:set="" hidden="true"> </pre><pre var="sec" value="{{map isin='RU0001011101' name='MINFIN ROSSII 2 31/10/20' type='NSEC' status='Размещен' active=true}}" hidden="" cmdId="be99f238-53eb-484a-b6f1-ad463ae2666f" e:set="">{isin=RU0001011101, name=MINFIN ROSSII 2 31/10/20, type=NSEC, status=Размещен, active=true}</pre>
+    </div>
+</div>
+    <div hidden="" cmdId="6ee11116-646a-4bfc-8d3b-a6be1d740814" e:given="" class="given"><p class="lead text-primary">Given</p><hr />
+        <pre var="timestamp1" value="2020-01-01T00:00:00" cmdId="0c022d7a-6adb-45f1-bf9b-456ff907c5e3" e:set="" hidden="true"> </pre><pre var="timestamp1" value="2020-01-01T00:00:00" hidden="" cmdId="0c022d7a-6adb-45f1-bf9b-456ff907c5e3" e:set="">2020-01-01T00:00:00</pre>
+        <pre var="timestamp2" value="2020-01-01T00:00:01" cmdId="c6086cba-077c-41bf-a5ba-a8288c7d5117" e:set="" hidden="true"> </pre><pre var="timestamp2" value="2020-01-01T00:00:01" hidden="" cmdId="c6086cba-077c-41bf-a5ba-a8288c7d5117" e:set="">2020-01-01T00:00:01</pre>
+        <pre var="timestamp3" value="2020-01-01T00:01:00" cmdId="03396f76-306c-4cc7-aeaf-5406ff97b32c" e:set="" hidden="true"> </pre><pre var="timestamp3" value="2020-01-01T00:01:00" hidden="" cmdId="03396f76-306c-4cc7-aeaf-5406ff97b32c" e:set="">2020-01-01T00:01:00</pre>
+        <pre var="timestamp4" value="2020-01-01T01:00:00" cmdId="9b3d42e1-6cfe-43f6-83a8-4d8f255bfd2b" e:set="" hidden="true"> </pre><pre var="timestamp4" value="2020-01-01T01:00:00" hidden="" cmdId="9b3d42e1-6cfe-43f6-83a8-4d8f255bfd2b" e:set="">2020-01-01T01:00:00</pre>
+        <pre var="timestamp5" value="2020-02-02T00:00:00" cmdId="3bd813ac-0a65-4551-9606-08a1595c3d5f" e:set="" hidden="true"> </pre><pre var="timestamp5" value="2020-02-02T00:00:00" hidden="" cmdId="3bd813ac-0a65-4551-9606-08a1595c3d5f" e:set="">2020-02-02T00:00:00</pre>
+        <pre var="timestamp6" value="2020-02-01T00:00:00" cmdId="b12c412b-e3e1-4906-b38b-6b6be975d571" e:set="" hidden="true"> </pre><pre var="timestamp6" value="2020-02-01T00:00:00" hidden="" cmdId="b12c412b-e3e1-4906-b38b-6b6be975d571" e:set="">2020-02-01T00:00:00</pre>
+
+        <pre var="fields1" value="{{map ISIN=(sec.isin) FACE_VALUE='0'}}" cmdId="2b2a1a24-f95f-4c6f-bb87-22d70e693b81" e:set="" hidden="true"> </pre><pre var="fields1" value="{{map ISIN=(sec.isin) FACE_VALUE='0'}}" hidden="true" cmdId="2b2a1a24-f95f-4c6f-bb87-22d70e693b81" e:set="">{ISIN=RU0001011101, FACE_VALUE=0}</pre>
+        <pre var="fields2" value="{{map ISIN=(sec.isin) FACE_VALUE=0.008}}" cmdId="40ad723f-af21-4321-adb9-260438a3ae49" e:set="" hidden="true"> </pre><pre var="fields2" value="{{map ISIN=(sec.isin) FACE_VALUE=0.008}}" hidden="true" cmdId="40ad723f-af21-4321-adb9-260438a3ae49" e:set="">{ISIN=RU0001011101, FACE_VALUE=0.008}</pre>
+        <pre var="fields3" value="{{map ISIN=(sec.isin) FACE_VALUE=11}}" cmdId="d8727158-e314-46bd-86e7-e86eb4f92a2f" e:set="" hidden="true"> </pre><pre var="fields3" value="{{map ISIN=(sec.isin) FACE_VALUE=11}}" hidden="true" cmdId="d8727158-e314-46bd-86e7-e86eb4f92a2f" e:set="">{ISIN=RU0001011101, FACE_VALUE=11}</pre>
+        <pre var="fields4" value="{{map ISIN=(sec.isin) FACE_VALUE=11.22}}" cmdId="4349bc5a-d644-4969-b2ef-623c43bad68b" e:set="" hidden="true"> </pre><pre var="fields4" value="{{map ISIN=(sec.isin) FACE_VALUE=11.22}}" hidden="true" cmdId="4349bc5a-d644-4969-b2ef-623c43bad68b" e:set="">{ISIN=RU0001011101, FACE_VALUE=11.22}</pre>
+        <pre var="fields5" value="{{map ISIN=(sec.isin) FACE_VALUE='0.00800000000000000001'}}" cmdId="aa421fe5-66d3-4eac-b9ba-1651ce0275f8" e:set="" hidden="true"> </pre><pre var="fields5" value="{{map ISIN=(sec.isin) FACE_VALUE='0.00800000000000000001'}}" hidden="true" cmdId="aa421fe5-66d3-4eac-b9ba-1651ce0275f8" e:set="">{ISIN=RU0001011101, FACE_VALUE=0.00800000000000000001}</pre>
+        <pre var="fields6" value="{{map ISIN=(sec.isin) FACE_VALUE='999999999999999999.99'}}" cmdId="e3aa410c-5a2f-416c-a8aa-b490e14bb1cf" e:set="" hidden="true"> </pre><pre var="fields6" value="{{map ISIN=(sec.isin) FACE_VALUE='999999999999999999.99'}}" hidden="true" cmdId="e3aa410c-5a2f-416c-a8aa-b490e14bb1cf" e:set="">{ISIN=RU0001011101, FACE_VALUE=999999999999999999.99}</pre>
+    </div>
+    <div cmdId="7e65e7f5-09f6-44b8-9d46-764488961bb4" e:when="" class="when"><p class="lead text-warning">When</p><hr />
+        На вход пришли события ФИ:
+        <div class="mq-send">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> 
+<tr><td class="exp-body"><div class="json">{
+  "status": "SECURITY_FOUND",
+  "integrationSource": "NSD",
+  "isin": "RU0001011101",
+  "timestamp": "2020-01-01T00:00:00",
+  "security": {
+    "isin": "RU0001011101",
+    "name": "MINFIN ROSSII 2 31/10/20",
+    "type": "NSEC",
+    "active": true,
+    "statusDescription": "Размещен",
+    "fields": [{
+      "code": "ISIN",
+      "value": "RU0001011101"
+    }, {
+      "code": "FACE_VALUE",
+      "value": "0"
+    }]
+  }
+}</div></td></tr> </tbody>
+    </table>
+</div>
+        <div class="mq-send">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> 
+<tr><td class="exp-body"><div class="json">{
+  "status": "SECURITY_FOUND",
+  "integrationSource": "NSD",
+  "isin": "RU0001011101",
+  "timestamp": "2020-01-01T00:00:01",
+  "security": {
+    "isin": "RU0001011101",
+    "name": "MINFIN ROSSII 2 31/10/20",
+    "type": "NSEC",
+    "active": true,
+    "statusDescription": "Размещен",
+    "fields": [{
+      "code": "ISIN",
+      "value": "RU0001011101"
+    }, {
+      "code": "FACE_VALUE",
+      "value": "0.008"
+    }]
+  }
+}</div></td></tr> </tbody>
+    </table>
+</div>
+        <div class="mq-send">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> 
+<tr><td class="exp-body"><div class="json">{
+  "status": "SECURITY_FOUND",
+  "integrationSource": "NSD",
+  "isin": "RU0001011101",
+  "timestamp": "2020-01-01T00:01:00",
+  "security": {
+    "isin": "RU0001011101",
+    "name": "MINFIN ROSSII 2 31/10/20",
+    "type": "NSEC",
+    "active": true,
+    "statusDescription": "Размещен",
+    "fields": [{
+      "code": "ISIN",
+      "value": "RU0001011101"
+    }, {
+      "code": "FACE_VALUE",
+      "value": "11"
+    }]
+  }
+}</div></td></tr> </tbody>
+    </table>
+</div>
+        <div class="mq-send">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> 
+<tr><td class="exp-body"><div class="json">{
+  "status": "SECURITY_FOUND",
+  "integrationSource": "NSD",
+  "isin": "RU0001011101",
+  "timestamp": "2020-01-01T01:00:00",
+  "security": {
+    "isin": "RU0001011101",
+    "name": "MINFIN ROSSII 2 31/10/20",
+    "type": "NSEC",
+    "active": true,
+    "statusDescription": "Размещен",
+    "fields": [{
+      "code": "ISIN",
+      "value": "RU0001011101"
+    }, {
+      "code": "FACE_VALUE",
+      "value": "11.22"
+    }]
+  }
+}</div></td></tr> </tbody>
+    </table>
+</div>
+        <div class="mq-send">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> 
+<tr><td class="exp-body"><div class="json">{
+  "status": "SECURITY_FOUND",
+  "integrationSource": "NSD",
+  "isin": "RU0001011101",
+  "timestamp": "2020-02-02T00:00:00",
+  "security": {
+    "isin": "RU0001011101",
+    "name": "MINFIN ROSSII 2 31/10/20",
+    "type": "NSEC",
+    "active": true,
+    "statusDescription": "Размещен",
+    "fields": [{
+      "code": "ISIN",
+      "value": "RU0001011101"
+    }, {
+      "code": "FACE_VALUE",
+      "value": "0.00800000000000000001"
+    }]
+  }
+}</div></td></tr> </tbody>
+    </table>
+</div>
+        <div class="mq-send">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> 
+<tr><td class="exp-body"><div class="json">{
+  "status": "SECURITY_FOUND",
+  "integrationSource": "NSD",
+  "isin": "RU0001011101",
+  "timestamp": "2020-02-01T00:00:00",
+  "security": {
+    "isin": "RU0001011101",
+    "name": "MINFIN ROSSII 2 31/10/20",
+    "type": "NSEC",
+    "active": true,
+    "statusDescription": "Размещен",
+    "fields": [{
+      "code": "ISIN",
+      "value": "RU0001011101"
+    }, {
+      "code": "FACE_VALUE",
+      "value": "999999999999999999.99"
+    }]
+  }
+}</div></td></tr> </tbody>
+    </table>
+</div>
+    </div>
+    <div cmdId="58b1f2c4-9408-449d-a96b-85a369a3d55e" e:then="" class="then"><p class="lead text-success">Then</p><hr />
+        Событие обработано: <div class="mq-check">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> <tr><td class="exp-body">EMPTY</td></tr> </tbody>
+    </table>
+</div>
+
+        ФИ сохранен в БД:
+        <table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  security</caption><thead class="thead-default"><tr><th class="">isin</th><th class="">name</th><th class="">type</th><th class="">updated_at</th></tr></thead><tbody><tr><td class=" table-success"><span title="RU0001011101" data-toggle="tooltip" data-placement="top" style="">RU0001011101</span></td><td class=" table-success"><span title="MINFIN ROSSII 2 31/10/20" data-toggle="tooltip" data-placement="top" style="">MINFIN ROSSII 2 31/10/20</span></td><td class=" table-success"><span title="6" data-toggle="tooltip" data-placement="top" style="">6</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:28:55.454</span></td></tr></tbody></table>
+        Значения полей ФИ загружены в БД:
+        <table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  field_value</caption><thead class="thead-default"><tr><th class="">security</th><th class="">field</th><th class="">value</th><th class="">date</th><th class="">created_at</th></tr></thead><tbody><tr><td class=" table-success"><span title="7" data-toggle="tooltip" data-placement="top" style="">7</span></td><td class=" table-success"><span title="65" data-toggle="tooltip" data-placement="top" style="">2</span></td><td class=" table-success"><span title="RU0001011101" data-toggle="tooltip" data-placement="top" style="">0</span></td><td class=" table-success"><span title="2020-01-01 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2020-01-01 00:00:00.000</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:28:53.032</span></td></tr><tr><td class=" table-success"><span title="7" data-toggle="tooltip" data-placement="top" style="">7</span></td><td class=" table-success"><span title="2" data-toggle="tooltip" data-placement="top" style="">2</span></td><td class=" table-success"><span title="0" data-toggle="tooltip" data-placement="top" style="">0.008</span></td><td class=" table-success"><span title="2020-01-01 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2020-01-01 00:00:00.000</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:28:53.076</span></td></tr><tr><td class=" table-success"><span title="7" data-toggle="tooltip" data-placement="top" style="">7</span></td><td class=" table-success"><span title="2" data-toggle="tooltip" data-placement="top" style="">2</span></td><td class=" table-success"><span title="0.008" data-toggle="tooltip" data-placement="top" style="">0.00800000000000000001</span></td><td class=" table-success"><span title="2020-01-01" data-toggle="tooltip" data-placement="top" style="">2020-02-02 00:00:00.000</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:28:55.431</span></td></tr><tr><td class=" table-success"><span title="7" data-toggle="tooltip" data-placement="top" style="">7</span></td><td class=" table-success"><span title="2" data-toggle="tooltip" data-placement="top" style="">2</span></td><td class=" table-success"><span title="11" data-toggle="tooltip" data-placement="top" style="">11</span></td><td class=" table-success"><span title="2020-01-01" data-toggle="tooltip" data-placement="top" style="">2020-01-01 00:00:00.000</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:28:55.358</span></td></tr><tr><td class=" table-success"><span title="7" data-toggle="tooltip" data-placement="top" style="">7</span></td><td class=" table-success"><span title="2" data-toggle="tooltip" data-placement="top" style="">2</span></td><td class=" table-success"><span title="11.22" data-toggle="tooltip" data-placement="top" style="">11.22</span></td><td class=" table-success"><span title="2020-01-01" data-toggle="tooltip" data-placement="top" style="">2020-01-01 00:00:00.000</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:28:55.404</span></td></tr><tr><td class=" table-success"><span title="7" data-toggle="tooltip" data-placement="top" style="">7</span></td><td class=" table-success"><span title="2" data-toggle="tooltip" data-placement="top" style="">2</span></td><td class=" table-success"><span title="0.00800000000000000001" data-toggle="tooltip" data-placement="top" style="">999999999999999999.99</span></td><td class=" table-success"><span title="2020-02-02 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2020-02-01 00:00:00.000</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:28:55.454</span></td></tr><tr><td class=" table-success"><span title="7" data-toggle="tooltip" data-placement="top" style="">7</span></td><td class=" table-success"><span title="2" data-toggle="tooltip" data-placement="top" style="">65</span></td><td class=" table-success"><span title="999999999999999999.99" data-toggle="tooltip" data-placement="top" style="">RU0001011101</span></td><td class=" table-success"><span title="2020-02-01 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2020-01-01 00:00:00.000</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:28:53.032</span></td></tr></tbody></table>
+        В DLQ пусто: <div class="mq-check">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.data.dlq</span></caption>
+        <tbody> <tr><td class="exp-body">EMPTY</td></tr> </tbody>
+    </table>
+</div>
+    </div>
+</div><div class="time-fig"><p>3s 326ms</p></div></div>
+
+<h3>Даты</h3>
+<p>
+    При запуске: <br />
+    - все значения полей ФИ загружены из топика в БД<br />
+</p>
+<div xmlns:c="http://www.concordion.org/2007/concordion" name="Date value" cmdId="dd9df947-315a-40b6-a1e7-ec8b12a71a29" c:example="Date value" c:status="ExpectedToPass" e:example="" class="exam-example mb-3" data-type="example" id="Date value" data-summary-success="4" data-summary-ignore="0" data-summary-failure="0" data-summary-exception="0" data-summary-status="ExpectedToPass"><a style="font-size: 9pt; font-weight: bold; float: right; display: inline-block;margin-top: 20px; text-decoration: none; color: #89C;" href="SecurityUpdateValueFormats[Date value]LogViewer.html">Log File</a><div data-bs-toggle="collapse" data-bs-target="#e92e2cad5-cc0f-432e-bb62-847932fd49da" aria-expanded="true"><h4 style="visibility: hidden; height:0;" class="test-class"><i class="example-badge fa fa-check m-1 text-success"></i>Date value</h4><i class="far fa-caret-square-down"></i><span> </span><a class="bd-example-title text-muted fw-lighter">Date value</a></div><div class="bd-example collapse show rounded bg-light bg-gradient" id="e92e2cad5-cc0f-432e-bb62-847932fd49da"><div cmdId="825a1076-fb4b-4761-9ab4-8ebaddffed58" e:before-each="">
+    <div cmdId="90f63df4-e361-449f-9203-d32a0005d2d9" e:given="" class="given"><p class="lead text-primary">Given</p><hr />
+        В БД нет ФИ и значений полей ФИ: <pre tables="security, field_value, field_value_agg, security_issuer_exposition, security_id" cmdId="64be61d6-e631-499e-b7b7-5e4721ab3e58" e:db-clean="">security, field_value, field_value_agg, security_issuer_exposition, security_id</pre>
+        Входящий топик батчей пуст: <div name="md.security.data.batch" cmdId="b4224bb0-8570-4495-ad22-5be9699b6ad5" e:mq-purge=""><table class="table table-sm caption-top"><caption><i class="far fa-envelope-open me-1"> </i><span>md.security.data.batch purged</span></caption></table></div>
+        Входящий топик поштучный пуст: <div name="md.security.data" cmdId="4479a143-9b5f-4e00-932c-3b36dcc589bb" e:mq-purge=""><table class="table table-sm caption-top"><caption><i class="far fa-envelope-open me-1"> </i><span>md.security.data purged</span></caption></table></div>
+        DLQ пуст: <div name="md.security.data.dlq" cmdId="c24a0033-3581-40b1-9d77-0ad8d5543b19" e:mq-purge=""><table class="table table-sm caption-top"><caption><i class="far fa-envelope-open me-1"> </i><span>md.security.data.dlq purged</span></caption></table></div>
+        <span dir="/data/db/" datasets="sources-primary-nsd.xml" cmdId="1949093c-a57d-4a44-8c17-4059047f203f" e:db-execute=""><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SOURCE</caption><thead class="thead-default"><tr><th class="">ID</th><th class="">CODE</th><th class="">NAME</th><th class="">PRIORITY</th><th class="">IS_RESERVE</th></tr></thead><tbody><tr><td class=""><span>11</span></td><td class=""><span>NSD</span></td><td class=""><span>API НРД</span></td><td class=""><span>1</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>22</span></td><td class=""><span>BDL</span></td><td class=""><span>Bloomberg Data Licence</span></td><td class=""><span>2</span></td><td class=""><span>1</span></td></tr><tr><td class=""><span>33</span></td><td class=""><span>CBONDS</span></td><td class=""><span>CBONDS</span></td><td class=""><span>3</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>44</span></td><td class=""><span>QUIK_EXPORTER</span></td><td class=""><span>ARQA QUIK Exporter</span></td><td class=""><span>4</span></td><td class=""><span>0</span></td></tr><tr><td class=""><span>55</span></td><td class=""><span>CAPQORT</span></td><td class=""><span>DISABLED</span></td><td class=""><span>5</span></td><td class=""><span>0</span></td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SECURITY</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  FIELD_VALUE</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  FIELD_VALUE_AGG</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SECURITY_ID</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table></span>
+        <pre var="sec" value="{{map isin='RU0001011101' name='MINFIN ROSSII 2 31/10/20' type='NSEC' status='Размещен' active=true}}" cmdId="be99f238-53eb-484a-b6f1-ad463ae2666f" e:set="" hidden="true"> </pre><pre var="sec" value="{{map isin='RU0001011101' name='MINFIN ROSSII 2 31/10/20' type='NSEC' status='Размещен' active=true}}" hidden="" cmdId="be99f238-53eb-484a-b6f1-ad463ae2666f" e:set="">{isin=RU0001011101, name=MINFIN ROSSII 2 31/10/20, type=NSEC, status=Размещен, active=true}</pre>
+    </div>
+</div>
+    <div cmdId="dbd6e23b-006a-4b84-aaeb-654302061680" e:when="" class="when"><p class="lead text-warning">When</p><hr />
+        На вход пришло событие ФИ с датой в качестве значения:
+        <div class="mq-send">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> 
+<tr><td class="exp-body"><div class="json">{
+  "status": "SECURITY_FOUND",
+  "integrationSource": "NSD",
+  "isin": "RU0001011101",
+  "timestamp": "2024-04-02T12:28:27.287",
+  "security": {
+    "isin": "RU0001011101",
+    "name": "MINFIN ROSSII 2 31/10/20",
+    "type": "NSEC",
+    "active": true,
+    "statusDescription": "Размещен",
+    "fields": [{
+      "code": "ISIN",
+      "value": "RU0001011101"
+    }, {
+      "code": "OPEN_DATE",
+      "value": "2021-07-12"
+    }]
+  }
+}</div></td></tr> </tbody>
+    </table>
+</div>
+    </div>
+    <div cmdId="58ee43fe-74d0-4cb2-96eb-f1abec034284" e:then="" class="then"><p class="lead text-success">Then</p><hr />
+        Событие обработано: <div class="mq-check">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> <tr><td class="exp-body">EMPTY</td></tr> </tbody>
+    </table>
+</div>
+        ФИ сохранен в БД:
+        <table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  security</caption><thead class="thead-default"><tr><th class="">isin</th><th class="">name</th><th class="">type</th><th class="">updated_at</th></tr></thead><tbody><tr><td class=" table-success"><span title="RU0001011101" data-toggle="tooltip" data-placement="top" style="">RU0001011101</span></td><td class=" table-success"><span title="MINFIN ROSSII 2 31/10/20" data-toggle="tooltip" data-placement="top" style="">MINFIN ROSSII 2 31/10/20</span></td><td class=" table-success"><span title="6" data-toggle="tooltip" data-placement="top" style="">6</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:28:56.331</span></td></tr></tbody></table>
+        Значения полей ФИ загружены в БД:
+        <table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  field_value</caption><thead class="thead-default"><tr><th class="">security</th><th class="">field</th><th class="">value</th><th class="">created_at</th></tr></thead><tbody><tr><td class=" table-success"><span title="8" data-toggle="tooltip" data-placement="top" style="">8</span></td><td class=" table-success"><span title="5" data-toggle="tooltip" data-placement="top" style="">5</span></td><td class=" table-success"><span title="2021-07-12" data-toggle="tooltip" data-placement="top" style="">2021-07-12</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:28:56.331</span></td></tr><tr><td class=" table-success"><span title="8" data-toggle="tooltip" data-placement="top" style="">8</span></td><td class=" table-success"><span title="65" data-toggle="tooltip" data-placement="top" style="">65</span></td><td class=" table-success"><span title="RU0001011101" data-toggle="tooltip" data-placement="top" style="">RU0001011101</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:28:56.331</span></td></tr></tbody></table>
+        В DLQ пусто: <div class="mq-check">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.data.dlq</span></caption>
+        <tbody> <tr><td class="exp-body">EMPTY</td></tr> </tbody>
+    </table>
+</div>
+    </div>
+</div><div class="time-fig"><p>1s 216ms</p></div></div>
+
+</div></main></div></div><div class="footer">Results generated by <a href="http://www.concordion.org" style="font-weight: bold; text-decoration: none; color: #89C;">Concordion</a><div class="testTime">in 4643 ms on 02-апр.-2024 at 12:28:57 MSK</div></div></body>
+<button id="btnToTop" onclick="topFunction()" type="button" class="btn btn-light btn-sm text-muted me-1"><i class="fa fa-arrow-up"></i></button></html>

@@ -1,0 +1,800 @@
+12:44:46.935 [Test worker] WARN  i.g.a.c.e.exam.core.ContentVerifier.verify-gIAlu-s - Content verification error
+net.javacrumbs.jsonunit.core.internal.Opentest4jExceptionFactory$JsonAssertError: JSON documents are different:
+Array "content" has different length, expected: <2> but was: <1>.
+Array "content" has different content. Missing values: [{"id":"1","isin":"ISIN1","name":"SOGOU Inc","type":"SEC","active":true,"statusDescription":"Размещен","createdAt":"2024-03-28T12:44:31.466","updatedAt":"${json-unit.matches:formattedAs}ISO_LOCAL","cfi":"SOME","currency":"RUB","base_value":110,"face_value":130}, {"id":"3","isin":"ISIN3","name":"ADIDAS AG ORD SHS","type":"AFORSEC","active":true,"createdAt":"2024-03-30T12:44:31.466","updatedAt":"${json-unit.matches:formattedAs}ISO_LOCAL"}], extra values: [{"id":"3","isin":"ISIN1","name":"Sec 1","type":"NSEC","active":true,"statusDescription":"desc","createdAt":"2024-04-02T12:44:42.180901","updatedAt":"2024-04-02T12:44:42.180901"}], expected: <[{"id":"1","isin":"ISIN1","name":"SOGOU Inc","type":"SEC","active":true,"statusDescription":"Размещен","createdAt":"2024-03-28T12:44:31.466","updatedAt":"${json-unit.matches:formattedAs}ISO_LOCAL","cfi":"SOME","currency":"RUB","base_value":110,"face_value":130},{"id":"3","isin":"ISIN3","name":"ADIDAS AG ORD SHS","type":"AFORSEC","active":true,"createdAt":"2024-03-30T12:44:31.466","updatedAt":"${json-unit.matches:formattedAs}ISO_LOCAL"}]> but was: <[{"id":"3","isin":"ISIN1","name":"Sec 1","type":"NSEC","active":true,"statusDescription":"desc","createdAt":"2024-04-02T12:44:42.180901","updatedAt":"2024-04-02T12:44:42.180901"}]>
+Different value found in node "total", expected: <2> but was: <1>.
+
+	at net.javacrumbs.jsonunit.core.internal.Opentest4jExceptionFactory.createException(ExceptionFactory.java:37)
+	at net.javacrumbs.jsonunit.core.internal.ExceptionUtils.createException(ExceptionUtils.java:45)
+	at net.javacrumbs.jsonunit.core.internal.Diff.failIfDifferent(Diff.java:617)
+	at net.javacrumbs.jsonunit.core.internal.Diff.failIfDifferent(Diff.java:612)
+	at net.javacrumbs.jsonunit.JsonAssert.assertJsonPartEquals(JsonAssert.java:84)
+	at net.javacrumbs.jsonunit.JsonAssert.assertJsonEquals(JsonAssert.java:69)
+	at io.github.adven27.concordion.extensions.exam.core.JsonVerifier.assertThat(Content.kt:181)
+	at io.github.adven27.concordion.extensions.exam.core.ContentVerifier$Default.verify-gIAlu-s(Content.kt:122)
+	at io.github.adven27.concordion.extensions.exam.ws.CaseCommand.check(RestCommands.kt:411)
+	at io.github.adven27.concordion.extensions.exam.ws.CaseCommand.check(RestCommands.kt:394)
+	at io.github.adven27.concordion.extensions.exam.ws.CaseCommand.execute(RestCommands.kt:275)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.LocalTextDecorator.process(LocalTextDecorator.java:26)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.ThrowableCatchingDecorator.process(ThrowableCatchingDecorator.java:38)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.CommandCall.execute(CommandCall.java:72)
+	at org.concordion.api.CommandCallList.processSequentially(CommandCallList.java:33)
+	at io.github.adven27.concordion.extensions.exam.core.commands.ExamCommand.execute(ExamCommand.kt:62)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.LocalTextDecorator.process(LocalTextDecorator.java:26)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.ThrowableCatchingDecorator.process(ThrowableCatchingDecorator.java:38)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.CommandCall.execute(CommandCall.java:72)
+	at org.concordion.api.CommandCallList.processSequentially(CommandCallList.java:33)
+	at org.concordion.internal.command.ExampleCommand.execute(ExampleCommand.java:49)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.LocalTextDecorator.process(LocalTextDecorator.java:26)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.ThrowableCatchingDecorator.process(ThrowableCatchingDecorator.java:38)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.CommandCall.execute(CommandCall.java:72)
+	at org.concordion.internal.XMLSpecification.processNode(XMLSpecification.java:60)
+	at org.concordion.internal.XMLSpecification.processExample(XMLSpecification.java:76)
+	at org.concordion.Concordion.processExample(Concordion.java:92)
+	at org.concordion.internal.FixtureRunner.run(FixtureRunner.java:41)
+	at org.concordion.integration.junit4.ConcordionRunner.invoke(ConcordionRunner.java:207)
+	at org.concordion.integration.junit4.ConcordionRunner$1.invoke(ConcordionRunner.java:31)
+	at org.concordion.integration.junit4.ConcordionFrameworkMethod.invokeExplosively(ConcordionFrameworkMethod.java:58)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.concordion.integration.junit4.ConcordionRunner.runChild(ConcordionRunner.java:191)
+	at org.concordion.integration.junit4.ConcordionRunner.runChild(ConcordionRunner.java:23)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.concordion.integration.junit4.ConcordionRunner.run(ConcordionRunner.java:150)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:105)
+	at org.junit.runner.JUnitCore.runClasses(JUnitCore.java:62)
+	at org.junit.runner.JUnitCore.runClasses(JUnitCore.java:49)
+	at org.concordion.internal.runner.DefaultConcordionRunner.runJUnitClass(DefaultConcordionRunner.java:78)
+	at org.concordion.internal.runner.DefaultConcordionRunner.runTestClass(DefaultConcordionRunner.java:44)
+	at org.concordion.internal.runner.DefaultConcordionRunner.execute(DefaultConcordionRunner.java:19)
+	at org.concordion.internal.command.SequentialRunStrategy.call(SequentialRunStrategy.java:10)
+	at org.concordion.internal.command.RunCommand.execute(RunCommand.java:81)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.LocalTextDecorator.process(LocalTextDecorator.java:26)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.ThrowableCatchingDecorator.process(ThrowableCatchingDecorator.java:38)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.CommandCall.execute(CommandCall.java:72)
+	at org.concordion.api.CommandCallList.processSequentially(CommandCallList.java:33)
+	at org.concordion.internal.command.SpecificationCommand.execute(SpecificationCommand.java:36)
+	at org.concordion.api.CommandCall.execute(CommandCall.java:72)
+	at org.concordion.internal.XMLSpecification.processNode(XMLSpecification.java:60)
+	at org.concordion.internal.XMLSpecification.processExample(XMLSpecification.java:69)
+	at org.concordion.Concordion.processExample(Concordion.java:92)
+	at org.concordion.internal.FixtureRunner.run(FixtureRunner.java:41)
+	at org.concordion.integration.junit4.ConcordionRunner.invoke(ConcordionRunner.java:207)
+	at org.concordion.integration.junit4.ConcordionRunner$1.invoke(ConcordionRunner.java:31)
+	at org.concordion.integration.junit4.ConcordionFrameworkMethod.invokeExplosively(ConcordionFrameworkMethod.java:58)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.concordion.integration.junit4.ConcordionRunner.runChild(ConcordionRunner.java:191)
+	at org.concordion.integration.junit4.ConcordionRunner.runChild(ConcordionRunner.java:23)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.concordion.integration.junit4.ConcordionRunner.run(ConcordionRunner.java:150)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:110)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:90)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:85)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy2/jdk.proxy2.$Proxy5.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+12:44:46.948 [http-nio-54797-exec-11] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "fffcd1fbe358d418",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/v2/securities?type=SEC%2CNSEC",
+  "host" : "localhost",
+  "path" : "/v2/securities",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:44:46.948 [http-nio-54797-exec-11] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "fffcd1fbe358d418",
+  "duration" : 6,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:44:46 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:44:46.962 [http-nio-54797-exec-10] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "9fb27369db71f19d",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/v2/securities?name=ISIN%204%2CISIN%205",
+  "host" : "localhost",
+  "path" : "/v2/securities",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:44:46.963 [http-nio-54797-exec-10] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "9fb27369db71f19d",
+  "duration" : 5,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:44:46 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:44:46.978 [http-nio-54797-exec-9] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "8612e7d2f77adc79",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/v2/securities?statusDescription=%D0%A0%D0%B0%D0%B7%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%2C%D0%92%20%D0%BE%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B8",
+  "host" : "localhost",
+  "path" : "/v2/securities",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:44:46.979 [http-nio-54797-exec-9] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "8612e7d2f77adc79",
+  "duration" : 6,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:44:46 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:44:46.997 [http-nio-54797-exec-3] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "8e3e789c82dc38b5",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/v2/securities?currency=RUB",
+  "host" : "localhost",
+  "path" : "/v2/securities",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:44:46.997 [http-nio-54797-exec-3] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "8e3e789c82dc38b5",
+  "duration" : 9,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:44:46 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:44:47.017 [http-nio-54797-exec-2] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "bd16a17d7c3e9bca",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/v2/securities?currency=RUB&face_value=130",
+  "host" : "localhost",
+  "path" : "/v2/securities",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:44:47.017 [http-nio-54797-exec-2] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "bd16a17d7c3e9bca",
+  "duration" : 10,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:44:46 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:44:47.042 [http-nio-54797-exec-1] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "95f7fa593583a949",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/v2/securities?createdFrom=2024-03-31T12%3A44%3A31.466",
+  "host" : "localhost",
+  "path" : "/v2/securities",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:44:47.042 [http-nio-54797-exec-1] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "95f7fa593583a949",
+  "duration" : 15,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:44:46 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:44:47.056 [http-nio-54797-exec-4] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "cd5355c2593e76d6",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/v2/securities?createdFrom=2024-03-29T12%3A44%3A31.466&createdTo=2024-03-31T12%3A44%3A31.466",
+  "host" : "localhost",
+  "path" : "/v2/securities",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:44:47.056 [http-nio-54797-exec-4] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "cd5355c2593e76d6",
+  "duration" : 5,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:44:46 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:44:47.072 [http-nio-54797-exec-5] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "8248a8d78837fc3d",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/v2/securities?active=false",
+  "host" : "localhost",
+  "path" : "/v2/securities",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:44:47.073 [http-nio-54797-exec-5] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "8248a8d78837fc3d",
+  "duration" : 6,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:44:46 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:44:47.074 [Test worker] WARN  i.g.a.c.e.exam.core.ContentVerifier.verify-gIAlu-s - Content verification error
+net.javacrumbs.jsonunit.core.internal.Opentest4jExceptionFactory$JsonAssertError: JSON documents are different:
+Array "content" has different length, expected: <0> but was: <1>.
+Array "content" has different content. Missing values: [], extra values: [{"id":"6","isin":"NEW2","name":"some2","type":"SEC","active":false,"statusDescription":"any","createdAt":"2024-04-02T12:44:43.35428","updatedAt":"2024-04-02T12:44:43.35428"}], expected: <[]> but was: <[{"id":"6","isin":"NEW2","name":"some2","type":"SEC","active":false,"statusDescription":"any","createdAt":"2024-04-02T12:44:43.35428","updatedAt":"2024-04-02T12:44:43.35428"}]>
+Different value found in node "total", expected: <0> but was: <1>.
+
+	at net.javacrumbs.jsonunit.core.internal.Opentest4jExceptionFactory.createException(ExceptionFactory.java:37)
+	at net.javacrumbs.jsonunit.core.internal.ExceptionUtils.createException(ExceptionUtils.java:45)
+	at net.javacrumbs.jsonunit.core.internal.Diff.failIfDifferent(Diff.java:617)
+	at net.javacrumbs.jsonunit.core.internal.Diff.failIfDifferent(Diff.java:612)
+	at net.javacrumbs.jsonunit.JsonAssert.assertJsonPartEquals(JsonAssert.java:84)
+	at net.javacrumbs.jsonunit.JsonAssert.assertJsonEquals(JsonAssert.java:69)
+	at io.github.adven27.concordion.extensions.exam.core.JsonVerifier.assertThat(Content.kt:181)
+	at io.github.adven27.concordion.extensions.exam.core.ContentVerifier$Default.verify-gIAlu-s(Content.kt:122)
+	at io.github.adven27.concordion.extensions.exam.ws.CaseCommand.check(RestCommands.kt:411)
+	at io.github.adven27.concordion.extensions.exam.ws.CaseCommand.check(RestCommands.kt:394)
+	at io.github.adven27.concordion.extensions.exam.ws.CaseCommand.execute(RestCommands.kt:275)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.LocalTextDecorator.process(LocalTextDecorator.java:26)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.ThrowableCatchingDecorator.process(ThrowableCatchingDecorator.java:38)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.CommandCall.execute(CommandCall.java:72)
+	at org.concordion.api.CommandCallList.processSequentially(CommandCallList.java:33)
+	at io.github.adven27.concordion.extensions.exam.core.commands.ExamCommand.execute(ExamCommand.kt:62)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.LocalTextDecorator.process(LocalTextDecorator.java:26)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.ThrowableCatchingDecorator.process(ThrowableCatchingDecorator.java:38)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.CommandCall.execute(CommandCall.java:72)
+	at org.concordion.api.CommandCallList.processSequentially(CommandCallList.java:33)
+	at org.concordion.internal.command.ExampleCommand.execute(ExampleCommand.java:49)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.LocalTextDecorator.process(LocalTextDecorator.java:26)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.ThrowableCatchingDecorator.process(ThrowableCatchingDecorator.java:38)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.CommandCall.execute(CommandCall.java:72)
+	at org.concordion.internal.XMLSpecification.processNode(XMLSpecification.java:60)
+	at org.concordion.internal.XMLSpecification.processExample(XMLSpecification.java:76)
+	at org.concordion.Concordion.processExample(Concordion.java:92)
+	at org.concordion.internal.FixtureRunner.run(FixtureRunner.java:41)
+	at org.concordion.integration.junit4.ConcordionRunner.invoke(ConcordionRunner.java:207)
+	at org.concordion.integration.junit4.ConcordionRunner$1.invoke(ConcordionRunner.java:31)
+	at org.concordion.integration.junit4.ConcordionFrameworkMethod.invokeExplosively(ConcordionFrameworkMethod.java:58)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.concordion.integration.junit4.ConcordionRunner.runChild(ConcordionRunner.java:191)
+	at org.concordion.integration.junit4.ConcordionRunner.runChild(ConcordionRunner.java:23)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.concordion.integration.junit4.ConcordionRunner.run(ConcordionRunner.java:150)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:105)
+	at org.junit.runner.JUnitCore.runClasses(JUnitCore.java:62)
+	at org.junit.runner.JUnitCore.runClasses(JUnitCore.java:49)
+	at org.concordion.internal.runner.DefaultConcordionRunner.runJUnitClass(DefaultConcordionRunner.java:78)
+	at org.concordion.internal.runner.DefaultConcordionRunner.runTestClass(DefaultConcordionRunner.java:44)
+	at org.concordion.internal.runner.DefaultConcordionRunner.execute(DefaultConcordionRunner.java:19)
+	at org.concordion.internal.command.SequentialRunStrategy.call(SequentialRunStrategy.java:10)
+	at org.concordion.internal.command.RunCommand.execute(RunCommand.java:81)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.LocalTextDecorator.process(LocalTextDecorator.java:26)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.ThrowableCatchingDecorator.process(ThrowableCatchingDecorator.java:38)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.CommandCall.execute(CommandCall.java:72)
+	at org.concordion.api.CommandCallList.processSequentially(CommandCallList.java:33)
+	at org.concordion.internal.command.SpecificationCommand.execute(SpecificationCommand.java:36)
+	at org.concordion.api.CommandCall.execute(CommandCall.java:72)
+	at org.concordion.internal.XMLSpecification.processNode(XMLSpecification.java:60)
+	at org.concordion.internal.XMLSpecification.processExample(XMLSpecification.java:69)
+	at org.concordion.Concordion.processExample(Concordion.java:92)
+	at org.concordion.internal.FixtureRunner.run(FixtureRunner.java:41)
+	at org.concordion.integration.junit4.ConcordionRunner.invoke(ConcordionRunner.java:207)
+	at org.concordion.integration.junit4.ConcordionRunner$1.invoke(ConcordionRunner.java:31)
+	at org.concordion.integration.junit4.ConcordionFrameworkMethod.invokeExplosively(ConcordionFrameworkMethod.java:58)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.concordion.integration.junit4.ConcordionRunner.runChild(ConcordionRunner.java:191)
+	at org.concordion.integration.junit4.ConcordionRunner.runChild(ConcordionRunner.java:23)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.concordion.integration.junit4.ConcordionRunner.run(ConcordionRunner.java:150)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:110)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:90)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:85)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy2/jdk.proxy2.$Proxy5.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+12:44:47.172 [http-nio-54797-exec-7] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "fef5a8ba41a020ce",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/v2/securities?page=1&size=3&sort=createdAt%2Cdesc&sort=name%2Cdesc&sort=type&sort=isin&sort=id&sort=statusDescription",
+  "host" : "localhost",
+  "path" : "/v2/securities",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:44:47.172 [http-nio-54797-exec-7] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "fef5a8ba41a020ce",
+  "duration" : 9,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:44:46 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:44:47.193 [http-nio-54797-exec-8] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "f8055fafeeab7ad1",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/v2/securities?sort=base_value%2Cdesc",
+  "host" : "localhost",
+  "path" : "/v2/securities",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:44:47.194 [http-nio-54797-exec-8] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "f8055fafeeab7ad1",
+  "duration" : 9,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:44:47 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:44:47.489 [http-nio-54797-exec-6] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "ed1b17b29cc56c9d",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/v2/securities/999",
+  "host" : "localhost",
+  "path" : "/v2/securities/999",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:44:47.490 [http-nio-54797-exec-6] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "ed1b17b29cc56c9d",
+  "duration" : 7,
+  "protocol" : "HTTP/1.1",
+  "status" : 400,
+  "headers" : {
+    "Connection" : [ "close" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:44:47 GMT" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  },
+  "body" : {"message":"Security not found '999'"}
+}
+12:44:47.548 [http-nio-54797-exec-2] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "dfc2456bc71c2006",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/securities/types",
+  "host" : "localhost",
+  "path" : "/securities/types",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:44:47.548 [http-nio-54797-exec-2] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "dfc2456bc71c2006",
+  "duration" : 7,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:44:47 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:44:47.591 [http-nio-54797-exec-10] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "86ccb2923261f686",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/securities/fields",
+  "host" : "localhost",
+  "path" : "/securities/fields",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:44:47.591 [http-nio-54797-exec-10] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "86ccb2923261f686",
+  "duration" : 10,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:44:47 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+12:44:47.751 [http-nio-54797-exec-9] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "c7265917b9415057",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:54797/securities/currencies",
+  "host" : "localhost",
+  "path" : "/securities/currencies",
+  "scheme" : "http",
+  "port" : "54797",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:54797" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+12:44:47.751 [http-nio-54797-exec-9] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "c7265917b9415057",
+  "duration" : 20,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 02 Apr 2024 09:44:47 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}

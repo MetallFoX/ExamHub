@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?><html xmlns:concordion="http://www.concordion.org/2007/concordion" xmlns:e="http://exam.extension.io" xmlns:c="http://www.concordion.org/2007/concordion"><head><script type="text/javascript">document.addEventListener('DOMContentLoaded', function (event) {
+    Array.from(document.getElementsByClassName("nomnoml")).forEach(function(el) {
+        nomnoml.draw(el, el.textContent); 
+    });  
+});</script><script type="text/javascript">window.addEventListener('DOMContentLoaded', function (event) {
+     jQuery("table").wrap(unescape("&lt;div class='table-responsive'&gt;&lt;/div&gt;"));
+}); </script><script type="text/javascript">window.addEventListener('DOMContentLoaded', function (event) {
+     jQuery(".details").wrap(unescape("&lt;details&gt;&lt;/details&gt;"));
+}); </script><script type="text/javascript">window.addEventListener('DOMContentLoaded', function (event) {
+    anchors.options = {
+        placement: 'left',
+        icon: '#'
+    };
+    anchors.add();
+    tocbot.init({
+        tocSelector: '.js-toc',
+        contentSelector: '.bd-content',
+        headingSelector: 'h1, h2, h3, h4, h5, h6',
+        hasInnerContainers: true,
+        collapseDepth: 3,
+        scrollSmooth: false,
+        fixedSidebarOffset: 'auto',
+        includeHtml: true
+    });
+    var collapseDepth = 3; 
+    jQuery( "#example-summary-badge" ).click(function() {
+        if (collapseDepth === 3) {
+            collapseDepth = 30;
+        } else {
+            collapseDepth = 3;
+        }
+        tocbot.refresh({
+            tocSelector: '.js-toc',
+            contentSelector: '.bd-content',
+            headingSelector: 'h1, h2, h3, h4, h5, h6',
+            hasInnerContainers: true,
+            collapseDepth: collapseDepth,
+            scrollSmooth: false,
+            fixedSidebarOffset: 'auto',
+            includeHtml: true
+        });
+        if (collapseDepth === 30) {
+            jQuery( ".toc-link" ).filter(function( index ) {
+                return jQuery( "i", this ).length !== 1
+            }).css("display", "none");
+        } else {
+            jQuery( ".toc-link" ).filter(function( index ) {
+                return jQuery( "i", this ).length !== 1
+            }).css("display", "unset");
+        }
+    });
+}); </script><script type="text/javascript">document.addEventListener('DOMContentLoaded', function (event) {
+    hljs.configure({
+        cssSelector: 'pre code, pre.code'
+    });
+    hljs.highlightAll();
+});</script><meta http-equiv="content-type" content="text/html; charset=UTF-8" /><link type="text/css" rel="stylesheet" href="../ext/codemirror/codemirror.css" /><link type="text/css" rel="stylesheet" href="../ext/codemirror/enable-codemirror.css" /><link type="text/css" rel="stylesheet" href="../ext/codemirror/merge.css" /><link type="text/css" rel="stylesheet" href="../ext/codemirror/foldgutter.css" /><link type="text/css" rel="stylesheet" href="../ext/codemirror/simplescrollbar.css" /><script type="text/javascript" src="../ext/codemirror/codemirror.js"></script><script type="text/javascript" src="../ext/codemirror/enable-codemirror.js"></script><script type="text/javascript" src="../ext/codemirror/javascript.js"></script><script type="text/javascript" src="../ext/codemirror/xml.js"></script><script type="text/javascript" src="../ext/codemirror/addon/mode/simple.js"></script><script type="text/javascript" src="../ext/codemirror/http.js"></script><script type="text/javascript" src="../ext/codemirror/diff_match_patch.js"></script><script type="text/javascript" src="../ext/codemirror/merge.js"></script><script type="text/javascript" src="../ext/codemirror/xml-fold.js"></script><script type="text/javascript" src="../ext/codemirror/simplescrollbar.js"></script><link type="text/css" rel="stylesheet" href="../ext/highlight/stackoverflow-light.min.css" /><script type="text/javascript" src="../ext/highlight/highlight.min.js"></script><script type="text/javascript" src="../ext/highlight/http.min.js"></script><script type="text/javascript" src="../ext/highlight/java.min.js"></script><link type="text/css" rel="stylesheet" href="../ext/tocbot/tocbot.css" /><script type="text/javascript" src="../ext/tocbot/tocbot.min.js"></script><link type="text/css" rel="stylesheet" href="../ext/fontawesome/css/all.min.css" /><link type="text/css" rel="stylesheet" href="../ext/fontawesome/css/regular.min.css" /><link type="text/css" rel="stylesheet" href="../ext/fontawesome/css/solid.min.css" /><link type="text/css" rel="stylesheet" href="../ext/fontawesome/css/all.min.css" /><link type="text/css" rel="stylesheet" href="../ext/bootstrap/bootstrap.min.css" /><link type="text/css" rel="stylesheet" href="../ext/bootstrap/enable-bootstrap.css" /><link type="text/css" rel="stylesheet" href="../ext/bootstrap/doc.min.css" /><link type="text/css" rel="stylesheet" href="../ext/bootstrap/scrollToTop.css" /><script type="text/javascript" src="../ext/bootstrap/bootstrap.bundle.min.js"></script><script type="text/javascript" src="../ext/bootstrap/jquery-3.2.1.slim.min.js"></script><script type="text/javascript" src="../ext/bootstrap/sidebar.js"></script><script type="text/javascript" src="../ext/bootstrap/doc.min.js"></script><script type="text/javascript" src="../ext/bootstrap/scrollToTop.js"></script><script type="text/javascript" src="../ext/nomnoml/graphre.js"></script><script type="text/javascript" src="../ext/nomnoml/nomnoml.min.js"></script><link type="text/css" rel="stylesheet" href="../timingExtensionStyle.css" /><script type="text/javascript" src="../timingExtensionToggle.js"></script></head><body><div id="toggle-button"><img id="toggle-on" src="../timing-on.svg" height="24" width="24" style="display:none" /><img id="toggle-off" src="../timing-off.svg" height="24" width="24" /></div><span class="breadcrumbs"><a href="Specs.html">Securities API</a> &gt;</span><div class="container-fluid"><div class="container-xxl my-md-4 bd-layout"><main class="bd-main order-1"><div class="bd-toc mt-4 mb-5 my-md-0 ps-xl-3 mb-lg-5 text-muted"><div class="row my-2 pb-2 border-bottom"><div class="col-9"><strong class="h6">On this page</strong></div><div class="col-2"><i id="example-summary-badge" class="fa fa-list-check"></i></div></div><nav id="table-of-contents" class="js-toc toc toc-right" /></div><div class="bd-content ps-lg-4" id="content"><h1>Загрузка предложений по выкупу (оферт)</h1>
+<h2>Описание</h2>
+<p>Сервис слушает топик <code>md.security.offers.data</code> и сохраняет оферты.</p>
+<h2>Примеры</h2>
+<div concordion:example="before" id="before"><p></p><p></p><p></p>
+<h3>Перед каждым примером</h3>
+<p>Чистим топики</p>
+<ul>
+<li>Входящий топик пуст: <span e:mq-purge="#TEXT">md.security.offers.data</span></li>
+<li>DLQ пуст: <span e:mq-purge="#TEXT">md.security.offers.data.dlq</span></li>
+<li>Топик событий оферт пуст: <span e:mq-purge="#TEXT">md.security.offer.events</span></li>
+</ul>
+<p>В БД нет ФИ и оферт: <span e:db-clean="#TEXT">SECURITY, OFFER, FIELD_VALUE, FIELD_VALUE_AGG</span></p>
+</div>
+<h3>Happy-path</h3>
+<div concordion:example="создание-оферты" class="exam-example mb-3" data-type="example" id="создание-оферты" data-summary-success="2" data-summary-ignore="0" data-summary-failure="0" data-summary-exception="0" data-summary-status="ExpectedToPass"><div data-bs-toggle="collapse" data-bs-target="#ee4cf6d09-ea7f-4a95-94c2-df422849b5b6" aria-expanded="true"><h4 style="visibility: hidden; height:0;" class="test-class"><i class="example-badge fa fa-check m-1 text-success"></i>Создание оферты</h4><i class="far fa-caret-square-down"></i><span> </span><a class="bd-example-title text-muted fw-lighter">Создание оферты</a></div><div class="bd-example collapse show rounded bg-light bg-gradient" id="ee4cf6d09-ea7f-4a95-94c2-df422849b5b6">
+
+<p><strong>Given</strong></p>
+<hr />
+<table hidden="true" rendered="true">
+<thead>
+<tr><th> isin   </th><th> name </th><th> type                    </th><th> source           </th></tr>
+</thead>
+<tbody>
+<tr><td> ISIN_C </td><td> ФИ1  </td><td> {{securityType 'NSEC'}} </td><td> {{source 'NSD'}} </td></tr>
+</tbody>
+<caption><span e:db-set="security">ФИ:</span></caption>
+</table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  ФИ:</caption><thead class="thead-default"><tr><th class="">isin</th><th class="">name</th><th class="">type</th><th class="">source</th></tr></thead><tbody><tr><td class=""><span>ISIN_C</span></td><td class=""><span>ФИ1</span></td><td class=""><span>6</span></td><td class=""><span>1</span></td></tr></tbody></table>
+<table hidden="true" rendered="true">
+<thead>
+<tr><th> EMPTY </th></tr>
+</thead>
+<tbody />
+<caption><span e:db-set="offer">Сохраненные оферты:</span></caption>
+</table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  Сохраненные оферты:</caption><thead class="thead-default"><tr><th /></tr></thead><tbody><tr><td colspan="0">EMPTY</td></tr></tbody></table>
+<p><strong>When</strong></p>
+<hr />
+<p>Информация по трем офертам:</p>
+<ul>
+  <li>одна оферта с securityId, которого нет в ФИ</li>
+  <li>во второй заполнены все поля</li> 
+  <li>в третьей только ключевые</li>
+</ul>
+<p>На вход пришли события:</p><div class="mq-send">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope me-1"> </i><span>md.security.offers.data</span></caption>
+        <tbody> 
+<tr><td class="exp-body"><div class="json">{
+  "offer": {
+    "securityId": {
+      "id": "WRONG_ISIN"
+    },
+    "date": "2024-02-01"
+  }
+}</div></td></tr>
+
+<tr><td class="exp-body"><div class="json">{
+  "offer": {
+    "securityId": {
+      "id": "ISIN_C"
+    },
+    "date": "2024-02-01"
+  }
+}</div></td></tr>
+
+<tr><td class="exp-body"><div class="json">{
+  "offer": {
+    "securityId": {
+      "id": "ISIN_C"
+    },
+    "date": "2024-01-01",
+    "type": "type1",
+    "optionType": "oType1",
+    "openDate": "2024-01-02",
+    "closeFrom": "2024-01-03",
+    "description": "descr1",
+    "price": 1.1
+  }
+}</div></td></tr> </tbody>
+    </table>
+</div>
+<p><strong>Then</strong></p>
+<hr />
+<ul>
+<li>[События обработаны:]</li>
+</ul>
+<p>Добавлены две оферты с securityId cуществующих в базе ФИ</p>
+<table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  Оферты:</caption><thead class="thead-default"><tr><th class="">security_id</th><th class="">date</th><th class="">description</th><th class="">type</th><th class="">option_type</th><th class="">open_date</th><th class="">close_date</th><th class="">price</th><th class="">created_at</th><th class="">updated_at</th></tr></thead><tbody><tr><td class=" table-success"><span title="ISIN_C" data-toggle="tooltip" data-placement="top" style="">ISIN_C</span></td><td class=" table-success"><span title="2024-02-01" data-toggle="tooltip" data-placement="top" style="">2024-01-01 00:00:00.000</span></td><td class=" table-success"><span title="(null)" data-toggle="tooltip" data-placement="top" style="">descr1</span></td><td class=" table-success"><span title="(null)" data-toggle="tooltip" data-placement="top" style="">type1</span></td><td class=" table-success"><span title="(null)" data-toggle="tooltip" data-placement="top" style="">oType1</span></td><td class=" table-success"><span title="(null)" data-toggle="tooltip" data-placement="top" style="">2024-01-02 00:00:00.000</span></td><td class=" table-success"><span title="(null)" data-toggle="tooltip" data-placement="top" style="">2024-01-03 00:00:00.000</span></td><td class=" table-success"><span title="(null)" data-toggle="tooltip" data-placement="top" style="">1.1</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:45:46.392</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:45:46.392</span></td></tr><tr><td class=" table-success"><span title="ISIN_C" data-toggle="tooltip" data-placement="top" style="">ISIN_C</span></td><td class=" table-success"><span title="2024-01-01" data-toggle="tooltip" data-placement="top" style="">2024-02-01 00:00:00.000</span></td><td class=" table-success"><span title="descr1" data-toggle="tooltip" data-placement="top" style="">(null)</span></td><td class=" table-success"><span title="type1" data-toggle="tooltip" data-placement="top" style="">(null)</span></td><td class=" table-success"><span title="oType1" data-toggle="tooltip" data-placement="top" style="">(null)</span></td><td class=" table-success"><span title="2024-01-02" data-toggle="tooltip" data-placement="top" style="">(null)</span></td><td class=" table-success"><span title="2024-01-03" data-toggle="tooltip" data-placement="top" style="">(null)</span></td><td class=" table-success"><span title="1.1" data-toggle="tooltip" data-placement="top" style="">(null)</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:45:46.371</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:45:46.371</span></td></tr></tbody></table>
+<p>События оферт:</p><div class="mq-check">
+        <table class="table table-sm caption-top">
+            <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.offer.events</span></caption>
+            <tbody>     
+    <tr><td class="exp-body"><div class="json rest-success">{
+  "offer": {
+    "securityId": "ISIN_C",
+    "date": "2024-02-01"
+  },
+  "timestamp": "${json-unit.ignore}",
+  "type": "OFFER_CREATED"
+}</div></td></tr>
+    
+    <tr><td class="exp-body"><div class="json rest-success">{
+  "offer": {
+    "securityId": "ISIN_C",
+    "date": "2024-01-01",
+    "type": "type1",
+    "optionType": "oType1",
+    "openDate": "2024-01-02",
+    "closeDate": "2024-01-03",
+    "price": 1.1,
+    "description": "descr1"
+  },
+  "timestamp": "${json-unit.ignore}",
+  "type": "OFFER_CREATED"
+}</div></td></tr> </tbody>
+        </table>
+    </div>
+</div><div class="time-fig"><p>1s 93ms</p></div></div><div concordion:example="обновление-оферты" class="exam-example mb-3" data-type="example" id="обновление-оферты" data-summary-success="3" data-summary-ignore="0" data-summary-failure="0" data-summary-exception="0" data-summary-status="ExpectedToPass"><div data-bs-toggle="collapse" data-bs-target="#eaa2d0af7-d404-4587-bbc7-2a71fdf6106e" aria-expanded="true"><h4 style="visibility: hidden; height:0;" class="test-class"><i class="example-badge fa fa-check m-1 text-success"></i>Обновление оферты</h4><i class="far fa-caret-square-down"></i><span> </span><a class="bd-example-title text-muted fw-lighter">Обновление оферты</a></div><div class="bd-example collapse show rounded bg-light bg-gradient" id="eaa2d0af7-d404-4587-bbc7-2a71fdf6106e">
+
+<p><strong>Given</strong></p>
+<hr />
+<table hidden="true" rendered="true">
+<thead>
+<tr><th> isin   </th><th> name </th><th> type                    </th><th> source           </th></tr>
+</thead>
+<tbody>
+<tr><td> ISIN_U </td><td> ФИ1  </td><td> {{securityType 'NSEC'}} </td><td> {{source 'NSD'}} </td></tr>
+</tbody>
+<caption><span e:db-set="security">ФИ:</span></caption>
+</table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  ФИ:</caption><thead class="thead-default"><tr><th class="">isin</th><th class="">name</th><th class="">type</th><th class="">source</th></tr></thead><tbody><tr><td class=""><span>ISIN_U</span></td><td class=""><span>ФИ1</span></td><td class=""><span>6</span></td><td class=""><span>1</span></td></tr></tbody></table>
+<table hidden="true" rendered="true">
+<thead>
+<tr><th> security_id </th><th> date       </th><th> description </th><th> type      </th><th> option_type </th><th> open_date  </th><th> close_date </th><th> price </th><th> created_at   </th><th> updated_at   </th></tr>
+</thead>
+<tbody>
+<tr><td> ISIN_U      </td><td> 2024-02-01 </td><td> descr2_old  </td><td> type2_old </td><td> oType2_old  </td><td> 2020-01-02 </td><td> 2020-01-03 </td><td> 3.3   </td><td> {{weeksAgo}} </td><td> {{weeksAgo}} </td></tr>
+<tr><td> ISIN_U      </td><td> 2024-01-01 </td><td> descr1_old  </td><td> type1_old </td><td> oType1_old  </td><td> 2020-01-02 </td><td> 2020-01-03 </td><td> 2.2   </td><td> {{weeksAgo}} </td><td> {{weeksAgo}} </td></tr>
+</tbody>
+<caption><span e:db-set="offer">Сохраненные оферты:</span></caption>
+</table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  Сохраненные оферты:</caption><thead class="thead-default"><tr><th class="">security_id</th><th class="">date</th><th class="">description</th><th class="">type</th><th class="">option_type</th><th class="">open_date</th><th class="">close_date</th><th class="">price</th><th class="">created_at</th><th class="">updated_at</th></tr></thead><tbody><tr><td class=""><span>ISIN_U</span></td><td class=""><span>2024-02-01</span></td><td class=""><span>descr2_old</span></td><td class=""><span>type2_old</span></td><td class=""><span>oType2_old</span></td><td class=""><span>2020-01-02</span></td><td class=""><span>2020-01-03</span></td><td class=""><span>3.3</span></td><td class=""><span>2024-03-26 00:00:00.000</span></td><td class=""><span>2024-03-26 00:00:00.000</span></td></tr><tr><td class=""><span>ISIN_U</span></td><td class=""><span>2024-01-01</span></td><td class=""><span>descr1_old</span></td><td class=""><span>type1_old</span></td><td class=""><span>oType1_old</span></td><td class=""><span>2020-01-02</span></td><td class=""><span>2020-01-03</span></td><td class=""><span>2.2</span></td><td class=""><span>2024-03-26 00:00:00.000</span></td><td class=""><span>2024-03-26 00:00:00.000</span></td></tr></tbody></table>
+<p><strong>When</strong></p>
+<hr />
+<p>На вход приходят данные по 2-м офертам</p>
+<p>На вход пришли события:</p><div class="mq-send">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope me-1"> </i><span>md.security.offers.data</span></caption>
+        <tbody> 
+<tr><td class="exp-body"><div class="json">{
+  "offer": {
+    "securityId": {
+      "id": "ISIN_U"
+    },
+    "date": "2024-02-01"
+  }
+}</div></td></tr>
+
+<tr><td class="exp-body"><div class="json">{
+  "offer": {
+    "securityId": {
+      "id": "ISIN_U"
+    },
+    "date": "2024-01-01",
+    "type": "type1",
+    "optionType": "oType1",
+    "openDate": "2024-01-02",
+    "closeFrom": "2024-01-03",
+    "description": "descr1",
+    "price": 1.1
+  }
+}</div></td></tr> </tbody>
+    </table>
+</div>
+<p><strong>Then</strong></p>
+<hr />
+<p>Событие обработано:</p><div class="mq-check">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.offers.data</span></caption>
+        <tbody> <tr><td class="exp-body">EMPTY</td></tr> </tbody>
+    </table>
+</div>
+<table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  Оферты:</caption><thead class="thead-default"><tr><th class="">security_id</th><th class="">date</th><th class="">description</th><th class="">type</th><th class="">option_type</th><th class="">open_date</th><th class="">close_date</th><th class="">price</th><th class="">created_at</th><th class="">updated_at</th></tr></thead><tbody><tr><td class=" table-success"><span title="ISIN_U" data-toggle="tooltip" data-placement="top" style="">ISIN_U</span></td><td class=" table-success"><span title="2024-02-01" data-toggle="tooltip" data-placement="top" style="">2024-01-01 00:00:00.000</span></td><td class=" table-success"><span title="(null)" data-toggle="tooltip" data-placement="top" style="">descr1</span></td><td class=" table-success"><span title="(null)" data-toggle="tooltip" data-placement="top" style="">type1</span></td><td class=" table-success"><span title="(null)" data-toggle="tooltip" data-placement="top" style="">oType1</span></td><td class=" table-success"><span title="(null)" data-toggle="tooltip" data-placement="top" style="">2024-01-02 00:00:00.000</span></td><td class=" table-success"><span title="(null)" data-toggle="tooltip" data-placement="top" style="">2024-01-03 00:00:00.000</span></td><td class=" table-success"><span title="(null)" data-toggle="tooltip" data-placement="top" style="">1.1</span></td><td class=" table-success"><span title="2024-03-26 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2024-03-26 00:00:00.000</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:45:47.507</span></td></tr><tr><td class=" table-success"><span title="ISIN_U" data-toggle="tooltip" data-placement="top" style="">ISIN_U</span></td><td class=" table-success"><span title="2024-01-01" data-toggle="tooltip" data-placement="top" style="">2024-02-01 00:00:00.000</span></td><td class=" table-success"><span title="descr1" data-toggle="tooltip" data-placement="top" style="">(null)</span></td><td class=" table-success"><span title="type1" data-toggle="tooltip" data-placement="top" style="">(null)</span></td><td class=" table-success"><span title="oType1" data-toggle="tooltip" data-placement="top" style="">(null)</span></td><td class=" table-success"><span title="2024-01-02" data-toggle="tooltip" data-placement="top" style="">(null)</span></td><td class=" table-success"><span title="2024-01-03" data-toggle="tooltip" data-placement="top" style="">(null)</span></td><td class=" table-success"><span title="1.1" data-toggle="tooltip" data-placement="top" style="">(null)</span></td><td class=" table-success"><span title="2024-03-26 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2024-03-26 00:00:00.000</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:45:47.489</span></td></tr></tbody></table>
+<p>События оферт:</p><div class="mq-check">
+        <table class="table table-sm caption-top">
+            <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.offer.events</span></caption>
+            <tbody>     
+    <tr><td class="exp-body"><div class="json rest-success">{
+  "securityId": "ISIN_U",
+  "date": "2024-02-01",
+  "update": {
+    "type": {
+      "old": "type2_old"
+    },
+    "optionType": {
+      "old": "oType2_old"
+    },
+    "openDate": {
+      "old": "2020-01-02"
+    },
+    "closeDate": {
+      "old": "2020-01-03"
+    },
+    "price": {
+      "old": 3.3
+    },
+    "description": {
+      "old": "descr2_old"
+    }
+  },
+  "timestamp": "${json-unit.ignore}",
+  "type": "OFFER_UPDATED"
+}</div></td></tr>
+    
+    <tr><td class="exp-body"><div class="json rest-success">{
+  "securityId": "ISIN_U",
+  "date": "2024-01-01",
+  "update": {
+    "type": {
+      "new": "type1",
+      "old": "type1_old"
+    },
+    "optionType": {
+      "new": "oType1",
+      "old": "oType1_old"
+    },
+    "openDate": {
+      "new": "2024-01-02",
+      "old": "2020-01-02"
+    },
+    "closeDate": {
+      "new": "2024-01-03",
+      "old": "2020-01-03"
+    },
+    "price": {
+      "new": 1.1,
+      "old": 2.2
+    },
+    "description": {
+      "new": "descr1",
+      "old": "descr1_old"
+    }
+  },
+  "timestamp": "${json-unit.ignore}",
+  "type": "OFFER_UPDATED"
+}</div></td></tr> </tbody>
+        </table>
+    </div>
+</div><div class="time-fig"><p>2s 187ms</p></div></div>
+<h3>DLQ</h3>
+<div concordion:example="dlq" class="exam-example mb-3" data-type="example" id="dlq" data-summary-success="2" data-summary-ignore="0" data-summary-failure="0" data-summary-exception="0" data-summary-status="ExpectedToPass"><div data-bs-toggle="collapse" data-bs-target="#ef70cbf18-e002-45b5-9217-bbce8a0be7d0" aria-expanded="true"><h4 style="visibility: hidden; height:0;" class="test-class"><i class="example-badge fa fa-check m-1 text-success"></i>dlq</h4><i class="far fa-caret-square-down"></i><span> </span><a class="bd-example-title text-muted fw-lighter">dlq</a></div><div class="bd-example collapse show rounded bg-light bg-gradient" id="ef70cbf18-e002-45b5-9217-bbce8a0be7d0">
+
+<p><strong>When</strong></p>
+<hr />
+<p>Невалидное событие:</p><div class="mq-send">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope me-1"> </i><span>md.security.offers.data</span></caption>
+        <tbody> 
+<tr><td class="exp-body"><div class="json">{}</div></td></tr> </tbody>
+    </table>
+</div>
+<p><strong>Then</strong></p>
+<hr />
+<p>Событие обработано:</p><div class="mq-check">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.offers.data</span></caption>
+        <tbody> <tr><td class="exp-body">EMPTY</td></tr> </tbody>
+    </table>
+</div>
+<p>и перенаправлено в DLQ:</p>
+<p>dlq</p><div class="mq-check">
+        <table class="table table-sm caption-top">
+            <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.offers.data.dlq</span></caption>
+            <tbody> 
+<tr><td class="exp-body"><div class="json rest-success">{}</div></td></tr> </tbody>
+        </table>
+    </div>
+</div><div class="time-fig"><p>1s 83ms</p></div></div></div></main></div></div><div class="footer">Results generated by <a href="http://www.concordion.org" style="font-weight: bold; text-decoration: none; color: #89C;">Concordion</a><div class="testTime">in 4461 ms on 02-апр.-2024 at 12:45:50 MSK</div></div></body><button id="btnToTop" onclick="topFunction()" type="button" class="btn btn-light btn-sm text-muted me-1"><i class="fa fa-arrow-up"></i></button></html>

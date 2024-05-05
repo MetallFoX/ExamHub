@@ -1,0 +1,2728 @@
+13:41:56.239 [Test worker] WARN  i.g.a.c.e.e.d.c.check.DbVerifier.verify-0E7RQCE - Check failed
+org.awaitility.core.ConditionTimeoutException: Condition with alias 'Await DB table security_asset' didn't complete within 9 seconds because assertion condition defined as a io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier table size mismatch.
+	at org.awaitility.core.ConditionAwaiter.await(ConditionAwaiter.java:167)
+	at org.awaitility.core.AssertionCondition.await(AssertionCondition.java:119)
+	at org.awaitility.core.AssertionCondition.await(AssertionCondition.java:31)
+	at org.awaitility.core.ConditionFactory.until(ConditionFactory.java:985)
+	at org.awaitility.core.ConditionFactory.untilAsserted(ConditionFactory.java:769)
+	at io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier.verify-0E7RQCE(DbVerifier.kt:48)
+	at io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier.verify-0E7RQCE(DbVerifier.kt:22)
+	at io.github.adven27.concordion.extensions.exam.core.commands.ExamAssertCommand.verify(ExamVerifyCommand.kt:111)
+	at io.github.adven27.concordion.extensions.exam.db.commands.check.CheckCommand.verify(CheckCommand.kt:43)
+	at org.concordion.api.AbstractCommandDecorator$3.run(AbstractCommandDecorator.java:33)
+	at org.concordion.internal.command.LocalTextDecorator.process(LocalTextDecorator.java:26)
+	at org.concordion.api.AbstractCommandDecorator.verify(AbstractCommandDecorator.java:31)
+	at org.concordion.api.AbstractCommandDecorator$3.run(AbstractCommandDecorator.java:33)
+	at org.concordion.internal.command.ThrowableCatchingDecorator.process(ThrowableCatchingDecorator.java:38)
+	at org.concordion.api.AbstractCommandDecorator.verify(AbstractCommandDecorator.java:31)
+	at org.concordion.api.CommandCall.verify(CommandCall.java:76)
+	at org.concordion.api.CommandCallList.processSequentially(CommandCallList.java:34)
+	at org.concordion.internal.command.ExampleCommand.execute(ExampleCommand.java:49)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.LocalTextDecorator.process(LocalTextDecorator.java:26)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.AbstractCommandDecorator$2.run(AbstractCommandDecorator.java:25)
+	at org.concordion.internal.command.ThrowableCatchingDecorator.process(ThrowableCatchingDecorator.java:38)
+	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)
+	at org.concordion.api.CommandCall.execute(CommandCall.java:72)
+	at org.concordion.internal.XMLSpecification.processNode(XMLSpecification.java:60)
+	at org.concordion.internal.XMLSpecification.processExample(XMLSpecification.java:76)
+	at org.concordion.Concordion.processExample(Concordion.java:92)
+	at org.concordion.internal.FixtureRunner.run(FixtureRunner.java:41)
+	at org.concordion.integration.junit4.ConcordionRunner.invoke(ConcordionRunner.java:207)
+	at org.concordion.integration.junit4.ConcordionRunner$1.invoke(ConcordionRunner.java:31)
+	at org.concordion.integration.junit4.ConcordionFrameworkMethod.invokeExplosively(ConcordionFrameworkMethod.java:58)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.concordion.integration.junit4.ConcordionRunner.runChild(ConcordionRunner.java:191)
+	at org.concordion.integration.junit4.ConcordionRunner.runChild(ConcordionRunner.java:23)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.concordion.integration.junit4.ConcordionRunner.run(ConcordionRunner.java:150)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:110)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:90)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:85)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy2/jdk.proxy2.$Proxy5.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+Caused by: io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier$TableSizeMismatch: table size mismatch
+	at io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier.dbUnitAssert(DbVerifier.kt:77)
+	at io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier.verify_0E7RQCE$lambda$1$lambda$0(DbVerifier.kt:54)
+	at org.awaitility.core.AssertionCondition.lambda$new$0(AssertionCondition.java:53)
+	at org.awaitility.core.ConditionAwaiter$ConditionPoller.call(ConditionAwaiter.java:248)
+	at org.awaitility.core.ConditionAwaiter$ConditionPoller.call(ConditionAwaiter.java:235)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.dbunit.assertion.DbComparisonFailure: row count (table=security_asset) expected:<3> but was:<1>
+	at org.dbunit.assertion.DefaultFailureHandler$DefaultFailureFactory.createFailure(DefaultFailureHandler.java:323)
+	at org.dbunit.assertion.DefaultFailureHandler.createFailure(DefaultFailureHandler.java:105)
+	at org.dbunit.assertion.DbUnitAssertBase.compareRowCounts(DbUnitAssertBase.java:171)
+	at org.dbunit.assertion.DbUnitAssertBase.assertWithValueComparer(DbUnitAssertBase.java:417)
+	at org.dbunit.Assertion.assertWithValueComparer(Assertion.java:238)
+	at io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier.assert(DbVerifier.kt:85)
+	at io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier.dbUnitAssert(DbVerifier.kt:75)
+	... 8 common frames omitted
+13:41:56.527 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] ERROR r.a.m.a.securitiesapi.SecuritiesApi.dlqPublishingRecoverer$lambda$5 - Failed to process message: ConsumerRecord(topic = md.security.assets.data, partition = 0, leaderEpoch = 0, offset = 1, CreateTime = 1707216116372, serialized key size = -1, serialized value size = 2, headers = RecordHeaders(headers = [], isReadOnly = false), key = null, value = {}), sending to DLQ: md.security.assets.data.dlq-0
+org.springframework.kafka.listener.ListenerExecutionFailedException: Listener failed; nested exception is org.springframework.kafka.support.converter.ConversionException: Failed to convert from JSON; nested exception is com.fasterxml.jackson.module.kotlin.MissingKotlinParameterException: Instantiation of [simple type, class ru.alfacapital.mda.api.securitiesapi.listener.AssetEventsListener$AssetEvent] value failed for JSON property securityId due to missing (therefore NULL) value for creator parameter securityId which is a non-nullable type
+ at [Source: (String)"{}"; line: 1, column: 2] (through reference chain: ru.alfacapital.mda.api.securitiesapi.listener.AssetEventsListener$AssetEvent["securityId"])
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.decorateException(KafkaMessageListenerContainer.java:2724)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2690)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeOnMessage(KafkaMessageListenerContainer.java:2650)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2577)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeWithRecords(KafkaMessageListenerContainer.java:2457)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeRecordListener(KafkaMessageListenerContainer.java:2335)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeListener(KafkaMessageListenerContainer.java:2006)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeIfHaveRecords(KafkaMessageListenerContainer.java:1375)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.pollAndInvoke(KafkaMessageListenerContainer.java:1366)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.run(KafkaMessageListenerContainer.java:1257)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.springframework.kafka.support.converter.ConversionException: Failed to convert from JSON; nested exception is com.fasterxml.jackson.module.kotlin.MissingKotlinParameterException: Instantiation of [simple type, class ru.alfacapital.mda.api.securitiesapi.listener.AssetEventsListener$AssetEvent] value failed for JSON property securityId due to missing (therefore NULL) value for creator parameter securityId which is a non-nullable type
+ at [Source: (String)"{}"; line: 1, column: 2] (through reference chain: ru.alfacapital.mda.api.securitiesapi.listener.AssetEventsListener$AssetEvent["securityId"])
+	at org.springframework.kafka.support.converter.JsonMessageConverter.extractAndConvertValue(JsonMessageConverter.java:116)
+	at org.springframework.kafka.support.converter.MessagingMessageConverter.toMessage(MessagingMessageConverter.java:174)
+	at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.toMessagingMessage(MessagingMessageListenerAdapter.java:322)
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:83)
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53)
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter$$FastClassBySpringCGLIB$$cde8c01d.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:792)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:762)
+	at org.springframework.cloud.sleuth.brave.instrument.messaging.MessageListenerMethodInterceptor.invoke(MessageListenerMethodInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:762)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:707)
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter$$EnhancerBySpringCGLIB$$6af3dbd9.onMessage(<generated>)
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2670)
+	... 11 common frames omitted
+Caused by: com.fasterxml.jackson.module.kotlin.MissingKotlinParameterException: Instantiation of [simple type, class ru.alfacapital.mda.api.securitiesapi.listener.AssetEventsListener$AssetEvent] value failed for JSON property securityId due to missing (therefore NULL) value for creator parameter securityId which is a non-nullable type
+ at [Source: (String)"{}"; line: 1, column: 2] (through reference chain: ru.alfacapital.mda.api.securitiesapi.listener.AssetEventsListener$AssetEvent["securityId"])
+	at com.fasterxml.jackson.module.kotlin.KotlinValueInstantiator.createFromObjectWith(KotlinValueInstantiator.kt:84)
+	at com.fasterxml.jackson.databind.deser.impl.PropertyBasedCreator.build(PropertyBasedCreator.java:202)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeUsingPropertyBased(BeanDeserializer.java:519)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1405)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:352)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:185)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:323)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4674)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3629)
+	at org.springframework.kafka.support.converter.JsonMessageConverter.extractAndConvertValue(JsonMessageConverter.java:113)
+	... 26 common frames omitted
+13:41:58.183 [http-nio-15756-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+13:41:58.184 [http-nio-15756-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+13:41:58.185 [http-nio-15756-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 1 ms
+13:41:58.752 [http-nio-15756-exec-1] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "d6da94f2b615845b",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "POST",
+  "uri" : "http://localhost:15756/securities",
+  "host" : "localhost",
+  "path" : "/securities",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-length" : [ "81" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:41:58.754 [http-nio-15756-exec-1] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "d6da94f2b615845b",
+  "duration" : 539,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:41:58 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:41:59.481 [http-nio-15756-exec-2] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "846cc8cebfbd00a7",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "POST",
+  "uri" : "http://localhost:15756/securities",
+  "host" : "localhost",
+  "path" : "/securities",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-length" : [ "309" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:41:59.482 [http-nio-15756-exec-2] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "846cc8cebfbd00a7",
+  "duration" : 75,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:41:58 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:41:59.703 [http-nio-15756-exec-3] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "a90d4a1f45fc8072",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "POST",
+  "uri" : "http://localhost:15756/securities",
+  "host" : "localhost",
+  "path" : "/securities",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-length" : [ "88" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  },
+  "body" : {"isin":"isinunknown","name":"isinunknownname","type":"SEC","source":"UNKNOWN"}
+}
+13:41:59.704 [http-nio-15756-exec-3] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "a90d4a1f45fc8072",
+  "duration" : 46,
+  "protocol" : "HTTP/1.1",
+  "status" : 400,
+  "headers" : {
+    "Connection" : [ "close" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:41:58 GMT" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  },
+  "body" : {"message":"Could not find integration source by code 'UNKNOWN'"}
+}
+13:41:59.731 [http-nio-15756-exec-4] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "d96f2e7b4e25f404",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "POST",
+  "uri" : "http://localhost:15756/securities",
+  "host" : "localhost",
+  "path" : "/securities",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-length" : [ "88" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  },
+  "body" : {"isin":"isinunknown","name":"isinunknownname","type":"UNKNOWN","source":"NSD"}
+}
+13:41:59.732 [http-nio-15756-exec-4] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "d96f2e7b4e25f404",
+  "duration" : 15,
+  "protocol" : "HTTP/1.1",
+  "status" : 400,
+  "headers" : {
+    "Connection" : [ "close" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:41:58 GMT" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  },
+  "body" : {"message":"Could not find security type by code 'UNKNOWN'"}
+}
+13:41:59.835 [http-nio-15756-exec-5] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "98bc393bfe54ace3",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "POST",
+  "uri" : "http://localhost:15756/securities",
+  "host" : "localhost",
+  "path" : "/securities",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-length" : [ "259" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:41:59.835 [http-nio-15756-exec-5] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "98bc393bfe54ace3",
+  "duration" : 30,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:41:59 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:41:59.873 [http-nio-15756-exec-6] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "d5a074ba2acd77a5",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "POST",
+  "uri" : "http://localhost:15756/securities",
+  "host" : "localhost",
+  "path" : "/securities",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-length" : [ "259" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:41:59.873 [http-nio-15756-exec-6] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "d5a074ba2acd77a5",
+  "duration" : 25,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:41:59 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:00.466 [http-nio-15756-exec-7] INFO  o.s.api.AbstractOpenApiResource.getOpenApi - Init duration for springdoc-openapi is: 380 ms
+13:42:00.606 [http-nio-15756-exec-7] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "9af0e34338f9f068",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/api-docs",
+  "host" : "localhost",
+  "path" : "/api-docs",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:00.607 [http-nio-15756-exec-7] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "9af0e34338f9f068",
+  "duration" : 535,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Length" : [ "12064" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:41:59 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ]
+  }
+}
+13:42:00.754 [http-nio-15756-exec-8] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "b20bd131733d2461",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/async-api-docs",
+  "host" : "localhost",
+  "path" : "/async-api-docs",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:00.756 [http-nio-15756-exec-8] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "b20bd131733d2461",
+  "duration" : 124,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Length" : [ "12412" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:41:59 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ]
+  }
+}
+13:42:00.822 [http-nio-15756-exec-9] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "ecf621b9438b098f",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/currencies",
+  "host" : "localhost",
+  "path" : "/securities/currencies",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:00.822 [http-nio-15756-exec-9] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "ecf621b9438b098f",
+  "duration" : 21,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:41:59 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:00.993 [http-nio-15756-exec-5] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "d0b6868939772118",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/fields",
+  "host" : "localhost",
+  "path" : "/securities/fields",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:00.994 [http-nio-15756-exec-5] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "d0b6868939772118",
+  "duration" : 14,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:00 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:01.193 [http-nio-15756-exec-6] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "baa7c8c5dcb025a4",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/registries",
+  "host" : "localhost",
+  "path" : "/securities/registries",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:01.193 [http-nio-15756-exec-6] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "baa7c8c5dcb025a4",
+  "duration" : 38,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:00 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:01.425 [http-nio-15756-exec-7] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "ca97849e3f4ac221",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/registries/moex-high-tech/records",
+  "host" : "localhost",
+  "path" : "/securities/registries/moex-high-tech/records",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:01.426 [http-nio-15756-exec-7] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "ca97849e3f4ac221",
+  "duration" : 38,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:00 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:01.460 [http-nio-15756-exec-8] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "964725078fb42345",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/registries/moex-high-tech/records?isin=ISIN5",
+  "host" : "localhost",
+  "path" : "/securities/registries/moex-high-tech/records",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:01.462 [http-nio-15756-exec-8] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "964725078fb42345",
+  "duration" : 9,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:00 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:01.488 [http-nio-15756-exec-9] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "f5065ebba517c42e",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/registries/moex-high-tech/records?from=2020-01-01",
+  "host" : "localhost",
+  "path" : "/securities/registries/moex-high-tech/records",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:01.490 [http-nio-15756-exec-9] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "f5065ebba517c42e",
+  "duration" : 15,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:00 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:01.520 [http-nio-15756-exec-3] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "d66fcf86c32b886a",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/registries/moex-high-tech/records?to=2022-01-01",
+  "host" : "localhost",
+  "path" : "/securities/registries/moex-high-tech/records",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:01.521 [http-nio-15756-exec-3] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "d66fcf86c32b886a",
+  "duration" : 11,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:00 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:01.543 [http-nio-15756-exec-1] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "cfda125d6309c570",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/registries/moex-high-tech/records?from=2010-01-01&to=2022-01-01",
+  "host" : "localhost",
+  "path" : "/securities/registries/moex-high-tech/records",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:01.545 [http-nio-15756-exec-1] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "cfda125d6309c570",
+  "duration" : 7,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:00 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:01.670 [http-nio-15756-exec-4] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "9c76595127a63137",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/registries/moex-high-tech/records?size=2",
+  "host" : "localhost",
+  "path" : "/securities/registries/moex-high-tech/records",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:01.671 [http-nio-15756-exec-4] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "9c76595127a63137",
+  "duration" : 8,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:00 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:01.695 [http-nio-15756-exec-10] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "a1dc8db3d1089988",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/registries/moex-high-tech/records?page=0&size=4",
+  "host" : "localhost",
+  "path" : "/securities/registries/moex-high-tech/records",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:01.695 [http-nio-15756-exec-10] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "a1dc8db3d1089988",
+  "duration" : 9,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:00 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:01.718 [http-nio-15756-exec-2] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "b4599c1d492d4b6b",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/registries/moex-high-tech/records?page=1&size=4",
+  "host" : "localhost",
+  "path" : "/securities/registries/moex-high-tech/records",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:01.718 [http-nio-15756-exec-2] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "b4599c1d492d4b6b",
+  "duration" : 10,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:00 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:01.741 [http-nio-15756-exec-5] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "ee1506073160fdc6",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/registries/moex-high-tech/records?page=2&size=4",
+  "host" : "localhost",
+  "path" : "/securities/registries/moex-high-tech/records",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:01.742 [http-nio-15756-exec-5] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "ee1506073160fdc6",
+  "duration" : 9,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:00 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:01.975 [http-nio-15756-exec-6] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "b86d1d863cf1b56a",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/assets?securityIds=STRUCTURED1",
+  "host" : "localhost",
+  "path" : "/securities/assets",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:01.976 [http-nio-15756-exec-6] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "b86d1d863cf1b56a",
+  "duration" : 43,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:00 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:01.994 [http-nio-15756-exec-7] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "b8a5ef030ba8505d",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/assets?securityIds=STRUCTURED1%2CSTRUCTURED2",
+  "host" : "localhost",
+  "path" : "/securities/assets",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:01.995 [http-nio-15756-exec-7] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "b8a5ef030ba8505d",
+  "duration" : 6,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:01 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:02.010 [http-nio-15756-exec-8] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "ac4b1cc4e3098419",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/assets?securityIds=UNKNOWN",
+  "host" : "localhost",
+  "path" : "/securities/assets",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:02.011 [http-nio-15756-exec-8] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "ac4b1cc4e3098419",
+  "duration" : 5,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:01 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:02.028 [http-nio-15756-exec-9] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "c73e5d62442b5e94",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/assets?securityTypeCodes=SEC",
+  "host" : "localhost",
+  "path" : "/securities/assets",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:02.029 [http-nio-15756-exec-9] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "c73e5d62442b5e94",
+  "duration" : 6,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:01 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:02.048 [http-nio-15756-exec-3] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "b56bf9be4724d40a",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/assets?securityTypeCodes=SEC%2CAFORSEC",
+  "host" : "localhost",
+  "path" : "/securities/assets",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:02.048 [http-nio-15756-exec-3] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "b56bf9be4724d40a",
+  "duration" : 8,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:01 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:02.066 [http-nio-15756-exec-1] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "b04b33aa77143632",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/assets?securityTypeCodes=UNKNOWN",
+  "host" : "localhost",
+  "path" : "/securities/assets",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:02.066 [http-nio-15756-exec-1] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "b04b33aa77143632",
+  "duration" : 6,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:01 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:02.257 [http-nio-15756-exec-4] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "c3924702819f3520",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/assets?assetIds=ASSET_ISIN1",
+  "host" : "localhost",
+  "path" : "/securities/assets",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:02.258 [http-nio-15756-exec-4] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "c3924702819f3520",
+  "duration" : 26,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:01 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:02.281 [http-nio-15756-exec-10] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "8f22737920e35865",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/assets?assetIds=ASSET_ISIN1%2CASSET_ISIN2",
+  "host" : "localhost",
+  "path" : "/securities/assets",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:02.282 [http-nio-15756-exec-10] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "8f22737920e35865",
+  "duration" : 8,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:01 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:02.306 [http-nio-15756-exec-2] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "f1723fe392c4f352",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/assets?assetIds=UNKNOWN",
+  "host" : "localhost",
+  "path" : "/securities/assets",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:02.307 [http-nio-15756-exec-2] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "f1723fe392c4f352",
+  "duration" : 7,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:01 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:02.444 [http-nio-15756-exec-5] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "dae450a1f5d751fc",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/assets?size=3",
+  "host" : "localhost",
+  "path" : "/securities/assets",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:02.444 [http-nio-15756-exec-5] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "dae450a1f5d751fc",
+  "duration" : 5,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:01 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:02.487 [http-nio-15756-exec-6] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "e3ab5b430643ff3a",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/assets?page=1&size=2",
+  "host" : "localhost",
+  "path" : "/securities/assets",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:02.488 [http-nio-15756-exec-6] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "e3ab5b430643ff3a",
+  "duration" : 23,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:01 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:02.589 [http-nio-15756-exec-7] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "fe100231a885c897",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/assets?sort=securityId%2Casc",
+  "host" : "localhost",
+  "path" : "/securities/assets",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:02.591 [http-nio-15756-exec-7] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "fe100231a885c897",
+  "duration" : 19,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:01 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:02.636 [http-nio-15756-exec-8] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "a87b2b93568fcad2",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/assets?sort=assetId%2Casc",
+  "host" : "localhost",
+  "path" : "/securities/assets",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:02.636 [http-nio-15756-exec-8] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "a87b2b93568fcad2",
+  "duration" : 19,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:01 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:02.849 [http-nio-15756-exec-9] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "b3c00d79b5cdae30",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/STRUCTURED1/assets",
+  "host" : "localhost",
+  "path" : "/securities/STRUCTURED1/assets",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:02.850 [http-nio-15756-exec-9] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "b3c00d79b5cdae30",
+  "duration" : 13,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:01 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:02.963 [http-nio-15756-exec-3] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "cc84c6d82cead1b7",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/NOT_STRUCTURED/assets",
+  "host" : "localhost",
+  "path" : "/securities/NOT_STRUCTURED/assets",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:02.964 [http-nio-15756-exec-3] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "cc84c6d82cead1b7",
+  "duration" : 7,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:01 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:03.246 [http-nio-15756-exec-1] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "da971de3168e183e",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/UNKNOWN/assets",
+  "host" : "localhost",
+  "path" : "/securities/UNKNOWN/assets",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:03.248 [http-nio-15756-exec-1] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "da971de3168e183e",
+  "duration" : 127,
+  "protocol" : "HTTP/1.1",
+  "status" : 404,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:03 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  },
+  "body" : {"code":"SECURITY_NOT_FOUND"}
+}
+13:42:03.669 [http-nio-15756-exec-4] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "9ba559a8bc34c0f4",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/byFields?face_value=231",
+  "host" : "localhost",
+  "path" : "/securities/byFields",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:03.670 [http-nio-15756-exec-4] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "9ba559a8bc34c0f4",
+  "duration" : 18,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:03 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:03.704 [http-nio-15756-exec-10] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "e4932a9f2cbfe054",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/byFields?source=NSD&face_value=130&currency=122",
+  "host" : "localhost",
+  "path" : "/securities/byFields",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:03.706 [http-nio-15756-exec-10] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "e4932a9f2cbfe054",
+  "duration" : 18,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:03 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:03.992 [http-nio-15756-exec-12] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "f7cc9a40d4a4478a",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/byFields?source=NSD",
+  "host" : "localhost",
+  "path" : "/securities/byFields",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:03.993 [http-nio-15756-exec-12] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "f7cc9a40d4a4478a",
+  "duration" : 5,
+  "protocol" : "HTTP/1.1",
+  "status" : 400,
+  "headers" : {
+    "Connection" : [ "close" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:03 GMT" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  },
+  "body" : {"message":"Fields are required"}
+}
+13:42:04.253 [http-nio-15756-exec-13] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "cb5043b5ed56e702",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/search?text=e",
+  "host" : "localhost",
+  "path" : "/securities/search",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:04.254 [http-nio-15756-exec-13] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "cb5043b5ed56e702",
+  "duration" : 38,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:04 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:04.277 [http-nio-15756-exec-4] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "8122b574478289d2",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/search?isin=test&name=i",
+  "host" : "localhost",
+  "path" : "/securities/search",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:04.278 [http-nio-15756-exec-4] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "8122b574478289d2",
+  "duration" : 9,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:04 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:04.305 [http-nio-15756-exec-1] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "a5b896bed7ac73dd",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/search?name=i&size=2",
+  "host" : "localhost",
+  "path" : "/securities/search",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:04.306 [http-nio-15756-exec-1] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "a5b896bed7ac73dd",
+  "duration" : 13,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:04 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:04.339 [http-nio-15756-exec-10] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "cdf2d2e452d42b9b",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/search?name=i&page=0&size=3",
+  "host" : "localhost",
+  "path" : "/securities/search",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:04.340 [http-nio-15756-exec-10] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "cdf2d2e452d42b9b",
+  "duration" : 10,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:04 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:04.361 [http-nio-15756-exec-5] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "f651bec0872944c0",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/search?name=i&page=1&size=3",
+  "host" : "localhost",
+  "path" : "/securities/search",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:04.362 [http-nio-15756-exec-5] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "f651bec0872944c0",
+  "duration" : 7,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:04 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:04.380 [http-nio-15756-exec-6] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "bf8cd820fbbf4b7b",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/search?name=i&page=2&size=3",
+  "host" : "localhost",
+  "path" : "/securities/search",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:04.380 [http-nio-15756-exec-6] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "bf8cd820fbbf4b7b",
+  "duration" : 7,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:04 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:04.632 [http-nio-15756-exec-2] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "91294ea83d864731",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/search",
+  "host" : "localhost",
+  "path" : "/securities/search",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:04.632 [http-nio-15756-exec-2] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "91294ea83d864731",
+  "duration" : 11,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:04 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:04.650 [http-nio-15756-exec-11] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "976d92d045203bcd",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities/search?unknown=1&size=wrong&page=wrong",
+  "host" : "localhost",
+  "path" : "/securities/search",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:04.650 [http-nio-15756-exec-11] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "976d92d045203bcd",
+  "duration" : 6,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:04 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:04.960 [http-nio-15756-exec-7] DEBUG r.a.m.a.s.service.SecurityService.find - Finding securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, REG_CODE3], fields=null, sources=null, at=null, from=null, to=null)
+13:42:04.967 [http-nio-15756-exec-7] DEBUG r.a.m.a.s.service.SecurityService.find - Found 3 securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, REG_CODE3], fields=null, sources=null, at=null, from=null, to=null)
+13:42:04.996 [http-nio-15756-exec-7] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "fcfbc92200b4958a",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities?ids=ISIN1%2CISIN2%2CREG_CODE3",
+  "host" : "localhost",
+  "path" : "/securities",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:04.997 [http-nio-15756-exec-7] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "fcfbc92200b4958a",
+  "duration" : 54,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:04 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:05.045 [http-nio-15756-exec-8] DEBUG r.a.m.a.s.service.SecurityService.find - Finding securities by filter: SecurityFilter(idTypes=[ISIN], ids=[ISIN1, ISIN2, REG_CODE3], fields=null, sources=null, at=null, from=null, to=null)
+13:42:05.053 [http-nio-15756-exec-8] DEBUG r.a.m.a.s.service.SecurityService.find - Found 2 securities by filter: SecurityFilter(idTypes=[ISIN], ids=[ISIN1, ISIN2, REG_CODE3], fields=null, sources=null, at=null, from=null, to=null)
+13:42:05.059 [http-nio-15756-exec-8] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "ee7d9d10e420678b",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities?ids=ISIN1%2CISIN2%2CREG_CODE3&idTypes=ISIN",
+  "host" : "localhost",
+  "path" : "/securities",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:05.060 [http-nio-15756-exec-8] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "ee7d9d10e420678b",
+  "duration" : 15,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:04 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:05.077 [http-nio-15756-exec-9] DEBUG r.a.m.a.s.service.SecurityService.find - Finding securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, RN1], fields=null, sources=null, at=null, from=null, to=null)
+13:42:05.082 [http-nio-15756-exec-9] DEBUG r.a.m.a.s.service.SecurityService.find - Found 1 securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, RN1], fields=null, sources=null, at=null, from=null, to=null)
+13:42:05.086 [http-nio-15756-exec-9] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "9aaa52ac9ff1bf87",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities?ids=ISIN1%2CRN1",
+  "host" : "localhost",
+  "path" : "/securities",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:05.086 [http-nio-15756-exec-9] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "9aaa52ac9ff1bf87",
+  "duration" : 10,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:04 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:05.100 [http-nio-15756-exec-3] DEBUG r.a.m.a.s.service.SecurityService.find - Finding securities by filter: SecurityFilter(idTypes=[ISIN], ids=[ISIN1, RN1], fields=null, sources=null, at=null, from=null, to=null)
+13:42:05.104 [http-nio-15756-exec-3] DEBUG r.a.m.a.s.service.SecurityService.find - Found 1 securities by filter: SecurityFilter(idTypes=[ISIN], ids=[ISIN1, RN1], fields=null, sources=null, at=null, from=null, to=null)
+13:42:05.111 [http-nio-15756-exec-3] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "d91b1ae685060460",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities?ids=ISIN1%2CRN1&idTypes=ISIN",
+  "host" : "localhost",
+  "path" : "/securities",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:05.111 [http-nio-15756-exec-3] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "d91b1ae685060460",
+  "duration" : 11,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:04 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:05.386 [http-nio-15756-exec-12] DEBUG r.a.m.a.s.service.SecurityService.find - Finding securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, ISIN3], fields=[BASE_VALUE, CURRENCY], sources=null, at=null, from=null, to=null)
+13:42:05.392 [http-nio-15756-exec-12] DEBUG r.a.m.a.s.service.SecurityService.find - Found 3 securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, ISIN3], fields=[BASE_VALUE, CURRENCY], sources=null, at=null, from=null, to=null)
+13:42:05.396 [http-nio-15756-exec-12] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "d77e0f74615c3320",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities?ids=ISIN1%2CISIN2%2CISIN3&fields=BASE_VALUE%2CCURRENCY",
+  "host" : "localhost",
+  "path" : "/securities",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:05.396 [http-nio-15756-exec-12] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "d77e0f74615c3320",
+  "duration" : 11,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:05 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:05.418 [http-nio-15756-exec-13] DEBUG r.a.m.a.s.service.SecurityService.find - Finding securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, ISIN3], fields=[FACE_VALUE, CURRENCY], sources=null, at=null, from=null, to=null)
+13:42:05.424 [http-nio-15756-exec-13] DEBUG r.a.m.a.s.service.SecurityService.find - Found 3 securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, ISIN3], fields=[FACE_VALUE, CURRENCY], sources=null, at=null, from=null, to=null)
+13:42:05.427 [http-nio-15756-exec-13] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "df114b89536bfd2d",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities?ids=ISIN1%2CISIN2%2CISIN3&fields=FACE_VALUE%2CCURRENCY",
+  "host" : "localhost",
+  "path" : "/securities",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:05.427 [http-nio-15756-exec-13] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "df114b89536bfd2d",
+  "duration" : 10,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:05 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:05.446 [http-nio-15756-exec-4] DEBUG r.a.m.a.s.service.SecurityService.find - Finding securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, ISIN3], fields=[CURRENCY], sources=null, at=null, from=null, to=null)
+13:42:05.451 [http-nio-15756-exec-4] DEBUG r.a.m.a.s.service.SecurityService.find - Found 3 securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, ISIN3], fields=[CURRENCY], sources=null, at=null, from=null, to=null)
+13:42:05.456 [http-nio-15756-exec-4] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "90a3bbe9f836875d",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities?ids=ISIN1%2CISIN2%2CISIN3&fields=CURRENCY",
+  "host" : "localhost",
+  "path" : "/securities",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:05.456 [http-nio-15756-exec-4] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "90a3bbe9f836875d",
+  "duration" : 10,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:05 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:05.470 [http-nio-15756-exec-1] DEBUG r.a.m.a.s.service.SecurityService.find - Finding securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN2], fields=[FACE_VALUE], sources=null, at=null, from=null, to=null)
+13:42:05.475 [http-nio-15756-exec-1] DEBUG r.a.m.a.s.service.SecurityService.find - Found 1 securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN2], fields=[FACE_VALUE], sources=null, at=null, from=null, to=null)
+13:42:05.477 [http-nio-15756-exec-1] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "f481dc55c29644f0",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities?ids=ISIN2&fields=FACE_VALUE",
+  "host" : "localhost",
+  "path" : "/securities",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:05.477 [http-nio-15756-exec-1] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "f481dc55c29644f0",
+  "duration" : 8,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:05 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:05.492 [http-nio-15756-exec-10] DEBUG r.a.m.a.s.service.SecurityService.find - Finding securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, ISIN3], fields=null, sources=null, at=2024-01-30T18:45, from=null, to=null)
+13:42:05.498 [http-nio-15756-exec-10] DEBUG r.a.m.a.s.service.SecurityService.find - Found 3 securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, ISIN3], fields=null, sources=null, at=2024-01-30T18:45, from=null, to=null)
+13:42:05.502 [http-nio-15756-exec-10] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "d26c9c3c9aded7de",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities?ids=ISIN1%2CISIN2%2CISIN3&at=2024-01-30T18%3A45%3A00",
+  "host" : "localhost",
+  "path" : "/securities",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:05.503 [http-nio-15756-exec-10] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "d26c9c3c9aded7de",
+  "duration" : 13,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:05 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:05.520 [http-nio-15756-exec-5] DEBUG r.a.m.a.s.service.SecurityService.find - Finding securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, ISIN3], fields=null, sources=null, at=2024-01-30T13:40:02, from=null, to=null)
+13:42:05.526 [http-nio-15756-exec-5] DEBUG r.a.m.a.s.service.SecurityService.find - Found 3 securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, ISIN3], fields=null, sources=null, at=2024-01-30T13:40:02, from=null, to=null)
+13:42:05.529 [http-nio-15756-exec-5] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "dbfb225f85de059c",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities?ids=ISIN1%2CISIN2%2CISIN3&at=2024-01-30T13%3A40%3A02",
+  "host" : "localhost",
+  "path" : "/securities",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:05.529 [http-nio-15756-exec-5] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "dbfb225f85de059c",
+  "duration" : 9,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:05 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:05.555 [http-nio-15756-exec-6] DEBUG r.a.m.a.s.service.SecurityService.find - Finding securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, ISIN3], fields=null, sources=null, at=2024-01-29T16:20:02, from=null, to=null)
+13:42:05.560 [http-nio-15756-exec-6] DEBUG r.a.m.a.s.service.SecurityService.find - Found 3 securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, ISIN3], fields=null, sources=null, at=2024-01-29T16:20:02, from=null, to=null)
+13:42:05.563 [http-nio-15756-exec-6] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "ed8e3c540e6e2e1c",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities?ids=ISIN1%2CISIN2%2CISIN3&at=2024-01-29T16%3A20%3A02",
+  "host" : "localhost",
+  "path" : "/securities",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:05.563 [http-nio-15756-exec-6] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "ed8e3c540e6e2e1c",
+  "duration" : 9,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:05 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:05.578 [http-nio-15756-exec-2] DEBUG r.a.m.a.s.service.SecurityService.find - Finding securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, ISIN3], fields=null, sources=null, at=2024-01-29T16:20:01, from=null, to=null)
+13:42:05.582 [http-nio-15756-exec-2] DEBUG r.a.m.a.s.service.SecurityService.find - Found 3 securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, ISIN3], fields=null, sources=null, at=2024-01-29T16:20:01, from=null, to=null)
+13:42:05.585 [http-nio-15756-exec-2] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "c31e3f8c540d6cea",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities?ids=ISIN1%2CISIN2%2CISIN3&at=2024-01-29T16%3A20%3A01",
+  "host" : "localhost",
+  "path" : "/securities",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:05.586 [http-nio-15756-exec-2] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "c31e3f8c540d6cea",
+  "duration" : 9,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:05 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:05.602 [http-nio-15756-exec-11] DEBUG r.a.m.a.s.service.SecurityService.find - Finding securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, ISIN3], fields=null, sources=null, at=null, from=2024-01-29T16:20:01, to=null)
+13:42:05.606 [http-nio-15756-exec-11] DEBUG r.a.m.a.s.service.SecurityService.find - Found 3 securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, ISIN3], fields=null, sources=null, at=null, from=2024-01-29T16:20:01, to=null)
+13:42:05.611 [http-nio-15756-exec-11] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "93efd7ce2b3f97e4",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities?ids=ISIN1%2CISIN2%2CISIN3&from=2024-01-29T16%3A20%3A01",
+  "host" : "localhost",
+  "path" : "/securities",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:05.612 [http-nio-15756-exec-11] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "93efd7ce2b3f97e4",
+  "duration" : 10,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:05 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:05.633 [http-nio-15756-exec-7] DEBUG r.a.m.a.s.service.SecurityService.find - Finding securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, ISIN3], fields=null, sources=null, at=null, from=2024-01-30T13:40:01, to=null)
+13:42:05.639 [http-nio-15756-exec-7] DEBUG r.a.m.a.s.service.SecurityService.find - Found 3 securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, ISIN3], fields=null, sources=null, at=null, from=2024-01-30T13:40:01, to=null)
+13:42:05.643 [http-nio-15756-exec-7] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "d2e7936f8e270efa",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities?ids=ISIN1%2CISIN2%2CISIN3&from=2024-01-30T13%3A40%3A01",
+  "host" : "localhost",
+  "path" : "/securities",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:05.644 [http-nio-15756-exec-7] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "d2e7936f8e270efa",
+  "duration" : 12,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:05 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:05.668 [http-nio-15756-exec-8] DEBUG r.a.m.a.s.service.SecurityService.find - Finding securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, ISIN3], fields=null, sources=null, at=null, from=2024-01-30T13:40:02, to=null)
+13:42:05.676 [http-nio-15756-exec-8] DEBUG r.a.m.a.s.service.SecurityService.find - Found 3 securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, ISIN3], fields=null, sources=null, at=null, from=2024-01-30T13:40:02, to=null)
+13:42:05.684 [http-nio-15756-exec-8] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "a0a47163d17c0b83",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities?ids=ISIN1%2CISIN2%2CISIN3&from=2024-01-30T13%3A40%3A02",
+  "host" : "localhost",
+  "path" : "/securities",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:05.688 [http-nio-15756-exec-8] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "a0a47163d17c0b83",
+  "duration" : 18,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:05 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:05.728 [http-nio-15756-exec-9] DEBUG r.a.m.a.s.service.SecurityService.find - Finding securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, ISIN3], fields=null, sources=null, at=null, from=2024-01-29T23:55:55, to=2024-01-29T23:55:55)
+13:42:05.738 [http-nio-15756-exec-9] DEBUG r.a.m.a.s.service.SecurityService.find - Found 3 securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, ISIN3], fields=null, sources=null, at=null, from=2024-01-29T23:55:55, to=2024-01-29T23:55:55)
+13:42:05.742 [http-nio-15756-exec-9] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "880f9fd3383558ad",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities?ids=ISIN1%2CISIN2%2CISIN3&from=2024-01-29T23%3A55%3A55&to=2024-01-29T23%3A55%3A55",
+  "host" : "localhost",
+  "path" : "/securities",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:05.743 [http-nio-15756-exec-9] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "880f9fd3383558ad",
+  "duration" : 17,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:05 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:05.801 [http-nio-15756-exec-3] DEBUG r.a.m.a.s.service.SecurityService.find - Finding securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, ISIN3], fields=null, sources=null, at=null, from=2024-01-29T16:20:01, to=2024-01-30T13:40:02)
+13:42:05.817 [http-nio-15756-exec-3] DEBUG r.a.m.a.s.service.SecurityService.find - Found 3 securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, ISIN3], fields=null, sources=null, at=null, from=2024-01-29T16:20:01, to=2024-01-30T13:40:02)
+13:42:05.830 [http-nio-15756-exec-3] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "ff38a72067fac2d2",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities?ids=ISIN1%2CISIN2%2CISIN3&from=2024-01-29T16%3A20%3A01&to=2024-01-30T13%3A40%3A02",
+  "host" : "localhost",
+  "path" : "/securities",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:05.831 [http-nio-15756-exec-3] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "ff38a72067fac2d2",
+  "duration" : 34,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:05 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:05.916 [http-nio-15756-exec-12] DEBUG r.a.m.a.s.service.SecurityService.find - Finding securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, ISIN3], fields=null, sources=null, at=null, from=2024-01-29T23:55:55, to=2024-01-30T00:00)
+13:42:05.929 [http-nio-15756-exec-12] DEBUG r.a.m.a.s.service.SecurityService.find - Found 3 securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, ISIN3], fields=null, sources=null, at=null, from=2024-01-29T23:55:55, to=2024-01-30T00:00)
+13:42:05.935 [http-nio-15756-exec-12] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "ca3a99892ea46fcc",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities?ids=ISIN1%2CISIN2%2CISIN3&from=2024-01-29T23%3A55%3A55&to=2024-01-30T00%3A00%3A00",
+  "host" : "localhost",
+  "path" : "/securities",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:05.936 [http-nio-15756-exec-12] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "ca3a99892ea46fcc",
+  "duration" : 24,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:05 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:05.983 [http-nio-15756-exec-13] DEBUG r.a.m.a.s.service.SecurityService.find - Finding securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[UNKNOWN_ISIN], fields=null, sources=null, at=null, from=null, to=null)
+13:42:05.988 [http-nio-15756-exec-13] DEBUG r.a.m.a.s.service.SecurityService.find - Found 0 securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[UNKNOWN_ISIN], fields=null, sources=null, at=null, from=null, to=null)
+13:42:05.992 [http-nio-15756-exec-13] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "ecf662f9ae25b239",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities?ids=UNKNOWN_ISIN",
+  "host" : "localhost",
+  "path" : "/securities",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:05.993 [http-nio-15756-exec-13] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "ecf662f9ae25b239",
+  "duration" : 11,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:05 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:06.407 [http-nio-15756-exec-4] DEBUG r.a.m.a.s.service.SecurityService.find - Finding securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, ISIN3], fields=null, sources=[NSD, BDL], at=2024-01-30T18:45, from=null, to=null)
+13:42:06.413 [http-nio-15756-exec-4] DEBUG r.a.m.a.s.service.SecurityService.find - Found 3 securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, ISIN3], fields=null, sources=[NSD, BDL], at=2024-01-30T18:45, from=null, to=null)
+13:42:06.419 [http-nio-15756-exec-4] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "f76bfd60fac3d1b7",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities?ids=ISIN1%2CISIN2%2CISIN3&at=2024-01-30T18%3A45%3A00&sources=NSD%2CBDL",
+  "host" : "localhost",
+  "path" : "/securities",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:06.419 [http-nio-15756-exec-4] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "f76bfd60fac3d1b7",
+  "duration" : 13,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:06 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:06.436 [http-nio-15756-exec-1] DEBUG r.a.m.a.s.service.SecurityService.find - Finding securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, ISIN3], fields=null, sources=[NSD, BDL], at=null, from=2024-01-29T16:20:01, to=null)
+13:42:06.441 [http-nio-15756-exec-1] DEBUG r.a.m.a.s.service.SecurityService.find - Found 3 securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, ISIN3], fields=null, sources=[NSD, BDL], at=null, from=2024-01-29T16:20:01, to=null)
+13:42:06.444 [http-nio-15756-exec-1] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "9af6fa4bd4aef4ba",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities?ids=ISIN1%2CISIN2%2CISIN3&from=2024-01-29T16%3A20%3A01&sources=NSD%2CBDL",
+  "host" : "localhost",
+  "path" : "/securities",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:06.445 [http-nio-15756-exec-1] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "9af6fa4bd4aef4ba",
+  "duration" : 10,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:06 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:06.502 [http-nio-15756-exec-5] DEBUG r.a.m.a.s.service.SecurityService.find - Finding securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, ISIN3], fields=null, sources=[NSD, BDL], at=null, from=2024-01-29T23:55:55, to=2024-01-30T00:00)
+13:42:06.509 [http-nio-15756-exec-5] DEBUG r.a.m.a.s.service.SecurityService.find - Found 3 securities by filter: SecurityFilter(idTypes=[ISIN, RULE_NUMBER], ids=[ISIN1, ISIN2, ISIN3], fields=null, sources=[NSD, BDL], at=null, from=2024-01-29T23:55:55, to=2024-01-30T00:00)
+13:42:06.513 [http-nio-15756-exec-5] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "d251d4cf2af9e4ab",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities?ids=ISIN1%2CISIN2%2CISIN3&from=2024-01-29T23%3A55%3A55&to=2024-01-30T00%3A00%3A00&sources=NSD%2CBDL",
+  "host" : "localhost",
+  "path" : "/securities",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:06.514 [http-nio-15756-exec-5] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "d251d4cf2af9e4ab",
+  "duration" : 12,
+  "protocol" : "HTTP/1.1",
+  "status" : 200,
+  "headers" : {
+    "Connection" : [ "keep-alive" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:06 GMT" ],
+    "Keep-Alive" : [ "timeout=60" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  }
+}
+13:42:08.344 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown.shutDownGracefully - Commencing graceful shutdown. Waiting for active requests to complete
+13:42:08.509 [http-nio-15756-exec-8] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "remote",
+  "type" : "request",
+  "correlation" : "867cc49c0ed63e13",
+  "protocol" : "HTTP/1.1",
+  "remote" : "127.0.0.1",
+  "method" : "GET",
+  "uri" : "http://localhost:15756/securities",
+  "host" : "localhost",
+  "path" : "/securities",
+  "scheme" : "http",
+  "port" : "15756",
+  "headers" : {
+    "accept" : [ "*/*" ],
+    "accept-encoding" : [ "gzip,deflate" ],
+    "connection" : [ "Keep-Alive" ],
+    "content-type" : [ "application/json" ],
+    "host" : [ "localhost:15756" ],
+    "user-agent" : [ "Apache-HttpClient/4.5.14 (Java/18.0.1.1)" ]
+  }
+}
+13:42:08.511 [http-nio-15756-exec-8] TRACE org.zalando.logbook.Logbook.write - {
+  "origin" : "local",
+  "type" : "response",
+  "correlation" : "867cc49c0ed63e13",
+  "duration" : 813,
+  "protocol" : "HTTP/1.1",
+  "status" : 400,
+  "headers" : {
+    "Connection" : [ "close" ],
+    "Content-Type" : [ "application/json" ],
+    "Date" : [ "Tue, 06 Feb 2024 10:42:08 GMT" ],
+    "Transfer-Encoding" : [ "chunked" ]
+  },
+  "body" : {"code":"INVALID_FORMAT","violations":[{"path":"ids","message":"must not be null"}]}
+}
+13:42:08.564 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown.doShutdown - Graceful shutdown complete

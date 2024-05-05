@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="UTF-8"?><html xmlns:e="http://exam.extension.io" xmlns:cc="http://www.concordion.org/2007/concordion" lang="en"><head><script type="text/javascript">document.addEventListener('DOMContentLoaded', function (event) {
+    Array.from(document.getElementsByClassName("nomnoml")).forEach(function(el) {
+        nomnoml.draw(el, el.textContent); 
+    });  
+});</script><script type="text/javascript">window.addEventListener('DOMContentLoaded', function (event) {
+     jQuery("table").wrap(unescape("&lt;div class='table-responsive'&gt;&lt;/div&gt;"));
+}); </script><script type="text/javascript">window.addEventListener('DOMContentLoaded', function (event) {
+     jQuery(".details").wrap(unescape("&lt;details&gt;&lt;/details&gt;"));
+}); </script><script type="text/javascript">window.addEventListener('DOMContentLoaded', function (event) {
+    anchors.options = {
+        placement: 'left',
+        icon: '#'
+    };
+    anchors.add();
+    tocbot.init({
+        tocSelector: '.js-toc',
+        contentSelector: '.bd-content',
+        headingSelector: 'h1, h2, h3, h4, h5, h6',
+        hasInnerContainers: true,
+        collapseDepth: 3,
+        scrollSmooth: false,
+        fixedSidebarOffset: 'auto',
+        includeHtml: true
+    });
+    var collapseDepth = 3; 
+    jQuery( "#example-summary-badge" ).click(function() {
+        if (collapseDepth === 3) {
+            collapseDepth = 30;
+        } else {
+            collapseDepth = 3;
+        }
+        tocbot.refresh({
+            tocSelector: '.js-toc',
+            contentSelector: '.bd-content',
+            headingSelector: 'h1, h2, h3, h4, h5, h6',
+            hasInnerContainers: true,
+            collapseDepth: collapseDepth,
+            scrollSmooth: false,
+            fixedSidebarOffset: 'auto',
+            includeHtml: true
+        });
+        if (collapseDepth === 30) {
+            jQuery( ".toc-link" ).filter(function( index ) {
+                return jQuery( "i", this ).length !== 1
+            }).css("display", "none");
+        } else {
+            jQuery( ".toc-link" ).filter(function( index ) {
+                return jQuery( "i", this ).length !== 1
+            }).css("display", "unset");
+        }
+    });
+}); </script><script type="text/javascript">document.addEventListener('DOMContentLoaded', function (event) {
+    hljs.configure({
+        cssSelector: 'pre code, pre.code'
+    });
+    hljs.highlightAll();
+});</script><meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link type="text/css" rel="stylesheet" href="../../ext/codemirror/codemirror.css" /><link type="text/css" rel="stylesheet" href="../../ext/codemirror/enable-codemirror.css" /><link type="text/css" rel="stylesheet" href="../../ext/codemirror/merge.css" /><link type="text/css" rel="stylesheet" href="../../ext/codemirror/foldgutter.css" /><link type="text/css" rel="stylesheet" href="../../ext/codemirror/simplescrollbar.css" /><script type="text/javascript" src="../../ext/codemirror/codemirror.js"></script><script type="text/javascript" src="../../ext/codemirror/enable-codemirror.js"></script><script type="text/javascript" src="../../ext/codemirror/javascript.js"></script><script type="text/javascript" src="../../ext/codemirror/xml.js"></script><script type="text/javascript" src="../../ext/codemirror/addon/mode/simple.js"></script><script type="text/javascript" src="../../ext/codemirror/http.js"></script><script type="text/javascript" src="../../ext/codemirror/diff_match_patch.js"></script><script type="text/javascript" src="../../ext/codemirror/merge.js"></script><script type="text/javascript" src="../../ext/codemirror/xml-fold.js"></script><script type="text/javascript" src="../../ext/codemirror/simplescrollbar.js"></script><link type="text/css" rel="stylesheet" href="../../ext/highlight/stackoverflow-light.min.css" /><script type="text/javascript" src="../../ext/highlight/highlight.min.js"></script><script type="text/javascript" src="../../ext/highlight/http.min.js"></script><script type="text/javascript" src="../../ext/highlight/java.min.js"></script><link type="text/css" rel="stylesheet" href="../../ext/tocbot/tocbot.css" /><script type="text/javascript" src="../../ext/tocbot/tocbot.min.js"></script><link type="text/css" rel="stylesheet" href="../../ext/fontawesome/css/all.min.css" /><link type="text/css" rel="stylesheet" href="../../ext/fontawesome/css/regular.min.css" /><link type="text/css" rel="stylesheet" href="../../ext/fontawesome/css/solid.min.css" /><link type="text/css" rel="stylesheet" href="../../ext/fontawesome/css/all.min.css" /><link type="text/css" rel="stylesheet" href="../../ext/bootstrap/bootstrap.min.css" /><link type="text/css" rel="stylesheet" href="../../ext/bootstrap/enable-bootstrap.css" /><link type="text/css" rel="stylesheet" href="../../ext/bootstrap/doc.min.css" /><link type="text/css" rel="stylesheet" href="../../ext/bootstrap/scrollToTop.css" /><script type="text/javascript" src="../../ext/bootstrap/bootstrap.bundle.min.js"></script><script type="text/javascript" src="../../ext/bootstrap/jquery-3.2.1.slim.min.js"></script><script type="text/javascript" src="../../ext/bootstrap/sidebar.js"></script><script type="text/javascript" src="../../ext/bootstrap/doc.min.js"></script><script type="text/javascript" src="../../ext/bootstrap/scrollToTop.js"></script><script type="text/javascript" src="../../ext/nomnoml/graphre.js"></script><script type="text/javascript" src="../../ext/nomnoml/nomnoml.min.js"></script><link type="text/css" rel="stylesheet" href="../../timingExtensionStyle.css" /><script type="text/javascript" src="../../timingExtensionToggle.js"></script></head><body><div id="toggle-button"><img id="toggle-on" src="../../timing-on.svg" height="24" width="24" style="display:none" /><img id="toggle-off" src="../../timing-off.svg" height="24" width="24" /></div><span class="breadcrumbs"><a href="../Specs.html">Securities API</a> &gt; <a href="SecurityUpdate.html">Security Update</a> &gt;</span><div class="container-fluid"><div class="container-xxl my-md-4 bd-layout"><main class="bd-main order-1"><div class="bd-toc mt-4 mb-5 my-md-0 ps-xl-3 mb-lg-5 text-muted"><div class="row my-2 pb-2 border-bottom"><div class="col-9"><strong class="h6">On this page</strong></div><div class="col-2"><i id="example-summary-badge" class="fa fa-list-check"></i></div></div><nav id="table-of-contents" class="js-toc toc toc-right" /></div><div class="bd-content ps-lg-4" id="content">
+<h1>Обновление класса актива по ФИ</h1>
+
+<h2>Описание</h2>
+
+<p>
+    Класс актива содержится в поле <code>SECURITY_TYPE_AC</code>.<br />
+    Значение класса актива определяется на основе поля <code>BR_TYPE</code> или MD-типа актива (MD-security type).
+    Значение поля <code>BR_TYPE</code> более приоритетно.<br />
+    Вычисление нового значения класса актива происходит при сохранении ФИ.
+    Новое значение поля <code>SECURITY_TYPE_AC</code> сохраняется только в том случае, если оно отличается от предыдущего значения.
+</p>
+
+<h2>Примеры</h2>
+
+
+
+
+<h3>Отсутствует предыдущее значение <code>SECURITY_TYPE_AC</code></h3>
+
+При отсутствии информации о <code>BR_TYPE</code> значение
+<code>SECURITY_TYPE_AC</code> вычисляется на основе MD-security type. <br />
+В качестве даты актуальности такого значения используется текущая дата.
+
+<div xmlns:c="http://www.concordion.org/2007/concordion" name="Вычисление класса актива на основе MD-security type" cmdId="fad8cab0-7e3f-43f9-9567-1ef0531578d8" c:example="Вычисление класса актива на основе MD-security type" c:status="ExpectedToPass" e:example="" class="exam-example mb-3" data-type="example" id="Вычисление класса актива на основе MD-security type" data-summary-success="3" data-summary-ignore="0" data-summary-failure="0" data-summary-exception="0" data-summary-status="ExpectedToPass"><a style="font-size: 9pt; font-weight: bold; float: right; display: inline-block;margin-top: 20px; text-decoration: none; color: #89C;" href="SecurityTypeACUpdate[Вычисление класса актива на основе MD-sY]LogViewer.html">Log File</a><div data-bs-toggle="collapse" data-bs-target="#eb86d9c9c-0a57-4f4c-9aaf-78b0f2b3e8f8" aria-expanded="true"><h4 style="visibility: hidden; height:0;" class="test-class"><i class="example-badge fa fa-check m-1 text-success"></i>Вычисление класса актива на основе MD-security type</h4><i class="far fa-caret-square-down"></i><span> </span><a class="bd-example-title text-muted fw-lighter">Вычисление класса актива на основе MD-security type</a></div><div class="bd-example collapse show rounded bg-light bg-gradient" id="eb86d9c9c-0a57-4f4c-9aaf-78b0f2b3e8f8"><div cmdId="268454cf-e66e-4cc2-bb54-b8ec57228f3a" e:before-each="">
+    <div cmdId="0dc56126-7121-4076-ba38-731722ca3148" e:given="" class="given"><p class="lead text-primary">Given</p><hr />
+        <details> <summery>Справочники</summery>
+            <pre tables="security, field_value, field_value_agg, security_id, security_issuer_exposition" hidden="" cmdId="7c8a37b8-a4e8-49e8-9b65-e5cb9ddae735" e:db-clean="">security, field_value, field_value_agg, security_id, security_issuer_exposition</pre>
+            <span dir="/data/db/" datasets="sources.xml" cmdId="543e6835-90f5-4975-bba9-e9c77709a992" e:db-execute=""><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SOURCE</caption><thead class="thead-default"><tr><th class="">ID</th><th class="">CODE</th><th class="">NAME</th><th class="">PRIORITY</th></tr></thead><tbody><tr><td class=""><span>1</span></td><td class=""><span>QUIK_EXPORTER</span></td><td class=""><span>ARQA QUIK Exporter</span></td><td class=""><span>1</span></td></tr><tr><td class=""><span>2</span></td><td class=""><span>NSD</span></td><td class=""><span>API НРД</span></td><td class=""><span>2</span></td></tr><tr><td class=""><span>3</span></td><td class=""><span>BDL</span></td><td class=""><span>Bloomberg Data Licence</span></td><td class=""><span>3</span></td></tr><tr><td class=""><span>4</span></td><td class=""><span>MANUAL</span></td><td class=""><span>Manual</span></td><td class=""><span>4</span></td></tr><tr><td class=""><span>5</span></td><td class=""><span>ALFACAPITAL</span></td><td class=""><span>Alfacapital</span></td><td class=""><span>5</span></td></tr><tr><td class=""><span>6</span></td><td class=""><span>RU_DATA</span></td><td class=""><span>RU_DATA</span></td><td class=""><span>6</span></td></tr><tr><td class=""><span>7</span></td><td class=""><span>CBONDS</span></td><td class=""><span>CBONDS</span></td><td class=""><span>7</span></td></tr></tbody></table></span>
+        </details>
+
+        Входящий топик пуст: <div name="md.security.data.batch" cmdId="0e1a3013-c422-4cd4-af95-54d786ad67db" e:mq-purge=""><table class="table table-sm caption-top"><caption><i class="far fa-envelope-open me-1"> </i><span>md.security.data.batch purged</span></caption></table></div>
+        DLQ пуст: <div name="md.security.data.dlq" cmdId="9d19e0a6-d507-4d07-8372-6f7c059912c9" e:mq-purge=""><table class="table table-sm caption-top"><caption><i class="far fa-envelope-open me-1"> </i><span>md.security.data.dlq purged</span></caption></table></div>
+        Топик событий ФИ пуст: <div name="md.security.events" cmdId="e2ad98a8-e099-4e45-851c-6b12c36eb61c" e:mq-purge=""><table class="table table-sm caption-top"><caption><i class="far fa-envelope-open me-1"> </i><span>md.security.events purged</span></caption></table></div>
+    </div>
+</div>
+    <div cmdId="65a68d23-e54b-4865-9fff-1be12e9ad4f0" e:given="" class="given"><p class="lead text-primary">Given</p><hr />
+        <code>ISIN0</code> без значения поля <code>BR_TYPE.</code><br />
+        <code>ISIN1</code> без значения поля <code>BR_TYPE.</code>
+        <div table="security" cols="isin, name=MINFIN ROSSII 2 31/10/20, status_description=Размещен, type={{securityType 'SEC'}}, is_active=1" cmdId="3346a264-74b6-4b9b-8d17-b088554ff620" e:db-set="" hidden="true" rendered="true">
+            
+            
+        </div><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  security</caption><thead class="thead-default"><tr><th class="">isin</th><th class="">name</th><th class="">status_description</th><th class="">type</th><th class="">is_active</th></tr></thead><tbody><tr><td class=""><span>ISIN0</span></td><td class=""><span>MINFIN ROSSII 2 31/10/20</span></td><td class=""><span>Размещен</span></td><td class=""><span>4</span></td><td class=""><span>1</span></td></tr><tr><td class=""><span>ISIN1</span></td><td class=""><span>MINFIN ROSSII 2 31/10/20</span></td><td class=""><span>Размещен</span></td><td class=""><span>4</span></td><td class=""><span>1</span></td></tr></tbody></table>
+        <div table="field_value" cols="security, field, value, created_at={{daysAgo}}, date={{daysAgo}}" cmdId="8f6065b8-a2c0-43b4-b82b-79f3f5b975da" e:db-set="" hidden="true" rendered="true">
+            
+            
+        </div><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  field_value</caption><thead class="thead-default"><tr><th class="">security</th><th class="">field</th><th class="">value</th><th class="">created_at</th><th class="">date</th></tr></thead><tbody><tr><td class=""><span>19</span></td><td class=""><span>65</span></td><td class=""><span>ISIN0</span></td><td class=""><span>2024-04-01 00:00:00.000</span></td><td class=""><span>2024-04-01 00:00:00.000</span></td></tr><tr><td class=""><span>20</span></td><td class=""><span>65</span></td><td class=""><span>ISIN1</span></td><td class=""><span>2024-04-01 00:00:00.000</span></td><td class=""><span>2024-04-01 00:00:00.000</span></td></tr></tbody></table>
+        <div table="SECURITY_ID" cols="SECURITY,ID,TYPE" cmdId="cd05462c-a737-46c0-bf07-f7fce8c822e6" e:db-set="" hidden="true" rendered="true">
+            
+            
+        </div><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SECURITY_ID</caption><thead class="thead-default"><tr><th class="">SECURITY</th><th class="">ID</th><th class="">TYPE</th></tr></thead><tbody><tr><td class=""><span>19</span></td><td class=""><span>ISIN0</span></td><td class=""><span>1</span></td></tr><tr><td class=""><span>20</span></td><td class=""><span>ISIN1</span></td><td class=""><span>1</span></td></tr></tbody></table>
+    </div>
+
+    <div cmdId="8080569f-dc67-432e-8722-bad76d50ae2c" e:when="" class="when"><p class="lead text-warning">When</p><hr />
+        На вход пришли события:
+        <ul>
+            <li><code>ISIN0</code> MD-security type равен значению, представленному в БД </li>
+            <li><code>ISIN1</code> MD-security type отличается от значения, представленного в БД</li>
+        </ul>
+        Значения поля <code>BR_TYPE</code> в сообщениях отсутствуют.
+        <div class="mq-send">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> 
+<tr><td class="exp-body"><div class="json">{
+  "status": "SECURITY_FOUND",
+  "integrationSource": "NSD",
+  "isin": "ISIN0",
+  "timestamp": "2020-01-01T00:00:00",
+  "security": {
+    "isin": "ISIN0",
+    "name": "MINFIN ROSSII 2 31/10/20",
+    "type": "SEC",
+    "active": true,
+    "statusDescription": "Размещен",
+    "fields": [{
+      "code": "ISIN",
+      "value": "ISIN0"
+    }]
+  }
+}</div></td></tr> </tbody>
+    </table>
+</div>
+        <div class="mq-send">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> 
+<tr><td class="exp-body"><div class="json">{
+  "status": "SECURITY_FOUND",
+  "integrationSource": "NSD",
+  "isin": "ISIN1",
+  "timestamp": "2020-01-01T00:00:00",
+  "security": {
+    "isin": "ISIN1",
+    "name": "MINFIN ROSSII 2 31/10/20",
+    "type": "NSEC",
+    "active": true,
+    "statusDescription": "Размещен",
+    "fields": [{
+      "code": "ISIN",
+      "value": "ISIN1"
+    }]
+  }
+}</div></td></tr> </tbody>
+    </table>
+</div>
+    </div>
+
+    <div cmdId="0745a3c9-7263-4038-a744-2a66b4b5a0a4" e:then="" class="then"><p class="lead text-success">Then</p><hr />
+        События обработаны:
+        <div class="mq-check">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> <tr><td class="exp-body">EMPTY</td></tr> </tbody>
+    </table>
+</div>
+
+        Добавлены поля:
+        <table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  field_value</caption><thead class="thead-default"><tr><th class="">security</th><th class="">field</th><th class="">value</th><th class="">created_at</th><th class="">date</th></tr></thead><tbody><tr><td class=" table-success"><span title="19" data-toggle="tooltip" data-placement="top" style="">19</span></td><td class=" table-success"><span title="65" data-toggle="tooltip" data-placement="top" style="">65</span></td><td class=" table-success"><span title="ISIN0" data-toggle="tooltip" data-placement="top" style="">ISIN0</span></td><td class=" table-success"><span title="2024-04-01 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2024-04-01 00:00:00.000</span></td><td class=" table-success"><span title="2024-04-01 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2024-04-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="20" data-toggle="tooltip" data-placement="top" style="">19</span></td><td class=" table-success"><span title="65" data-toggle="tooltip" data-placement="top" style="">65</span></td><td class=" table-success"><span title="ISIN1" data-toggle="tooltip" data-placement="top" style="">ISIN0</span></td><td class=" table-success"><span title="2024-04-01 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2024-04-02 12:29:39.055</span></td><td class=" table-success"><span title="2024-04-01 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2020-01-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="19" data-toggle="tooltip" data-placement="top" style="">20</span></td><td class=" table-success"><span title="64" data-toggle="tooltip" data-placement="top" style="">65</span></td><td class=" table-success"><span title="Акции" data-toggle="tooltip" data-placement="top" style="">ISIN1</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-01 00:00:00.000</span></td><td class=" table-success"><span title="2024-04-02 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2024-04-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="20" data-toggle="tooltip" data-placement="top" style="">20</span></td><td class=" table-success"><span title="64" data-toggle="tooltip" data-placement="top" style="">65</span></td><td class=" table-success"><span title="Облигации" data-toggle="tooltip" data-placement="top" style="">ISIN1</span></td><td class=" table-success"><span title="!{within 20s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:39.080</span></td><td class=" table-success"><span title="2024-04-02 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2020-01-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="19" data-toggle="tooltip" data-placement="top" style="">19</span></td><td class=" table-success"><span title="65" data-toggle="tooltip" data-placement="top" style="">64</span></td><td class=" table-success"><span title="ISIN0" data-toggle="tooltip" data-placement="top" style="">Акции</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:39.055</span></td><td class=" table-success"><span title="2020-01-01" data-toggle="tooltip" data-placement="top" style="">2024-04-02 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="20" data-toggle="tooltip" data-placement="top" style="">20</span></td><td class=" table-success"><span title="65" data-toggle="tooltip" data-placement="top" style="">64</span></td><td class=" table-success"><span title="ISIN1" data-toggle="tooltip" data-placement="top" style="">Облигации</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:39.080</span></td><td class=" table-success"><span title="2020-01-01" data-toggle="tooltip" data-placement="top" style="">2024-04-02 00:00:00.000</span></td></tr></tbody></table>
+
+        Отправлены события ФИ:
+        <div class="mq-check">
+        <table class="table table-sm caption-top">
+            <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.events</span></caption>
+            <tbody>     
+    <tr><td class="exp-body"><div class="json rest-success">{
+  "isin": "ISIN0",
+  "update": {
+    "fields": {
+      "SECURITY_TYPE_AC": {
+        "new": "Акции",
+        "updatedAt": "2024-04-02T00:00:00"
+      }
+    }
+  },
+  "timestamp": "${json-unit.matches:formattedAndWithin}ISO_LOCAL|$|10s|$|2024-04-02T12:29:40.153",
+  "type": "SECURITY_UPDATED"
+}</div></td></tr>
+    
+    <tr><td class="exp-body"><div class="json rest-success">{
+  "isin": "ISIN1",
+  "update": {
+    "type": {
+      "new": "NSEC",
+      "old": "SEC"
+    },
+    "fields": {
+      "SECURITY_TYPE_AC": {
+        "new": "Облигации",
+        "updatedAt": "2024-04-02T00:00:00"
+      }
+    }
+  },
+  "timestamp": "${json-unit.matches:formattedAndWithin}ISO_LOCAL|$|10s|$|2024-04-02T12:29:40.157",
+  "type": "SECURITY_UPDATED"
+}</div></td></tr> </tbody>
+        </table>
+    </div>
+    </div>
+</div><div class="time-fig"><p>2s 235ms</p></div></div>
+
+Значения поля <code>BR_TYPE</code> более приоритетны для вычисления значения <code>SECURITY_TYPE_AC</code>,
+чем MD-security type. <br />
+При вычислении используется последнее значение <code>BR_TYPE</code>. <br />
+Последним считается значение с максимальным <code>DATE</code> и <code>CREATED_AT</code>. <br />
+В качестве даты актуальности значения поля <code>SECURITY_TYPE_AC</code> используется дата актуальности значения поля <code>BR_TYPE</code>,
+на основе которого это поле было рассчитано. <br />
+<div xmlns:c="http://www.concordion.org/2007/concordion" name="Вычисление класса актива на основе BR_TYPE" cmdId="acf8107f-6f8b-4de5-91fb-dd07eb5a0b57" c:example="Вычисление класса актива на основе BR_TYPE" c:status="ExpectedToPass" e:example="" class="exam-example mb-3" data-type="example" id="Вычисление класса актива на основе BR_TYPE" data-summary-success="3" data-summary-ignore="0" data-summary-failure="0" data-summary-exception="0" data-summary-status="ExpectedToPass"><a style="font-size: 9pt; font-weight: bold; float: right; display: inline-block;margin-top: 20px; text-decoration: none; color: #89C;" href="SecurityTypeACUpdate[Вычисление класса актива на основе BR_TY]LogViewer.html">Log File</a><div data-bs-toggle="collapse" data-bs-target="#e32a180d9-0b95-4a66-a927-992250303e0f" aria-expanded="true"><h4 style="visibility: hidden; height:0;" class="test-class"><i class="example-badge fa fa-check m-1 text-success"></i>Вычисление класса актива на основе BR_TYPE</h4><i class="far fa-caret-square-down"></i><span> </span><a class="bd-example-title text-muted fw-lighter">Вычисление класса актива на основе BR_TYPE</a></div><div class="bd-example collapse show rounded bg-light bg-gradient" id="e32a180d9-0b95-4a66-a927-992250303e0f"><div cmdId="268454cf-e66e-4cc2-bb54-b8ec57228f3a" e:before-each="">
+    <div cmdId="0dc56126-7121-4076-ba38-731722ca3148" e:given="" class="given"><p class="lead text-primary">Given</p><hr />
+        <details> <summery>Справочники</summery>
+            <pre tables="security, field_value, field_value_agg, security_id, security_issuer_exposition" hidden="" cmdId="7c8a37b8-a4e8-49e8-9b65-e5cb9ddae735" e:db-clean="">security, field_value, field_value_agg, security_id, security_issuer_exposition</pre>
+            <span dir="/data/db/" datasets="sources.xml" cmdId="543e6835-90f5-4975-bba9-e9c77709a992" e:db-execute=""><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SOURCE</caption><thead class="thead-default"><tr><th class="">ID</th><th class="">CODE</th><th class="">NAME</th><th class="">PRIORITY</th></tr></thead><tbody><tr><td class=""><span>1</span></td><td class=""><span>QUIK_EXPORTER</span></td><td class=""><span>ARQA QUIK Exporter</span></td><td class=""><span>1</span></td></tr><tr><td class=""><span>2</span></td><td class=""><span>NSD</span></td><td class=""><span>API НРД</span></td><td class=""><span>2</span></td></tr><tr><td class=""><span>3</span></td><td class=""><span>BDL</span></td><td class=""><span>Bloomberg Data Licence</span></td><td class=""><span>3</span></td></tr><tr><td class=""><span>4</span></td><td class=""><span>MANUAL</span></td><td class=""><span>Manual</span></td><td class=""><span>4</span></td></tr><tr><td class=""><span>5</span></td><td class=""><span>ALFACAPITAL</span></td><td class=""><span>Alfacapital</span></td><td class=""><span>5</span></td></tr><tr><td class=""><span>6</span></td><td class=""><span>RU_DATA</span></td><td class=""><span>RU_DATA</span></td><td class=""><span>6</span></td></tr><tr><td class=""><span>7</span></td><td class=""><span>CBONDS</span></td><td class=""><span>CBONDS</span></td><td class=""><span>7</span></td></tr></tbody></table></span>
+        </details>
+
+        Входящий топик пуст: <div name="md.security.data.batch" cmdId="0e1a3013-c422-4cd4-af95-54d786ad67db" e:mq-purge=""><table class="table table-sm caption-top"><caption><i class="far fa-envelope-open me-1"> </i><span>md.security.data.batch purged</span></caption></table></div>
+        DLQ пуст: <div name="md.security.data.dlq" cmdId="9d19e0a6-d507-4d07-8372-6f7c059912c9" e:mq-purge=""><table class="table table-sm caption-top"><caption><i class="far fa-envelope-open me-1"> </i><span>md.security.data.dlq purged</span></caption></table></div>
+        Топик событий ФИ пуст: <div name="md.security.events" cmdId="e2ad98a8-e099-4e45-851c-6b12c36eb61c" e:mq-purge=""><table class="table table-sm caption-top"><caption><i class="far fa-envelope-open me-1"> </i><span>md.security.events purged</span></caption></table></div>
+    </div>
+</div>
+    <div cmdId="bcc10b86-defe-46fb-8565-48daf4ef857e" e:given="" class="given"><p class="lead text-primary">Given</p><hr />
+        <code>ISIN0</code> значения поля<code>BR_TYPE</code> нет в базе<br />
+        <code>ISIN1</code> значение поля<code>BR_TYPE</code> есть в базе на дату 2020-01-01<br />
+        <code>ISIN2</code> значение поля<code>BR_TYPE</code> есть в базе на сегодня<br />
+        <div table="security" cols="isin, name=MINFIN ROSSII 2 31/10/20, status_description=Размещен, type={{securityType 'SEC'}}, is_active=1" cmdId="f68a6d30-b130-4f2b-840d-e9777be1829a" e:db-set="" hidden="true" rendered="true">
+            
+            
+            
+        </div><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  security</caption><thead class="thead-default"><tr><th class="">isin</th><th class="">name</th><th class="">status_description</th><th class="">type</th><th class="">is_active</th></tr></thead><tbody><tr><td class=""><span>ISIN0</span></td><td class=""><span>MINFIN ROSSII 2 31/10/20</span></td><td class=""><span>Размещен</span></td><td class=""><span>4</span></td><td class=""><span>1</span></td></tr><tr><td class=""><span>ISIN1</span></td><td class=""><span>MINFIN ROSSII 2 31/10/20</span></td><td class=""><span>Размещен</span></td><td class=""><span>4</span></td><td class=""><span>1</span></td></tr><tr><td class=""><span>ISIN2</span></td><td class=""><span>MINFIN ROSSII 2 31/10/20</span></td><td class=""><span>Размещен</span></td><td class=""><span>4</span></td><td class=""><span>1</span></td></tr></tbody></table>
+        <div table="SECURITY_ID" cols="SECURITY,ID,TYPE" cmdId="e9eb3ed1-8c79-46c8-b543-754bbf9499f1" e:db-set="" hidden="true" rendered="true">
+            
+            
+            
+        </div><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SECURITY_ID</caption><thead class="thead-default"><tr><th class="">SECURITY</th><th class="">ID</th><th class="">TYPE</th></tr></thead><tbody><tr><td class=""><span>21</span></td><td class=""><span>ISIN0</span></td><td class=""><span>1</span></td></tr><tr><td class=""><span>22</span></td><td class=""><span>ISIN1</span></td><td class=""><span>1</span></td></tr><tr><td class=""><span>23</span></td><td class=""><span>ISIN2</span></td><td class=""><span>1</span></td></tr></tbody></table>
+        <div table="field_value" cols="security, field, value, date, created_at={{daysAgo}}" cmdId="89a94fc1-3bca-4867-8d28-051a452463c4" e:db-set="" hidden="true" rendered="true">
+            
+            
+            
+            
+            
+        </div><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  field_value</caption><thead class="thead-default"><tr><th class="">security</th><th class="">field</th><th class="">value</th><th class="">date</th><th class="">created_at</th></tr></thead><tbody><tr><td class=""><span>21</span></td><td class=""><span>65</span></td><td class=""><span>ISIN0</span></td><td class=""><span>2024-04-01 00:00:00.000</span></td><td class=""><span>2024-04-01 00:00:00.000</span></td></tr><tr><td class=""><span>22</span></td><td class=""><span>65</span></td><td class=""><span>ISIN1</span></td><td class=""><span>2024-04-01 00:00:00.000</span></td><td class=""><span>2024-04-01 00:00:00.000</span></td></tr><tr><td class=""><span>23</span></td><td class=""><span>65</span></td><td class=""><span>ISIN2</span></td><td class=""><span>2024-04-01 00:00:00.000</span></td><td class=""><span>2024-04-01 00:00:00.000</span></td></tr><tr><td class=""><span>22</span></td><td class=""><span>50</span></td><td class=""><span>SN1</span></td><td class=""><span>2020-01-01</span></td><td class=""><span>2024-04-01 00:00:00.000</span></td></tr><tr><td class=""><span>23</span></td><td class=""><span>50</span></td><td class=""><span>SN1</span></td><td class=""><span>2024-04-02 00:00:00.000</span></td><td class=""><span>2024-04-01 00:00:00.000</span></td></tr></tbody></table>
+    </div>
+
+    <div cmdId="47621076-f8cd-43c3-9ce9-9caba2b3813f" e:when="" class="when"><p class="lead text-warning">When</p><hr />
+        На вход пришли события:
+        <ul>
+            <li><code>ISIN0</code> Значение BR_TYPE на дату '2020-01-01T00:00:00' </li>
+            <li><code>ISIN1</code> Значение BR_TYPE на дату '2022-01-01T00:00:00'</li>
+            <li><code>ISIN2</code> Значение BR_TYPE на дату '2022-01-01T00:00:00'</li>
+        </ul>
+        <div class="mq-send">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> 
+<tr><td class="exp-body"><div class="json">{
+  "status": "SECURITY_FOUND",
+  "integrationSource": "NSD",
+  "isin": "ISIN0",
+  "timestamp": "2020-01-01T00:00:00",
+  "security": {
+    "isin": "ISIN0",
+    "name": "MINFIN ROSSII 2 31/10/20",
+    "type": "SEC",
+    "active": true,
+    "statusDescription": "Размещен",
+    "fields": [{
+      "code": "ISIN",
+      "value": "ISIN0"
+    }, {
+      "code": "BR_TYPE",
+      "value": "BON1"
+    }]
+  }
+}</div></td></tr> </tbody>
+    </table>
+</div>
+        <div class="mq-send">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> 
+<tr><td class="exp-body"><div class="json">{
+  "status": "SECURITY_FOUND",
+  "integrationSource": "NSD",
+  "isin": "ISIN1",
+  "timestamp": "2022-01-01T00:00:00",
+  "security": {
+    "isin": "ISIN1",
+    "name": "MINFIN ROSSII 2 31/10/20",
+    "type": "SEC",
+    "active": true,
+    "statusDescription": "Размещен",
+    "fields": [{
+      "code": "ISIN",
+      "value": "ISIN1"
+    }, {
+      "code": "BR_TYPE",
+      "value": "BON1"
+    }]
+  }
+}</div></td></tr> </tbody>
+    </table>
+</div>
+        <div class="mq-send">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> 
+<tr><td class="exp-body"><div class="json">{
+  "status": "SECURITY_FOUND",
+  "integrationSource": "NSD",
+  "isin": "ISIN2",
+  "timestamp": "2022-01-01T00:00:00",
+  "security": {
+    "isin": "ISIN2",
+    "name": "MINFIN ROSSII 2 31/10/20",
+    "type": "SEC",
+    "active": true,
+    "statusDescription": "Размещен",
+    "fields": [{
+      "code": "ISIN",
+      "value": "ISIN2"
+    }, {
+      "code": "BR_TYPE",
+      "value": "BON1"
+    }]
+  }
+}</div></td></tr> </tbody>
+    </table>
+</div>
+    </div>
+
+    <div cmdId="6f4a4185-bca0-431f-8064-297fd7ec5fe1" e:then="" class="then"><p class="lead text-success">Then</p><hr />
+        События обработаны:
+        <div class="mq-check">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> <tr><td class="exp-body">EMPTY</td></tr> </tbody>
+    </table>
+</div>
+        <ul>
+            <li><code>ISIN0</code> Рассчитан тип актива на основе <code>BR_TYPE</code> из сообщения</li>
+            <li><code>ISIN1</code> Рассчитан тип актива на основе <code>BR_TYPE</code> из сообщения,
+                т. к. дата актуальности там больше, чем у значения в базе.</li>
+            <li><code>ISIN2</code> Рассчитан тип актива на основе <code>BR_TYPE</code> из базы,
+                т. к. дата актуальности там больше, чем у значения в сообщении.</li>
+        </ul>
+        Добавлены поля:
+        <table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  field_value</caption><thead class="thead-default"><tr><th class="">security</th><th class="">field</th><th class="">value</th><th class="">created_at</th><th class="">date</th></tr></thead><tbody><tr><td class=" table-success"><span title="21" data-toggle="tooltip" data-placement="top" style="">21</span></td><td class=" table-success"><span title="65" data-toggle="tooltip" data-placement="top" style="">50</span></td><td class=" table-success"><span title="ISIN0" data-toggle="tooltip" data-placement="top" style="">BON1</span></td><td class=" table-success"><span title="2024-04-01 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2024-04-02 12:29:41.304</span></td><td class=" table-success"><span title="2024-04-01 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2020-01-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="22" data-toggle="tooltip" data-placement="top" style="">22</span></td><td class=" table-success"><span title="65" data-toggle="tooltip" data-placement="top" style="">50</span></td><td class=" table-success"><span title="ISIN1" data-toggle="tooltip" data-placement="top" style="">BON1</span></td><td class=" table-success"><span title="2024-04-01 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2024-04-02 12:29:41.333</span></td><td class=" table-success"><span title="2024-04-01 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2022-01-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="23" data-toggle="tooltip" data-placement="top" style="">23</span></td><td class=" table-success"><span title="65" data-toggle="tooltip" data-placement="top" style="">50</span></td><td class=" table-success"><span title="ISIN2" data-toggle="tooltip" data-placement="top" style="">BON1</span></td><td class=" table-success"><span title="2024-04-01 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2024-04-02 12:29:41.356</span></td><td class=" table-success"><span title="2024-04-01 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2022-01-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="21" data-toggle="tooltip" data-placement="top" style="">21</span></td><td class=" table-success"><span title="50" data-toggle="tooltip" data-placement="top" style="">65</span></td><td class=" table-success"><span title="BON1" data-toggle="tooltip" data-placement="top" style="">ISIN0</span></td><td class=" table-success"><span title="!{within 20s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-01 00:00:00.000</span></td><td class=" table-success"><span title="2020-01-01" data-toggle="tooltip" data-placement="top" style="">2024-04-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="21" data-toggle="tooltip" data-placement="top" style="">21</span></td><td class=" table-success"><span title="58" data-toggle="tooltip" data-placement="top" style="">65</span></td><td class=" table-success"><span title="Госбумаги" data-toggle="tooltip" data-placement="top" style="">ISIN0</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:41.304</span></td><td class=" table-success"><span title="2020-01-01" data-toggle="tooltip" data-placement="top" style="">2020-01-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="21" data-toggle="tooltip" data-placement="top" style="">22</span></td><td class=" table-success"><span title="64" data-toggle="tooltip" data-placement="top" style="">65</span></td><td class=" table-success"><span title="Ценные бумаги РФ" data-toggle="tooltip" data-placement="top" style="">ISIN1</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-01 00:00:00.000</span></td><td class=" table-success"><span title="2020-01-01" data-toggle="tooltip" data-placement="top" style="">2024-04-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="22" data-toggle="tooltip" data-placement="top" style="">22</span></td><td class=" table-success"><span title="50" data-toggle="tooltip" data-placement="top" style="">65</span></td><td class=" table-success"><span title="BON1" data-toggle="tooltip" data-placement="top" style="">ISIN1</span></td><td class=" table-success"><span title="!{within 20s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:41.333</span></td><td class=" table-success"><span title="2022-01-01" data-toggle="tooltip" data-placement="top" style="">2022-01-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="22" data-toggle="tooltip" data-placement="top" style="">23</span></td><td class=" table-success"><span title="50" data-toggle="tooltip" data-placement="top" style="">65</span></td><td class=" table-success"><span title="SN1" data-toggle="tooltip" data-placement="top" style="">ISIN2</span></td><td class=" table-success"><span title="2024-04-01 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2024-04-01 00:00:00.000</span></td><td class=" table-success"><span title="2020-01-01" data-toggle="tooltip" data-placement="top" style="">2024-04-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="22" data-toggle="tooltip" data-placement="top" style="">23</span></td><td class=" table-success"><span title="64" data-toggle="tooltip" data-placement="top" style="">65</span></td><td class=" table-success"><span title="Ценные бумаги РФ" data-toggle="tooltip" data-placement="top" style="">ISIN2</span></td><td class=" table-success"><span title="!{within 20s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:41.356</span></td><td class=" table-success"><span title="2022-01-01" data-toggle="tooltip" data-placement="top" style="">2022-01-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="22" data-toggle="tooltip" data-placement="top" style="">22</span></td><td class=" table-success"><span title="58" data-toggle="tooltip" data-placement="top" style="">50</span></td><td class=" table-success"><span title="Госбумаги" data-toggle="tooltip" data-placement="top" style="">SN1</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-01 00:00:00.000</span></td><td class=" table-success"><span title="2022-01-01" data-toggle="tooltip" data-placement="top" style="">2020-01-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="23" data-toggle="tooltip" data-placement="top" style="">23</span></td><td class=" table-success"><span title="50" data-toggle="tooltip" data-placement="top" style="">50</span></td><td class=" table-success"><span title="BON1" data-toggle="tooltip" data-placement="top" style="">SN1</span></td><td class=" table-success"><span title="!{within 20s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-01 00:00:00.000</span></td><td class=" table-success"><span title="2022-01-01" data-toggle="tooltip" data-placement="top" style="">2024-04-02 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="23" data-toggle="tooltip" data-placement="top" style="">21</span></td><td class=" table-success"><span title="50" data-toggle="tooltip" data-placement="top" style="">58</span></td><td class=" table-success"><span title="SN1" data-toggle="tooltip" data-placement="top" style="">Госбумаги</span></td><td class=" table-success"><span title="2024-04-01 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2024-04-02 12:29:41.304</span></td><td class=" table-success"><span title="2024-04-02 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2020-01-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="23" data-toggle="tooltip" data-placement="top" style="">22</span></td><td class=" table-success"><span title="64" data-toggle="tooltip" data-placement="top" style="">58</span></td><td class=" table-success"><span title="Облигации" data-toggle="tooltip" data-placement="top" style="">Госбумаги</span></td><td class=" table-success"><span title="!{within 20s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:41.333</span></td><td class=" table-success"><span title="2024-04-02 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2022-01-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="21" data-toggle="tooltip" data-placement="top" style="">23</span></td><td class=" table-success"><span title="65" data-toggle="tooltip" data-placement="top" style="">64</span></td><td class=" table-success"><span title="ISIN0" data-toggle="tooltip" data-placement="top" style="">Облигации</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:41.356</span></td><td class=" table-success"><span title="2020-01-01" data-toggle="tooltip" data-placement="top" style="">2024-04-02 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="22" data-toggle="tooltip" data-placement="top" style="">21</span></td><td class=" table-success"><span title="65" data-toggle="tooltip" data-placement="top" style="">64</span></td><td class=" table-success"><span title="ISIN1" data-toggle="tooltip" data-placement="top" style="">Ценные бумаги РФ</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:41.304</span></td><td class=" table-success"><span title="2022-01-01" data-toggle="tooltip" data-placement="top" style="">2020-01-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="23" data-toggle="tooltip" data-placement="top" style="">22</span></td><td class=" table-success"><span title="65" data-toggle="tooltip" data-placement="top" style="">64</span></td><td class=" table-success"><span title="ISIN2" data-toggle="tooltip" data-placement="top" style="">Ценные бумаги РФ</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:41.333</span></td><td class=" table-success"><span title="2022-01-01" data-toggle="tooltip" data-placement="top" style="">2022-01-01 00:00:00.000</span></td></tr></tbody></table>
+
+        Отправлены события ФИ:
+        <div class="mq-check">
+        <table class="table table-sm caption-top">
+            <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.events</span></caption>
+            <tbody>     
+    <tr><td class="exp-body"><div class="json rest-success">{
+  "isin": "ISIN0",
+  "update": {
+    "fields": {
+      "SECURITY_TYPE_AC": {
+        "new": "Ценные бумаги РФ",
+        "updatedAt": "2020-01-01T00:00:00"
+      },
+      "BR_TYPE": {
+        "new": "BON1",
+        "updatedAt": "2020-01-01T00:00:00"
+      },
+      "SECURITY_ISSUER_INDUSTRY_AC": {
+        "new": "Госбумаги",
+        "updatedAt": "2020-01-01T00:00:00"
+      }
+    }
+  },
+  "timestamp": "${json-unit.matches:formattedAndWithin}ISO_LOCAL|$|10s|$|2024-04-02T12:29:42.419",
+  "type": "SECURITY_UPDATED"
+}</div></td></tr>
+    
+    <tr><td class="exp-body"><div class="json rest-success">{
+  "isin": "ISIN1",
+  "update": {
+    "fields": {
+      "SECURITY_TYPE_AC": {
+        "new": "Ценные бумаги РФ",
+        "updatedAt": "2022-01-01T00:00:00"
+      },
+      "BR_TYPE": {
+        "new": "BON1",
+        "updatedAt": "2022-01-01T00:00:00",
+        "old": "SN1"
+      },
+      "SECURITY_ISSUER_INDUSTRY_AC": {
+        "new": "Госбумаги",
+        "updatedAt": "2022-01-01T00:00:00"
+      }
+    }
+  },
+  "timestamp": "${json-unit.matches:formattedAndWithin}ISO_LOCAL|$|10s|$|2024-04-02T12:29:42.421",
+  "type": "SECURITY_UPDATED"
+}</div></td></tr>
+    
+    <tr><td class="exp-body"><div class="json rest-success">{
+  "isin": "ISIN2",
+  "update": {
+    "fields": {
+      "SECURITY_TYPE_AC": {
+        "new": "Облигации",
+        "updatedAt": "2024-04-02T00:00:00"
+      }
+    }
+  },
+  "timestamp": "${json-unit.matches:formattedAndWithin}ISO_LOCAL|$|10s|$|2024-04-02T12:29:42.422",
+  "type": "SECURITY_UPDATED"
+}</div></td></tr> </tbody>
+        </table>
+    </div>
+    </div>
+</div><div class="time-fig"><p>2s 261ms</p></div></div>
+
+<h3>Обновление значения <code>SECURITY_TYPE_AC</code></h3>
+
+При отсутствии информации о <code>BR_TYPE</code> значение <code>SECURITY_TYPE_AC</code>
+обновляется на основе MD-security type.
+
+<div xmlns:c="http://www.concordion.org/2007/concordion" name="Обновление класса актива на основе MD-security type" cmdId="b081b76e-85be-48e1-8a04-a46c70d7e26f" c:example="Обновление класса актива на основе MD-security type" c:status="ExpectedToPass" e:example="" class="exam-example mb-3" data-type="example" id="Обновление класса актива на основе MD-security type" data-summary-success="3" data-summary-ignore="0" data-summary-failure="0" data-summary-exception="0" data-summary-status="ExpectedToPass"><a style="font-size: 9pt; font-weight: bold; float: right; display: inline-block;margin-top: 20px; text-decoration: none; color: #89C;" href="SecurityTypeACUpdate[Обновление класса актива на основе MD-sY]LogViewer.html">Log File</a><div data-bs-toggle="collapse" data-bs-target="#e142064b0-febb-45d1-b32a-ca9a79c95a09" aria-expanded="true"><h4 style="visibility: hidden; height:0;" class="test-class"><i class="example-badge fa fa-check m-1 text-success"></i>Обновление класса актива на основе MD-security type</h4><i class="far fa-caret-square-down"></i><span> </span><a class="bd-example-title text-muted fw-lighter">Обновление класса актива на основе MD-security type</a></div><div class="bd-example collapse show rounded bg-light bg-gradient" id="e142064b0-febb-45d1-b32a-ca9a79c95a09"><div cmdId="268454cf-e66e-4cc2-bb54-b8ec57228f3a" e:before-each="">
+    <div cmdId="0dc56126-7121-4076-ba38-731722ca3148" e:given="" class="given"><p class="lead text-primary">Given</p><hr />
+        <details> <summery>Справочники</summery>
+            <pre tables="security, field_value, field_value_agg, security_id, security_issuer_exposition" hidden="" cmdId="7c8a37b8-a4e8-49e8-9b65-e5cb9ddae735" e:db-clean="">security, field_value, field_value_agg, security_id, security_issuer_exposition</pre>
+            <span dir="/data/db/" datasets="sources.xml" cmdId="543e6835-90f5-4975-bba9-e9c77709a992" e:db-execute=""><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SOURCE</caption><thead class="thead-default"><tr><th class="">ID</th><th class="">CODE</th><th class="">NAME</th><th class="">PRIORITY</th></tr></thead><tbody><tr><td class=""><span>1</span></td><td class=""><span>QUIK_EXPORTER</span></td><td class=""><span>ARQA QUIK Exporter</span></td><td class=""><span>1</span></td></tr><tr><td class=""><span>2</span></td><td class=""><span>NSD</span></td><td class=""><span>API НРД</span></td><td class=""><span>2</span></td></tr><tr><td class=""><span>3</span></td><td class=""><span>BDL</span></td><td class=""><span>Bloomberg Data Licence</span></td><td class=""><span>3</span></td></tr><tr><td class=""><span>4</span></td><td class=""><span>MANUAL</span></td><td class=""><span>Manual</span></td><td class=""><span>4</span></td></tr><tr><td class=""><span>5</span></td><td class=""><span>ALFACAPITAL</span></td><td class=""><span>Alfacapital</span></td><td class=""><span>5</span></td></tr><tr><td class=""><span>6</span></td><td class=""><span>RU_DATA</span></td><td class=""><span>RU_DATA</span></td><td class=""><span>6</span></td></tr><tr><td class=""><span>7</span></td><td class=""><span>CBONDS</span></td><td class=""><span>CBONDS</span></td><td class=""><span>7</span></td></tr></tbody></table></span>
+        </details>
+
+        Входящий топик пуст: <div name="md.security.data.batch" cmdId="0e1a3013-c422-4cd4-af95-54d786ad67db" e:mq-purge=""><table class="table table-sm caption-top"><caption><i class="far fa-envelope-open me-1"> </i><span>md.security.data.batch purged</span></caption></table></div>
+        DLQ пуст: <div name="md.security.data.dlq" cmdId="9d19e0a6-d507-4d07-8372-6f7c059912c9" e:mq-purge=""><table class="table table-sm caption-top"><caption><i class="far fa-envelope-open me-1"> </i><span>md.security.data.dlq purged</span></caption></table></div>
+        Топик событий ФИ пуст: <div name="md.security.events" cmdId="e2ad98a8-e099-4e45-851c-6b12c36eb61c" e:mq-purge=""><table class="table table-sm caption-top"><caption><i class="far fa-envelope-open me-1"> </i><span>md.security.events purged</span></caption></table></div>
+    </div>
+</div>
+    <div cmdId="802d74bf-3e01-4fe9-aec7-be386df195e1" e:given="" class="given"><p class="lead text-primary">Given</p><hr />
+        <code>ISIN0</code> без значения поля <code>BR_TYPE</code>, <br />
+        <code>ISIN1</code> без значения поля <code>BR_TYPE</code>
+        <div table="security" cols="isin, type,name=MINFIN ROSSII 2 31/10/20, status_description=Размещен, is_active=1" cmdId="87c8a9e3-4e71-432f-8b6e-b9d0f1856f17" e:db-set="" hidden="true" rendered="true">
+            
+            
+        </div><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  security</caption><thead class="thead-default"><tr><th class="">isin</th><th class="">type</th><th class="">name</th><th class="">status_description</th><th class="">is_active</th></tr></thead><tbody><tr><td class=""><span>ISIN0</span></td><td class=""><span>15</span></td><td class=""><span>MINFIN ROSSII 2 31/10/20</span></td><td class=""><span>Размещен</span></td><td class=""><span>1</span></td></tr><tr><td class=""><span>ISIN1</span></td><td class=""><span>6</span></td><td class=""><span>MINFIN ROSSII 2 31/10/20</span></td><td class=""><span>Размещен</span></td><td class=""><span>1</span></td></tr></tbody></table>
+        <div table="field_value" cols="security, field, value, created_at={{daysAgo}}, date={{daysAgo}}" cmdId="3dfda11d-8209-4a4c-80e0-ac6925df3855" e:db-set="" hidden="true" rendered="true">
+            
+            
+        </div><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  field_value</caption><thead class="thead-default"><tr><th class="">security</th><th class="">field</th><th class="">value</th><th class="">created_at</th><th class="">date</th></tr></thead><tbody><tr><td class=""><span>24</span></td><td class=""><span>65</span></td><td class=""><span>ISIN0</span></td><td class=""><span>2024-04-01 00:00:00.000</span></td><td class=""><span>2024-04-01 00:00:00.000</span></td></tr><tr><td class=""><span>25</span></td><td class=""><span>65</span></td><td class=""><span>ISIN1</span></td><td class=""><span>2024-04-01 00:00:00.000</span></td><td class=""><span>2024-04-01 00:00:00.000</span></td></tr></tbody></table>
+        <div table="SECURITY_ID" cols="SECURITY,ID,TYPE" cmdId="f00616ad-c40e-4a4d-826a-ed7bdb9a034c" e:db-set="" hidden="true" rendered="true">
+            
+            
+        </div><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SECURITY_ID</caption><thead class="thead-default"><tr><th class="">SECURITY</th><th class="">ID</th><th class="">TYPE</th></tr></thead><tbody><tr><td class=""><span>24</span></td><td class=""><span>ISIN0</span></td><td class=""><span>1</span></td></tr><tr><td class=""><span>25</span></td><td class=""><span>ISIN1</span></td><td class=""><span>1</span></td></tr></tbody></table>
+        <div table="field_value" cols="security, field, value, date, created_at={{daysAgo}}" cmdId="cc3d6a89-fa7d-4d9f-af5c-0e0b2275b658" e:db-set="" hidden="true" rendered="true">
+            
+            
+            
+            
+        </div><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  field_value</caption><thead class="thead-default"><tr><th class="">security</th><th class="">field</th><th class="">value</th><th class="">date</th><th class="">created_at</th></tr></thead><tbody><tr><td class=""><span>24</span></td><td class=""><span>65</span></td><td class=""><span>ISIN0</span></td><td class=""><span>2020-01-01</span></td><td class=""><span>2024-04-01 00:00:00.000</span></td></tr><tr><td class=""><span>25</span></td><td class=""><span>65</span></td><td class=""><span>ISIN1</span></td><td class=""><span>2020-01-01</span></td><td class=""><span>2024-04-01 00:00:00.000</span></td></tr><tr><td class=""><span>24</span></td><td class=""><span>64</span></td><td class=""><span>Акции</span></td><td class=""><span>2020-01-01</span></td><td class=""><span>2024-04-01 00:00:00.000</span></td></tr><tr><td class=""><span>25</span></td><td class=""><span>64</span></td><td class=""><span>Облигации</span></td><td class=""><span>2020-01-01</span></td><td class=""><span>2024-04-01 00:00:00.000</span></td></tr></tbody></table>
+    </div>
+
+    <div cmdId="174911e1-4a82-44bf-b2f1-b0e6958475ba" e:when="" class="when"><p class="lead text-warning">When</p><hr />
+        На вход пришли события:
+        <ul>
+            <li><code>ISIN0</code> MD-security type изменился с RDR на SEC </li>
+            <li><code>ISIN1</code> MD-security type изменился с NSEC на SEC</li>
+        </ul>
+        Значения поля <code>BR_TYPE</code> в сообщениях отсутствуют.
+        <div class="mq-send">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> 
+<tr><td class="exp-body"><div class="json">{
+  "status": "SECURITY_FOUND",
+  "integrationSource": "NSD",
+  "isin": "ISIN0",
+  "timestamp": "2020-01-01T00:00:00",
+  "security": {
+    "isin": "ISIN0",
+    "name": "MINFIN ROSSII 2 31/10/20",
+    "type": "SEC",
+    "active": true,
+    "statusDescription": "Размещен",
+    "fields": [{
+      "code": "ISIN",
+      "value": "ISIN0"
+    }]
+  }
+}</div></td></tr> </tbody>
+    </table>
+</div>
+        <div class="mq-send">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> 
+<tr><td class="exp-body"><div class="json">{
+  "status": "SECURITY_FOUND",
+  "integrationSource": "NSD",
+  "isin": "ISIN1",
+  "timestamp": "2020-01-01T00:00:00",
+  "security": {
+    "isin": "ISIN1",
+    "name": "MINFIN ROSSII 2 31/10/20",
+    "type": "SEC",
+    "active": true,
+    "statusDescription": "Размещен",
+    "fields": [{
+      "code": "ISIN",
+      "value": "ISIN1"
+    }]
+  }
+}</div></td></tr> </tbody>
+    </table>
+</div>
+    </div>
+
+    <div cmdId="4c02d4a5-003c-4b75-83ad-a2cb03dde72d" e:then="" class="then"><p class="lead text-success">Then</p><hr />
+        События обработаны:
+        <div class="mq-check">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> <tr><td class="exp-body">EMPTY</td></tr> </tbody>
+    </table>
+</div>
+
+        <ul>
+            <li><code>ISIN0</code> Значение SECURITY_TYPE_AC не поменялось</li>
+            <li><code>ISIN1</code> Значение SECURITY_TYPE_AC поменялось</li>
+        </ul>
+        <table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  field_value</caption><thead class="thead-default"><tr><th class="">security</th><th class="">field</th><th class="">value</th><th class="">date</th><th class="">created_at</th></tr></thead><tbody><tr><td class=" table-success"><span title="24" data-toggle="tooltip" data-placement="top" style="">24</span></td><td class=" table-success"><span title="65" data-toggle="tooltip" data-placement="top" style="">64</span></td><td class=" table-success"><span title="ISIN0" data-toggle="tooltip" data-placement="top" style="">Акции</span></td><td class=" table-success"><span title="2020-01-01" data-toggle="tooltip" data-placement="top" style="">2020-01-01 00:00:00.000</span></td><td class=" table-success"><span title="2024-04-01 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2024-04-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="25" data-toggle="tooltip" data-placement="top" style="">24</span></td><td class=" table-success"><span title="65" data-toggle="tooltip" data-placement="top" style="">65</span></td><td class=" table-success"><span title="ISIN1" data-toggle="tooltip" data-placement="top" style="">ISIN0</span></td><td class=" table-success"><span title="2020-01-01" data-toggle="tooltip" data-placement="top" style="">2020-01-01 00:00:00.000</span></td><td class=" table-success"><span title="2024-04-01 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2024-04-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="24" data-toggle="tooltip" data-placement="top" style="">25</span></td><td class=" table-success"><span title="64" data-toggle="tooltip" data-placement="top" style="">64</span></td><td class=" table-success"><span title="Акции" data-toggle="tooltip" data-placement="top" style="">Акции</span></td><td class=" table-success"><span title="2020-01-01" data-toggle="tooltip" data-placement="top" style="">2024-04-02 00:00:00.000</span></td><td class=" table-success"><span title="2024-04-01 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2024-04-02 12:29:43.598</span></td></tr><tr><td class=" table-success"><span title="25" data-toggle="tooltip" data-placement="top" style="">25</span></td><td class=" table-success"><span title="64" data-toggle="tooltip" data-placement="top" style="">64</span></td><td class=" table-success"><span title="Облигации" data-toggle="tooltip" data-placement="top" style="">Облигации</span></td><td class=" table-success"><span title="2020-01-01" data-toggle="tooltip" data-placement="top" style="">2020-01-01 00:00:00.000</span></td><td class=" table-success"><span title="2024-04-01 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2024-04-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="25" data-toggle="tooltip" data-placement="top" style="">25</span></td><td class=" table-success"><span title="64" data-toggle="tooltip" data-placement="top" style="">65</span></td><td class=" table-success"><span title="Акции" data-toggle="tooltip" data-placement="top" style="">ISIN1</span></td><td class=" table-success"><span title="2024-04-02 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2020-01-01 00:00:00.000</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-01 00:00:00.000</span></td></tr></tbody></table>
+
+        Отправлены события ФИ:
+        <div class="mq-check">
+        <table class="table table-sm caption-top">
+            <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.events</span></caption>
+            <tbody>     
+    <tr><td class="exp-body"><div class="json rest-success">{
+  "isin": "ISIN0",
+  "update": {
+    "type": {
+      "new": "SEC",
+      "old": "RDR"
+    },
+    "fields": {}
+  },
+  "timestamp": "${json-unit.matches:formattedAndWithin}ISO_LOCAL|$|10s|$|2024-04-02T12:29:44.677",
+  "type": "SECURITY_UPDATED"
+}</div></td></tr>
+    
+    <tr><td class="exp-body"><div class="json rest-success">{
+  "isin": "ISIN1",
+  "update": {
+    "type": {
+      "new": "SEC",
+      "old": "NSEC"
+    },
+    "fields": {
+      "SECURITY_TYPE_AC": {
+        "new": "Акции",
+        "updatedAt": "2024-04-02T00:00:00",
+        "old": "Облигации"
+      }
+    }
+  },
+  "timestamp": "${json-unit.matches:formattedAndWithin}ISO_LOCAL|$|10s|$|2024-04-02T12:29:44.681",
+  "type": "SECURITY_UPDATED"
+}</div></td></tr> </tbody>
+        </table>
+    </div>
+    </div>
+</div><div class="time-fig"><p>2s 259ms</p></div></div>
+
+Обновление класса актива на основе <code>BR_TYPE</code> происходит, если
+1. Новое вычисленное значение не совпадает с предыдущим  <br />
+2. Дата актуальности нового значения <code>BR_TYPE</code> больше даты актуальности <code>SECURITY_TYPE_AC</code>.
+Иначе новое значение просто добавляется в базу, но сообщение об изменении <code>SECURITY_TYPE_AC</code> не генерируется.
+<div xmlns:c="http://www.concordion.org/2007/concordion" name="Обновление класса актива на основе BR_TYPE" cmdId="8b30eaa2-0577-4ac9-9228-80df5cc3ced6" c:example="Обновление класса актива на основе BR_TYPE" c:status="ExpectedToPass" e:example="" class="exam-example mb-3" data-type="example" id="Обновление класса актива на основе BR_TYPE" data-summary-success="3" data-summary-ignore="0" data-summary-failure="0" data-summary-exception="0" data-summary-status="ExpectedToPass"><a style="font-size: 9pt; font-weight: bold; float: right; display: inline-block;margin-top: 20px; text-decoration: none; color: #89C;" href="SecurityTypeACUpdate[Обновление класса актива на основе BR_TY]LogViewer.html">Log File</a><div data-bs-toggle="collapse" data-bs-target="#efaa0b7cb-3234-48bf-bc75-2e083afa7640" aria-expanded="true"><h4 style="visibility: hidden; height:0;" class="test-class"><i class="example-badge fa fa-check m-1 text-success"></i>Обновление класса актива на основе BR_TYPE</h4><i class="far fa-caret-square-down"></i><span> </span><a class="bd-example-title text-muted fw-lighter">Обновление класса актива на основе BR_TYPE</a></div><div class="bd-example collapse show rounded bg-light bg-gradient" id="efaa0b7cb-3234-48bf-bc75-2e083afa7640"><div cmdId="268454cf-e66e-4cc2-bb54-b8ec57228f3a" e:before-each="">
+    <div cmdId="0dc56126-7121-4076-ba38-731722ca3148" e:given="" class="given"><p class="lead text-primary">Given</p><hr />
+        <details> <summery>Справочники</summery>
+            <pre tables="security, field_value, field_value_agg, security_id, security_issuer_exposition" hidden="" cmdId="7c8a37b8-a4e8-49e8-9b65-e5cb9ddae735" e:db-clean="">security, field_value, field_value_agg, security_id, security_issuer_exposition</pre>
+            <span dir="/data/db/" datasets="sources.xml" cmdId="543e6835-90f5-4975-bba9-e9c77709a992" e:db-execute=""><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SOURCE</caption><thead class="thead-default"><tr><th class="">ID</th><th class="">CODE</th><th class="">NAME</th><th class="">PRIORITY</th></tr></thead><tbody><tr><td class=""><span>1</span></td><td class=""><span>QUIK_EXPORTER</span></td><td class=""><span>ARQA QUIK Exporter</span></td><td class=""><span>1</span></td></tr><tr><td class=""><span>2</span></td><td class=""><span>NSD</span></td><td class=""><span>API НРД</span></td><td class=""><span>2</span></td></tr><tr><td class=""><span>3</span></td><td class=""><span>BDL</span></td><td class=""><span>Bloomberg Data Licence</span></td><td class=""><span>3</span></td></tr><tr><td class=""><span>4</span></td><td class=""><span>MANUAL</span></td><td class=""><span>Manual</span></td><td class=""><span>4</span></td></tr><tr><td class=""><span>5</span></td><td class=""><span>ALFACAPITAL</span></td><td class=""><span>Alfacapital</span></td><td class=""><span>5</span></td></tr><tr><td class=""><span>6</span></td><td class=""><span>RU_DATA</span></td><td class=""><span>RU_DATA</span></td><td class=""><span>6</span></td></tr><tr><td class=""><span>7</span></td><td class=""><span>CBONDS</span></td><td class=""><span>CBONDS</span></td><td class=""><span>7</span></td></tr></tbody></table></span>
+        </details>
+
+        Входящий топик пуст: <div name="md.security.data.batch" cmdId="0e1a3013-c422-4cd4-af95-54d786ad67db" e:mq-purge=""><table class="table table-sm caption-top"><caption><i class="far fa-envelope-open me-1"> </i><span>md.security.data.batch purged</span></caption></table></div>
+        DLQ пуст: <div name="md.security.data.dlq" cmdId="9d19e0a6-d507-4d07-8372-6f7c059912c9" e:mq-purge=""><table class="table table-sm caption-top"><caption><i class="far fa-envelope-open me-1"> </i><span>md.security.data.dlq purged</span></caption></table></div>
+        Топик событий ФИ пуст: <div name="md.security.events" cmdId="e2ad98a8-e099-4e45-851c-6b12c36eb61c" e:mq-purge=""><table class="table table-sm caption-top"><caption><i class="far fa-envelope-open me-1"> </i><span>md.security.events purged</span></caption></table></div>
+    </div>
+</div>
+    <div cmdId="5f0917d8-683a-4fb0-9da7-0ff47c08010c" e:given="" class="given"><p class="lead text-primary">Given</p><hr />
+        Значений полей <code>BR_TYPE</code> нет в базе.<br />
+        Значения <code>SECURITY_TYPE_AC</code> присутствуют для всех ФИ.
+        <div table="security" cols="isin, name=MINFIN ROSSII 2 31/10/20, status_description=Размещен, type={{securityType 'SEC'}}, is_active=1" cmdId="496b3a2e-61e8-4434-9dec-11cded6fd4ba" e:db-set="" hidden="true" rendered="true">
+            
+            
+            
+        </div><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  security</caption><thead class="thead-default"><tr><th class="">isin</th><th class="">name</th><th class="">status_description</th><th class="">type</th><th class="">is_active</th></tr></thead><tbody><tr><td class=""><span>ISIN0</span></td><td class=""><span>MINFIN ROSSII 2 31/10/20</span></td><td class=""><span>Размещен</span></td><td class=""><span>4</span></td><td class=""><span>1</span></td></tr><tr><td class=""><span>ISIN1</span></td><td class=""><span>MINFIN ROSSII 2 31/10/20</span></td><td class=""><span>Размещен</span></td><td class=""><span>4</span></td><td class=""><span>1</span></td></tr><tr><td class=""><span>ISIN2</span></td><td class=""><span>MINFIN ROSSII 2 31/10/20</span></td><td class=""><span>Размещен</span></td><td class=""><span>4</span></td><td class=""><span>1</span></td></tr></tbody></table>
+        <div table="SECURITY_ID" cols="SECURITY,ID,TYPE" cmdId="a84d1848-f67d-407b-9b40-cc159d52b9d5" e:db-set="" hidden="true" rendered="true">
+            
+            
+            
+        </div><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  SECURITY_ID</caption><thead class="thead-default"><tr><th class="">SECURITY</th><th class="">ID</th><th class="">TYPE</th></tr></thead><tbody><tr><td class=""><span>26</span></td><td class=""><span>ISIN0</span></td><td class=""><span>1</span></td></tr><tr><td class=""><span>27</span></td><td class=""><span>ISIN1</span></td><td class=""><span>1</span></td></tr><tr><td class=""><span>28</span></td><td class=""><span>ISIN2</span></td><td class=""><span>1</span></td></tr></tbody></table>
+        <div table="field_value" cols="security, field, value, date, created_at={{daysAgo}}" cmdId="59b2cf95-d27b-4ad1-8c7a-2d9700819ddc" e:db-set="" hidden="true" rendered="true">
+            
+            
+            
+            
+            
+            
+        </div><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  field_value</caption><thead class="thead-default"><tr><th class="">security</th><th class="">field</th><th class="">value</th><th class="">date</th><th class="">created_at</th></tr></thead><tbody><tr><td class=""><span>26</span></td><td class=""><span>65</span></td><td class=""><span>ISIN0</span></td><td class=""><span>2024-04-01 00:00:00.000</span></td><td class=""><span>2024-04-01 00:00:00.000</span></td></tr><tr><td class=""><span>27</span></td><td class=""><span>65</span></td><td class=""><span>ISIN1</span></td><td class=""><span>2024-04-01 00:00:00.000</span></td><td class=""><span>2024-04-01 00:00:00.000</span></td></tr><tr><td class=""><span>28</span></td><td class=""><span>65</span></td><td class=""><span>ISIN2</span></td><td class=""><span>2024-04-01 00:00:00.000</span></td><td class=""><span>2024-04-01 00:00:00.000</span></td></tr><tr><td class=""><span>26</span></td><td class=""><span>64</span></td><td class=""><span>Акции</span></td><td class=""><span>2020-01-01</span></td><td class=""><span>2024-04-01 00:00:00.000</span></td></tr><tr><td class=""><span>27</span></td><td class=""><span>64</span></td><td class=""><span>Акции</span></td><td class=""><span>2023-01-01</span></td><td class=""><span>2024-04-01 00:00:00.000</span></td></tr><tr><td class=""><span>28</span></td><td class=""><span>64</span></td><td class=""><span>Акции</span></td><td class=""><span>2022-01-01</span></td><td class=""><span>2024-04-01 00:00:00.000</span></td></tr></tbody></table>
+    </div>
+
+    <div cmdId="82200613-b93d-4444-bebc-b212fccf3618" e:when="" class="when"><p class="lead text-warning">When</p><hr />
+        На вход пришли события:
+        <ul>
+            <li><code>ISIN0</code> Значение BR_TYPE на дату '2022-01-01T00:00:00' </li>
+            <li><code>ISIN1</code> Значение BR_TYPE на дату '2022-01-01T00:00:00'</li>
+            <li><code>ISIN2</code> Значение BR_TYPE на дату сегодня</li>
+        </ul>
+        <div class="mq-send">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> 
+<tr><td class="exp-body"><div class="json">{
+  "status": "SECURITY_FOUND",
+  "integrationSource": "NSD",
+  "isin": "ISIN0",
+  "timestamp": "2020-01-01T00:00:00",
+  "security": {
+    "isin": "ISIN0",
+    "name": "MINFIN ROSSII 2 31/10/20",
+    "type": "SEC",
+    "active": true,
+    "statusDescription": "Размещен",
+    "fields": [{
+      "code": "ISIN",
+      "value": "ISIN0"
+    }, {
+      "code": "BR_TYPE",
+      "value": "SHS1"
+    }]
+  }
+}</div></td></tr> </tbody>
+    </table>
+</div>
+        <div class="mq-send">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> 
+<tr><td class="exp-body"><div class="json">{
+  "status": "SECURITY_FOUND",
+  "integrationSource": "NSD",
+  "isin": "ISIN1",
+  "timestamp": "2022-01-01T00:00:00",
+  "security": {
+    "isin": "ISIN1",
+    "name": "MINFIN ROSSII 2 31/10/20",
+    "type": "SEC",
+    "active": true,
+    "statusDescription": "Размещен",
+    "fields": [{
+      "code": "ISIN",
+      "value": "ISIN1"
+    }, {
+      "code": "BR_TYPE",
+      "value": "SS1"
+    }]
+  }
+}</div></td></tr> </tbody>
+    </table>
+</div>
+        <div class="mq-send">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> 
+<tr><td class="exp-body"><div class="json">{
+  "status": "SECURITY_FOUND",
+  "integrationSource": "NSD",
+  "isin": "ISIN2",
+  "timestamp": "2022-01-02T00:00:00",
+  "security": {
+    "isin": "ISIN2",
+    "name": "MINFIN ROSSII 2 31/10/20",
+    "type": "SEC",
+    "active": true,
+    "statusDescription": "Размещен",
+    "fields": [{
+      "code": "ISIN",
+      "value": "ISIN2"
+    }, {
+      "code": "BR_TYPE",
+      "value": "BON1"
+    }]
+  }
+}</div></td></tr> </tbody>
+    </table>
+</div>
+    </div>
+
+    <div cmdId="bb1008eb-cb46-4fe9-bc76-c1fdb8da122f" e:then="" class="then"><p class="lead text-success">Then</p><hr />
+        События обработаны:
+        <div class="mq-check">
+    <table class="table table-sm caption-top">
+        <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.data.batch</span></caption>
+        <tbody> <tr><td class="exp-body">EMPTY</td></tr> </tbody>
+    </table>
+</div>
+        <ul>
+            <li><code>ISIN0</code> Новое значение не добавляется,
+                т. к. значение <code>SECURITY_TYPE_AC</code> совпадает с предыдущим
+            </li>
+            <li><code>ISIN1</code> Новое значение <code>SECURITY_TYPE_AC</code> добавляется,
+                т к такое значение этого поля есть только на более позднюю дату.
+                При этом сообщение об изменении значения этого поля не отправляется.
+            </li>
+            <li><code>ISIN2</code> Рассчитан класс актива на основе <code>BR_TYPE</code> из сообщения,
+                значение <code>SECURITY_TYPE_AC</code> обновлено, сообщение об обновлении оправляется.
+            </li>
+        </ul>
+        <table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  field_value</caption><thead class="thead-default"><tr><th class="">security</th><th class="">field</th><th class="">value</th><th class="">created_at</th><th class="">date</th></tr></thead><tbody><tr><td class=" table-success"><span title="26" data-toggle="tooltip" data-placement="top" style="">28</span></td><td class=" table-success"><span title="65" data-toggle="tooltip" data-placement="top" style="">50</span></td><td class=" table-success"><span title="ISIN0" data-toggle="tooltip" data-placement="top" style="">BON1</span></td><td class=" table-success"><span title="2024-04-01 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2024-04-02 12:29:45.956</span></td><td class=" table-success"><span title="2024-04-01 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2022-01-02 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="27" data-toggle="tooltip" data-placement="top" style="">26</span></td><td class=" table-success"><span title="65" data-toggle="tooltip" data-placement="top" style="">65</span></td><td class=" table-success"><span title="ISIN1" data-toggle="tooltip" data-placement="top" style="">ISIN0</span></td><td class=" table-success"><span title="2024-04-01 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2024-04-01 00:00:00.000</span></td><td class=" table-success"><span title="2024-04-01 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2024-04-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="28" data-toggle="tooltip" data-placement="top" style="">26</span></td><td class=" table-success"><span title="65" data-toggle="tooltip" data-placement="top" style="">65</span></td><td class=" table-success"><span title="ISIN2" data-toggle="tooltip" data-placement="top" style="">ISIN0</span></td><td class=" table-success"><span title="2024-04-01 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2024-04-02 12:29:45.914</span></td><td class=" table-success"><span title="2024-04-01 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2020-01-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="26" data-toggle="tooltip" data-placement="top" style="">27</span></td><td class=" table-success"><span title="50" data-toggle="tooltip" data-placement="top" style="">65</span></td><td class=" table-success"><span title="SHS1" data-toggle="tooltip" data-placement="top" style="">ISIN1</span></td><td class=" table-success"><span title="!{within 20s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-01 00:00:00.000</span></td><td class=" table-success"><span title="2020-01-01" data-toggle="tooltip" data-placement="top" style="">2024-04-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="26" data-toggle="tooltip" data-placement="top" style="">27</span></td><td class=" table-success"><span title="64" data-toggle="tooltip" data-placement="top" style="">65</span></td><td class=" table-success"><span title="Акции" data-toggle="tooltip" data-placement="top" style="">ISIN1</span></td><td class=" table-success"><span title="2024-04-01 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2024-04-02 12:29:45.936</span></td><td class=" table-success"><span title="2020-01-01" data-toggle="tooltip" data-placement="top" style="">2022-01-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="27" data-toggle="tooltip" data-placement="top" style="">28</span></td><td class=" table-success"><span title="50" data-toggle="tooltip" data-placement="top" style="">65</span></td><td class=" table-success"><span title="SS1" data-toggle="tooltip" data-placement="top" style="">ISIN2</span></td><td class=" table-success"><span title="!{within 20s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-01 00:00:00.000</span></td><td class=" table-success"><span title="2022-01-01" data-toggle="tooltip" data-placement="top" style="">2024-04-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="27" data-toggle="tooltip" data-placement="top" style="">28</span></td><td class=" table-success"><span title="64" data-toggle="tooltip" data-placement="top" style="">65</span></td><td class=" table-success"><span title="Облигации" data-toggle="tooltip" data-placement="top" style="">ISIN2</span></td><td class=" table-success"><span title="!{within 20s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:45.956</span></td><td class=" table-success"><span title="2022-01-01" data-toggle="tooltip" data-placement="top" style="">2022-01-02 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="27" data-toggle="tooltip" data-placement="top" style="">26</span></td><td class=" table-success"><span title="64" data-toggle="tooltip" data-placement="top" style="">50</span></td><td class=" table-success"><span title="Акции" data-toggle="tooltip" data-placement="top" style="">SHS1</span></td><td class=" table-success"><span title="2024-04-01 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2024-04-02 12:29:45.914</span></td><td class=" table-success"><span title="2023-01-01" data-toggle="tooltip" data-placement="top" style="">2020-01-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="28" data-toggle="tooltip" data-placement="top" style="">27</span></td><td class=" table-success"><span title="50" data-toggle="tooltip" data-placement="top" style="">50</span></td><td class=" table-success"><span title="BON1" data-toggle="tooltip" data-placement="top" style="">SS1</span></td><td class=" table-success"><span title="!{within 20s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:45.936</span></td><td class=" table-success"><span title="2022-01-02" data-toggle="tooltip" data-placement="top" style="">2022-01-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="28" data-toggle="tooltip" data-placement="top" style="">26</span></td><td class=" table-success"><span title="64" data-toggle="tooltip" data-placement="top" style="">64</span></td><td class=" table-success"><span title="Акции" data-toggle="tooltip" data-placement="top" style="">Акции</span></td><td class=" table-success"><span title="2024-04-01 00:00:00.000" data-toggle="tooltip" data-placement="top" style="">2024-04-01 00:00:00.000</span></td><td class=" table-success"><span title="2022-01-01" data-toggle="tooltip" data-placement="top" style="">2020-01-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="28" data-toggle="tooltip" data-placement="top" style="">27</span></td><td class=" table-success"><span title="64" data-toggle="tooltip" data-placement="top" style="">64</span></td><td class=" table-success"><span title="Ценные бумаги РФ" data-toggle="tooltip" data-placement="top" style="">Акции</span></td><td class=" table-success"><span title="!{within 20s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-01 00:00:00.000</span></td><td class=" table-success"><span title="2022-01-02" data-toggle="tooltip" data-placement="top" style="">2023-01-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="28" data-toggle="tooltip" data-placement="top" style="">28</span></td><td class=" table-success"><span title="58" data-toggle="tooltip" data-placement="top" style="">64</span></td><td class=" table-success"><span title="Госбумаги" data-toggle="tooltip" data-placement="top" style="">Акции</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-01 00:00:00.000</span></td><td class=" table-success"><span title="2022-01-02" data-toggle="tooltip" data-placement="top" style="">2022-01-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="26" data-toggle="tooltip" data-placement="top" style="">28</span></td><td class=" table-success"><span title="65" data-toggle="tooltip" data-placement="top" style="">58</span></td><td class=" table-success"><span title="ISIN0" data-toggle="tooltip" data-placement="top" style="">Госбумаги</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:45.956</span></td><td class=" table-success"><span title="2020-01-01" data-toggle="tooltip" data-placement="top" style="">2022-01-02 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="27" data-toggle="tooltip" data-placement="top" style="">27</span></td><td class=" table-success"><span title="65" data-toggle="tooltip" data-placement="top" style="">64</span></td><td class=" table-success"><span title="ISIN1" data-toggle="tooltip" data-placement="top" style="">Облигации</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:45.936</span></td><td class=" table-success"><span title="2022-01-01" data-toggle="tooltip" data-placement="top" style="">2022-01-01 00:00:00.000</span></td></tr><tr><td class=" table-success"><span title="28" data-toggle="tooltip" data-placement="top" style="">28</span></td><td class=" table-success"><span title="65" data-toggle="tooltip" data-placement="top" style="">64</span></td><td class=" table-success"><span title="ISIN2" data-toggle="tooltip" data-placement="top" style="">Ценные бумаги РФ</span></td><td class=" table-success"><span title="!{within 10s}" data-toggle="tooltip" data-placement="top" style="text-decoration: underline grey dashed !important;">2024-04-02 12:29:45.956</span></td><td class=" table-success"><span title="2022-01-02" data-toggle="tooltip" data-placement="top" style="">2022-01-02 00:00:00.000</span></td></tr></tbody></table>
+
+        Отправлены события ФИ:
+        <div class="mq-check">
+        <table class="table table-sm caption-top">
+            <caption><i class="fa fa-envelope-open me-1"> </i><span>md.security.events</span></caption>
+            <tbody>     
+    <tr><td class="exp-body"><div class="json rest-success">{
+  "isin": "ISIN0",
+  "update": {
+    "fields": {
+      "BR_TYPE": {
+        "new": "SHS1",
+        "updatedAt": "2020-01-01T00:00:00"
+      }
+    }
+  },
+  "timestamp": "${json-unit.matches:formattedAndWithin}ISO_LOCAL|$|10s|$|2024-04-02T12:29:47.053",
+  "type": "SECURITY_UPDATED"
+}</div></td></tr>
+    
+    <tr><td class="exp-body"><div class="json rest-success">{
+  "isin": "ISIN1",
+  "update": {
+    "fields": {
+      "BR_TYPE": {
+        "new": "SS1",
+        "updatedAt": "2022-01-01T00:00:00"
+      }
+    }
+  },
+  "timestamp": "${json-unit.matches:formattedAndWithin}ISO_LOCAL|$|10s|$|2024-04-02T12:29:47.056",
+  "type": "SECURITY_UPDATED"
+}</div></td></tr>
+    
+    <tr><td class="exp-body"><div class="json rest-success">{
+  "isin": "ISIN2",
+  "update": {
+    "fields": {
+      "BR_TYPE": {
+        "new": "BON1",
+        "updatedAt": "2022-01-02T00:00:00"
+      },
+      "SECURITY_TYPE_AC": {
+        "new": "Ценные бумаги РФ",
+        "updatedAt": "2022-01-02T00:00:00",
+        "old": "Акции"
+      },
+      "SECURITY_ISSUER_INDUSTRY_AC": {
+        "new": "Госбумаги",
+        "updatedAt": "2022-01-02T00:00:00"
+      }
+    }
+  },
+  "timestamp": "${json-unit.matches:formattedAndWithin}ISO_LOCAL|$|10s|$|2024-04-02T12:29:47.059",
+  "type": "SECURITY_UPDATED"
+}</div></td></tr> </tbody>
+        </table>
+    </div>
+    </div>
+</div><div class="time-fig"><p>2s 298ms</p></div></div>
+
+
+</div></main></div></div><div class="footer">Results generated by <a href="http://www.concordion.org" style="font-weight: bold; text-decoration: none; color: #89C;">Concordion</a><div class="testTime">in 9166 ms on 02-апр.-2024 at 12:29:48 MSK</div></div></body>
+<button id="btnToTop" onclick="topFunction()" type="button" class="btn btn-light btn-sm text-muted me-1"><i class="fa fa-arrow-up"></i></button></html>

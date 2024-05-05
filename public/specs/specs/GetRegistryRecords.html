@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"?><html xmlns:e="http://exam.extension.io" lang="en"><head><script type="text/javascript">document.addEventListener('DOMContentLoaded', function (event) {
+    Array.from(document.getElementsByClassName("nomnoml")).forEach(function(el) {
+        nomnoml.draw(el, el.textContent); 
+    });  
+});</script><script type="text/javascript">window.addEventListener('DOMContentLoaded', function (event) {
+     jQuery("table").wrap(unescape("&lt;div class='table-responsive'&gt;&lt;/div&gt;"));
+}); </script><script type="text/javascript">window.addEventListener('DOMContentLoaded', function (event) {
+     jQuery(".details").wrap(unescape("&lt;details&gt;&lt;/details&gt;"));
+}); </script><script type="text/javascript">window.addEventListener('DOMContentLoaded', function (event) {
+    anchors.options = {
+        placement: 'left',
+        icon: '#'
+    };
+    anchors.add();
+    tocbot.init({
+        tocSelector: '.js-toc',
+        contentSelector: '.bd-content',
+        headingSelector: 'h1, h2, h3, h4, h5, h6',
+        hasInnerContainers: true,
+        collapseDepth: 3,
+        scrollSmooth: false,
+        fixedSidebarOffset: 'auto',
+        includeHtml: true
+    });
+    var collapseDepth = 3; 
+    jQuery( "#example-summary-badge" ).click(function() {
+        if (collapseDepth === 3) {
+            collapseDepth = 30;
+        } else {
+            collapseDepth = 3;
+        }
+        tocbot.refresh({
+            tocSelector: '.js-toc',
+            contentSelector: '.bd-content',
+            headingSelector: 'h1, h2, h3, h4, h5, h6',
+            hasInnerContainers: true,
+            collapseDepth: collapseDepth,
+            scrollSmooth: false,
+            fixedSidebarOffset: 'auto',
+            includeHtml: true
+        });
+        if (collapseDepth === 30) {
+            jQuery( ".toc-link" ).filter(function( index ) {
+                return jQuery( "i", this ).length !== 1
+            }).css("display", "none");
+        } else {
+            jQuery( ".toc-link" ).filter(function( index ) {
+                return jQuery( "i", this ).length !== 1
+            }).css("display", "unset");
+        }
+    });
+}); </script><script type="text/javascript">document.addEventListener('DOMContentLoaded', function (event) {
+    hljs.configure({
+        cssSelector: 'pre code, pre.code'
+    });
+    hljs.highlightAll();
+});</script><meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link type="text/css" rel="stylesheet" href="../ext/codemirror/codemirror.css" /><link type="text/css" rel="stylesheet" href="../ext/codemirror/enable-codemirror.css" /><link type="text/css" rel="stylesheet" href="../ext/codemirror/merge.css" /><link type="text/css" rel="stylesheet" href="../ext/codemirror/foldgutter.css" /><link type="text/css" rel="stylesheet" href="../ext/codemirror/simplescrollbar.css" /><script type="text/javascript" src="../ext/codemirror/codemirror.js"></script><script type="text/javascript" src="../ext/codemirror/enable-codemirror.js"></script><script type="text/javascript" src="../ext/codemirror/javascript.js"></script><script type="text/javascript" src="../ext/codemirror/xml.js"></script><script type="text/javascript" src="../ext/codemirror/addon/mode/simple.js"></script><script type="text/javascript" src="../ext/codemirror/http.js"></script><script type="text/javascript" src="../ext/codemirror/diff_match_patch.js"></script><script type="text/javascript" src="../ext/codemirror/merge.js"></script><script type="text/javascript" src="../ext/codemirror/xml-fold.js"></script><script type="text/javascript" src="../ext/codemirror/simplescrollbar.js"></script><link type="text/css" rel="stylesheet" href="../ext/highlight/stackoverflow-light.min.css" /><script type="text/javascript" src="../ext/highlight/highlight.min.js"></script><script type="text/javascript" src="../ext/highlight/http.min.js"></script><script type="text/javascript" src="../ext/highlight/java.min.js"></script><link type="text/css" rel="stylesheet" href="../ext/tocbot/tocbot.css" /><script type="text/javascript" src="../ext/tocbot/tocbot.min.js"></script><link type="text/css" rel="stylesheet" href="../ext/fontawesome/css/all.min.css" /><link type="text/css" rel="stylesheet" href="../ext/fontawesome/css/regular.min.css" /><link type="text/css" rel="stylesheet" href="../ext/fontawesome/css/solid.min.css" /><link type="text/css" rel="stylesheet" href="../ext/fontawesome/css/all.min.css" /><link type="text/css" rel="stylesheet" href="../ext/bootstrap/bootstrap.min.css" /><link type="text/css" rel="stylesheet" href="../ext/bootstrap/enable-bootstrap.css" /><link type="text/css" rel="stylesheet" href="../ext/bootstrap/doc.min.css" /><link type="text/css" rel="stylesheet" href="../ext/bootstrap/scrollToTop.css" /><script type="text/javascript" src="../ext/bootstrap/bootstrap.bundle.min.js"></script><script type="text/javascript" src="../ext/bootstrap/jquery-3.2.1.slim.min.js"></script><script type="text/javascript" src="../ext/bootstrap/sidebar.js"></script><script type="text/javascript" src="../ext/bootstrap/doc.min.js"></script><script type="text/javascript" src="../ext/bootstrap/scrollToTop.js"></script><script type="text/javascript" src="../ext/nomnoml/graphre.js"></script><script type="text/javascript" src="../ext/nomnoml/nomnoml.min.js"></script><link type="text/css" rel="stylesheet" href="../timingExtensionStyle.css" /><script type="text/javascript" src="../timingExtensionToggle.js"></script></head><body><div id="toggle-button"><img id="toggle-on" src="../timing-on.svg" height="24" width="24" style="display:none" /><img id="toggle-off" src="../timing-off.svg" height="24" width="24" /></div><span class="breadcrumbs"><a href="Specs.html">Securities API</a> &gt;</span><div class="container-fluid"><div class="container-xxl my-md-4 bd-layout"><main class="bd-main order-1"><div class="bd-toc mt-4 mb-5 my-md-0 ps-xl-3 mb-lg-5 text-muted"><div class="row my-2 pb-2 border-bottom"><div class="col-9"><strong class="h6">On this page</strong></div><div class="col-2"><i id="example-summary-badge" class="fa fa-list-check"></i></div></div><nav id="table-of-contents" class="js-toc toc toc-right" /></div><div class="bd-content ps-lg-4" id="content">
+<h1>Получение записей реестра ФИ</h1>
+<hr />
+
+<h2>Описание</h2>
+
+<p>
+    Получение записей реестра ФИ
+</p>
+
+<h2>Примеры</h2>
+
+
+
+<h3>Получение записей реестра ФИ</h3>
+<div xmlns:c="http://www.concordion.org/2007/concordion" name="Фильтрация" cmdId="4337ebe8-d41e-483d-a868-50a8d61c9271" c:example="Фильтрация" c:status="ExpectedToPass" e:example="" class="exam-example mb-3" data-type="example" id="Фильтрация" data-summary-success="10" data-summary-ignore="0" data-summary-failure="0" data-summary-exception="0" data-summary-status="ExpectedToPass"><div data-bs-toggle="collapse" data-bs-target="#e48c6bce4-9201-47fa-a911-27cddcce32e8" aria-expanded="true"><h4 style="visibility: hidden; height:0;" class="test-class"><i class="example-badge fa fa-check m-1 text-success"></i>Фильтрация</h4><i class="far fa-caret-square-down"></i><span> </span><a class="bd-example-title text-muted fw-lighter">Фильтрация</a></div><div class="bd-example collapse show rounded bg-light bg-gradient" id="e48c6bce4-9201-47fa-a911-27cddcce32e8"><div cmdId="dc63c4f2-f393-4325-9f5c-9a106196a776" e:before-each="">
+    <div cmdId="41329188-4ca9-4025-8d48-923aba31f7fb" e:given="" class="given"><p class="lead text-primary">Given</p><hr />
+        <pre var="date1" value="{{today 'yyyy-MM-dd' minus='1 day'}}" cmdId="f989a809-9171-496d-9946-bce7fcfa3524" e:set="" hidden="true"> </pre><pre var="date1" value="{{today 'yyyy-MM-dd' minus='1 day'}}" hidden="true" cmdId="f989a809-9171-496d-9946-bce7fcfa3524" e:set="">2024-04-01</pre>
+        <pre var="date2" value="{{today 'yyyy-MM-dd' plus='1 day'}}" cmdId="8aae2ff3-dba1-4eb8-a267-0f41c6b0e7b5" e:set="" hidden="true"> </pre><pre var="date2" value="{{today 'yyyy-MM-dd' plus='1 day'}}" hidden="true" cmdId="8aae2ff3-dba1-4eb8-a267-0f41c6b0e7b5" e:set="">2024-04-03</pre>
+
+        Предварительно заполнен реестр
+        <span dir="/data/db/" datasets="registry-records.xml" cmdId="65cbdf7d-f78a-4223-b111-76d2a7a5c425" e:db-execute=""><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  REGISTRY</caption><thead class="thead-default"><tr><th class="">CODE</th></tr></thead><tbody><tr><td class=""><span>moex-high-tech</span></td></tr><tr><td class=""><span>other-registry</span></td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  REGISTRY_RECORD</caption><thead class="thead-default"><tr><th class="">REGISTRY_ID</th><th class="">ISIN</th><th class="">INCLUDED_AT</th><th class="">EXCLUDED_AT</th></tr></thead><tbody><tr><td class=""><span>3</span></td><td class=""><span>ISIN1</span></td><td class=""><span>2000-01-01</span></td><td class=""><span>2001-01-01</span></td></tr><tr><td class=""><span>3</span></td><td class=""><span>ISIN2</span></td><td class=""><span>2020-01-01</span></td><td class=""><span>(null)</span></td></tr><tr><td class=""><span>3</span></td><td class=""><span>ISIN3</span></td><td class=""><span>2023-01-01</span></td><td class=""><span>(null)</span></td></tr><tr><td class=""><span>3</span></td><td class=""><span>ISIN4</span></td><td class=""><span>2019-01-01</span></td><td class=""><span>2020-01-01</span></td></tr><tr><td class=""><span>3</span></td><td class=""><span>ISIN5</span></td><td class=""><span>2024-04-01</span></td><td class=""><span>(null)</span></td></tr><tr><td class=""><span>3</span></td><td class=""><span>ISIN6</span></td><td class=""><span>2024-04-03</span></td><td class=""><span>(null)</span></td></tr><tr><td class=""><span>4</span></td><td class=""><span>ISIN1</span></td><td class=""><span>2000-01-01</span></td><td class=""><span>2001-01-01</span></td></tr></tbody></table></span>
+    </div>
+</div>
+    <div url="/securities/registries/moex-high-tech/records" cmdId="cfcc329b-3351-4986-9c04-fcd894cc6c5b" e:get=""><table class="ws-cases table table-sm caption-top"><div><div class="input-group mb-1 mt-1">
+        <span class="input-group-text bg-primary text-white">GET</span>
+        <span class="form-control bg-light text-primary font-weight-light overflow-scroll" id="endpoint-1181186501">/securities/registries/moex-high-tech/records</span>
+    </div><div class="input-group input-group-sm">
+        <span class="input-group-text">Content-Type</span>
+        <span id="header-42691412" class="form-control bg-light text-dark font-weight-light overflow-scroll">application/json</span>
+    </div></div><thead class="thead-default"><th colspan="2" style="text-align:center;" class="text-secondary">Use cases:</th></thead>
+
+        <tr desc="Если параметры не заданы, возвращаем все записи (постранично)." cmdId="eb762aa1-5336-483d-85e5-8c6e88f44abb" e:case="" data-type="case" id="1) Если параметры не заданы, возвращаем все записи (постранично)."><tr><td colspan="2" class="text-muted bg-light" style="border-bottom: 1px solid lightgray;">1) Если параметры не заданы, возвращаем все записи (постранично).</td></tr>
+            
+        <tr data-case-title="single"><td style="width: 100%;"><div class="httpstyle"><pre class="doc-code language-http"><code>GET /securities/registries/moex-high-tech/records HTTP/1.1
+</code></pre></div></td><td style="padding-left: 0;"><small><span class="exp-status rest-success">200</span><span class="badge badge-pill badge-light">28ms</span></small></td></tr><tr><td colspan="2" class="exp-body"><div>
+        <nav>
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item" role="presentation"> 
+                <button class="nav-link active small text-success" type="button" role="tab" id="nav-et-1712051142407-tab" data-bs-toggle="tab" data-bs-target="#nav-et-1712051142407" aria-controls="nav-et-1712051142407" aria-selected="true">Expected</button>
+            </li>
+            <li class="nav-item" role="presentation"> 
+                <button class="nav-link small" type="button" role="tab" onclick="setTimeout(() =&gt; { window.dispatchEvent(new Event('resize')); }, 200)" id="nav-at-1712051142407-tab" data-bs-toggle="tab" data-bs-target="#nav-at-1712051142407" aria-controls="nav-at-1712051142407" aria-selected="false">Actual</button>
+            </li>
+          </ul>
+        </nav>
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="nav-et-1712051142407" role="tabpanel" aria-labelledby="nav-et-1712051142407-tab">
+            <pre id="e-1712051142407" class="rest-success json">{
+  "size": 20,
+  "page": 0,
+  "total": 6,
+  "records": [{
+    "isin": "ISIN1",
+    "includedAt": "2000-01-01",
+    "excludedAt": "2001-01-01"
+  }, {
+    "isin": "ISIN2",
+    "includedAt": "2020-01-01"
+  }, {
+    "isin": "ISIN3",
+    "includedAt": "2023-01-01"
+  }, {
+    "isin": "ISIN4",
+    "includedAt": "2019-01-01",
+    "excludedAt": "2020-01-01"
+  }, {
+    "isin": "ISIN5",
+    "includedAt": "2024-04-01"
+  }, {
+    "isin": "ISIN6",
+    "includedAt": "2024-04-03"
+  }]
+}</pre>
+          </div>
+          <div class="tab-pane fade" id="nav-at-1712051142407" role="tabpanel" aria-labelledby="nav-at-1712051142407-tab">
+            <pre id="a-1712051142407" class="rest-success json">{
+  "size": 20,
+  "page": 0,
+  "total": 6,
+  "records": [{
+    "isin": "ISIN1",
+    "includedAt": "2000-01-01",
+    "excludedAt": "2001-01-01"
+  }, {
+    "isin": "ISIN2",
+    "includedAt": "2020-01-01"
+  }, {
+    "isin": "ISIN3",
+    "includedAt": "2023-01-01"
+  }, {
+    "isin": "ISIN4",
+    "includedAt": "2019-01-01",
+    "excludedAt": "2020-01-01"
+  }, {
+    "isin": "ISIN5",
+    "includedAt": "2024-04-01"
+  }, {
+    "isin": "ISIN6",
+    "includedAt": "2024-04-03"
+  }]
+}</pre>
+          </div>
+        </div>
+    </div></td></tr></tr>
+
+        <tr desc="Если указан параметр isin, возвращаем все записи c соответствующим ISIN (постранично)." urlParams="isin=ISIN5" cmdId="08a7d091-1144-44f5-9ddc-47e10cdf50ab" e:case="" data-type="case" id="2) Если указан параметр isin, возвращаем все записи c соответствующим ISIN (постранично)."><tr><td colspan="2" class="text-muted bg-light" style="border-bottom: 1px solid lightgray;">2) Если указан параметр isin, возвращаем все записи c соответствующим ISIN (постранично).</td></tr>
+            
+        <tr data-case-title="single"><td style="width: 100%;"><div class="httpstyle"><pre class="doc-code language-http"><code>GET /securities/registries/moex-high-tech/records?isin=ISIN5 HTTP/1.1
+</code></pre></div></td><td style="padding-left: 0;"><small><span class="exp-status rest-success">200</span><span class="badge badge-pill badge-light">11ms</span></small></td></tr><tr><td colspan="2" class="exp-body"><div>
+        <nav>
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item" role="presentation"> 
+                <button class="nav-link active small text-success" type="button" role="tab" id="nav-et-1712051142421-tab" data-bs-toggle="tab" data-bs-target="#nav-et-1712051142421" aria-controls="nav-et-1712051142421" aria-selected="true">Expected</button>
+            </li>
+            <li class="nav-item" role="presentation"> 
+                <button class="nav-link small" type="button" role="tab" onclick="setTimeout(() =&gt; { window.dispatchEvent(new Event('resize')); }, 200)" id="nav-at-1712051142421-tab" data-bs-toggle="tab" data-bs-target="#nav-at-1712051142421" aria-controls="nav-at-1712051142421" aria-selected="false">Actual</button>
+            </li>
+          </ul>
+        </nav>
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="nav-et-1712051142421" role="tabpanel" aria-labelledby="nav-et-1712051142421-tab">
+            <pre id="e-1712051142421" class="rest-success json">{
+  "size": 20,
+  "page": 0,
+  "total": 1,
+  "records": [{
+    "isin": "ISIN5",
+    "includedAt": "2024-04-01"
+  }]
+}</pre>
+          </div>
+          <div class="tab-pane fade" id="nav-at-1712051142421" role="tabpanel" aria-labelledby="nav-at-1712051142421-tab">
+            <pre id="a-1712051142421" class="rest-success json">{
+  "size": 20,
+  "page": 0,
+  "total": 1,
+  "records": [{
+    "isin": "ISIN5",
+    "includedAt": "2024-04-01"
+  }]
+}</pre>
+          </div>
+        </div>
+    </div></td></tr></tr>
+
+        <tr desc="Если указан параметр 'from', то возвращаем все записи актуальные на период после даты, включительно (постранично)." urlParams="from=2020-01-01" cmdId="5fe30fa6-40a9-4313-9b79-ba965ed78e70" e:case="" data-type="case" id="3) Если указан параметр 'from', то возвращаем все записи актуальные на период после даты, включительно (постранично)."><tr><td colspan="2" class="text-muted bg-light" style="border-bottom: 1px solid lightgray;">3) Если указан параметр 'from', то возвращаем все записи актуальные на период после даты, включительно (постранично).</td></tr>
+            
+        <tr data-case-title="single"><td style="width: 100%;"><div class="httpstyle"><pre class="doc-code language-http"><code>GET /securities/registries/moex-high-tech/records?from=2020-01-01 HTTP/1.1
+</code></pre></div></td><td style="padding-left: 0;"><small><span class="exp-status rest-success">200</span><span class="badge badge-pill badge-light">9ms</span></small></td></tr><tr><td colspan="2" class="exp-body"><div>
+        <nav>
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item" role="presentation"> 
+                <button class="nav-link active small text-success" type="button" role="tab" id="nav-et-1712051142434-tab" data-bs-toggle="tab" data-bs-target="#nav-et-1712051142434" aria-controls="nav-et-1712051142434" aria-selected="true">Expected</button>
+            </li>
+            <li class="nav-item" role="presentation"> 
+                <button class="nav-link small" type="button" role="tab" onclick="setTimeout(() =&gt; { window.dispatchEvent(new Event('resize')); }, 200)" id="nav-at-1712051142434-tab" data-bs-toggle="tab" data-bs-target="#nav-at-1712051142434" aria-controls="nav-at-1712051142434" aria-selected="false">Actual</button>
+            </li>
+          </ul>
+        </nav>
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="nav-et-1712051142434" role="tabpanel" aria-labelledby="nav-et-1712051142434-tab">
+            <pre id="e-1712051142434" class="rest-success json">{
+  "size": 20,
+  "page": 0,
+  "total": 5,
+  "records": [{
+    "isin": "ISIN2",
+    "includedAt": "2020-01-01"
+  }, {
+    "isin": "ISIN3",
+    "includedAt": "2023-01-01"
+  }, {
+    "isin": "ISIN4",
+    "includedAt": "2019-01-01",
+    "excludedAt": "2020-01-01"
+  }, {
+    "isin": "ISIN5",
+    "includedAt": "2024-04-01"
+  }, {
+    "isin": "ISIN6",
+    "includedAt": "2024-04-03"
+  }]
+}</pre>
+          </div>
+          <div class="tab-pane fade" id="nav-at-1712051142434" role="tabpanel" aria-labelledby="nav-at-1712051142434-tab">
+            <pre id="a-1712051142434" class="rest-success json">{
+  "size": 20,
+  "page": 0,
+  "total": 5,
+  "records": [{
+    "isin": "ISIN2",
+    "includedAt": "2020-01-01"
+  }, {
+    "isin": "ISIN3",
+    "includedAt": "2023-01-01"
+  }, {
+    "isin": "ISIN4",
+    "includedAt": "2019-01-01",
+    "excludedAt": "2020-01-01"
+  }, {
+    "isin": "ISIN5",
+    "includedAt": "2024-04-01"
+  }, {
+    "isin": "ISIN6",
+    "includedAt": "2024-04-03"
+  }]
+}</pre>
+          </div>
+        </div>
+    </div></td></tr></tr>
+
+        <tr desc="Если указан параметр 'to', то возвращаем все записи актуальные на период до даты, включительно (постранично)." urlParams="to=2022-01-01" cmdId="e77cad58-a2a0-4710-829b-2ccbbaf66e96" e:case="" data-type="case" id="4) Если указан параметр 'to', то возвращаем все записи актуальные на период до даты, включительно (постранично)."><tr><td colspan="2" class="text-muted bg-light" style="border-bottom: 1px solid lightgray;">4) Если указан параметр 'to', то возвращаем все записи актуальные на период до даты, включительно (постранично).</td></tr>
+            
+        <tr data-case-title="single"><td style="width: 100%;"><div class="httpstyle"><pre class="doc-code language-http"><code>GET /securities/registries/moex-high-tech/records?to=2022-01-01 HTTP/1.1
+</code></pre></div></td><td style="padding-left: 0;"><small><span class="exp-status rest-success">200</span><span class="badge badge-pill badge-light">9ms</span></small></td></tr><tr><td colspan="2" class="exp-body"><div>
+        <nav>
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item" role="presentation"> 
+                <button class="nav-link active small text-success" type="button" role="tab" id="nav-et-1712051142446-tab" data-bs-toggle="tab" data-bs-target="#nav-et-1712051142446" aria-controls="nav-et-1712051142446" aria-selected="true">Expected</button>
+            </li>
+            <li class="nav-item" role="presentation"> 
+                <button class="nav-link small" type="button" role="tab" onclick="setTimeout(() =&gt; { window.dispatchEvent(new Event('resize')); }, 200)" id="nav-at-1712051142446-tab" data-bs-toggle="tab" data-bs-target="#nav-at-1712051142446" aria-controls="nav-at-1712051142446" aria-selected="false">Actual</button>
+            </li>
+          </ul>
+        </nav>
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="nav-et-1712051142446" role="tabpanel" aria-labelledby="nav-et-1712051142446-tab">
+            <pre id="e-1712051142446" class="rest-success json">{
+  "size": 20,
+  "page": 0,
+  "total": 3,
+  "records": [{
+    "isin": "ISIN1",
+    "includedAt": "2000-01-01",
+    "excludedAt": "2001-01-01"
+  }, {
+    "isin": "ISIN2",
+    "includedAt": "2020-01-01"
+  }, {
+    "isin": "ISIN4",
+    "includedAt": "2019-01-01",
+    "excludedAt": "2020-01-01"
+  }]
+}</pre>
+          </div>
+          <div class="tab-pane fade" id="nav-at-1712051142446" role="tabpanel" aria-labelledby="nav-at-1712051142446-tab">
+            <pre id="a-1712051142446" class="rest-success json">{
+  "size": 20,
+  "page": 0,
+  "total": 3,
+  "records": [{
+    "isin": "ISIN1",
+    "includedAt": "2000-01-01",
+    "excludedAt": "2001-01-01"
+  }, {
+    "isin": "ISIN2",
+    "includedAt": "2020-01-01"
+  }, {
+    "isin": "ISIN4",
+    "includedAt": "2019-01-01",
+    "excludedAt": "2020-01-01"
+  }]
+}</pre>
+          </div>
+        </div>
+    </div></td></tr></tr>
+
+        <tr desc="Если указаны параметры 'from' / 'to', то возвращаем все записи актуальные в указанный период (постранично)." urlParams="from=2010-01-01&amp;to=2022-01-01" cmdId="7fb03618-c18c-4fb8-969f-bf4f97311542" e:case="" data-type="case" id="5) Если указаны параметры 'from' / 'to', то возвращаем все записи актуальные в указанный период (постранично)."><tr><td colspan="2" class="text-muted bg-light" style="border-bottom: 1px solid lightgray;">5) Если указаны параметры 'from' / 'to', то возвращаем все записи актуальные в указанный период (постранично).</td></tr>
+            
+        <tr data-case-title="single"><td style="width: 100%;"><div class="httpstyle"><pre class="doc-code language-http"><code>GET /securities/registries/moex-high-tech/records?from=2010-01-01&amp;to=2022-01-01 HTTP/1.1
+</code></pre></div></td><td style="padding-left: 0;"><small><span class="exp-status rest-success">200</span><span class="badge badge-pill badge-light">10ms</span></small></td></tr><tr><td colspan="2" class="exp-body"><div>
+        <nav>
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item" role="presentation"> 
+                <button class="nav-link active small text-success" type="button" role="tab" id="nav-et-1712051142459-tab" data-bs-toggle="tab" data-bs-target="#nav-et-1712051142459" aria-controls="nav-et-1712051142459" aria-selected="true">Expected</button>
+            </li>
+            <li class="nav-item" role="presentation"> 
+                <button class="nav-link small" type="button" role="tab" onclick="setTimeout(() =&gt; { window.dispatchEvent(new Event('resize')); }, 200)" id="nav-at-1712051142459-tab" data-bs-toggle="tab" data-bs-target="#nav-at-1712051142459" aria-controls="nav-at-1712051142459" aria-selected="false">Actual</button>
+            </li>
+          </ul>
+        </nav>
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="nav-et-1712051142459" role="tabpanel" aria-labelledby="nav-et-1712051142459-tab">
+            <pre id="e-1712051142459" class="rest-success json">{
+  "size": 20,
+  "page": 0,
+  "total": 2,
+  "records": [{
+    "isin": "ISIN2",
+    "includedAt": "2020-01-01"
+  }, {
+    "isin": "ISIN4",
+    "includedAt": "2019-01-01",
+    "excludedAt": "2020-01-01"
+  }]
+}</pre>
+          </div>
+          <div class="tab-pane fade" id="nav-at-1712051142459" role="tabpanel" aria-labelledby="nav-at-1712051142459-tab">
+            <pre id="a-1712051142459" class="rest-success json">{
+  "size": 20,
+  "page": 0,
+  "total": 2,
+  "records": [{
+    "isin": "ISIN2",
+    "includedAt": "2020-01-01"
+  }, {
+    "isin": "ISIN4",
+    "includedAt": "2019-01-01",
+    "excludedAt": "2020-01-01"
+  }]
+}</pre>
+          </div>
+        </div>
+    </div></td></tr></tr>
+    </table></div>
+</div><div class="time-fig"><p>120ms</p></div></div>
+
+<div xmlns:c="http://www.concordion.org/2007/concordion" name="Пагинация" cmdId="419c380c-cc11-4e23-83cf-3b1e8164f3ab" c:example="Пагинация" c:status="ExpectedToPass" e:example="" class="exam-example mb-3" data-type="example" id="Пагинация" data-summary-success="8" data-summary-ignore="0" data-summary-failure="0" data-summary-exception="0" data-summary-status="ExpectedToPass"><div data-bs-toggle="collapse" data-bs-target="#e0eb19f44-4d6e-4eeb-80b5-d0fa1312904b" aria-expanded="true"><h4 style="visibility: hidden; height:0;" class="test-class"><i class="example-badge fa fa-check m-1 text-success"></i>Пагинация</h4><i class="far fa-caret-square-down"></i><span> </span><a class="bd-example-title text-muted fw-lighter">Пагинация</a></div><div class="bd-example collapse show rounded bg-light bg-gradient" id="e0eb19f44-4d6e-4eeb-80b5-d0fa1312904b"><div cmdId="dc63c4f2-f393-4325-9f5c-9a106196a776" e:before-each="">
+    <div cmdId="41329188-4ca9-4025-8d48-923aba31f7fb" e:given="" class="given"><p class="lead text-primary">Given</p><hr />
+        <pre var="date1" value="{{today 'yyyy-MM-dd' minus='1 day'}}" cmdId="f989a809-9171-496d-9946-bce7fcfa3524" e:set="" hidden="true"> </pre><pre var="date1" value="{{today 'yyyy-MM-dd' minus='1 day'}}" hidden="true" cmdId="f989a809-9171-496d-9946-bce7fcfa3524" e:set="">2024-04-01</pre>
+        <pre var="date2" value="{{today 'yyyy-MM-dd' plus='1 day'}}" cmdId="8aae2ff3-dba1-4eb8-a267-0f41c6b0e7b5" e:set="" hidden="true"> </pre><pre var="date2" value="{{today 'yyyy-MM-dd' plus='1 day'}}" hidden="true" cmdId="8aae2ff3-dba1-4eb8-a267-0f41c6b0e7b5" e:set="">2024-04-03</pre>
+
+        Предварительно заполнен реестр
+        <span dir="/data/db/" datasets="registry-records.xml" cmdId="65cbdf7d-f78a-4223-b111-76d2a7a5c425" e:db-execute=""><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  REGISTRY</caption><thead class="thead-default"><tr><th class="">CODE</th></tr></thead><tbody><tr><td class=""><span>moex-high-tech</span></td></tr><tr><td class=""><span>other-registry</span></td></tr></tbody></table><table class="table table-sm caption-top"><caption style="width:max-content"><i class="fa fa-database me-1"> </i>  REGISTRY_RECORD</caption><thead class="thead-default"><tr><th class="">REGISTRY_ID</th><th class="">ISIN</th><th class="">INCLUDED_AT</th><th class="">EXCLUDED_AT</th></tr></thead><tbody><tr><td class=""><span>5</span></td><td class=""><span>ISIN1</span></td><td class=""><span>2000-01-01</span></td><td class=""><span>2001-01-01</span></td></tr><tr><td class=""><span>5</span></td><td class=""><span>ISIN2</span></td><td class=""><span>2020-01-01</span></td><td class=""><span>(null)</span></td></tr><tr><td class=""><span>5</span></td><td class=""><span>ISIN3</span></td><td class=""><span>2023-01-01</span></td><td class=""><span>(null)</span></td></tr><tr><td class=""><span>5</span></td><td class=""><span>ISIN4</span></td><td class=""><span>2019-01-01</span></td><td class=""><span>2020-01-01</span></td></tr><tr><td class=""><span>5</span></td><td class=""><span>ISIN5</span></td><td class=""><span>2024-04-01</span></td><td class=""><span>(null)</span></td></tr><tr><td class=""><span>5</span></td><td class=""><span>ISIN6</span></td><td class=""><span>2024-04-03</span></td><td class=""><span>(null)</span></td></tr><tr><td class=""><span>6</span></td><td class=""><span>ISIN1</span></td><td class=""><span>2000-01-01</span></td><td class=""><span>2001-01-01</span></td></tr></tbody></table></span>
+    </div>
+</div>
+    <div url="/securities/registries/moex-high-tech/records" cmdId="fa5c6e07-ced3-48e1-970a-301d00312220" e:get=""><table class="ws-cases table table-sm caption-top"><div><div class="input-group mb-1 mt-1">
+        <span class="input-group-text bg-primary text-white">GET</span>
+        <span class="form-control bg-light text-primary font-weight-light overflow-scroll" id="endpoint--1802955578">/securities/registries/moex-high-tech/records</span>
+    </div><div class="input-group input-group-sm">
+        <span class="input-group-text">Content-Type</span>
+        <span id="header-161932169" class="form-control bg-light text-dark font-weight-light overflow-scroll">application/json</span>
+    </div></div><thead class="thead-default"><th colspan="2" style="text-align:center;" class="text-secondary">Use cases:</th></thead>
+        <tr desc="поиск с указанием размера страницы" urlParams="size=2" cmdId="383a7f86-6544-45ee-a706-71e73ac5a9f5" e:case="" data-type="case" id="6) поиск с указанием размера страницы"><tr><td colspan="2" class="text-muted bg-light" style="border-bottom: 1px solid lightgray;">6) поиск с указанием размера страницы</td></tr>
+            
+        <tr data-case-title="single"><td style="width: 100%;"><div class="httpstyle"><pre class="doc-code language-http"><code>GET /securities/registries/moex-high-tech/records?size=2 HTTP/1.1
+</code></pre></div></td><td style="padding-left: 0;"><small><span class="exp-status rest-success">200</span><span class="badge badge-pill badge-light">11ms</span></small></td></tr><tr><td colspan="2" class="exp-body"><div>
+        <nav>
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item" role="presentation"> 
+                <button class="nav-link active small text-success" type="button" role="tab" id="nav-et-1712051142511-tab" data-bs-toggle="tab" data-bs-target="#nav-et-1712051142511" aria-controls="nav-et-1712051142511" aria-selected="true">Expected</button>
+            </li>
+            <li class="nav-item" role="presentation"> 
+                <button class="nav-link small" type="button" role="tab" onclick="setTimeout(() =&gt; { window.dispatchEvent(new Event('resize')); }, 200)" id="nav-at-1712051142511-tab" data-bs-toggle="tab" data-bs-target="#nav-at-1712051142511" aria-controls="nav-at-1712051142511" aria-selected="false">Actual</button>
+            </li>
+          </ul>
+        </nav>
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="nav-et-1712051142511" role="tabpanel" aria-labelledby="nav-et-1712051142511-tab">
+            <pre id="e-1712051142511" class="rest-success json">{
+  "size": 2,
+  "page": 0,
+  "total": 6,
+  "records": [{
+    "isin": "ISIN1",
+    "includedAt": "2000-01-01",
+    "excludedAt": "2001-01-01"
+  }, {
+    "isin": "ISIN2",
+    "includedAt": "2020-01-01"
+  }]
+}</pre>
+          </div>
+          <div class="tab-pane fade" id="nav-at-1712051142511" role="tabpanel" aria-labelledby="nav-at-1712051142511-tab">
+            <pre id="a-1712051142511" class="rest-success json">{
+  "size": 2,
+  "page": 0,
+  "total": 6,
+  "records": [{
+    "isin": "ISIN1",
+    "includedAt": "2000-01-01",
+    "excludedAt": "2001-01-01"
+  }, {
+    "isin": "ISIN2",
+    "includedAt": "2020-01-01"
+  }]
+}</pre>
+          </div>
+        </div>
+    </div></td></tr></tr>
+
+        <tr desc="первая страница по 4 элемента" urlParams="page=0&amp;size=4" cmdId="3ed956ac-adb2-46df-8f41-1c485d276dd1" e:case="" data-type="case" id="7) первая страница по 4 элемента"><tr><td colspan="2" class="text-muted bg-light" style="border-bottom: 1px solid lightgray;">7) первая страница по 4 элемента</td></tr>
+            
+        <tr data-case-title="single"><td style="width: 100%;"><div class="httpstyle"><pre class="doc-code language-http"><code>GET /securities/registries/moex-high-tech/records?page=0&amp;size=4 HTTP/1.1
+</code></pre></div></td><td style="padding-left: 0;"><small><span class="exp-status rest-success">200</span><span class="badge badge-pill badge-light">11ms</span></small></td></tr><tr><td colspan="2" class="exp-body"><div>
+        <nav>
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item" role="presentation"> 
+                <button class="nav-link active small text-success" type="button" role="tab" id="nav-et-1712051142526-tab" data-bs-toggle="tab" data-bs-target="#nav-et-1712051142526" aria-controls="nav-et-1712051142526" aria-selected="true">Expected</button>
+            </li>
+            <li class="nav-item" role="presentation"> 
+                <button class="nav-link small" type="button" role="tab" onclick="setTimeout(() =&gt; { window.dispatchEvent(new Event('resize')); }, 200)" id="nav-at-1712051142526-tab" data-bs-toggle="tab" data-bs-target="#nav-at-1712051142526" aria-controls="nav-at-1712051142526" aria-selected="false">Actual</button>
+            </li>
+          </ul>
+        </nav>
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="nav-et-1712051142526" role="tabpanel" aria-labelledby="nav-et-1712051142526-tab">
+            <pre id="e-1712051142526" class="rest-success json">{
+  "size": 4,
+  "page": 0,
+  "total": 6,
+  "records": [{
+    "isin": "ISIN1",
+    "includedAt": "2000-01-01",
+    "excludedAt": "2001-01-01"
+  }, {
+    "isin": "ISIN2",
+    "includedAt": "2020-01-01"
+  }, {
+    "isin": "ISIN3",
+    "includedAt": "2023-01-01"
+  }, {
+    "isin": "ISIN4",
+    "includedAt": "2019-01-01",
+    "excludedAt": "2020-01-01"
+  }]
+}</pre>
+          </div>
+          <div class="tab-pane fade" id="nav-at-1712051142526" role="tabpanel" aria-labelledby="nav-at-1712051142526-tab">
+            <pre id="a-1712051142526" class="rest-success json">{
+  "size": 4,
+  "page": 0,
+  "total": 6,
+  "records": [{
+    "isin": "ISIN1",
+    "includedAt": "2000-01-01",
+    "excludedAt": "2001-01-01"
+  }, {
+    "isin": "ISIN2",
+    "includedAt": "2020-01-01"
+  }, {
+    "isin": "ISIN3",
+    "includedAt": "2023-01-01"
+  }, {
+    "isin": "ISIN4",
+    "includedAt": "2019-01-01",
+    "excludedAt": "2020-01-01"
+  }]
+}</pre>
+          </div>
+        </div>
+    </div></td></tr></tr>
+
+        <tr desc="вторая страница по 4 элемента" urlParams="page=1&amp;size=4" cmdId="d1a366a4-4236-450a-ae8c-0ac0498981ba" e:case="" data-type="case" id="8) вторая страница по 4 элемента"><tr><td colspan="2" class="text-muted bg-light" style="border-bottom: 1px solid lightgray;">8) вторая страница по 4 элемента</td></tr>
+            
+        <tr data-case-title="single"><td style="width: 100%;"><div class="httpstyle"><pre class="doc-code language-http"><code>GET /securities/registries/moex-high-tech/records?page=1&amp;size=4 HTTP/1.1
+</code></pre></div></td><td style="padding-left: 0;"><small><span class="exp-status rest-success">200</span><span class="badge badge-pill badge-light">10ms</span></small></td></tr><tr><td colspan="2" class="exp-body"><div>
+        <nav>
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item" role="presentation"> 
+                <button class="nav-link active small text-success" type="button" role="tab" id="nav-et-1712051142539-tab" data-bs-toggle="tab" data-bs-target="#nav-et-1712051142539" aria-controls="nav-et-1712051142539" aria-selected="true">Expected</button>
+            </li>
+            <li class="nav-item" role="presentation"> 
+                <button class="nav-link small" type="button" role="tab" onclick="setTimeout(() =&gt; { window.dispatchEvent(new Event('resize')); }, 200)" id="nav-at-1712051142539-tab" data-bs-toggle="tab" data-bs-target="#nav-at-1712051142539" aria-controls="nav-at-1712051142539" aria-selected="false">Actual</button>
+            </li>
+          </ul>
+        </nav>
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="nav-et-1712051142539" role="tabpanel" aria-labelledby="nav-et-1712051142539-tab">
+            <pre id="e-1712051142539" class="rest-success json">{
+  "size": 4,
+  "page": 1,
+  "total": 6,
+  "records": [{
+    "isin": "ISIN5",
+    "includedAt": "2024-04-01"
+  }, {
+    "isin": "ISIN6",
+    "includedAt": "2024-04-03"
+  }]
+}</pre>
+          </div>
+          <div class="tab-pane fade" id="nav-at-1712051142539" role="tabpanel" aria-labelledby="nav-at-1712051142539-tab">
+            <pre id="a-1712051142539" class="rest-success json">{
+  "size": 4,
+  "page": 1,
+  "total": 6,
+  "records": [{
+    "isin": "ISIN5",
+    "includedAt": "2024-04-01"
+  }, {
+    "isin": "ISIN6",
+    "includedAt": "2024-04-03"
+  }]
+}</pre>
+          </div>
+        </div>
+    </div></td></tr></tr>
+
+        <tr desc="третья страница по 4 элемента" urlParams="page=2&amp;size=4" cmdId="3dc32044-be1c-4765-82e0-c55ac144ab8c" e:case="" data-type="case" id="9) третья страница по 4 элемента"><tr><td colspan="2" class="text-muted bg-light" style="border-bottom: 1px solid lightgray;">9) третья страница по 4 элемента</td></tr>
+            
+        <tr data-case-title="single"><td style="width: 100%;"><div class="httpstyle"><pre class="doc-code language-http"><code>GET /securities/registries/moex-high-tech/records?page=2&amp;size=4 HTTP/1.1
+</code></pre></div></td><td style="padding-left: 0;"><small><span class="exp-status rest-success">200</span><span class="badge badge-pill badge-light">8ms</span></small></td></tr><tr><td colspan="2" class="exp-body"><div>
+        <nav>
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item" role="presentation"> 
+                <button class="nav-link active small text-success" type="button" role="tab" id="nav-et-1712051142551-tab" data-bs-toggle="tab" data-bs-target="#nav-et-1712051142551" aria-controls="nav-et-1712051142551" aria-selected="true">Expected</button>
+            </li>
+            <li class="nav-item" role="presentation"> 
+                <button class="nav-link small" type="button" role="tab" onclick="setTimeout(() =&gt; { window.dispatchEvent(new Event('resize')); }, 200)" id="nav-at-1712051142551-tab" data-bs-toggle="tab" data-bs-target="#nav-at-1712051142551" aria-controls="nav-at-1712051142551" aria-selected="false">Actual</button>
+            </li>
+          </ul>
+        </nav>
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="nav-et-1712051142551" role="tabpanel" aria-labelledby="nav-et-1712051142551-tab">
+            <pre id="e-1712051142551" class="rest-success json">{
+  "size": 4,
+  "page": 2,
+  "total": 6,
+  "records": []
+}</pre>
+          </div>
+          <div class="tab-pane fade" id="nav-at-1712051142551" role="tabpanel" aria-labelledby="nav-at-1712051142551-tab">
+            <pre id="a-1712051142551" class="rest-success json">{
+  "size": 4,
+  "page": 2,
+  "total": 6,
+  "records": []
+}</pre>
+          </div>
+        </div>
+    </div></td></tr></tr>
+    </table></div>
+</div><div class="time-fig"><p>92ms</p></div></div>
+<h3>Ошибки</h3>
+
+</div></main></div></div><div class="footer">Results generated by <a href="http://www.concordion.org" style="font-weight: bold; text-decoration: none; color: #89C;">Concordion</a><div class="testTime">in 216 ms on 02-апр.-2024 at 12:45:42 MSK</div><div class="testTime"><a href="GetRegistryRecordsLogViewer.html" style="font-weight: bold; text-decoration: none; color: #89C;">Log File</a></div></div></body>
+<button id="btnToTop" onclick="topFunction()" type="button" class="btn btn-light btn-sm text-muted me-1"><i class="fa fa-arrow-up"></i></button></html>

@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <style type="text/css">
+        h1 {
+            margin-bottom: 0;
+        }
+
+        .levelkey {
+            margin-top: 25px;
+            padding 0;
+            border-collapse: collapse;
+        }
+
+        .levelkey td {
+            width: 48px;
+            border: 1px solid gray;
+            text-align: center;
+        }
+
+        .alignleft {
+            display: inline-block;
+        }
+
+        .floatright {
+            display: inline-block;
+            float: right;
+            margin-right: 40px;
+        }
+
+        .line {
+            font-family: monospace;
+        }
+
+        .info {
+        }
+
+        .info-color {
+            background-color: White;
+        }
+
+        .debug {
+        }
+
+        .debug-color {
+            background-color: Gainsboro;
+        }
+
+        .trace {
+        }
+
+        .trace-color {
+            background-color: Khaki;
+        }
+
+        .warn {
+        }
+
+        .warn-color {
+            background-color: Orange;
+        }
+
+        .error {
+        }
+
+        .error-color {
+            background-color: #ffbbbb;
+        }
+
+        .line-numbers {
+            background: #e9e9e9;
+            border-right: 1px solid #666;
+            display: inline-block;
+            width: 40px;
+            text-align: right;
+            padding: 0 5px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .split-debug-levels {
+            border-bottom: none;
+        }
+
+        .split-trace-levels {
+            border-bottom: none;
+        }
+
+        div.header-fixed {
+            background-color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding-left: 10px;
+            z-index: 100000;
+        }
+
+        ul.content {
+            margin-top: 125px;
+            padding-left: 0;
+            white-space: nowrap;
+            list-style-type: none;
+        }
+
+        pre {
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+        }
+
+    </style>
+    <script type="text/javascript">
+        function filterTestWorker(cb) {
+            doFilter("test-worker", cb.checked);
+        }
+
+        function filterDebug(cb) {
+            doFilter("debug", cb.checked);
+            doSplit("split-debug-levels", cb.checked);
+        }
+
+        function filterTrace(cb) {
+            doFilter("trace", cb.checked);
+            doSplit("split-trace-levels", cb.checked);
+        }
+
+        function doFilter(className, checked) {
+            var setting = checked ? "inherit" : "none";
+
+            var all = document.getElementsByClassName(className);
+            for (var i = 0; i < all.length; i++) {
+                all[i].style.display = setting;
+            }
+        }
+
+        function doSplit(className, checked) {
+            var setting = checked ? "none" : "1px dotted black";
+
+            var all = document.getElementsByClassName(className);
+            for (var i = 0; i < all.length; i++) {
+                all[i].style.borderBottom = setting;
+            }
+        }
+
+        function filter() {
+            let input, filter, ul, lines, line;
+            input = document.getElementById("search");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("content");
+            lines = ul.getElementsByTagName("li");
+
+            for (let i = 0; i < lines.length; i++) {
+                line = lines[i];
+                if (line) {
+                    let txtValue = line.textContent || line.innerText;
+                    line.style.display = txtValue.toUpperCase().indexOf(filter) > -1 ? "" : "none";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="header-fixed">
+    <h1 class="alignleft">IndustryExposition[обновление-эмитента].log</h1>
+    <table class="levelkey floatright">
+        <tr>
+            <td class="trace-color">Trace</td>
+            <td class="debug-color">Debug</td>
+            <td class="info-color">Info</td>
+            <td class="warn-color">Warn</td>
+            <td class="error-color">Error</td>
+        </tr>
+    </table>
+
+    <p>
+        <label class="alignleft"><input id="chkDebug" type="checkbox" onclick="filterDebug(this);" checked>DEBUG</label>
+        <label class="alignleft"><input id="chkTrace" type="checkbox" onclick="filterTrace(this);" checked>TRACE</label>
+        <label class="alignleft"><input id="chkTestWorker" type="checkbox" onclick="filterTestWorker(this);" checked>Test worker</label>
+        <input type="text" id="search" onkeyup="filter()" placeholder="Search...">
+        <span class="floatright"><a href="IndustryExposition[обновление-эмитента].log">Raw Log File</a></span>
+    </p>
+    <hr style="clear: both;">
+</div>
+<ul class="content" id="content">
+    <li class="line warn warn-color "><div class="line-numbers">1</div><pre>23:06:38.072 [Test worker] WARN  i.g.a.c.e.e.d.c.check.DbVerifier.verify-0E7RQCE - Check failed</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">2</div><pre>org.awaitility.core.ConditionTimeoutException: Condition with alias 'Await DB table field_value' didn't complete within 7 seconds because assertion condition defined as a io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier table size mismatch.</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">3</div><pre>	at org.awaitility.core.ConditionAwaiter.await(ConditionAwaiter.java:167)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">4</div><pre>	at org.awaitility.core.AssertionCondition.await(AssertionCondition.java:119)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">5</div><pre>	at org.awaitility.core.AssertionCondition.await(AssertionCondition.java:31)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">6</div><pre>	at org.awaitility.core.ConditionFactory.until(ConditionFactory.java:985)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">7</div><pre>	at org.awaitility.core.ConditionFactory.untilAsserted(ConditionFactory.java:769)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">8</div><pre>	at io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier.verify-0E7RQCE(DbVerifier.kt:48)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">9</div><pre>	at io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier.verify-0E7RQCE(DbVerifier.kt:22)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">10</div><pre>	at io.github.adven27.concordion.extensions.exam.core.commands.ExamAssertCommand.verify(ExamVerifyCommand.kt:111)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">11</div><pre>	at io.github.adven27.concordion.extensions.exam.db.commands.check.CheckCommand.verify(CheckCommand.kt:43)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">12</div><pre>	at org.concordion.api.AbstractCommandDecorator\$3.run(AbstractCommandDecorator.java:33)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">13</div><pre>	at org.concordion.internal.command.LocalTextDecorator.process(LocalTextDecorator.java:26)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">14</div><pre>	at org.concordion.api.AbstractCommandDecorator.verify(AbstractCommandDecorator.java:31)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">15</div><pre>	at org.concordion.api.AbstractCommandDecorator\$3.run(AbstractCommandDecorator.java:33)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">16</div><pre>	at org.concordion.internal.command.ThrowableCatchingDecorator.process(ThrowableCatchingDecorator.java:38)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">17</div><pre>	at org.concordion.api.AbstractCommandDecorator.verify(AbstractCommandDecorator.java:31)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">18</div><pre>	at org.concordion.api.CommandCall.verify(CommandCall.java:76)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">19</div><pre>	at org.concordion.api.CommandCallList.processSequentially(CommandCallList.java:34)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">20</div><pre>	at org.concordion.internal.command.ExampleCommand.execute(ExampleCommand.java:49)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">21</div><pre>	at org.concordion.api.AbstractCommandDecorator\$2.run(AbstractCommandDecorator.java:25)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">22</div><pre>	at org.concordion.internal.command.LocalTextDecorator.process(LocalTextDecorator.java:26)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">23</div><pre>	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">24</div><pre>	at org.concordion.api.AbstractCommandDecorator\$2.run(AbstractCommandDecorator.java:25)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">25</div><pre>	at org.concordion.internal.command.ThrowableCatchingDecorator.process(ThrowableCatchingDecorator.java:38)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">26</div><pre>	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">27</div><pre>	at org.concordion.api.CommandCall.execute(CommandCall.java:72)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">28</div><pre>	at org.concordion.internal.XMLSpecification.processNode(XMLSpecification.java:60)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">29</div><pre>	at org.concordion.internal.XMLSpecification.processExample(XMLSpecification.java:76)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">30</div><pre>	at org.concordion.Concordion.processExample(Concordion.java:92)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">31</div><pre>	at org.concordion.internal.FixtureRunner.run(FixtureRunner.java:41)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">32</div><pre>	at org.concordion.integration.junit4.ConcordionRunner.invoke(ConcordionRunner.java:207)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">33</div><pre>	at org.concordion.integration.junit4.ConcordionRunner\$1.invoke(ConcordionRunner.java:31)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">34</div><pre>	at org.concordion.integration.junit4.ConcordionFrameworkMethod.invokeExplosively(ConcordionFrameworkMethod.java:58)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">35</div><pre>	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">36</div><pre>	at org.junit.runners.ParentRunner\$3.evaluate(ParentRunner.java:306)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">37</div><pre>	at org.junit.runners.BlockJUnit4ClassRunner\$1.evaluate(BlockJUnit4ClassRunner.java:100)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">38</div><pre>	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">39</div><pre>	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">40</div><pre>	at org.concordion.integration.junit4.ConcordionRunner.runChild(ConcordionRunner.java:191)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">41</div><pre>	at org.concordion.integration.junit4.ConcordionRunner.runChild(ConcordionRunner.java:23)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">42</div><pre>	at org.junit.runners.ParentRunner\$4.run(ParentRunner.java:331)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">43</div><pre>	at org.junit.runners.ParentRunner\$1.schedule(ParentRunner.java:79)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">44</div><pre>	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">45</div><pre>	at org.junit.runners.ParentRunner.access\$100(ParentRunner.java:66)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">46</div><pre>	at org.junit.runners.ParentRunner\$2.evaluate(ParentRunner.java:293)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">47</div><pre>	at org.junit.runners.ParentRunner\$3.evaluate(ParentRunner.java:306)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">48</div><pre>	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">49</div><pre>	at org.concordion.integration.junit4.ConcordionRunner.run(ConcordionRunner.java:150)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">50</div><pre>	at org.junit.runners.Suite.runChild(Suite.java:128)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">51</div><pre>	at org.junit.runners.Suite.runChild(Suite.java:27)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">52</div><pre>	at org.junit.runners.ParentRunner\$4.run(ParentRunner.java:331)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">53</div><pre>	at org.junit.runners.ParentRunner\$1.schedule(ParentRunner.java:79)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">54</div><pre>	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">55</div><pre>	at org.junit.runners.ParentRunner.access\$100(ParentRunner.java:66)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">56</div><pre>	at org.junit.runners.ParentRunner\$2.evaluate(ParentRunner.java:293)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">57</div><pre>	at org.junit.runners.ParentRunner\$3.evaluate(ParentRunner.java:306)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">58</div><pre>	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">59</div><pre>	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">60</div><pre>	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">61</div><pre>	at org.junit.runner.JUnitCore.run(JUnitCore.java:105)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">62</div><pre>	at org.junit.runner.JUnitCore.runClasses(JUnitCore.java:62)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">63</div><pre>	at org.junit.runner.JUnitCore.runClasses(JUnitCore.java:49)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">64</div><pre>	at org.concordion.internal.runner.DefaultConcordionRunner.runJUnitClass(DefaultConcordionRunner.java:78)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">65</div><pre>	at org.concordion.internal.runner.DefaultConcordionRunner.runTestClass(DefaultConcordionRunner.java:44)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">66</div><pre>	at org.concordion.internal.runner.DefaultConcordionRunner.execute(DefaultConcordionRunner.java:19)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">67</div><pre>	at org.concordion.internal.command.SequentialRunStrategy.call(SequentialRunStrategy.java:10)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">68</div><pre>	at org.concordion.internal.command.RunCommand.execute(RunCommand.java:81)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">69</div><pre>	at org.concordion.api.AbstractCommandDecorator\$2.run(AbstractCommandDecorator.java:25)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">70</div><pre>	at org.concordion.internal.command.LocalTextDecorator.process(LocalTextDecorator.java:26)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">71</div><pre>	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">72</div><pre>	at org.concordion.api.AbstractCommandDecorator\$2.run(AbstractCommandDecorator.java:25)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">73</div><pre>	at org.concordion.internal.command.ThrowableCatchingDecorator.process(ThrowableCatchingDecorator.java:38)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">74</div><pre>	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">75</div><pre>	at org.concordion.api.CommandCall.execute(CommandCall.java:72)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">76</div><pre>	at org.concordion.api.CommandCallList.processSequentially(CommandCallList.java:33)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">77</div><pre>	at org.concordion.internal.command.SpecificationCommand.execute(SpecificationCommand.java:36)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">78</div><pre>	at org.concordion.api.CommandCall.execute(CommandCall.java:72)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">79</div><pre>	at org.concordion.internal.XMLSpecification.processNode(XMLSpecification.java:60)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">80</div><pre>	at org.concordion.internal.XMLSpecification.processExample(XMLSpecification.java:69)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">81</div><pre>	at org.concordion.Concordion.processExample(Concordion.java:92)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">82</div><pre>	at org.concordion.internal.FixtureRunner.run(FixtureRunner.java:41)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">83</div><pre>	at org.concordion.integration.junit4.ConcordionRunner.invoke(ConcordionRunner.java:207)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">84</div><pre>	at org.concordion.integration.junit4.ConcordionRunner\$1.invoke(ConcordionRunner.java:31)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">85</div><pre>	at org.concordion.integration.junit4.ConcordionFrameworkMethod.invokeExplosively(ConcordionFrameworkMethod.java:58)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">86</div><pre>	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">87</div><pre>	at org.junit.runners.ParentRunner\$3.evaluate(ParentRunner.java:306)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">88</div><pre>	at org.junit.runners.BlockJUnit4ClassRunner\$1.evaluate(BlockJUnit4ClassRunner.java:100)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">89</div><pre>	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">90</div><pre>	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">91</div><pre>	at org.concordion.integration.junit4.ConcordionRunner.runChild(ConcordionRunner.java:191)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">92</div><pre>	at org.concordion.integration.junit4.ConcordionRunner.runChild(ConcordionRunner.java:23)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">93</div><pre>	at org.junit.runners.ParentRunner\$4.run(ParentRunner.java:331)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">94</div><pre>	at org.junit.runners.ParentRunner\$1.schedule(ParentRunner.java:79)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">95</div><pre>	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">96</div><pre>	at org.junit.runners.ParentRunner.access\$100(ParentRunner.java:66)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">97</div><pre>	at org.junit.runners.ParentRunner\$2.evaluate(ParentRunner.java:293)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">98</div><pre>	at org.junit.runners.ParentRunner\$3.evaluate(ParentRunner.java:306)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">99</div><pre>	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">100</div><pre>	at org.concordion.integration.junit4.ConcordionRunner.run(ConcordionRunner.java:150)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">101</div><pre>	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">102</div><pre>	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">103</div><pre>	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">104</div><pre>	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">105</div><pre>	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">106</div><pre>	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">107</div><pre>	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">108</div><pre>	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda\$execute\$0(EngineExecutionOrchestrator.java:54)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">109</div><pre>	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">110</div><pre>	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">111</div><pre>	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">112</div><pre>	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">113</div><pre>	at org.junit.platform.launcher.core.DefaultLauncherSession\$DelegatingLauncher.execute(DefaultLauncherSession.java:86)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">114</div><pre>	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor\$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:110)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">115</div><pre>	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor\$CollectAllTestClassesExecutor.access\$000(JUnitPlatformTestClassProcessor.java:90)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">116</div><pre>	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:85)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">117</div><pre>	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">118</div><pre>	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">119</div><pre>	at java.base/java.lang.reflect.Method.invoke(Method.java:577)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">120</div><pre>	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">121</div><pre>	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">122</div><pre>	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">123</div><pre>	at org.gradle.internal.dispatch.ProxyDispatchAdapter\$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">124</div><pre>	at jdk.proxy2/jdk.proxy2.\$Proxy5.stop(Unknown Source)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">125</div><pre>	at org.gradle.api.internal.tasks.testing.worker.TestWorker\$3.run(TestWorker.java:193)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">126</div><pre>	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">127</div><pre>	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">128</div><pre>	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">129</div><pre>	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">130</div><pre>	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">131</div><pre>	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">132</div><pre>	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">133</div><pre>	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">134</div><pre>Caused by: io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier\$TableSizeMismatch: table size mismatch</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">135</div><pre>	at io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier.dbUnitAssert(DbVerifier.kt:77)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">136</div><pre>	at io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier.verify_0E7RQCE\$lambda\$1\$lambda\$0(DbVerifier.kt:54)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">137</div><pre>	at org.awaitility.core.AssertionCondition.lambda\$new\$0(AssertionCondition.java:53)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">138</div><pre>	at org.awaitility.core.ConditionAwaiter\$ConditionPoller.call(ConditionAwaiter.java:248)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">139</div><pre>	at org.awaitility.core.ConditionAwaiter\$ConditionPoller.call(ConditionAwaiter.java:235)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">140</div><pre>	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">141</div><pre>	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">142</div><pre>	at java.base/java.util.concurrent.ThreadPoolExecutor\$Worker.run(ThreadPoolExecutor.java:635)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">143</div><pre>	at java.base/java.lang.Thread.run(Thread.java:833)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">144</div><pre>Caused by: org.dbunit.assertion.DbComparisonFailure: row count (table=field_value) expected:&lt;5&gt; but was:&lt;1&gt;</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">145</div><pre>	at org.dbunit.assertion.DefaultFailureHandler\$DefaultFailureFactory.createFailure(DefaultFailureHandler.java:323)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">146</div><pre>	at org.dbunit.assertion.DefaultFailureHandler.createFailure(DefaultFailureHandler.java:105)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">147</div><pre>	at org.dbunit.assertion.DbUnitAssertBase.compareRowCounts(DbUnitAssertBase.java:171)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">148</div><pre>	at org.dbunit.assertion.DbUnitAssertBase.assertWithValueComparer(DbUnitAssertBase.java:417)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">149</div><pre>	at org.dbunit.Assertion.assertWithValueComparer(Assertion.java:238)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">150</div><pre>	at io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier.assert(DbVerifier.kt:85)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">151</div><pre>	at io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier.dbUnitAssert(DbVerifier.kt:75)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">152</div><pre>	... 8 common frames omitted</pre></li>
+<li class="line error error-color "><div class="line-numbers">153</div><pre>23:06:38.115 [Test worker] ERROR o.dbunit.assertion.DbUnitAssertBase.compareRowCounts - org.dbunit.assertion.DbComparisonFailure[row count (table=security_issuer_exposition)expected:&lt;4&gt;but was:&lt;1&gt;]</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">154</div><pre>23:06:38.116 [Test worker] WARN  i.g.a.c.e.e.d.c.check.DbVerifier.verify-0E7RQCE - Check failed</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">155</div><pre>io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier\$TableSizeMismatch: table size mismatch</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">156</div><pre>	at io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier.dbUnitAssert(DbVerifier.kt:77)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">157</div><pre>	at io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier.verify-0E7RQCE(DbVerifier.kt:56)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">158</div><pre>	at io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier.verify-0E7RQCE(DbVerifier.kt:22)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">159</div><pre>	at io.github.adven27.concordion.extensions.exam.core.commands.ExamAssertCommand.verify(ExamVerifyCommand.kt:111)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">160</div><pre>	at io.github.adven27.concordion.extensions.exam.db.commands.check.CheckCommand.verify(CheckCommand.kt:43)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">161</div><pre>	at org.concordion.api.AbstractCommandDecorator\$3.run(AbstractCommandDecorator.java:33)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">162</div><pre>	at org.concordion.internal.command.LocalTextDecorator.process(LocalTextDecorator.java:26)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">163</div><pre>	at org.concordion.api.AbstractCommandDecorator.verify(AbstractCommandDecorator.java:31)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">164</div><pre>	at org.concordion.api.AbstractCommandDecorator\$3.run(AbstractCommandDecorator.java:33)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">165</div><pre>	at org.concordion.internal.command.ThrowableCatchingDecorator.process(ThrowableCatchingDecorator.java:38)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">166</div><pre>	at org.concordion.api.AbstractCommandDecorator.verify(AbstractCommandDecorator.java:31)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">167</div><pre>	at org.concordion.api.CommandCall.verify(CommandCall.java:76)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">168</div><pre>	at org.concordion.api.CommandCallList.processSequentially(CommandCallList.java:34)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">169</div><pre>	at org.concordion.internal.command.ExampleCommand.execute(ExampleCommand.java:49)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">170</div><pre>	at org.concordion.api.AbstractCommandDecorator\$2.run(AbstractCommandDecorator.java:25)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">171</div><pre>	at org.concordion.internal.command.LocalTextDecorator.process(LocalTextDecorator.java:26)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">172</div><pre>	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">173</div><pre>	at org.concordion.api.AbstractCommandDecorator\$2.run(AbstractCommandDecorator.java:25)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">174</div><pre>	at org.concordion.internal.command.ThrowableCatchingDecorator.process(ThrowableCatchingDecorator.java:38)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">175</div><pre>	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">176</div><pre>	at org.concordion.api.CommandCall.execute(CommandCall.java:72)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">177</div><pre>	at org.concordion.internal.XMLSpecification.processNode(XMLSpecification.java:60)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">178</div><pre>	at org.concordion.internal.XMLSpecification.processExample(XMLSpecification.java:76)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">179</div><pre>	at org.concordion.Concordion.processExample(Concordion.java:92)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">180</div><pre>	at org.concordion.internal.FixtureRunner.run(FixtureRunner.java:41)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">181</div><pre>	at org.concordion.integration.junit4.ConcordionRunner.invoke(ConcordionRunner.java:207)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">182</div><pre>	at org.concordion.integration.junit4.ConcordionRunner\$1.invoke(ConcordionRunner.java:31)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">183</div><pre>	at org.concordion.integration.junit4.ConcordionFrameworkMethod.invokeExplosively(ConcordionFrameworkMethod.java:58)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">184</div><pre>	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">185</div><pre>	at org.junit.runners.ParentRunner\$3.evaluate(ParentRunner.java:306)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">186</div><pre>	at org.junit.runners.BlockJUnit4ClassRunner\$1.evaluate(BlockJUnit4ClassRunner.java:100)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">187</div><pre>	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">188</div><pre>	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">189</div><pre>	at org.concordion.integration.junit4.ConcordionRunner.runChild(ConcordionRunner.java:191)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">190</div><pre>	at org.concordion.integration.junit4.ConcordionRunner.runChild(ConcordionRunner.java:23)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">191</div><pre>	at org.junit.runners.ParentRunner\$4.run(ParentRunner.java:331)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">192</div><pre>	at org.junit.runners.ParentRunner\$1.schedule(ParentRunner.java:79)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">193</div><pre>	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">194</div><pre>	at org.junit.runners.ParentRunner.access\$100(ParentRunner.java:66)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">195</div><pre>	at org.junit.runners.ParentRunner\$2.evaluate(ParentRunner.java:293)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">196</div><pre>	at org.junit.runners.ParentRunner\$3.evaluate(ParentRunner.java:306)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">197</div><pre>	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">198</div><pre>	at org.concordion.integration.junit4.ConcordionRunner.run(ConcordionRunner.java:150)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">199</div><pre>	at org.junit.runners.Suite.runChild(Suite.java:128)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">200</div><pre>	at org.junit.runners.Suite.runChild(Suite.java:27)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">201</div><pre>	at org.junit.runners.ParentRunner\$4.run(ParentRunner.java:331)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">202</div><pre>	at org.junit.runners.ParentRunner\$1.schedule(ParentRunner.java:79)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">203</div><pre>	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">204</div><pre>	at org.junit.runners.ParentRunner.access\$100(ParentRunner.java:66)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">205</div><pre>	at org.junit.runners.ParentRunner\$2.evaluate(ParentRunner.java:293)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">206</div><pre>	at org.junit.runners.ParentRunner\$3.evaluate(ParentRunner.java:306)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">207</div><pre>	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">208</div><pre>	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">209</div><pre>	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">210</div><pre>	at org.junit.runner.JUnitCore.run(JUnitCore.java:105)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">211</div><pre>	at org.junit.runner.JUnitCore.runClasses(JUnitCore.java:62)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">212</div><pre>	at org.junit.runner.JUnitCore.runClasses(JUnitCore.java:49)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">213</div><pre>	at org.concordion.internal.runner.DefaultConcordionRunner.runJUnitClass(DefaultConcordionRunner.java:78)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">214</div><pre>	at org.concordion.internal.runner.DefaultConcordionRunner.runTestClass(DefaultConcordionRunner.java:44)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">215</div><pre>	at org.concordion.internal.runner.DefaultConcordionRunner.execute(DefaultConcordionRunner.java:19)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">216</div><pre>	at org.concordion.internal.command.SequentialRunStrategy.call(SequentialRunStrategy.java:10)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">217</div><pre>	at org.concordion.internal.command.RunCommand.execute(RunCommand.java:81)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">218</div><pre>	at org.concordion.api.AbstractCommandDecorator\$2.run(AbstractCommandDecorator.java:25)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">219</div><pre>	at org.concordion.internal.command.LocalTextDecorator.process(LocalTextDecorator.java:26)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">220</div><pre>	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">221</div><pre>	at org.concordion.api.AbstractCommandDecorator\$2.run(AbstractCommandDecorator.java:25)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">222</div><pre>	at org.concordion.internal.command.ThrowableCatchingDecorator.process(ThrowableCatchingDecorator.java:38)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">223</div><pre>	at org.concordion.api.AbstractCommandDecorator.execute(AbstractCommandDecorator.java:23)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">224</div><pre>	at org.concordion.api.CommandCall.execute(CommandCall.java:72)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">225</div><pre>	at org.concordion.api.CommandCallList.processSequentially(CommandCallList.java:33)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">226</div><pre>	at org.concordion.internal.command.SpecificationCommand.execute(SpecificationCommand.java:36)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">227</div><pre>	at org.concordion.api.CommandCall.execute(CommandCall.java:72)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">228</div><pre>	at org.concordion.internal.XMLSpecification.processNode(XMLSpecification.java:60)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">229</div><pre>	at org.concordion.internal.XMLSpecification.processExample(XMLSpecification.java:69)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">230</div><pre>	at org.concordion.Concordion.processExample(Concordion.java:92)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">231</div><pre>	at org.concordion.internal.FixtureRunner.run(FixtureRunner.java:41)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">232</div><pre>	at org.concordion.integration.junit4.ConcordionRunner.invoke(ConcordionRunner.java:207)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">233</div><pre>	at org.concordion.integration.junit4.ConcordionRunner\$1.invoke(ConcordionRunner.java:31)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">234</div><pre>	at org.concordion.integration.junit4.ConcordionFrameworkMethod.invokeExplosively(ConcordionFrameworkMethod.java:58)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">235</div><pre>	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">236</div><pre>	at org.junit.runners.ParentRunner\$3.evaluate(ParentRunner.java:306)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">237</div><pre>	at org.junit.runners.BlockJUnit4ClassRunner\$1.evaluate(BlockJUnit4ClassRunner.java:100)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">238</div><pre>	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">239</div><pre>	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">240</div><pre>	at org.concordion.integration.junit4.ConcordionRunner.runChild(ConcordionRunner.java:191)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">241</div><pre>	at org.concordion.integration.junit4.ConcordionRunner.runChild(ConcordionRunner.java:23)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">242</div><pre>	at org.junit.runners.ParentRunner\$4.run(ParentRunner.java:331)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">243</div><pre>	at org.junit.runners.ParentRunner\$1.schedule(ParentRunner.java:79)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">244</div><pre>	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">245</div><pre>	at org.junit.runners.ParentRunner.access\$100(ParentRunner.java:66)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">246</div><pre>	at org.junit.runners.ParentRunner\$2.evaluate(ParentRunner.java:293)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">247</div><pre>	at org.junit.runners.ParentRunner\$3.evaluate(ParentRunner.java:306)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">248</div><pre>	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">249</div><pre>	at org.concordion.integration.junit4.ConcordionRunner.run(ConcordionRunner.java:150)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">250</div><pre>	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">251</div><pre>	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">252</div><pre>	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">253</div><pre>	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">254</div><pre>	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">255</div><pre>	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">256</div><pre>	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">257</div><pre>	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda\$execute\$0(EngineExecutionOrchestrator.java:54)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">258</div><pre>	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">259</div><pre>	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">260</div><pre>	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">261</div><pre>	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">262</div><pre>	at org.junit.platform.launcher.core.DefaultLauncherSession\$DelegatingLauncher.execute(DefaultLauncherSession.java:86)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">263</div><pre>	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor\$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:110)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">264</div><pre>	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor\$CollectAllTestClassesExecutor.access\$000(JUnitPlatformTestClassProcessor.java:90)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">265</div><pre>	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:85)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">266</div><pre>	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">267</div><pre>	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">268</div><pre>	at java.base/java.lang.reflect.Method.invoke(Method.java:577)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">269</div><pre>	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">270</div><pre>	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">271</div><pre>	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">272</div><pre>	at org.gradle.internal.dispatch.ProxyDispatchAdapter\$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">273</div><pre>	at jdk.proxy2/jdk.proxy2.\$Proxy5.stop(Unknown Source)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">274</div><pre>	at org.gradle.api.internal.tasks.testing.worker.TestWorker\$3.run(TestWorker.java:193)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">275</div><pre>	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">276</div><pre>	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">277</div><pre>	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">278</div><pre>	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">279</div><pre>	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">280</div><pre>	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">281</div><pre>	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">282</div><pre>	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">283</div><pre>Caused by: org.dbunit.assertion.DbComparisonFailure: row count (table=security_issuer_exposition) expected:&lt;4&gt; but was:&lt;1&gt;</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">284</div><pre>	at org.dbunit.assertion.DefaultFailureHandler\$DefaultFailureFactory.createFailure(DefaultFailureHandler.java:323)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">285</div><pre>	at org.dbunit.assertion.DefaultFailureHandler.createFailure(DefaultFailureHandler.java:105)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">286</div><pre>	at org.dbunit.assertion.DbUnitAssertBase.compareRowCounts(DbUnitAssertBase.java:171)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">287</div><pre>	at org.dbunit.assertion.DbUnitAssertBase.assertWithValueComparer(DbUnitAssertBase.java:417)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">288</div><pre>	at org.dbunit.Assertion.assertWithValueComparer(Assertion.java:238)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">289</div><pre>	at io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier.assert(DbVerifier.kt:85)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">290</div><pre>	at io.github.adven27.concordion.extensions.exam.db.commands.check.DbVerifier.dbUnitAssert(DbVerifier.kt:75)</pre></li>
+<li class="line warn warn-color "><div class="line-numbers">291</div><pre>	... 126 common frames omitted</pre></li>
+<li class="line split-debug-levels info info-color "><div class="line-numbers">292</div><pre>23:06:45.733 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  r.a.m.a.s.l.IssuerEventsListener.issuerEvent - Got issuer event: IssuerAddedEvent(securityIds=[ISIN2, ISIN1, ISIN0, ISIN3], fields=[Field(code=NAME, value=Some issuer, timestamp=2024-02-05T23:02:34.189), Field(code=INDUSTRY_AC, value=Холдинги, timestamp=2024-02-04T23:02:34.189)], timestamp=2024-02-04T23:02:34.189)</pre></li>
+<li class="line debug debug-color "><div class="line-numbers">293</div><pre>23:06:45.741 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] DEBUG r.a.m.a.s.service.SecurityService.updateIndustryField - Update industry field: isin=ISIN0 value=Холдинги brTypeTs=null issuerTs=2024-02-04</pre></li>
+<li class="line debug debug-color "><div class="line-numbers">294</div><pre>23:06:45.741 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] DEBUG r.a.m.a.s.service.SecurityService.updateIndustryField - Update industry field: isin=ISIN1 value=Холдинги brTypeTs=2024-02-03 issuerTs=2024-02-04</pre></li>
+<li class="line debug debug-color "><div class="line-numbers">295</div><pre>23:06:45.741 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] DEBUG r.a.m.a.s.service.SecurityService.updateIndustryField - Update industry field: isin=ISIN2 value=Холдинги brTypeTs=2024-02-04 issuerTs=2024-02-04</pre></li>
+<li class="line debug debug-color "><div class="line-numbers">296</div><pre>23:06:45.741 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] DEBUG r.a.m.a.s.service.SecurityService.updateIndustryField - Update industry field: isin=ISIN3 value=Холдинги brTypeTs=2024-02-05 issuerTs=2024-02-04</pre></li>
+<li class="line error error-color "><div class="line-numbers">297</div><pre>23:06:46.775 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] ERROR o.s.k.l.KafkaMessageListenerContainer.error - Error handler threw an exception</pre></li>
+<li class="line error error-color "><div class="line-numbers">298</div><pre>org.springframework.kafka.KafkaException: Seek to current after exception; nested exception is org.springframework.kafka.listener.ListenerExecutionFailedException: Listener method 'public long ru.alfacapital.mda.api.securitiesapi.listener.IssuerEventsListener.issuerEvent(ru.alfacapital.mda.api.securitiesapi.listener.IssuerEvent)' threw exception; nested exception is org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [</pre></li>
+<li class="line error error-color "><div class="line-numbers">299</div><pre>    merge into field_value as fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">300</div><pre>    using (</pre></li>
+<li class="line error error-color "><div class="line-numbers">301</div><pre>        with</pre></li>
+<li class="line error error-color "><div class="line-numbers">302</div><pre>         ids as (select distinct security from security_id where id in ()),</pre></li>
+<li class="line error error-color "><div class="line-numbers">303</div><pre>         src as (select id from source where code = ?)</pre></li>
+<li class="line error error-color "><div class="line-numbers">304</div><pre>        select</pre></li>
+<li class="line error error-color "><div class="line-numbers">305</div><pre>            ids.security as security,</pre></li>
+<li class="line error error-color "><div class="line-numbers">306</div><pre>            ? as field,</pre></li>
+<li class="line error error-color "><div class="line-numbers">307</div><pre>            ? as value,</pre></li>
+<li class="line error error-color "><div class="line-numbers">308</div><pre>            src.id as source,</pre></li>
+<li class="line error error-color "><div class="line-numbers">309</div><pre>            (select id from field where code = 'ACCRUED_INTEREST') = ? as accri,</pre></li>
+<li class="line error error-color "><div class="line-numbers">310</div><pre>            (?)::date as date,</pre></li>
+<li class="line error error-color "><div class="line-numbers">311</div><pre>            (select max(date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">312</div><pre>             from field_value fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">313</div><pre>             where security = ids.security</pre></li>
+<li class="line error error-color "><div class="line-numbers">314</div><pre>               AND field = ?</pre></li>
+<li class="line error error-color "><div class="line-numbers">315</div><pre>               AND source = src.id</pre></li>
+<li class="line error error-color "><div class="line-numbers">316</div><pre>               AND fv.date &lt;= ?) as latest_date,</pre></li>
+<li class="line error error-color "><div class="line-numbers">317</div><pre>            (select max(created_at)</pre></li>
+<li class="line error error-color "><div class="line-numbers">318</div><pre>             from field_value fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">319</div><pre>             where security = ids.security</pre></li>
+<li class="line error error-color "><div class="line-numbers">320</div><pre>               AND field = ?</pre></li>
+<li class="line error error-color "><div class="line-numbers">321</div><pre>               AND source = src.id</pre></li>
+<li class="line error error-color "><div class="line-numbers">322</div><pre>               AND fv.date &lt;= ?) as latest_created</pre></li>
+<li class="line error error-color "><div class="line-numbers">323</div><pre>        from src left join ids on true</pre></li>
+<li class="line error error-color "><div class="line-numbers">324</div><pre>    ) inc</pre></li>
+<li class="line error error-color "><div class="line-numbers">325</div><pre>    on (</pre></li>
+<li class="line error error-color "><div class="line-numbers">326</div><pre>        (inc.accri and</pre></li>
+<li class="line error error-color "><div class="line-numbers">327</div><pre>        fv.security = inc.security and</pre></li>
+<li class="line error error-color "><div class="line-numbers">328</div><pre>        fv.field = inc.field and</pre></li>
+<li class="line error error-color "><div class="line-numbers">329</div><pre>        fv.source = inc.source and</pre></li>
+<li class="line error error-color "><div class="line-numbers">330</div><pre>        fv.date = inc.date and</pre></li>
+<li class="line error error-color "><div class="line-numbers">331</div><pre>        fv.created_at = latest_created)</pre></li>
+<li class="line error error-color "><div class="line-numbers">332</div><pre>        or</pre></li>
+<li class="line error error-color "><div class="line-numbers">333</div><pre>        (not inc.accri and</pre></li>
+<li class="line error error-color "><div class="line-numbers">334</div><pre>        fv.security = inc.security and</pre></li>
+<li class="line error error-color "><div class="line-numbers">335</div><pre>        fv.field = inc.field and</pre></li>
+<li class="line error error-color "><div class="line-numbers">336</div><pre>        fv.value = inc.value and</pre></li>
+<li class="line error error-color "><div class="line-numbers">337</div><pre>        fv.source = inc.source and</pre></li>
+<li class="line error error-color "><div class="line-numbers">338</div><pre>        fv.date = latest_date and</pre></li>
+<li class="line error error-color "><div class="line-numbers">339</div><pre>        fv.created_at = latest_created)</pre></li>
+<li class="line error error-color "><div class="line-numbers">340</div><pre>    )</pre></li>
+<li class="line error error-color "><div class="line-numbers">341</div><pre>    when not matched then</pre></li>
+<li class="line error error-color "><div class="line-numbers">342</div><pre>        insert (security, field, value, source, date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">343</div><pre>        values (inc.security, inc.field, inc.value, inc.source, inc.date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">344</div><pre>    ]; nested exception is org.postgresql.util.PSQLException: ERROR: syntax error at or near ")"</pre></li>
+<li class="line error error-color "><div class="line-numbers">345</div><pre>  Позиция: 132; nested exception is org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [</pre></li>
+<li class="line error error-color "><div class="line-numbers">346</div><pre>    merge into field_value as fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">347</div><pre>    using (</pre></li>
+<li class="line error error-color "><div class="line-numbers">348</div><pre>        with</pre></li>
+<li class="line error error-color "><div class="line-numbers">349</div><pre>         ids as (select distinct security from security_id where id in ()),</pre></li>
+<li class="line error error-color "><div class="line-numbers">350</div><pre>         src as (select id from source where code = ?)</pre></li>
+<li class="line error error-color "><div class="line-numbers">351</div><pre>        select</pre></li>
+<li class="line error error-color "><div class="line-numbers">352</div><pre>            ids.security as security,</pre></li>
+<li class="line error error-color "><div class="line-numbers">353</div><pre>            ? as field,</pre></li>
+<li class="line error error-color "><div class="line-numbers">354</div><pre>            ? as value,</pre></li>
+<li class="line error error-color "><div class="line-numbers">355</div><pre>            src.id as source,</pre></li>
+<li class="line error error-color "><div class="line-numbers">356</div><pre>            (select id from field where code = 'ACCRUED_INTEREST') = ? as accri,</pre></li>
+<li class="line error error-color "><div class="line-numbers">357</div><pre>            (?)::date as date,</pre></li>
+<li class="line error error-color "><div class="line-numbers">358</div><pre>            (select max(date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">359</div><pre>             from field_value fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">360</div><pre>             where security = ids.security</pre></li>
+<li class="line error error-color "><div class="line-numbers">361</div><pre>               AND field = ?</pre></li>
+<li class="line error error-color "><div class="line-numbers">362</div><pre>               AND source = src.id</pre></li>
+<li class="line error error-color "><div class="line-numbers">363</div><pre>               AND fv.date &lt;= ?) as latest_date,</pre></li>
+<li class="line error error-color "><div class="line-numbers">364</div><pre>            (select max(created_at)</pre></li>
+<li class="line error error-color "><div class="line-numbers">365</div><pre>             from field_value fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">366</div><pre>             where security = ids.security</pre></li>
+<li class="line error error-color "><div class="line-numbers">367</div><pre>               AND field = ?</pre></li>
+<li class="line error error-color "><div class="line-numbers">368</div><pre>               AND source = src.id</pre></li>
+<li class="line error error-color "><div class="line-numbers">369</div><pre>               AND fv.date &lt;= ?) as latest_created</pre></li>
+<li class="line error error-color "><div class="line-numbers">370</div><pre>        from src left join ids on true</pre></li>
+<li class="line error error-color "><div class="line-numbers">371</div><pre>    ) inc</pre></li>
+<li class="line error error-color "><div class="line-numbers">372</div><pre>    on (</pre></li>
+<li class="line error error-color "><div class="line-numbers">373</div><pre>        (inc.accri and</pre></li>
+<li class="line error error-color "><div class="line-numbers">374</div><pre>        fv.security = inc.security and</pre></li>
+<li class="line error error-color "><div class="line-numbers">375</div><pre>        fv.field = inc.field and</pre></li>
+<li class="line error error-color "><div class="line-numbers">376</div><pre>        fv.source = inc.source and</pre></li>
+<li class="line error error-color "><div class="line-numbers">377</div><pre>        fv.date = inc.date and</pre></li>
+<li class="line error error-color "><div class="line-numbers">378</div><pre>        fv.created_at = latest_created)</pre></li>
+<li class="line error error-color "><div class="line-numbers">379</div><pre>        or</pre></li>
+<li class="line error error-color "><div class="line-numbers">380</div><pre>        (not inc.accri and</pre></li>
+<li class="line error error-color "><div class="line-numbers">381</div><pre>        fv.security = inc.security and</pre></li>
+<li class="line error error-color "><div class="line-numbers">382</div><pre>        fv.field = inc.field and</pre></li>
+<li class="line error error-color "><div class="line-numbers">383</div><pre>        fv.value = inc.value and</pre></li>
+<li class="line error error-color "><div class="line-numbers">384</div><pre>        fv.source = inc.source and</pre></li>
+<li class="line error error-color "><div class="line-numbers">385</div><pre>        fv.date = latest_date and</pre></li>
+<li class="line error error-color "><div class="line-numbers">386</div><pre>        fv.created_at = latest_created)</pre></li>
+<li class="line error error-color "><div class="line-numbers">387</div><pre>    )</pre></li>
+<li class="line error error-color "><div class="line-numbers">388</div><pre>    when not matched then</pre></li>
+<li class="line error error-color "><div class="line-numbers">389</div><pre>        insert (security, field, value, source, date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">390</div><pre>        values (inc.security, inc.field, inc.value, inc.source, inc.date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">391</div><pre>    ]; nested exception is org.postgresql.util.PSQLException: ERROR: syntax error at or near ")"</pre></li>
+<li class="line error error-color "><div class="line-numbers">392</div><pre>  Позиция: 132</pre></li>
+<li class="line error error-color "><div class="line-numbers">393</div><pre>	at org.springframework.kafka.listener.SeekUtils.seekOrRecover(SeekUtils.java:208)</pre></li>
+<li class="line error error-color "><div class="line-numbers">394</div><pre>	at org.springframework.kafka.listener.DefaultErrorHandler.handleRemaining(DefaultErrorHandler.java:135)</pre></li>
+<li class="line error error-color "><div class="line-numbers">395</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.invokeErrorHandler(KafkaMessageListenerContainer.java:2707)</pre></li>
+<li class="line error error-color "><div class="line-numbers">396</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2588)</pre></li>
+<li class="line error error-color "><div class="line-numbers">397</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.doInvokeWithRecords(KafkaMessageListenerContainer.java:2457)</pre></li>
+<li class="line error error-color "><div class="line-numbers">398</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.invokeRecordListener(KafkaMessageListenerContainer.java:2335)</pre></li>
+<li class="line error error-color "><div class="line-numbers">399</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.invokeListener(KafkaMessageListenerContainer.java:2006)</pre></li>
+<li class="line error error-color "><div class="line-numbers">400</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.invokeIfHaveRecords(KafkaMessageListenerContainer.java:1375)</pre></li>
+<li class="line error error-color "><div class="line-numbers">401</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.pollAndInvoke(KafkaMessageListenerContainer.java:1366)</pre></li>
+<li class="line error error-color "><div class="line-numbers">402</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.run(KafkaMessageListenerContainer.java:1257)</pre></li>
+<li class="line error error-color "><div class="line-numbers">403</div><pre>	at java.base/java.util.concurrent.Executors\$RunnableAdapter.call(Executors.java:539)</pre></li>
+<li class="line error error-color "><div class="line-numbers">404</div><pre>	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)</pre></li>
+<li class="line error error-color "><div class="line-numbers">405</div><pre>	at java.base/java.lang.Thread.run(Thread.java:833)</pre></li>
+<li class="line error error-color "><div class="line-numbers">406</div><pre>Caused by: org.springframework.kafka.listener.ListenerExecutionFailedException: Listener method 'public long ru.alfacapital.mda.api.securitiesapi.listener.IssuerEventsListener.issuerEvent(ru.alfacapital.mda.api.securitiesapi.listener.IssuerEvent)' threw exception; nested exception is org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [</pre></li>
+<li class="line error error-color "><div class="line-numbers">407</div><pre>    merge into field_value as fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">408</div><pre>    using (</pre></li>
+<li class="line error error-color "><div class="line-numbers">409</div><pre>        with</pre></li>
+<li class="line error error-color "><div class="line-numbers">410</div><pre>         ids as (select distinct security from security_id where id in ()),</pre></li>
+<li class="line error error-color "><div class="line-numbers">411</div><pre>         src as (select id from source where code = ?)</pre></li>
+<li class="line error error-color "><div class="line-numbers">412</div><pre>        select</pre></li>
+<li class="line error error-color "><div class="line-numbers">413</div><pre>            ids.security as security,</pre></li>
+<li class="line error error-color "><div class="line-numbers">414</div><pre>            ? as field,</pre></li>
+<li class="line error error-color "><div class="line-numbers">415</div><pre>            ? as value,</pre></li>
+<li class="line error error-color "><div class="line-numbers">416</div><pre>            src.id as source,</pre></li>
+<li class="line error error-color "><div class="line-numbers">417</div><pre>            (select id from field where code = 'ACCRUED_INTEREST') = ? as accri,</pre></li>
+<li class="line error error-color "><div class="line-numbers">418</div><pre>            (?)::date as date,</pre></li>
+<li class="line error error-color "><div class="line-numbers">419</div><pre>            (select max(date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">420</div><pre>             from field_value fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">421</div><pre>             where security = ids.security</pre></li>
+<li class="line error error-color "><div class="line-numbers">422</div><pre>               AND field = ?</pre></li>
+<li class="line error error-color "><div class="line-numbers">423</div><pre>               AND source = src.id</pre></li>
+<li class="line error error-color "><div class="line-numbers">424</div><pre>               AND fv.date &lt;= ?) as latest_date,</pre></li>
+<li class="line error error-color "><div class="line-numbers">425</div><pre>            (select max(created_at)</pre></li>
+<li class="line error error-color "><div class="line-numbers">426</div><pre>             from field_value fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">427</div><pre>             where security = ids.security</pre></li>
+<li class="line error error-color "><div class="line-numbers">428</div><pre>               AND field = ?</pre></li>
+<li class="line error error-color "><div class="line-numbers">429</div><pre>               AND source = src.id</pre></li>
+<li class="line error error-color "><div class="line-numbers">430</div><pre>               AND fv.date &lt;= ?) as latest_created</pre></li>
+<li class="line error error-color "><div class="line-numbers">431</div><pre>        from src left join ids on true</pre></li>
+<li class="line error error-color "><div class="line-numbers">432</div><pre>    ) inc</pre></li>
+<li class="line error error-color "><div class="line-numbers">433</div><pre>    on (</pre></li>
+<li class="line error error-color "><div class="line-numbers">434</div><pre>        (inc.accri and</pre></li>
+<li class="line error error-color "><div class="line-numbers">435</div><pre>        fv.security = inc.security and</pre></li>
+<li class="line error error-color "><div class="line-numbers">436</div><pre>        fv.field = inc.field and</pre></li>
+<li class="line error error-color "><div class="line-numbers">437</div><pre>        fv.source = inc.source and</pre></li>
+<li class="line error error-color "><div class="line-numbers">438</div><pre>        fv.date = inc.date and</pre></li>
+<li class="line error error-color "><div class="line-numbers">439</div><pre>        fv.created_at = latest_created)</pre></li>
+<li class="line error error-color "><div class="line-numbers">440</div><pre>        or</pre></li>
+<li class="line error error-color "><div class="line-numbers">441</div><pre>        (not inc.accri and</pre></li>
+<li class="line error error-color "><div class="line-numbers">442</div><pre>        fv.security = inc.security and</pre></li>
+<li class="line error error-color "><div class="line-numbers">443</div><pre>        fv.field = inc.field and</pre></li>
+<li class="line error error-color "><div class="line-numbers">444</div><pre>        fv.value = inc.value and</pre></li>
+<li class="line error error-color "><div class="line-numbers">445</div><pre>        fv.source = inc.source and</pre></li>
+<li class="line error error-color "><div class="line-numbers">446</div><pre>        fv.date = latest_date and</pre></li>
+<li class="line error error-color "><div class="line-numbers">447</div><pre>        fv.created_at = latest_created)</pre></li>
+<li class="line error error-color "><div class="line-numbers">448</div><pre>    )</pre></li>
+<li class="line error error-color "><div class="line-numbers">449</div><pre>    when not matched then</pre></li>
+<li class="line error error-color "><div class="line-numbers">450</div><pre>        insert (security, field, value, source, date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">451</div><pre>        values (inc.security, inc.field, inc.value, inc.source, inc.date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">452</div><pre>    ]; nested exception is org.postgresql.util.PSQLException: ERROR: syntax error at or near ")"</pre></li>
+<li class="line error error-color "><div class="line-numbers">453</div><pre>  Позиция: 132; nested exception is org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [</pre></li>
+<li class="line error error-color "><div class="line-numbers">454</div><pre>    merge into field_value as fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">455</div><pre>    using (</pre></li>
+<li class="line error error-color "><div class="line-numbers">456</div><pre>        with</pre></li>
+<li class="line error error-color "><div class="line-numbers">457</div><pre>         ids as (select distinct security from security_id where id in ()),</pre></li>
+<li class="line error error-color "><div class="line-numbers">458</div><pre>         src as (select id from source where code = ?)</pre></li>
+<li class="line error error-color "><div class="line-numbers">459</div><pre>        select</pre></li>
+<li class="line error error-color "><div class="line-numbers">460</div><pre>            ids.security as security,</pre></li>
+<li class="line error error-color "><div class="line-numbers">461</div><pre>            ? as field,</pre></li>
+<li class="line error error-color "><div class="line-numbers">462</div><pre>            ? as value,</pre></li>
+<li class="line error error-color "><div class="line-numbers">463</div><pre>            src.id as source,</pre></li>
+<li class="line error error-color "><div class="line-numbers">464</div><pre>            (select id from field where code = 'ACCRUED_INTEREST') = ? as accri,</pre></li>
+<li class="line error error-color "><div class="line-numbers">465</div><pre>            (?)::date as date,</pre></li>
+<li class="line error error-color "><div class="line-numbers">466</div><pre>            (select max(date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">467</div><pre>             from field_value fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">468</div><pre>             where security = ids.security</pre></li>
+<li class="line error error-color "><div class="line-numbers">469</div><pre>               AND field = ?</pre></li>
+<li class="line error error-color "><div class="line-numbers">470</div><pre>               AND source = src.id</pre></li>
+<li class="line error error-color "><div class="line-numbers">471</div><pre>               AND fv.date &lt;= ?) as latest_date,</pre></li>
+<li class="line error error-color "><div class="line-numbers">472</div><pre>            (select max(created_at)</pre></li>
+<li class="line error error-color "><div class="line-numbers">473</div><pre>             from field_value fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">474</div><pre>             where security = ids.security</pre></li>
+<li class="line error error-color "><div class="line-numbers">475</div><pre>               AND field = ?</pre></li>
+<li class="line error error-color "><div class="line-numbers">476</div><pre>               AND source = src.id</pre></li>
+<li class="line error error-color "><div class="line-numbers">477</div><pre>               AND fv.date &lt;= ?) as latest_created</pre></li>
+<li class="line error error-color "><div class="line-numbers">478</div><pre>        from src left join ids on true</pre></li>
+<li class="line error error-color "><div class="line-numbers">479</div><pre>    ) inc</pre></li>
+<li class="line error error-color "><div class="line-numbers">480</div><pre>    on (</pre></li>
+<li class="line error error-color "><div class="line-numbers">481</div><pre>        (inc.accri and</pre></li>
+<li class="line error error-color "><div class="line-numbers">482</div><pre>        fv.security = inc.security and</pre></li>
+<li class="line error error-color "><div class="line-numbers">483</div><pre>        fv.field = inc.field and</pre></li>
+<li class="line error error-color "><div class="line-numbers">484</div><pre>        fv.source = inc.source and</pre></li>
+<li class="line error error-color "><div class="line-numbers">485</div><pre>        fv.date = inc.date and</pre></li>
+<li class="line error error-color "><div class="line-numbers">486</div><pre>        fv.created_at = latest_created)</pre></li>
+<li class="line error error-color "><div class="line-numbers">487</div><pre>        or</pre></li>
+<li class="line error error-color "><div class="line-numbers">488</div><pre>        (not inc.accri and</pre></li>
+<li class="line error error-color "><div class="line-numbers">489</div><pre>        fv.security = inc.security and</pre></li>
+<li class="line error error-color "><div class="line-numbers">490</div><pre>        fv.field = inc.field and</pre></li>
+<li class="line error error-color "><div class="line-numbers">491</div><pre>        fv.value = inc.value and</pre></li>
+<li class="line error error-color "><div class="line-numbers">492</div><pre>        fv.source = inc.source and</pre></li>
+<li class="line error error-color "><div class="line-numbers">493</div><pre>        fv.date = latest_date and</pre></li>
+<li class="line error error-color "><div class="line-numbers">494</div><pre>        fv.created_at = latest_created)</pre></li>
+<li class="line error error-color "><div class="line-numbers">495</div><pre>    )</pre></li>
+<li class="line error error-color "><div class="line-numbers">496</div><pre>    when not matched then</pre></li>
+<li class="line error error-color "><div class="line-numbers">497</div><pre>        insert (security, field, value, source, date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">498</div><pre>        values (inc.security, inc.field, inc.value, inc.source, inc.date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">499</div><pre>    ]; nested exception is org.postgresql.util.PSQLException: ERROR: syntax error at or near ")"</pre></li>
+<li class="line error error-color "><div class="line-numbers">500</div><pre>  Позиция: 132</pre></li>
+<li class="line error error-color "><div class="line-numbers">501</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.decorateException(KafkaMessageListenerContainer.java:2720)</pre></li>
+<li class="line error error-color "><div class="line-numbers">502</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2690)</pre></li>
+<li class="line error error-color "><div class="line-numbers">503</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.invokeOnMessage(KafkaMessageListenerContainer.java:2650)</pre></li>
+<li class="line error error-color "><div class="line-numbers">504</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2577)</pre></li>
+<li class="line error error-color "><div class="line-numbers">505</div><pre>	... 9 common frames omitted</pre></li>
+<li class="line error error-color "><div class="line-numbers">506</div><pre>Caused by: org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [</pre></li>
+<li class="line error error-color "><div class="line-numbers">507</div><pre>    merge into field_value as fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">508</div><pre>    using (</pre></li>
+<li class="line error error-color "><div class="line-numbers">509</div><pre>        with</pre></li>
+<li class="line error error-color "><div class="line-numbers">510</div><pre>         ids as (select distinct security from security_id where id in ()),</pre></li>
+<li class="line error error-color "><div class="line-numbers">511</div><pre>         src as (select id from source where code = ?)</pre></li>
+<li class="line error error-color "><div class="line-numbers">512</div><pre>        select</pre></li>
+<li class="line error error-color "><div class="line-numbers">513</div><pre>            ids.security as security,</pre></li>
+<li class="line error error-color "><div class="line-numbers">514</div><pre>            ? as field,</pre></li>
+<li class="line error error-color "><div class="line-numbers">515</div><pre>            ? as value,</pre></li>
+<li class="line error error-color "><div class="line-numbers">516</div><pre>            src.id as source,</pre></li>
+<li class="line error error-color "><div class="line-numbers">517</div><pre>            (select id from field where code = 'ACCRUED_INTEREST') = ? as accri,</pre></li>
+<li class="line error error-color "><div class="line-numbers">518</div><pre>            (?)::date as date,</pre></li>
+<li class="line error error-color "><div class="line-numbers">519</div><pre>            (select max(date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">520</div><pre>             from field_value fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">521</div><pre>             where security = ids.security</pre></li>
+<li class="line error error-color "><div class="line-numbers">522</div><pre>               AND field = ?</pre></li>
+<li class="line error error-color "><div class="line-numbers">523</div><pre>               AND source = src.id</pre></li>
+<li class="line error error-color "><div class="line-numbers">524</div><pre>               AND fv.date &lt;= ?) as latest_date,</pre></li>
+<li class="line error error-color "><div class="line-numbers">525</div><pre>            (select max(created_at)</pre></li>
+<li class="line error error-color "><div class="line-numbers">526</div><pre>             from field_value fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">527</div><pre>             where security = ids.security</pre></li>
+<li class="line error error-color "><div class="line-numbers">528</div><pre>               AND field = ?</pre></li>
+<li class="line error error-color "><div class="line-numbers">529</div><pre>               AND source = src.id</pre></li>
+<li class="line error error-color "><div class="line-numbers">530</div><pre>               AND fv.date &lt;= ?) as latest_created</pre></li>
+<li class="line error error-color "><div class="line-numbers">531</div><pre>        from src left join ids on true</pre></li>
+<li class="line error error-color "><div class="line-numbers">532</div><pre>    ) inc</pre></li>
+<li class="line error error-color "><div class="line-numbers">533</div><pre>    on (</pre></li>
+<li class="line error error-color "><div class="line-numbers">534</div><pre>        (inc.accri and</pre></li>
+<li class="line error error-color "><div class="line-numbers">535</div><pre>        fv.security = inc.security and</pre></li>
+<li class="line error error-color "><div class="line-numbers">536</div><pre>        fv.field = inc.field and</pre></li>
+<li class="line error error-color "><div class="line-numbers">537</div><pre>        fv.source = inc.source and</pre></li>
+<li class="line error error-color "><div class="line-numbers">538</div><pre>        fv.date = inc.date and</pre></li>
+<li class="line error error-color "><div class="line-numbers">539</div><pre>        fv.created_at = latest_created)</pre></li>
+<li class="line error error-color "><div class="line-numbers">540</div><pre>        or</pre></li>
+<li class="line error error-color "><div class="line-numbers">541</div><pre>        (not inc.accri and</pre></li>
+<li class="line error error-color "><div class="line-numbers">542</div><pre>        fv.security = inc.security and</pre></li>
+<li class="line error error-color "><div class="line-numbers">543</div><pre>        fv.field = inc.field and</pre></li>
+<li class="line error error-color "><div class="line-numbers">544</div><pre>        fv.value = inc.value and</pre></li>
+<li class="line error error-color "><div class="line-numbers">545</div><pre>        fv.source = inc.source and</pre></li>
+<li class="line error error-color "><div class="line-numbers">546</div><pre>        fv.date = latest_date and</pre></li>
+<li class="line error error-color "><div class="line-numbers">547</div><pre>        fv.created_at = latest_created)</pre></li>
+<li class="line error error-color "><div class="line-numbers">548</div><pre>    )</pre></li>
+<li class="line error error-color "><div class="line-numbers">549</div><pre>    when not matched then</pre></li>
+<li class="line error error-color "><div class="line-numbers">550</div><pre>        insert (security, field, value, source, date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">551</div><pre>        values (inc.security, inc.field, inc.value, inc.source, inc.date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">552</div><pre>    ]; nested exception is org.postgresql.util.PSQLException: ERROR: syntax error at or near ")"</pre></li>
+<li class="line error error-color "><div class="line-numbers">553</div><pre>  Позиция: 132</pre></li>
+<li class="line error error-color "><div class="line-numbers">554</div><pre>	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:236)</pre></li>
+<li class="line error error-color "><div class="line-numbers">555</div><pre>	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:73)</pre></li>
+<li class="line error error-color "><div class="line-numbers">556</div><pre>	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1577)</pre></li>
+<li class="line error error-color "><div class="line-numbers">557</div><pre>	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:669)</pre></li>
+<li class="line error error-color "><div class="line-numbers">558</div><pre>	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:693)</pre></li>
+<li class="line error error-color "><div class="line-numbers">559</div><pre>	at org.springframework.jdbc.core.JdbcTemplate.batchUpdate(JdbcTemplate.java:1036)</pre></li>
+<li class="line error error-color "><div class="line-numbers">560</div><pre>	at org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate.batchUpdate(NamedParameterJdbcTemplate.java:376)</pre></li>
+<li class="line error error-color "><div class="line-numbers">561</div><pre>	at ru.alfacapital.mda.api.securitiesapi.repository.SecurityRepository.saveFieldValues(SecurityRepository.kt:153)</pre></li>
+<li class="line error error-color "><div class="line-numbers">562</div><pre>	at ru.alfacapital.mda.api.securitiesapi.repository.SecurityRepository\$\$FastClassBySpringCGLIB\$\$cf05edcd.invoke(&lt;generated&gt;)</pre></li>
+<li class="line error error-color "><div class="line-numbers">563</div><pre>	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)</pre></li>
+<li class="line error error-color "><div class="line-numbers">564</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:792)</pre></li>
+<li class="line error error-color "><div class="line-numbers">565</div><pre>	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)</pre></li>
+<li class="line error error-color "><div class="line-numbers">566</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$CglibMethodInvocation.proceed(CglibAopProxy.java:762)</pre></li>
+<li class="line error error-color "><div class="line-numbers">567</div><pre>	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)</pre></li>
+<li class="line error error-color "><div class="line-numbers">568</div><pre>	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)</pre></li>
+<li class="line error error-color "><div class="line-numbers">569</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$CglibMethodInvocation.proceed(CglibAopProxy.java:762)</pre></li>
+<li class="line error error-color "><div class="line-numbers">570</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:707)</pre></li>
+<li class="line error error-color "><div class="line-numbers">571</div><pre>	at ru.alfacapital.mda.api.securitiesapi.repository.SecurityRepository\$\$EnhancerBySpringCGLIB\$\$619452cf.saveFieldValues(&lt;generated&gt;)</pre></li>
+<li class="line error error-color "><div class="line-numbers">572</div><pre>	at ru.alfacapital.mda.api.securitiesapi.service.SecurityService.updateIndustryExpo(SecurityService.kt:270)</pre></li>
+<li class="line error error-color "><div class="line-numbers">573</div><pre>	at ru.alfacapital.mda.api.securitiesapi.service.SecurityService.saveExpositions(SecurityService.kt:257)</pre></li>
+<li class="line error error-color "><div class="line-numbers">574</div><pre>	at ru.alfacapital.mda.api.securitiesapi.service.SecurityService\$\$FastClassBySpringCGLIB\$\$2d616b1b.invoke(&lt;generated&gt;)</pre></li>
+<li class="line error error-color "><div class="line-numbers">575</div><pre>	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)</pre></li>
+<li class="line error error-color "><div class="line-numbers">576</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:792)</pre></li>
+<li class="line error error-color "><div class="line-numbers">577</div><pre>	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)</pre></li>
+<li class="line error error-color "><div class="line-numbers">578</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$CglibMethodInvocation.proceed(CglibAopProxy.java:762)</pre></li>
+<li class="line error error-color "><div class="line-numbers">579</div><pre>	at org.springframework.transaction.interceptor.TransactionInterceptor\$1.proceedWithInvocation(TransactionInterceptor.java:123)</pre></li>
+<li class="line error error-color "><div class="line-numbers">580</div><pre>	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)</pre></li>
+<li class="line error error-color "><div class="line-numbers">581</div><pre>	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)</pre></li>
+<li class="line error error-color "><div class="line-numbers">582</div><pre>	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)</pre></li>
+<li class="line error error-color "><div class="line-numbers">583</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$CglibMethodInvocation.proceed(CglibAopProxy.java:762)</pre></li>
+<li class="line error error-color "><div class="line-numbers">584</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:707)</pre></li>
+<li class="line error error-color "><div class="line-numbers">585</div><pre>	at ru.alfacapital.mda.api.securitiesapi.service.SecurityService\$\$EnhancerBySpringCGLIB\$\$771cc43e.saveExpositions(&lt;generated&gt;)</pre></li>
+<li class="line error error-color "><div class="line-numbers">586</div><pre>	at ru.alfacapital.mda.api.securitiesapi.listener.IssuerEventsListener.issuerEvent(IssuerEventsListener.kt:34)</pre></li>
+<li class="line error error-color "><div class="line-numbers">587</div><pre>	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)</pre></li>
+<li class="line error error-color "><div class="line-numbers">588</div><pre>	at java.base/java.lang.reflect.Method.invoke(Method.java:577)</pre></li>
+<li class="line error error-color "><div class="line-numbers">589</div><pre>	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)</pre></li>
+<li class="line error error-color "><div class="line-numbers">590</div><pre>	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)</pre></li>
+<li class="line error error-color "><div class="line-numbers">591</div><pre>	at org.springframework.kafka.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:56)</pre></li>
+<li class="line error error-color "><div class="line-numbers">592</div><pre>	at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:347)</pre></li>
+<li class="line error error-color "><div class="line-numbers">593</div><pre>	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:92)</pre></li>
+<li class="line error error-color "><div class="line-numbers">594</div><pre>	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53)</pre></li>
+<li class="line error error-color "><div class="line-numbers">595</div><pre>	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter\$\$FastClassBySpringCGLIB\$\$cde8c01d.invoke(&lt;generated&gt;)</pre></li>
+<li class="line error error-color "><div class="line-numbers">596</div><pre>	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)</pre></li>
+<li class="line error error-color "><div class="line-numbers">597</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:792)</pre></li>
+<li class="line error error-color "><div class="line-numbers">598</div><pre>	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)</pre></li>
+<li class="line error error-color "><div class="line-numbers">599</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$CglibMethodInvocation.proceed(CglibAopProxy.java:762)</pre></li>
+<li class="line error error-color "><div class="line-numbers">600</div><pre>	at org.springframework.cloud.sleuth.brave.instrument.messaging.MessageListenerMethodInterceptor.invoke(MessageListenerMethodInterceptor.java:58)</pre></li>
+<li class="line error error-color "><div class="line-numbers">601</div><pre>	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)</pre></li>
+<li class="line error error-color "><div class="line-numbers">602</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$CglibMethodInvocation.proceed(CglibAopProxy.java:762)</pre></li>
+<li class="line error error-color "><div class="line-numbers">603</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:707)</pre></li>
+<li class="line error error-color "><div class="line-numbers">604</div><pre>	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter\$\$EnhancerBySpringCGLIB\$\$545ace4a.onMessage(&lt;generated&gt;)</pre></li>
+<li class="line error error-color "><div class="line-numbers">605</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2670)</pre></li>
+<li class="line error error-color "><div class="line-numbers">606</div><pre>	... 11 common frames omitted</pre></li>
+<li class="line error error-color "><div class="line-numbers">607</div><pre>Caused by: org.postgresql.util.PSQLException: ERROR: syntax error at or near ")"</pre></li>
+<li class="line error error-color "><div class="line-numbers">608</div><pre>  Позиция: 132</pre></li>
+<li class="line error error-color "><div class="line-numbers">609</div><pre>	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2675)</pre></li>
+<li class="line error error-color "><div class="line-numbers">610</div><pre>	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2365)</pre></li>
+<li class="line error error-color "><div class="line-numbers">611</div><pre>	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:355)</pre></li>
+<li class="line error error-color "><div class="line-numbers">612</div><pre>	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:315)</pre></li>
+<li class="line error error-color "><div class="line-numbers">613</div><pre>	at org.postgresql.jdbc.PgStatement.internalExecuteBatch(PgStatement.java:868)</pre></li>
+<li class="line error error-color "><div class="line-numbers">614</div><pre>	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:910)</pre></li>
+<li class="line error error-color "><div class="line-numbers">615</div><pre>	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1649)</pre></li>
+<li class="line error error-color "><div class="line-numbers">616</div><pre>	at com.zaxxer.hikari.pool.ProxyStatement.executeBatch(ProxyStatement.java:127)</pre></li>
+<li class="line error error-color "><div class="line-numbers">617</div><pre>	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeBatch(HikariProxyPreparedStatement.java)</pre></li>
+<li class="line error error-color "><div class="line-numbers">618</div><pre>	at com.p6spy.engine.wrapper.StatementWrapper.executeBatch(StatementWrapper.java:98)</pre></li>
+<li class="line error error-color "><div class="line-numbers">619</div><pre>	at org.springframework.jdbc.core.JdbcTemplate.lambda\$batchUpdate\$4(JdbcTemplate.java:1050)</pre></li>
+<li class="line error error-color "><div class="line-numbers">620</div><pre>	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:650)</pre></li>
+<li class="line error error-color "><div class="line-numbers">621</div><pre>	... 59 common frames omitted</pre></li>
+<li class="line split-debug-levels info info-color "><div class="line-numbers">622</div><pre>23:06:46.782 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  r.a.m.a.s.l.IssuerEventsListener.issuerEvent - Got issuer event: IssuerAddedEvent(securityIds=[ISIN2, ISIN1, ISIN0, ISIN3], fields=[Field(code=NAME, value=Some issuer, timestamp=2024-02-05T23:02:34.189), Field(code=INDUSTRY_AC, value=Холдинги, timestamp=2024-02-04T23:02:34.189)], timestamp=2024-02-04T23:02:34.189)</pre></li>
+<li class="line debug debug-color "><div class="line-numbers">623</div><pre>23:06:46.791 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] DEBUG r.a.m.a.s.service.SecurityService.updateIndustryField - Update industry field: isin=ISIN0 value=Холдинги brTypeTs=null issuerTs=2024-02-04</pre></li>
+<li class="line debug debug-color "><div class="line-numbers">624</div><pre>23:06:46.791 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] DEBUG r.a.m.a.s.service.SecurityService.updateIndustryField - Update industry field: isin=ISIN1 value=Холдинги brTypeTs=2024-02-03 issuerTs=2024-02-04</pre></li>
+<li class="line debug debug-color "><div class="line-numbers">625</div><pre>23:06:46.791 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] DEBUG r.a.m.a.s.service.SecurityService.updateIndustryField - Update industry field: isin=ISIN2 value=Холдинги brTypeTs=2024-02-04 issuerTs=2024-02-04</pre></li>
+<li class="line debug debug-color "><div class="line-numbers">626</div><pre>23:06:46.791 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] DEBUG r.a.m.a.s.service.SecurityService.updateIndustryField - Update industry field: isin=ISIN3 value=Холдинги brTypeTs=2024-02-05 issuerTs=2024-02-04</pre></li>
+<li class="line error error-color "><div class="line-numbers">627</div><pre>23:06:47.818 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] ERROR o.s.k.l.KafkaMessageListenerContainer.error - Error handler threw an exception</pre></li>
+<li class="line error error-color "><div class="line-numbers">628</div><pre>org.springframework.kafka.KafkaException: Seek to current after exception; nested exception is org.springframework.kafka.listener.ListenerExecutionFailedException: Listener method 'public long ru.alfacapital.mda.api.securitiesapi.listener.IssuerEventsListener.issuerEvent(ru.alfacapital.mda.api.securitiesapi.listener.IssuerEvent)' threw exception; nested exception is org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [</pre></li>
+<li class="line error error-color "><div class="line-numbers">629</div><pre>    merge into field_value as fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">630</div><pre>    using (</pre></li>
+<li class="line error error-color "><div class="line-numbers">631</div><pre>        with</pre></li>
+<li class="line error error-color "><div class="line-numbers">632</div><pre>         ids as (select distinct security from security_id where id in ()),</pre></li>
+<li class="line error error-color "><div class="line-numbers">633</div><pre>         src as (select id from source where code = ?)</pre></li>
+<li class="line error error-color "><div class="line-numbers">634</div><pre>        select</pre></li>
+<li class="line error error-color "><div class="line-numbers">635</div><pre>            ids.security as security,</pre></li>
+<li class="line error error-color "><div class="line-numbers">636</div><pre>            ? as field,</pre></li>
+<li class="line error error-color "><div class="line-numbers">637</div><pre>            ? as value,</pre></li>
+<li class="line error error-color "><div class="line-numbers">638</div><pre>            src.id as source,</pre></li>
+<li class="line error error-color "><div class="line-numbers">639</div><pre>            (select id from field where code = 'ACCRUED_INTEREST') = ? as accri,</pre></li>
+<li class="line error error-color "><div class="line-numbers">640</div><pre>            (?)::date as date,</pre></li>
+<li class="line error error-color "><div class="line-numbers">641</div><pre>            (select max(date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">642</div><pre>             from field_value fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">643</div><pre>             where security = ids.security</pre></li>
+<li class="line error error-color "><div class="line-numbers">644</div><pre>               AND field = ?</pre></li>
+<li class="line error error-color "><div class="line-numbers">645</div><pre>               AND source = src.id</pre></li>
+<li class="line error error-color "><div class="line-numbers">646</div><pre>               AND fv.date &lt;= ?) as latest_date,</pre></li>
+<li class="line error error-color "><div class="line-numbers">647</div><pre>            (select max(created_at)</pre></li>
+<li class="line error error-color "><div class="line-numbers">648</div><pre>             from field_value fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">649</div><pre>             where security = ids.security</pre></li>
+<li class="line error error-color "><div class="line-numbers">650</div><pre>               AND field = ?</pre></li>
+<li class="line error error-color "><div class="line-numbers">651</div><pre>               AND source = src.id</pre></li>
+<li class="line error error-color "><div class="line-numbers">652</div><pre>               AND fv.date &lt;= ?) as latest_created</pre></li>
+<li class="line error error-color "><div class="line-numbers">653</div><pre>        from src left join ids on true</pre></li>
+<li class="line error error-color "><div class="line-numbers">654</div><pre>    ) inc</pre></li>
+<li class="line error error-color "><div class="line-numbers">655</div><pre>    on (</pre></li>
+<li class="line error error-color "><div class="line-numbers">656</div><pre>        (inc.accri and</pre></li>
+<li class="line error error-color "><div class="line-numbers">657</div><pre>        fv.security = inc.security and</pre></li>
+<li class="line error error-color "><div class="line-numbers">658</div><pre>        fv.field = inc.field and</pre></li>
+<li class="line error error-color "><div class="line-numbers">659</div><pre>        fv.source = inc.source and</pre></li>
+<li class="line error error-color "><div class="line-numbers">660</div><pre>        fv.date = inc.date and</pre></li>
+<li class="line error error-color "><div class="line-numbers">661</div><pre>        fv.created_at = latest_created)</pre></li>
+<li class="line error error-color "><div class="line-numbers">662</div><pre>        or</pre></li>
+<li class="line error error-color "><div class="line-numbers">663</div><pre>        (not inc.accri and</pre></li>
+<li class="line error error-color "><div class="line-numbers">664</div><pre>        fv.security = inc.security and</pre></li>
+<li class="line error error-color "><div class="line-numbers">665</div><pre>        fv.field = inc.field and</pre></li>
+<li class="line error error-color "><div class="line-numbers">666</div><pre>        fv.value = inc.value and</pre></li>
+<li class="line error error-color "><div class="line-numbers">667</div><pre>        fv.source = inc.source and</pre></li>
+<li class="line error error-color "><div class="line-numbers">668</div><pre>        fv.date = latest_date and</pre></li>
+<li class="line error error-color "><div class="line-numbers">669</div><pre>        fv.created_at = latest_created)</pre></li>
+<li class="line error error-color "><div class="line-numbers">670</div><pre>    )</pre></li>
+<li class="line error error-color "><div class="line-numbers">671</div><pre>    when not matched then</pre></li>
+<li class="line error error-color "><div class="line-numbers">672</div><pre>        insert (security, field, value, source, date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">673</div><pre>        values (inc.security, inc.field, inc.value, inc.source, inc.date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">674</div><pre>    ]; nested exception is org.postgresql.util.PSQLException: ERROR: syntax error at or near ")"</pre></li>
+<li class="line error error-color "><div class="line-numbers">675</div><pre>  Позиция: 132; nested exception is org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [</pre></li>
+<li class="line error error-color "><div class="line-numbers">676</div><pre>    merge into field_value as fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">677</div><pre>    using (</pre></li>
+<li class="line error error-color "><div class="line-numbers">678</div><pre>        with</pre></li>
+<li class="line error error-color "><div class="line-numbers">679</div><pre>         ids as (select distinct security from security_id where id in ()),</pre></li>
+<li class="line error error-color "><div class="line-numbers">680</div><pre>         src as (select id from source where code = ?)</pre></li>
+<li class="line error error-color "><div class="line-numbers">681</div><pre>        select</pre></li>
+<li class="line error error-color "><div class="line-numbers">682</div><pre>            ids.security as security,</pre></li>
+<li class="line error error-color "><div class="line-numbers">683</div><pre>            ? as field,</pre></li>
+<li class="line error error-color "><div class="line-numbers">684</div><pre>            ? as value,</pre></li>
+<li class="line error error-color "><div class="line-numbers">685</div><pre>            src.id as source,</pre></li>
+<li class="line error error-color "><div class="line-numbers">686</div><pre>            (select id from field where code = 'ACCRUED_INTEREST') = ? as accri,</pre></li>
+<li class="line error error-color "><div class="line-numbers">687</div><pre>            (?)::date as date,</pre></li>
+<li class="line error error-color "><div class="line-numbers">688</div><pre>            (select max(date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">689</div><pre>             from field_value fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">690</div><pre>             where security = ids.security</pre></li>
+<li class="line error error-color "><div class="line-numbers">691</div><pre>               AND field = ?</pre></li>
+<li class="line error error-color "><div class="line-numbers">692</div><pre>               AND source = src.id</pre></li>
+<li class="line error error-color "><div class="line-numbers">693</div><pre>               AND fv.date &lt;= ?) as latest_date,</pre></li>
+<li class="line error error-color "><div class="line-numbers">694</div><pre>            (select max(created_at)</pre></li>
+<li class="line error error-color "><div class="line-numbers">695</div><pre>             from field_value fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">696</div><pre>             where security = ids.security</pre></li>
+<li class="line error error-color "><div class="line-numbers">697</div><pre>               AND field = ?</pre></li>
+<li class="line error error-color "><div class="line-numbers">698</div><pre>               AND source = src.id</pre></li>
+<li class="line error error-color "><div class="line-numbers">699</div><pre>               AND fv.date &lt;= ?) as latest_created</pre></li>
+<li class="line error error-color "><div class="line-numbers">700</div><pre>        from src left join ids on true</pre></li>
+<li class="line error error-color "><div class="line-numbers">701</div><pre>    ) inc</pre></li>
+<li class="line error error-color "><div class="line-numbers">702</div><pre>    on (</pre></li>
+<li class="line error error-color "><div class="line-numbers">703</div><pre>        (inc.accri and</pre></li>
+<li class="line error error-color "><div class="line-numbers">704</div><pre>        fv.security = inc.security and</pre></li>
+<li class="line error error-color "><div class="line-numbers">705</div><pre>        fv.field = inc.field and</pre></li>
+<li class="line error error-color "><div class="line-numbers">706</div><pre>        fv.source = inc.source and</pre></li>
+<li class="line error error-color "><div class="line-numbers">707</div><pre>        fv.date = inc.date and</pre></li>
+<li class="line error error-color "><div class="line-numbers">708</div><pre>        fv.created_at = latest_created)</pre></li>
+<li class="line error error-color "><div class="line-numbers">709</div><pre>        or</pre></li>
+<li class="line error error-color "><div class="line-numbers">710</div><pre>        (not inc.accri and</pre></li>
+<li class="line error error-color "><div class="line-numbers">711</div><pre>        fv.security = inc.security and</pre></li>
+<li class="line error error-color "><div class="line-numbers">712</div><pre>        fv.field = inc.field and</pre></li>
+<li class="line error error-color "><div class="line-numbers">713</div><pre>        fv.value = inc.value and</pre></li>
+<li class="line error error-color "><div class="line-numbers">714</div><pre>        fv.source = inc.source and</pre></li>
+<li class="line error error-color "><div class="line-numbers">715</div><pre>        fv.date = latest_date and</pre></li>
+<li class="line error error-color "><div class="line-numbers">716</div><pre>        fv.created_at = latest_created)</pre></li>
+<li class="line error error-color "><div class="line-numbers">717</div><pre>    )</pre></li>
+<li class="line error error-color "><div class="line-numbers">718</div><pre>    when not matched then</pre></li>
+<li class="line error error-color "><div class="line-numbers">719</div><pre>        insert (security, field, value, source, date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">720</div><pre>        values (inc.security, inc.field, inc.value, inc.source, inc.date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">721</div><pre>    ]; nested exception is org.postgresql.util.PSQLException: ERROR: syntax error at or near ")"</pre></li>
+<li class="line error error-color "><div class="line-numbers">722</div><pre>  Позиция: 132</pre></li>
+<li class="line error error-color "><div class="line-numbers">723</div><pre>	at org.springframework.kafka.listener.SeekUtils.seekOrRecover(SeekUtils.java:208)</pre></li>
+<li class="line error error-color "><div class="line-numbers">724</div><pre>	at org.springframework.kafka.listener.DefaultErrorHandler.handleRemaining(DefaultErrorHandler.java:135)</pre></li>
+<li class="line error error-color "><div class="line-numbers">725</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.invokeErrorHandler(KafkaMessageListenerContainer.java:2707)</pre></li>
+<li class="line error error-color "><div class="line-numbers">726</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2588)</pre></li>
+<li class="line error error-color "><div class="line-numbers">727</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.doInvokeWithRecords(KafkaMessageListenerContainer.java:2457)</pre></li>
+<li class="line error error-color "><div class="line-numbers">728</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.invokeRecordListener(KafkaMessageListenerContainer.java:2335)</pre></li>
+<li class="line error error-color "><div class="line-numbers">729</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.invokeListener(KafkaMessageListenerContainer.java:2006)</pre></li>
+<li class="line error error-color "><div class="line-numbers">730</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.invokeIfHaveRecords(KafkaMessageListenerContainer.java:1375)</pre></li>
+<li class="line error error-color "><div class="line-numbers">731</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.pollAndInvoke(KafkaMessageListenerContainer.java:1366)</pre></li>
+<li class="line error error-color "><div class="line-numbers">732</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.run(KafkaMessageListenerContainer.java:1257)</pre></li>
+<li class="line error error-color "><div class="line-numbers">733</div><pre>	at java.base/java.util.concurrent.Executors\$RunnableAdapter.call(Executors.java:539)</pre></li>
+<li class="line error error-color "><div class="line-numbers">734</div><pre>	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)</pre></li>
+<li class="line error error-color "><div class="line-numbers">735</div><pre>	at java.base/java.lang.Thread.run(Thread.java:833)</pre></li>
+<li class="line error error-color "><div class="line-numbers">736</div><pre>Caused by: org.springframework.kafka.listener.ListenerExecutionFailedException: Listener method 'public long ru.alfacapital.mda.api.securitiesapi.listener.IssuerEventsListener.issuerEvent(ru.alfacapital.mda.api.securitiesapi.listener.IssuerEvent)' threw exception; nested exception is org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [</pre></li>
+<li class="line error error-color "><div class="line-numbers">737</div><pre>    merge into field_value as fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">738</div><pre>    using (</pre></li>
+<li class="line error error-color "><div class="line-numbers">739</div><pre>        with</pre></li>
+<li class="line error error-color "><div class="line-numbers">740</div><pre>         ids as (select distinct security from security_id where id in ()),</pre></li>
+<li class="line error error-color "><div class="line-numbers">741</div><pre>         src as (select id from source where code = ?)</pre></li>
+<li class="line error error-color "><div class="line-numbers">742</div><pre>        select</pre></li>
+<li class="line error error-color "><div class="line-numbers">743</div><pre>            ids.security as security,</pre></li>
+<li class="line error error-color "><div class="line-numbers">744</div><pre>            ? as field,</pre></li>
+<li class="line error error-color "><div class="line-numbers">745</div><pre>            ? as value,</pre></li>
+<li class="line error error-color "><div class="line-numbers">746</div><pre>            src.id as source,</pre></li>
+<li class="line error error-color "><div class="line-numbers">747</div><pre>            (select id from field where code = 'ACCRUED_INTEREST') = ? as accri,</pre></li>
+<li class="line error error-color "><div class="line-numbers">748</div><pre>            (?)::date as date,</pre></li>
+<li class="line error error-color "><div class="line-numbers">749</div><pre>            (select max(date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">750</div><pre>             from field_value fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">751</div><pre>             where security = ids.security</pre></li>
+<li class="line error error-color "><div class="line-numbers">752</div><pre>               AND field = ?</pre></li>
+<li class="line error error-color "><div class="line-numbers">753</div><pre>               AND source = src.id</pre></li>
+<li class="line error error-color "><div class="line-numbers">754</div><pre>               AND fv.date &lt;= ?) as latest_date,</pre></li>
+<li class="line error error-color "><div class="line-numbers">755</div><pre>            (select max(created_at)</pre></li>
+<li class="line error error-color "><div class="line-numbers">756</div><pre>             from field_value fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">757</div><pre>             where security = ids.security</pre></li>
+<li class="line error error-color "><div class="line-numbers">758</div><pre>               AND field = ?</pre></li>
+<li class="line error error-color "><div class="line-numbers">759</div><pre>               AND source = src.id</pre></li>
+<li class="line error error-color "><div class="line-numbers">760</div><pre>               AND fv.date &lt;= ?) as latest_created</pre></li>
+<li class="line error error-color "><div class="line-numbers">761</div><pre>        from src left join ids on true</pre></li>
+<li class="line error error-color "><div class="line-numbers">762</div><pre>    ) inc</pre></li>
+<li class="line error error-color "><div class="line-numbers">763</div><pre>    on (</pre></li>
+<li class="line error error-color "><div class="line-numbers">764</div><pre>        (inc.accri and</pre></li>
+<li class="line error error-color "><div class="line-numbers">765</div><pre>        fv.security = inc.security and</pre></li>
+<li class="line error error-color "><div class="line-numbers">766</div><pre>        fv.field = inc.field and</pre></li>
+<li class="line error error-color "><div class="line-numbers">767</div><pre>        fv.source = inc.source and</pre></li>
+<li class="line error error-color "><div class="line-numbers">768</div><pre>        fv.date = inc.date and</pre></li>
+<li class="line error error-color "><div class="line-numbers">769</div><pre>        fv.created_at = latest_created)</pre></li>
+<li class="line error error-color "><div class="line-numbers">770</div><pre>        or</pre></li>
+<li class="line error error-color "><div class="line-numbers">771</div><pre>        (not inc.accri and</pre></li>
+<li class="line error error-color "><div class="line-numbers">772</div><pre>        fv.security = inc.security and</pre></li>
+<li class="line error error-color "><div class="line-numbers">773</div><pre>        fv.field = inc.field and</pre></li>
+<li class="line error error-color "><div class="line-numbers">774</div><pre>        fv.value = inc.value and</pre></li>
+<li class="line error error-color "><div class="line-numbers">775</div><pre>        fv.source = inc.source and</pre></li>
+<li class="line error error-color "><div class="line-numbers">776</div><pre>        fv.date = latest_date and</pre></li>
+<li class="line error error-color "><div class="line-numbers">777</div><pre>        fv.created_at = latest_created)</pre></li>
+<li class="line error error-color "><div class="line-numbers">778</div><pre>    )</pre></li>
+<li class="line error error-color "><div class="line-numbers">779</div><pre>    when not matched then</pre></li>
+<li class="line error error-color "><div class="line-numbers">780</div><pre>        insert (security, field, value, source, date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">781</div><pre>        values (inc.security, inc.field, inc.value, inc.source, inc.date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">782</div><pre>    ]; nested exception is org.postgresql.util.PSQLException: ERROR: syntax error at or near ")"</pre></li>
+<li class="line error error-color "><div class="line-numbers">783</div><pre>  Позиция: 132; nested exception is org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [</pre></li>
+<li class="line error error-color "><div class="line-numbers">784</div><pre>    merge into field_value as fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">785</div><pre>    using (</pre></li>
+<li class="line error error-color "><div class="line-numbers">786</div><pre>        with</pre></li>
+<li class="line error error-color "><div class="line-numbers">787</div><pre>         ids as (select distinct security from security_id where id in ()),</pre></li>
+<li class="line error error-color "><div class="line-numbers">788</div><pre>         src as (select id from source where code = ?)</pre></li>
+<li class="line error error-color "><div class="line-numbers">789</div><pre>        select</pre></li>
+<li class="line error error-color "><div class="line-numbers">790</div><pre>            ids.security as security,</pre></li>
+<li class="line error error-color "><div class="line-numbers">791</div><pre>            ? as field,</pre></li>
+<li class="line error error-color "><div class="line-numbers">792</div><pre>            ? as value,</pre></li>
+<li class="line error error-color "><div class="line-numbers">793</div><pre>            src.id as source,</pre></li>
+<li class="line error error-color "><div class="line-numbers">794</div><pre>            (select id from field where code = 'ACCRUED_INTEREST') = ? as accri,</pre></li>
+<li class="line error error-color "><div class="line-numbers">795</div><pre>            (?)::date as date,</pre></li>
+<li class="line error error-color "><div class="line-numbers">796</div><pre>            (select max(date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">797</div><pre>             from field_value fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">798</div><pre>             where security = ids.security</pre></li>
+<li class="line error error-color "><div class="line-numbers">799</div><pre>               AND field = ?</pre></li>
+<li class="line error error-color "><div class="line-numbers">800</div><pre>               AND source = src.id</pre></li>
+<li class="line error error-color "><div class="line-numbers">801</div><pre>               AND fv.date &lt;= ?) as latest_date,</pre></li>
+<li class="line error error-color "><div class="line-numbers">802</div><pre>            (select max(created_at)</pre></li>
+<li class="line error error-color "><div class="line-numbers">803</div><pre>             from field_value fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">804</div><pre>             where security = ids.security</pre></li>
+<li class="line error error-color "><div class="line-numbers">805</div><pre>               AND field = ?</pre></li>
+<li class="line error error-color "><div class="line-numbers">806</div><pre>               AND source = src.id</pre></li>
+<li class="line error error-color "><div class="line-numbers">807</div><pre>               AND fv.date &lt;= ?) as latest_created</pre></li>
+<li class="line error error-color "><div class="line-numbers">808</div><pre>        from src left join ids on true</pre></li>
+<li class="line error error-color "><div class="line-numbers">809</div><pre>    ) inc</pre></li>
+<li class="line error error-color "><div class="line-numbers">810</div><pre>    on (</pre></li>
+<li class="line error error-color "><div class="line-numbers">811</div><pre>        (inc.accri and</pre></li>
+<li class="line error error-color "><div class="line-numbers">812</div><pre>        fv.security = inc.security and</pre></li>
+<li class="line error error-color "><div class="line-numbers">813</div><pre>        fv.field = inc.field and</pre></li>
+<li class="line error error-color "><div class="line-numbers">814</div><pre>        fv.source = inc.source and</pre></li>
+<li class="line error error-color "><div class="line-numbers">815</div><pre>        fv.date = inc.date and</pre></li>
+<li class="line error error-color "><div class="line-numbers">816</div><pre>        fv.created_at = latest_created)</pre></li>
+<li class="line error error-color "><div class="line-numbers">817</div><pre>        or</pre></li>
+<li class="line error error-color "><div class="line-numbers">818</div><pre>        (not inc.accri and</pre></li>
+<li class="line error error-color "><div class="line-numbers">819</div><pre>        fv.security = inc.security and</pre></li>
+<li class="line error error-color "><div class="line-numbers">820</div><pre>        fv.field = inc.field and</pre></li>
+<li class="line error error-color "><div class="line-numbers">821</div><pre>        fv.value = inc.value and</pre></li>
+<li class="line error error-color "><div class="line-numbers">822</div><pre>        fv.source = inc.source and</pre></li>
+<li class="line error error-color "><div class="line-numbers">823</div><pre>        fv.date = latest_date and</pre></li>
+<li class="line error error-color "><div class="line-numbers">824</div><pre>        fv.created_at = latest_created)</pre></li>
+<li class="line error error-color "><div class="line-numbers">825</div><pre>    )</pre></li>
+<li class="line error error-color "><div class="line-numbers">826</div><pre>    when not matched then</pre></li>
+<li class="line error error-color "><div class="line-numbers">827</div><pre>        insert (security, field, value, source, date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">828</div><pre>        values (inc.security, inc.field, inc.value, inc.source, inc.date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">829</div><pre>    ]; nested exception is org.postgresql.util.PSQLException: ERROR: syntax error at or near ")"</pre></li>
+<li class="line error error-color "><div class="line-numbers">830</div><pre>  Позиция: 132</pre></li>
+<li class="line error error-color "><div class="line-numbers">831</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.decorateException(KafkaMessageListenerContainer.java:2720)</pre></li>
+<li class="line error error-color "><div class="line-numbers">832</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2690)</pre></li>
+<li class="line error error-color "><div class="line-numbers">833</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.invokeOnMessage(KafkaMessageListenerContainer.java:2650)</pre></li>
+<li class="line error error-color "><div class="line-numbers">834</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2577)</pre></li>
+<li class="line error error-color "><div class="line-numbers">835</div><pre>	... 9 common frames omitted</pre></li>
+<li class="line error error-color "><div class="line-numbers">836</div><pre>Caused by: org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [</pre></li>
+<li class="line error error-color "><div class="line-numbers">837</div><pre>    merge into field_value as fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">838</div><pre>    using (</pre></li>
+<li class="line error error-color "><div class="line-numbers">839</div><pre>        with</pre></li>
+<li class="line error error-color "><div class="line-numbers">840</div><pre>         ids as (select distinct security from security_id where id in ()),</pre></li>
+<li class="line error error-color "><div class="line-numbers">841</div><pre>         src as (select id from source where code = ?)</pre></li>
+<li class="line error error-color "><div class="line-numbers">842</div><pre>        select</pre></li>
+<li class="line error error-color "><div class="line-numbers">843</div><pre>            ids.security as security,</pre></li>
+<li class="line error error-color "><div class="line-numbers">844</div><pre>            ? as field,</pre></li>
+<li class="line error error-color "><div class="line-numbers">845</div><pre>            ? as value,</pre></li>
+<li class="line error error-color "><div class="line-numbers">846</div><pre>            src.id as source,</pre></li>
+<li class="line error error-color "><div class="line-numbers">847</div><pre>            (select id from field where code = 'ACCRUED_INTEREST') = ? as accri,</pre></li>
+<li class="line error error-color "><div class="line-numbers">848</div><pre>            (?)::date as date,</pre></li>
+<li class="line error error-color "><div class="line-numbers">849</div><pre>            (select max(date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">850</div><pre>             from field_value fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">851</div><pre>             where security = ids.security</pre></li>
+<li class="line error error-color "><div class="line-numbers">852</div><pre>               AND field = ?</pre></li>
+<li class="line error error-color "><div class="line-numbers">853</div><pre>               AND source = src.id</pre></li>
+<li class="line error error-color "><div class="line-numbers">854</div><pre>               AND fv.date &lt;= ?) as latest_date,</pre></li>
+<li class="line error error-color "><div class="line-numbers">855</div><pre>            (select max(created_at)</pre></li>
+<li class="line error error-color "><div class="line-numbers">856</div><pre>             from field_value fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">857</div><pre>             where security = ids.security</pre></li>
+<li class="line error error-color "><div class="line-numbers">858</div><pre>               AND field = ?</pre></li>
+<li class="line error error-color "><div class="line-numbers">859</div><pre>               AND source = src.id</pre></li>
+<li class="line error error-color "><div class="line-numbers">860</div><pre>               AND fv.date &lt;= ?) as latest_created</pre></li>
+<li class="line error error-color "><div class="line-numbers">861</div><pre>        from src left join ids on true</pre></li>
+<li class="line error error-color "><div class="line-numbers">862</div><pre>    ) inc</pre></li>
+<li class="line error error-color "><div class="line-numbers">863</div><pre>    on (</pre></li>
+<li class="line error error-color "><div class="line-numbers">864</div><pre>        (inc.accri and</pre></li>
+<li class="line error error-color "><div class="line-numbers">865</div><pre>        fv.security = inc.security and</pre></li>
+<li class="line error error-color "><div class="line-numbers">866</div><pre>        fv.field = inc.field and</pre></li>
+<li class="line error error-color "><div class="line-numbers">867</div><pre>        fv.source = inc.source and</pre></li>
+<li class="line error error-color "><div class="line-numbers">868</div><pre>        fv.date = inc.date and</pre></li>
+<li class="line error error-color "><div class="line-numbers">869</div><pre>        fv.created_at = latest_created)</pre></li>
+<li class="line error error-color "><div class="line-numbers">870</div><pre>        or</pre></li>
+<li class="line error error-color "><div class="line-numbers">871</div><pre>        (not inc.accri and</pre></li>
+<li class="line error error-color "><div class="line-numbers">872</div><pre>        fv.security = inc.security and</pre></li>
+<li class="line error error-color "><div class="line-numbers">873</div><pre>        fv.field = inc.field and</pre></li>
+<li class="line error error-color "><div class="line-numbers">874</div><pre>        fv.value = inc.value and</pre></li>
+<li class="line error error-color "><div class="line-numbers">875</div><pre>        fv.source = inc.source and</pre></li>
+<li class="line error error-color "><div class="line-numbers">876</div><pre>        fv.date = latest_date and</pre></li>
+<li class="line error error-color "><div class="line-numbers">877</div><pre>        fv.created_at = latest_created)</pre></li>
+<li class="line error error-color "><div class="line-numbers">878</div><pre>    )</pre></li>
+<li class="line error error-color "><div class="line-numbers">879</div><pre>    when not matched then</pre></li>
+<li class="line error error-color "><div class="line-numbers">880</div><pre>        insert (security, field, value, source, date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">881</div><pre>        values (inc.security, inc.field, inc.value, inc.source, inc.date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">882</div><pre>    ]; nested exception is org.postgresql.util.PSQLException: ERROR: syntax error at or near ")"</pre></li>
+<li class="line error error-color "><div class="line-numbers">883</div><pre>  Позиция: 132</pre></li>
+<li class="line error error-color "><div class="line-numbers">884</div><pre>	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:236)</pre></li>
+<li class="line error error-color "><div class="line-numbers">885</div><pre>	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:73)</pre></li>
+<li class="line error error-color "><div class="line-numbers">886</div><pre>	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1577)</pre></li>
+<li class="line error error-color "><div class="line-numbers">887</div><pre>	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:669)</pre></li>
+<li class="line error error-color "><div class="line-numbers">888</div><pre>	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:693)</pre></li>
+<li class="line error error-color "><div class="line-numbers">889</div><pre>	at org.springframework.jdbc.core.JdbcTemplate.batchUpdate(JdbcTemplate.java:1036)</pre></li>
+<li class="line error error-color "><div class="line-numbers">890</div><pre>	at org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate.batchUpdate(NamedParameterJdbcTemplate.java:376)</pre></li>
+<li class="line error error-color "><div class="line-numbers">891</div><pre>	at ru.alfacapital.mda.api.securitiesapi.repository.SecurityRepository.saveFieldValues(SecurityRepository.kt:153)</pre></li>
+<li class="line error error-color "><div class="line-numbers">892</div><pre>	at ru.alfacapital.mda.api.securitiesapi.repository.SecurityRepository\$\$FastClassBySpringCGLIB\$\$cf05edcd.invoke(&lt;generated&gt;)</pre></li>
+<li class="line error error-color "><div class="line-numbers">893</div><pre>	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)</pre></li>
+<li class="line error error-color "><div class="line-numbers">894</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:792)</pre></li>
+<li class="line error error-color "><div class="line-numbers">895</div><pre>	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)</pre></li>
+<li class="line error error-color "><div class="line-numbers">896</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$CglibMethodInvocation.proceed(CglibAopProxy.java:762)</pre></li>
+<li class="line error error-color "><div class="line-numbers">897</div><pre>	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)</pre></li>
+<li class="line error error-color "><div class="line-numbers">898</div><pre>	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)</pre></li>
+<li class="line error error-color "><div class="line-numbers">899</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$CglibMethodInvocation.proceed(CglibAopProxy.java:762)</pre></li>
+<li class="line error error-color "><div class="line-numbers">900</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:707)</pre></li>
+<li class="line error error-color "><div class="line-numbers">901</div><pre>	at ru.alfacapital.mda.api.securitiesapi.repository.SecurityRepository\$\$EnhancerBySpringCGLIB\$\$619452cf.saveFieldValues(&lt;generated&gt;)</pre></li>
+<li class="line error error-color "><div class="line-numbers">902</div><pre>	at ru.alfacapital.mda.api.securitiesapi.service.SecurityService.updateIndustryExpo(SecurityService.kt:270)</pre></li>
+<li class="line error error-color "><div class="line-numbers">903</div><pre>	at ru.alfacapital.mda.api.securitiesapi.service.SecurityService.saveExpositions(SecurityService.kt:257)</pre></li>
+<li class="line error error-color "><div class="line-numbers">904</div><pre>	at ru.alfacapital.mda.api.securitiesapi.service.SecurityService\$\$FastClassBySpringCGLIB\$\$2d616b1b.invoke(&lt;generated&gt;)</pre></li>
+<li class="line error error-color "><div class="line-numbers">905</div><pre>	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)</pre></li>
+<li class="line error error-color "><div class="line-numbers">906</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:792)</pre></li>
+<li class="line error error-color "><div class="line-numbers">907</div><pre>	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)</pre></li>
+<li class="line error error-color "><div class="line-numbers">908</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$CglibMethodInvocation.proceed(CglibAopProxy.java:762)</pre></li>
+<li class="line error error-color "><div class="line-numbers">909</div><pre>	at org.springframework.transaction.interceptor.TransactionInterceptor\$1.proceedWithInvocation(TransactionInterceptor.java:123)</pre></li>
+<li class="line error error-color "><div class="line-numbers">910</div><pre>	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)</pre></li>
+<li class="line error error-color "><div class="line-numbers">911</div><pre>	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)</pre></li>
+<li class="line error error-color "><div class="line-numbers">912</div><pre>	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)</pre></li>
+<li class="line error error-color "><div class="line-numbers">913</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$CglibMethodInvocation.proceed(CglibAopProxy.java:762)</pre></li>
+<li class="line error error-color "><div class="line-numbers">914</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:707)</pre></li>
+<li class="line error error-color "><div class="line-numbers">915</div><pre>	at ru.alfacapital.mda.api.securitiesapi.service.SecurityService\$\$EnhancerBySpringCGLIB\$\$771cc43e.saveExpositions(&lt;generated&gt;)</pre></li>
+<li class="line error error-color "><div class="line-numbers">916</div><pre>	at ru.alfacapital.mda.api.securitiesapi.listener.IssuerEventsListener.issuerEvent(IssuerEventsListener.kt:34)</pre></li>
+<li class="line error error-color "><div class="line-numbers">917</div><pre>	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)</pre></li>
+<li class="line error error-color "><div class="line-numbers">918</div><pre>	at java.base/java.lang.reflect.Method.invoke(Method.java:577)</pre></li>
+<li class="line error error-color "><div class="line-numbers">919</div><pre>	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)</pre></li>
+<li class="line error error-color "><div class="line-numbers">920</div><pre>	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)</pre></li>
+<li class="line error error-color "><div class="line-numbers">921</div><pre>	at org.springframework.kafka.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:56)</pre></li>
+<li class="line error error-color "><div class="line-numbers">922</div><pre>	at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:347)</pre></li>
+<li class="line error error-color "><div class="line-numbers">923</div><pre>	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:92)</pre></li>
+<li class="line error error-color "><div class="line-numbers">924</div><pre>	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53)</pre></li>
+<li class="line error error-color "><div class="line-numbers">925</div><pre>	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter\$\$FastClassBySpringCGLIB\$\$cde8c01d.invoke(&lt;generated&gt;)</pre></li>
+<li class="line error error-color "><div class="line-numbers">926</div><pre>	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)</pre></li>
+<li class="line error error-color "><div class="line-numbers">927</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:792)</pre></li>
+<li class="line error error-color "><div class="line-numbers">928</div><pre>	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)</pre></li>
+<li class="line error error-color "><div class="line-numbers">929</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$CglibMethodInvocation.proceed(CglibAopProxy.java:762)</pre></li>
+<li class="line error error-color "><div class="line-numbers">930</div><pre>	at org.springframework.cloud.sleuth.brave.instrument.messaging.MessageListenerMethodInterceptor.invoke(MessageListenerMethodInterceptor.java:58)</pre></li>
+<li class="line error error-color "><div class="line-numbers">931</div><pre>	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)</pre></li>
+<li class="line error error-color "><div class="line-numbers">932</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$CglibMethodInvocation.proceed(CglibAopProxy.java:762)</pre></li>
+<li class="line error error-color "><div class="line-numbers">933</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:707)</pre></li>
+<li class="line error error-color "><div class="line-numbers">934</div><pre>	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter\$\$EnhancerBySpringCGLIB\$\$545ace4a.onMessage(&lt;generated&gt;)</pre></li>
+<li class="line error error-color "><div class="line-numbers">935</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2670)</pre></li>
+<li class="line error error-color "><div class="line-numbers">936</div><pre>	... 11 common frames omitted</pre></li>
+<li class="line error error-color "><div class="line-numbers">937</div><pre>Caused by: org.postgresql.util.PSQLException: ERROR: syntax error at or near ")"</pre></li>
+<li class="line error error-color "><div class="line-numbers">938</div><pre>  Позиция: 132</pre></li>
+<li class="line error error-color "><div class="line-numbers">939</div><pre>	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2675)</pre></li>
+<li class="line error error-color "><div class="line-numbers">940</div><pre>	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2365)</pre></li>
+<li class="line error error-color "><div class="line-numbers">941</div><pre>	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:355)</pre></li>
+<li class="line error error-color "><div class="line-numbers">942</div><pre>	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:315)</pre></li>
+<li class="line error error-color "><div class="line-numbers">943</div><pre>	at org.postgresql.jdbc.PgStatement.internalExecuteBatch(PgStatement.java:868)</pre></li>
+<li class="line error error-color "><div class="line-numbers">944</div><pre>	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:910)</pre></li>
+<li class="line error error-color "><div class="line-numbers">945</div><pre>	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1649)</pre></li>
+<li class="line error error-color "><div class="line-numbers">946</div><pre>	at com.zaxxer.hikari.pool.ProxyStatement.executeBatch(ProxyStatement.java:127)</pre></li>
+<li class="line error error-color "><div class="line-numbers">947</div><pre>	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeBatch(HikariProxyPreparedStatement.java)</pre></li>
+<li class="line error error-color "><div class="line-numbers">948</div><pre>	at com.p6spy.engine.wrapper.StatementWrapper.executeBatch(StatementWrapper.java:98)</pre></li>
+<li class="line error error-color "><div class="line-numbers">949</div><pre>	at org.springframework.jdbc.core.JdbcTemplate.lambda\$batchUpdate\$4(JdbcTemplate.java:1050)</pre></li>
+<li class="line error error-color "><div class="line-numbers">950</div><pre>	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:650)</pre></li>
+<li class="line error error-color "><div class="line-numbers">951</div><pre>	... 59 common frames omitted</pre></li>
+<li class="line split-debug-levels info info-color "><div class="line-numbers">952</div><pre>23:06:47.825 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  r.a.m.a.s.l.IssuerEventsListener.issuerEvent - Got issuer event: IssuerAddedEvent(securityIds=[ISIN2, ISIN1, ISIN0, ISIN3], fields=[Field(code=NAME, value=Some issuer, timestamp=2024-02-05T23:02:34.189), Field(code=INDUSTRY_AC, value=Холдинги, timestamp=2024-02-04T23:02:34.189)], timestamp=2024-02-04T23:02:34.189)</pre></li>
+<li class="line debug debug-color "><div class="line-numbers">953</div><pre>23:06:47.832 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] DEBUG r.a.m.a.s.service.SecurityService.updateIndustryField - Update industry field: isin=ISIN0 value=Холдинги brTypeTs=null issuerTs=2024-02-04</pre></li>
+<li class="line debug debug-color "><div class="line-numbers">954</div><pre>23:06:47.833 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] DEBUG r.a.m.a.s.service.SecurityService.updateIndustryField - Update industry field: isin=ISIN1 value=Холдинги brTypeTs=2024-02-03 issuerTs=2024-02-04</pre></li>
+<li class="line debug debug-color "><div class="line-numbers">955</div><pre>23:06:47.833 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] DEBUG r.a.m.a.s.service.SecurityService.updateIndustryField - Update industry field: isin=ISIN2 value=Холдинги brTypeTs=2024-02-04 issuerTs=2024-02-04</pre></li>
+<li class="line debug debug-color "><div class="line-numbers">956</div><pre>23:06:47.833 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] DEBUG r.a.m.a.s.service.SecurityService.updateIndustryField - Update industry field: isin=ISIN3 value=Холдинги brTypeTs=2024-02-05 issuerTs=2024-02-04</pre></li>
+<li class="line error error-color "><div class="line-numbers">957</div><pre>23:06:47.835 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] ERROR r.a.m.a.securitiesapi.SecuritiesApi.dlqPublishingRecoverer\$lambda\$5 - Failed to process message: ConsumerRecord(topic = md.issuer.events, partition = 0, leaderEpoch = 0, offset = 9, CreateTime = 1707163605730, serialized key size = -1, serialized value size = 336, headers = RecordHeaders(headers = [], isReadOnly = false), key = null, value = {</pre></li>
+<li class="line error error-color "><div class="line-numbers">958</div><pre>  "securityIds": [ "ISIN0", "ISIN1", "ISIN2", "ISIN3" ],</pre></li>
+<li class="line error error-color "><div class="line-numbers">959</div><pre>  "fields": [</pre></li>
+<li class="line error error-color "><div class="line-numbers">960</div><pre>    {"code": "NAME", "value": "Some issuer", "timestamp": "2024-02-05T23:02:34.189"}</pre></li>
+<li class="line error error-color "><div class="line-numbers">961</div><pre>    , {"code": "INDUSTRY_AC", "value": "Холдинги", "timestamp": "2024-02-04T23:02:34.189"} </pre></li>
+<li class="line error error-color "><div class="line-numbers">962</div><pre>    </pre></li>
+<li class="line error error-color "><div class="line-numbers">963</div><pre>  ],</pre></li>
+<li class="line error error-color "><div class="line-numbers">964</div><pre>  "timestamp": "2024-02-04T23:02:34.189",</pre></li>
+<li class="line error error-color "><div class="line-numbers">965</div><pre>  "type": "ISSUER_ADDED"</pre></li>
+<li class="line error error-color "><div class="line-numbers">966</div><pre>}), sending to DLQ: md.issuer.events.dlq-0</pre></li>
+<li class="line error error-color "><div class="line-numbers">967</div><pre>org.springframework.kafka.listener.ListenerExecutionFailedException: Listener method 'public long ru.alfacapital.mda.api.securitiesapi.listener.IssuerEventsListener.issuerEvent(ru.alfacapital.mda.api.securitiesapi.listener.IssuerEvent)' threw exception; nested exception is org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [</pre></li>
+<li class="line error error-color "><div class="line-numbers">968</div><pre>    merge into field_value as fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">969</div><pre>    using (</pre></li>
+<li class="line error error-color "><div class="line-numbers">970</div><pre>        with</pre></li>
+<li class="line error error-color "><div class="line-numbers">971</div><pre>         ids as (select distinct security from security_id where id in ()),</pre></li>
+<li class="line error error-color "><div class="line-numbers">972</div><pre>         src as (select id from source where code = ?)</pre></li>
+<li class="line error error-color "><div class="line-numbers">973</div><pre>        select</pre></li>
+<li class="line error error-color "><div class="line-numbers">974</div><pre>            ids.security as security,</pre></li>
+<li class="line error error-color "><div class="line-numbers">975</div><pre>            ? as field,</pre></li>
+<li class="line error error-color "><div class="line-numbers">976</div><pre>            ? as value,</pre></li>
+<li class="line error error-color "><div class="line-numbers">977</div><pre>            src.id as source,</pre></li>
+<li class="line error error-color "><div class="line-numbers">978</div><pre>            (select id from field where code = 'ACCRUED_INTEREST') = ? as accri,</pre></li>
+<li class="line error error-color "><div class="line-numbers">979</div><pre>            (?)::date as date,</pre></li>
+<li class="line error error-color "><div class="line-numbers">980</div><pre>            (select max(date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">981</div><pre>             from field_value fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">982</div><pre>             where security = ids.security</pre></li>
+<li class="line error error-color "><div class="line-numbers">983</div><pre>               AND field = ?</pre></li>
+<li class="line error error-color "><div class="line-numbers">984</div><pre>               AND source = src.id</pre></li>
+<li class="line error error-color "><div class="line-numbers">985</div><pre>               AND fv.date &lt;= ?) as latest_date,</pre></li>
+<li class="line error error-color "><div class="line-numbers">986</div><pre>            (select max(created_at)</pre></li>
+<li class="line error error-color "><div class="line-numbers">987</div><pre>             from field_value fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">988</div><pre>             where security = ids.security</pre></li>
+<li class="line error error-color "><div class="line-numbers">989</div><pre>               AND field = ?</pre></li>
+<li class="line error error-color "><div class="line-numbers">990</div><pre>               AND source = src.id</pre></li>
+<li class="line error error-color "><div class="line-numbers">991</div><pre>               AND fv.date &lt;= ?) as latest_created</pre></li>
+<li class="line error error-color "><div class="line-numbers">992</div><pre>        from src left join ids on true</pre></li>
+<li class="line error error-color "><div class="line-numbers">993</div><pre>    ) inc</pre></li>
+<li class="line error error-color "><div class="line-numbers">994</div><pre>    on (</pre></li>
+<li class="line error error-color "><div class="line-numbers">995</div><pre>        (inc.accri and</pre></li>
+<li class="line error error-color "><div class="line-numbers">996</div><pre>        fv.security = inc.security and</pre></li>
+<li class="line error error-color "><div class="line-numbers">997</div><pre>        fv.field = inc.field and</pre></li>
+<li class="line error error-color "><div class="line-numbers">998</div><pre>        fv.source = inc.source and</pre></li>
+<li class="line error error-color "><div class="line-numbers">999</div><pre>        fv.date = inc.date and</pre></li>
+<li class="line error error-color "><div class="line-numbers">1000</div><pre>        fv.created_at = latest_created)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1001</div><pre>        or</pre></li>
+<li class="line error error-color "><div class="line-numbers">1002</div><pre>        (not inc.accri and</pre></li>
+<li class="line error error-color "><div class="line-numbers">1003</div><pre>        fv.security = inc.security and</pre></li>
+<li class="line error error-color "><div class="line-numbers">1004</div><pre>        fv.field = inc.field and</pre></li>
+<li class="line error error-color "><div class="line-numbers">1005</div><pre>        fv.value = inc.value and</pre></li>
+<li class="line error error-color "><div class="line-numbers">1006</div><pre>        fv.source = inc.source and</pre></li>
+<li class="line error error-color "><div class="line-numbers">1007</div><pre>        fv.date = latest_date and</pre></li>
+<li class="line error error-color "><div class="line-numbers">1008</div><pre>        fv.created_at = latest_created)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1009</div><pre>    )</pre></li>
+<li class="line error error-color "><div class="line-numbers">1010</div><pre>    when not matched then</pre></li>
+<li class="line error error-color "><div class="line-numbers">1011</div><pre>        insert (security, field, value, source, date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1012</div><pre>        values (inc.security, inc.field, inc.value, inc.source, inc.date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1013</div><pre>    ]; nested exception is org.postgresql.util.PSQLException: ERROR: syntax error at or near ")"</pre></li>
+<li class="line error error-color "><div class="line-numbers">1014</div><pre>  Позиция: 132; nested exception is org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [</pre></li>
+<li class="line error error-color "><div class="line-numbers">1015</div><pre>    merge into field_value as fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">1016</div><pre>    using (</pre></li>
+<li class="line error error-color "><div class="line-numbers">1017</div><pre>        with</pre></li>
+<li class="line error error-color "><div class="line-numbers">1018</div><pre>         ids as (select distinct security from security_id where id in ()),</pre></li>
+<li class="line error error-color "><div class="line-numbers">1019</div><pre>         src as (select id from source where code = ?)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1020</div><pre>        select</pre></li>
+<li class="line error error-color "><div class="line-numbers">1021</div><pre>            ids.security as security,</pre></li>
+<li class="line error error-color "><div class="line-numbers">1022</div><pre>            ? as field,</pre></li>
+<li class="line error error-color "><div class="line-numbers">1023</div><pre>            ? as value,</pre></li>
+<li class="line error error-color "><div class="line-numbers">1024</div><pre>            src.id as source,</pre></li>
+<li class="line error error-color "><div class="line-numbers">1025</div><pre>            (select id from field where code = 'ACCRUED_INTEREST') = ? as accri,</pre></li>
+<li class="line error error-color "><div class="line-numbers">1026</div><pre>            (?)::date as date,</pre></li>
+<li class="line error error-color "><div class="line-numbers">1027</div><pre>            (select max(date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1028</div><pre>             from field_value fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">1029</div><pre>             where security = ids.security</pre></li>
+<li class="line error error-color "><div class="line-numbers">1030</div><pre>               AND field = ?</pre></li>
+<li class="line error error-color "><div class="line-numbers">1031</div><pre>               AND source = src.id</pre></li>
+<li class="line error error-color "><div class="line-numbers">1032</div><pre>               AND fv.date &lt;= ?) as latest_date,</pre></li>
+<li class="line error error-color "><div class="line-numbers">1033</div><pre>            (select max(created_at)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1034</div><pre>             from field_value fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">1035</div><pre>             where security = ids.security</pre></li>
+<li class="line error error-color "><div class="line-numbers">1036</div><pre>               AND field = ?</pre></li>
+<li class="line error error-color "><div class="line-numbers">1037</div><pre>               AND source = src.id</pre></li>
+<li class="line error error-color "><div class="line-numbers">1038</div><pre>               AND fv.date &lt;= ?) as latest_created</pre></li>
+<li class="line error error-color "><div class="line-numbers">1039</div><pre>        from src left join ids on true</pre></li>
+<li class="line error error-color "><div class="line-numbers">1040</div><pre>    ) inc</pre></li>
+<li class="line error error-color "><div class="line-numbers">1041</div><pre>    on (</pre></li>
+<li class="line error error-color "><div class="line-numbers">1042</div><pre>        (inc.accri and</pre></li>
+<li class="line error error-color "><div class="line-numbers">1043</div><pre>        fv.security = inc.security and</pre></li>
+<li class="line error error-color "><div class="line-numbers">1044</div><pre>        fv.field = inc.field and</pre></li>
+<li class="line error error-color "><div class="line-numbers">1045</div><pre>        fv.source = inc.source and</pre></li>
+<li class="line error error-color "><div class="line-numbers">1046</div><pre>        fv.date = inc.date and</pre></li>
+<li class="line error error-color "><div class="line-numbers">1047</div><pre>        fv.created_at = latest_created)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1048</div><pre>        or</pre></li>
+<li class="line error error-color "><div class="line-numbers">1049</div><pre>        (not inc.accri and</pre></li>
+<li class="line error error-color "><div class="line-numbers">1050</div><pre>        fv.security = inc.security and</pre></li>
+<li class="line error error-color "><div class="line-numbers">1051</div><pre>        fv.field = inc.field and</pre></li>
+<li class="line error error-color "><div class="line-numbers">1052</div><pre>        fv.value = inc.value and</pre></li>
+<li class="line error error-color "><div class="line-numbers">1053</div><pre>        fv.source = inc.source and</pre></li>
+<li class="line error error-color "><div class="line-numbers">1054</div><pre>        fv.date = latest_date and</pre></li>
+<li class="line error error-color "><div class="line-numbers">1055</div><pre>        fv.created_at = latest_created)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1056</div><pre>    )</pre></li>
+<li class="line error error-color "><div class="line-numbers">1057</div><pre>    when not matched then</pre></li>
+<li class="line error error-color "><div class="line-numbers">1058</div><pre>        insert (security, field, value, source, date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1059</div><pre>        values (inc.security, inc.field, inc.value, inc.source, inc.date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1060</div><pre>    ]; nested exception is org.postgresql.util.PSQLException: ERROR: syntax error at or near ")"</pre></li>
+<li class="line error error-color "><div class="line-numbers">1061</div><pre>  Позиция: 132</pre></li>
+<li class="line error error-color "><div class="line-numbers">1062</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.decorateException(KafkaMessageListenerContainer.java:2720)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1063</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2690)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1064</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.invokeOnMessage(KafkaMessageListenerContainer.java:2650)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1065</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2577)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1066</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.doInvokeWithRecords(KafkaMessageListenerContainer.java:2457)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1067</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.invokeRecordListener(KafkaMessageListenerContainer.java:2335)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1068</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.invokeListener(KafkaMessageListenerContainer.java:2006)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1069</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.invokeIfHaveRecords(KafkaMessageListenerContainer.java:1375)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1070</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.pollAndInvoke(KafkaMessageListenerContainer.java:1366)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1071</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.run(KafkaMessageListenerContainer.java:1257)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1072</div><pre>	at java.base/java.util.concurrent.Executors\$RunnableAdapter.call(Executors.java:539)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1073</div><pre>	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1074</div><pre>	at java.base/java.lang.Thread.run(Thread.java:833)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1075</div><pre>Caused by: org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [</pre></li>
+<li class="line error error-color "><div class="line-numbers">1076</div><pre>    merge into field_value as fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">1077</div><pre>    using (</pre></li>
+<li class="line error error-color "><div class="line-numbers">1078</div><pre>        with</pre></li>
+<li class="line error error-color "><div class="line-numbers">1079</div><pre>         ids as (select distinct security from security_id where id in ()),</pre></li>
+<li class="line error error-color "><div class="line-numbers">1080</div><pre>         src as (select id from source where code = ?)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1081</div><pre>        select</pre></li>
+<li class="line error error-color "><div class="line-numbers">1082</div><pre>            ids.security as security,</pre></li>
+<li class="line error error-color "><div class="line-numbers">1083</div><pre>            ? as field,</pre></li>
+<li class="line error error-color "><div class="line-numbers">1084</div><pre>            ? as value,</pre></li>
+<li class="line error error-color "><div class="line-numbers">1085</div><pre>            src.id as source,</pre></li>
+<li class="line error error-color "><div class="line-numbers">1086</div><pre>            (select id from field where code = 'ACCRUED_INTEREST') = ? as accri,</pre></li>
+<li class="line error error-color "><div class="line-numbers">1087</div><pre>            (?)::date as date,</pre></li>
+<li class="line error error-color "><div class="line-numbers">1088</div><pre>            (select max(date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1089</div><pre>             from field_value fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">1090</div><pre>             where security = ids.security</pre></li>
+<li class="line error error-color "><div class="line-numbers">1091</div><pre>               AND field = ?</pre></li>
+<li class="line error error-color "><div class="line-numbers">1092</div><pre>               AND source = src.id</pre></li>
+<li class="line error error-color "><div class="line-numbers">1093</div><pre>               AND fv.date &lt;= ?) as latest_date,</pre></li>
+<li class="line error error-color "><div class="line-numbers">1094</div><pre>            (select max(created_at)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1095</div><pre>             from field_value fv</pre></li>
+<li class="line error error-color "><div class="line-numbers">1096</div><pre>             where security = ids.security</pre></li>
+<li class="line error error-color "><div class="line-numbers">1097</div><pre>               AND field = ?</pre></li>
+<li class="line error error-color "><div class="line-numbers">1098</div><pre>               AND source = src.id</pre></li>
+<li class="line error error-color "><div class="line-numbers">1099</div><pre>               AND fv.date &lt;= ?) as latest_created</pre></li>
+<li class="line error error-color "><div class="line-numbers">1100</div><pre>        from src left join ids on true</pre></li>
+<li class="line error error-color "><div class="line-numbers">1101</div><pre>    ) inc</pre></li>
+<li class="line error error-color "><div class="line-numbers">1102</div><pre>    on (</pre></li>
+<li class="line error error-color "><div class="line-numbers">1103</div><pre>        (inc.accri and</pre></li>
+<li class="line error error-color "><div class="line-numbers">1104</div><pre>        fv.security = inc.security and</pre></li>
+<li class="line error error-color "><div class="line-numbers">1105</div><pre>        fv.field = inc.field and</pre></li>
+<li class="line error error-color "><div class="line-numbers">1106</div><pre>        fv.source = inc.source and</pre></li>
+<li class="line error error-color "><div class="line-numbers">1107</div><pre>        fv.date = inc.date and</pre></li>
+<li class="line error error-color "><div class="line-numbers">1108</div><pre>        fv.created_at = latest_created)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1109</div><pre>        or</pre></li>
+<li class="line error error-color "><div class="line-numbers">1110</div><pre>        (not inc.accri and</pre></li>
+<li class="line error error-color "><div class="line-numbers">1111</div><pre>        fv.security = inc.security and</pre></li>
+<li class="line error error-color "><div class="line-numbers">1112</div><pre>        fv.field = inc.field and</pre></li>
+<li class="line error error-color "><div class="line-numbers">1113</div><pre>        fv.value = inc.value and</pre></li>
+<li class="line error error-color "><div class="line-numbers">1114</div><pre>        fv.source = inc.source and</pre></li>
+<li class="line error error-color "><div class="line-numbers">1115</div><pre>        fv.date = latest_date and</pre></li>
+<li class="line error error-color "><div class="line-numbers">1116</div><pre>        fv.created_at = latest_created)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1117</div><pre>    )</pre></li>
+<li class="line error error-color "><div class="line-numbers">1118</div><pre>    when not matched then</pre></li>
+<li class="line error error-color "><div class="line-numbers">1119</div><pre>        insert (security, field, value, source, date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1120</div><pre>        values (inc.security, inc.field, inc.value, inc.source, inc.date)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1121</div><pre>    ]; nested exception is org.postgresql.util.PSQLException: ERROR: syntax error at or near ")"</pre></li>
+<li class="line error error-color "><div class="line-numbers">1122</div><pre>  Позиция: 132</pre></li>
+<li class="line error error-color "><div class="line-numbers">1123</div><pre>	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:236)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1124</div><pre>	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:73)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1125</div><pre>	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1577)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1126</div><pre>	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:669)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1127</div><pre>	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:693)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1128</div><pre>	at org.springframework.jdbc.core.JdbcTemplate.batchUpdate(JdbcTemplate.java:1036)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1129</div><pre>	at org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate.batchUpdate(NamedParameterJdbcTemplate.java:376)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1130</div><pre>	at ru.alfacapital.mda.api.securitiesapi.repository.SecurityRepository.saveFieldValues(SecurityRepository.kt:153)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1131</div><pre>	at ru.alfacapital.mda.api.securitiesapi.repository.SecurityRepository\$\$FastClassBySpringCGLIB\$\$cf05edcd.invoke(&lt;generated&gt;)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1132</div><pre>	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1133</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:792)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1134</div><pre>	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1135</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$CglibMethodInvocation.proceed(CglibAopProxy.java:762)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1136</div><pre>	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1137</div><pre>	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1138</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$CglibMethodInvocation.proceed(CglibAopProxy.java:762)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1139</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:707)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1140</div><pre>	at ru.alfacapital.mda.api.securitiesapi.repository.SecurityRepository\$\$EnhancerBySpringCGLIB\$\$619452cf.saveFieldValues(&lt;generated&gt;)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1141</div><pre>	at ru.alfacapital.mda.api.securitiesapi.service.SecurityService.updateIndustryExpo(SecurityService.kt:270)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1142</div><pre>	at ru.alfacapital.mda.api.securitiesapi.service.SecurityService.saveExpositions(SecurityService.kt:257)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1143</div><pre>	at ru.alfacapital.mda.api.securitiesapi.service.SecurityService\$\$FastClassBySpringCGLIB\$\$2d616b1b.invoke(&lt;generated&gt;)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1144</div><pre>	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1145</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:792)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1146</div><pre>	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1147</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$CglibMethodInvocation.proceed(CglibAopProxy.java:762)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1148</div><pre>	at org.springframework.transaction.interceptor.TransactionInterceptor\$1.proceedWithInvocation(TransactionInterceptor.java:123)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1149</div><pre>	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1150</div><pre>	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1151</div><pre>	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1152</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$CglibMethodInvocation.proceed(CglibAopProxy.java:762)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1153</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:707)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1154</div><pre>	at ru.alfacapital.mda.api.securitiesapi.service.SecurityService\$\$EnhancerBySpringCGLIB\$\$771cc43e.saveExpositions(&lt;generated&gt;)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1155</div><pre>	at ru.alfacapital.mda.api.securitiesapi.listener.IssuerEventsListener.issuerEvent(IssuerEventsListener.kt:34)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1156</div><pre>	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1157</div><pre>	at java.base/java.lang.reflect.Method.invoke(Method.java:577)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1158</div><pre>	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1159</div><pre>	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1160</div><pre>	at org.springframework.kafka.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:56)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1161</div><pre>	at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:347)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1162</div><pre>	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:92)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1163</div><pre>	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1164</div><pre>	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter\$\$FastClassBySpringCGLIB\$\$cde8c01d.invoke(&lt;generated&gt;)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1165</div><pre>	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1166</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:792)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1167</div><pre>	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1168</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$CglibMethodInvocation.proceed(CglibAopProxy.java:762)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1169</div><pre>	at org.springframework.cloud.sleuth.brave.instrument.messaging.MessageListenerMethodInterceptor.invoke(MessageListenerMethodInterceptor.java:58)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1170</div><pre>	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1171</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$CglibMethodInvocation.proceed(CglibAopProxy.java:762)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1172</div><pre>	at org.springframework.aop.framework.CglibAopProxy\$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:707)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1173</div><pre>	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter\$\$EnhancerBySpringCGLIB\$\$545ace4a.onMessage(&lt;generated&gt;)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1174</div><pre>	at org.springframework.kafka.listener.KafkaMessageListenerContainer\$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2670)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1175</div><pre>	... 11 common frames omitted</pre></li>
+<li class="line error error-color "><div class="line-numbers">1176</div><pre>Caused by: org.postgresql.util.PSQLException: ERROR: syntax error at or near ")"</pre></li>
+<li class="line error error-color "><div class="line-numbers">1177</div><pre>  Позиция: 132</pre></li>
+<li class="line error error-color "><div class="line-numbers">1178</div><pre>	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2675)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1179</div><pre>	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2365)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1180</div><pre>	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:355)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1181</div><pre>	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:315)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1182</div><pre>	at org.postgresql.jdbc.PgStatement.internalExecuteBatch(PgStatement.java:868)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1183</div><pre>	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:910)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1184</div><pre>	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1649)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1185</div><pre>	at com.zaxxer.hikari.pool.ProxyStatement.executeBatch(ProxyStatement.java:127)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1186</div><pre>	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeBatch(HikariProxyPreparedStatement.java)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1187</div><pre>	at com.p6spy.engine.wrapper.StatementWrapper.executeBatch(StatementWrapper.java:98)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1188</div><pre>	at org.springframework.jdbc.core.JdbcTemplate.lambda\$batchUpdate\$4(JdbcTemplate.java:1050)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1189</div><pre>	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:650)</pre></li>
+<li class="line error error-color "><div class="line-numbers">1190</div><pre>	... 59 common frames omitted</pre></li>
+<li class="line error error-color "><div class="line-numbers">1191</div><pre>23:06:48.838 [awaitility[Await DB table field_value]] ERROR o.dbunit.assertion.DbUnitAssertBase.compareRowCounts - org.dbunit.assertion.DbComparisonFailure[row count (table=field_value)expected:&lt;4&gt;but was:&lt;0&gt;]</pre></li>
+<li class="line error error-color "><div class="line-numbers">1192</div><pre>23:06:49.845 [awaitility[Await DB table field_value]] ERROR o.dbunit.assertion.DbUnitAssertBase.compareRowCounts - org.dbunit.assertion.DbComparisonFailure[row count (table=field_value)expected:&lt;4&gt;but was:&lt;0&gt;]</pre></li>
+<li class="line error error-color "><div class="line-numbers">1193</div><pre>23:06:50.852 [awaitility[Await DB table field_value]] ERROR o.dbunit.assertion.DbUnitAssertBase.compareRowCounts - org.dbunit.assertion.DbComparisonFailure[row count (table=field_value)expected:&lt;4&gt;but was:&lt;0&gt;]</pre></li>
+<li class="line error error-color "><div class="line-numbers">1194</div><pre>23:06:51.861 [awaitility[Await DB table field_value]] ERROR o.dbunit.assertion.DbUnitAssertBase.compareRowCounts - org.dbunit.assertion.DbComparisonFailure[row count (table=field_value)expected:&lt;4&gt;but was:&lt;0&gt;]</pre></li>
+<li class="line error error-color "><div class="line-numbers">1195</div><pre>23:06:52.868 [awaitility[Await DB table field_value]] ERROR o.dbunit.assertion.DbUnitAssertBase.compareRowCounts - org.dbunit.assertion.DbComparisonFailure[row count (table=field_value)expected:&lt;4&gt;but was:&lt;0&gt;]</pre></li>
+<li class="line error error-color "><div class="line-numbers">1196</div><pre>23:06:53.874 [awaitility[Await DB table field_value]] ERROR o.dbunit.assertion.DbUnitAssertBase.compareRowCounts - org.dbunit.assertion.DbComparisonFailure[row count (table=field_value)expected:&lt;4&gt;but was:&lt;0&gt;]</pre></li>
+<li class="line error error-color "><div class="line-numbers">1197</div><pre>23:06:54.881 [awaitility[Await DB table field_value]] ERROR o.dbunit.assertion.DbUnitAssertBase.compareRowCounts - org.dbunit.assertion.DbComparisonFailure[row count (table=field_value)expected:&lt;4&gt;but was:&lt;0&gt;]</pre></li>
+
+</ul>
+</div>
+</body>
+</html>
