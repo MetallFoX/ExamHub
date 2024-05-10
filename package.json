@@ -3,27 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.95",
-    "@types/react": "^18.2.74",
-    "@types/react-dom": "^18.2.24",
-    "antd": "^5.16.1",
+    "antd": "^5.17.0",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.3",
+    "node-gyp": "^10.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.23.0",
     "react-scripts": "5.0.1",
     "sort-by": "^1.2.0",
-    "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
+    "swagger-editor": "^5.0.0-alpha.95",
+    "swagger-ui-react": "5.17.7",
+    "tachyons": "^4.12.0"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
+    "start": "GENERATE_SOURCEMAP=false craco start",
+    "build": "GENERATE_SOURCEMAP=false craco build",
     "test": "craco test",
     "eject": "react-scripts eject"
   },
@@ -46,8 +41,21 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@craco/craco": "^7.1.0",
     "@craco/types": "^7.1.0",
-    "swagger-editor": "^4.12.1"
+    "@types/jest": "^27.5.2",
+    "@types/node": "^20.12.11",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
+    "@types/swagger-ui-react": "^4.18.3",
+    "copy-webpack-plugin": "^12.0.2",
+    "https-browserify": "^1.0.0",
+    "prop-types": "^15.8.1",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "typescript": "^4.9.5",
+    "util": "^0.12.5",
+    "web-vitals": "^3.5.2"
   }
 }

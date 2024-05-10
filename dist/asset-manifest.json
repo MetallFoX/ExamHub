@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "/main.js",
+    "main.css": "/static/css/main.d4543379.css",
+    "438.js": "/438.js",
+    "591.js": "/591.js",
+    "static/js/swagger-editor.js": "/static/js/swagger-editor.js",
+    "static/js/apidom.worker.js": "/static/js/apidom.worker.js",
+    "static/js/editor.worker.js": "/static/js/editor.worker.js",
+    "tree-sitter-yaml.wasm": "/d396281e11774e0afa7a.wasm",
+    "tree-sitter.wasm": "/23aac571c96605dc2521.wasm",
+    "tree-sitter-json.wasm": "/64a30dfa8a51b6a090eb.wasm",
+    "webWorkerExtensionHostIframe.html": "/2a934b83f6d8506879ab.html",
+    "index.html": "/index.html"
+  },
+  "entrypoints": [
+    "main.js",
+    "static/css/main.d4543379.css"
+  ]
+}
